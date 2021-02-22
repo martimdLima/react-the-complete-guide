@@ -1,0 +1,49 @@
+#+TITLE:     React - The Complete Guide
+#+AUTHOR:    Martim Lima
+#+EMAIL:     (concat "martim.d.lima" at-sign "protonmail.com")
+#+DATE:      10-10-2020
+#+LANGUAGE:  en
+#+OPTIONS:   H:4 num:nil toc:2
+#+PROPERTY: header-args :dir ~/Documents/org/temp
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-readtheorg.setup
+
+-----
+
+* Introduction
+
+** What is React?
+  :PROPERTIES:
+  :CATEGORY: Introduction
+  :END:
+
+"A javascript Library for building User Interfaces"
+
+A browser side javascript framework - no need for server side rendering
+
+user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
+
+** Why React?
+    :PROPERTIES:
+    :CATEGORY: Introduction
+    :END:
+
+- UI State becomes diffcult to hadnle with Vanilla Javascript
+- Focus on Business Logic, not on preventing your App from exploding
+- Huge Ecosystem, Active Community, High Performance
+
+** Single Page Applications / Multi Page Applications
+
+ - Single Page Applications - Only ONE HTML Page, Content is (re)rendered on Client - Typically only ONE ReactDOM.render() call
+
+ - Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per "widget"
+
+
+* Understanding the Base Features & Syntax
+
+* Working with Lists and Conditionals
+
+* Styling React Components & Elements
+
+* Debugging React Apps
+
+* Diving Deeper into COmponents & React internals
