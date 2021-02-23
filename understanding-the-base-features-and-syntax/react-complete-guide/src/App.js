@@ -33,6 +33,17 @@ class App extends Component {
     });
   };
 
+  // two way binding
+  nameChangeHandler = (event) => {
+    this.setState({
+      persons: [
+        { name: "Lisbon", age: 23 },
+        { name: event.target.value, age: 34 },
+        { name: "Tokyo", age: 19 },
+      ],
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -51,6 +62,7 @@ class App extends Component {
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
           click={() => this.switchNameHandler("London")}
+          changed={this.nameChangeHandler}
         >
           My Hobbies are: Cinema
         </Person>

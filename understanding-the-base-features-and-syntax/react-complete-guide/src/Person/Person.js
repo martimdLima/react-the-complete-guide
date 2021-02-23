@@ -14,6 +14,8 @@ const person = (props) => {
         This is {props.name} and it's {props.age} old!
       </p>
       <p>{props.children}</p>
+      {/* two way binding */}
+      <input type="text" onChange={props.changed} value={props.name}/>
     </div>
   );
 };
