@@ -1,5 +1,6 @@
 import React, { Component, useState } from "react";
 import Person from "./Person/Person";
+
 import "./App.css";
 
 // Class for example, which we would use in normal html to assign a css class can't be used because it's a reserved word in javascript,
@@ -42,7 +43,7 @@ class App extends Component {
         { name: "Tokyo", age: 19 },
       ],
     });
-  }
+  };
 
   render() {
     return (

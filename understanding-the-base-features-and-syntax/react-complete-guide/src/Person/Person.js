@@ -1,4 +1,6 @@
 import React from "react";
+
+import "./Person.css";
 // in its simplest form, a component is a function returning some jsx.
 
 // props (short for “properties”) and state are both plain JavaScript objects.
@@ -9,13 +11,13 @@ import React from "react";
 
 const person = (props) => {
   return (
-    <div>
+    <div className="Person">
       <p onClick={props.click}>
         This is {props.name} and it's {props.age} old!
       </p>
       <p>{props.children}</p>
       {/* two way binding */}
-      <input type="text" onChange={props.changed} value={props.name}/>
+      <input type="text" onChange={props.changed} value={props.name} />
     </div>
   );
 };
