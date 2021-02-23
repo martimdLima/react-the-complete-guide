@@ -1,31 +1,33 @@
-- [Introduction](#org7b343e2)
-  - [What is React?](#orgac6a263)
-  - [Why React?](#orgbd90b62)
-  - [Single Page Applications / Multi Page Applications](#org0d08680)
-- [Refreshing Next Generation Javascript](#org2e3a34a)
-  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org637c6ba)
-  - [Arrow Functions](#orge7f59dc)
-  - [Exports & Imports (Modules)](#org9c1731e)
-  - [Classes](#org355d125)
-  - [Classes, Properties and Methods](#org0940471)
-  - [Spread and Rest Operator](#org9bb4084)
-  - [Destructuring](#org62e1e78)
-- [Understanding the Base Features & Syntax](#orga862492)
-  - [Using a Build Workflow](#org1b78520)
-- [Working with Lists and Conditionals](#orgf334806)
-- [Styling React Components & Elements](#orgd60ef3a)
-- [Debugging React Apps](#orgda561f1)
-- [Diving Deeper into Components & React internals](#orgadc7c25)
+- [Introduction](#org2a895c3)
+  - [What is React?](#org90c9547)
+  - [Why React?](#org26d3ccb)
+  - [Single Page Applications / Multi Page Applications](#orge8b7839)
+- [Refreshing Next Generation Javascript](#org0f50fb1)
+  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org7ce9c53)
+  - [Arrow Functions](#org98bf8d3)
+  - [Exports & Imports (Modules)](#org6ed8ae3)
+  - [Classes](#org04314ab)
+  - [Classes, Properties and Methods](#org2954ddb)
+  - [Spread and Rest Operator](#orgb096081)
+  - [Destructuring](#org879f54a)
+- [Understanding the Base Features & Syntax](#org0c575c8)
+  - [Using a Build Workflow](#org811d126)
+- [Working with Lists and Conditionals](#orgd428b4a)
+  - [JSX](#orgd53e658)
+  - [Components](#org5ec40df)
+- [Styling React Components & Elements](#org7ce0b31)
+- [Debugging React Apps](#org4640627)
+- [Diving Deeper into Components & React internals](#org2dbbca6)
 
 ---
 
 
-<a id="org7b343e2"></a>
+<a id="org2a895c3"></a>
 
 # Introduction
 
 
-<a id="orgac6a263"></a>
+<a id="org90c9547"></a>
 
 ## What is React?
 
@@ -36,16 +38,16 @@ A browser side javascript framework - no need for server side rendering
 user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
 
 
-<a id="orgbd90b62"></a>
+<a id="org26d3ccb"></a>
 
 ## Why React?
 
--   UI State becomes diffcult to hadnle with Vanilla Javascript
+-   UI State becomes difficult to handle with Vanilla Javascript
 -   Focus on Business Logic, not on preventing your App from exploding
 -   Huge Ecosystem, Active Community, High Performance
 
 
-<a id="org0d08680"></a>
+<a id="orge8b7839"></a>
 
 ## Single Page Applications / Multi Page Applications
 
@@ -54,12 +56,12 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per &ldquo;widget&rdquo;
 
 
-<a id="org2e3a34a"></a>
+<a id="org0f50fb1"></a>
 
 # Refreshing Next Generation Javascript
 
 
-<a id="org637c6ba"></a>
+<a id="org7ce9c53"></a>
 
 ## &ldquo;let&rdquo; and &ldquo;const&rdquo;
 
@@ -69,7 +71,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   const - constant values
 
 
-<a id="orge7f59dc"></a>
+<a id="org98bf8d3"></a>
 
 ## Arrow Functions
 
@@ -95,7 +97,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 ```
 
 
-<a id="org9c1731e"></a>
+<a id="org6ed8ae3"></a>
 
 ## Exports & Imports (Modules)
 
@@ -130,7 +132,7 @@ import * from './utility' // importing all using an alias from module
 ```
 
 
-<a id="org355d125"></a>
+<a id="org04314ab"></a>
 
 ## Classes
 
@@ -173,7 +175,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org0940471"></a>
+<a id="org2954ddb"></a>
 
 ## Classes, Properties and Methods
 
@@ -231,7 +233,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org9bb4084"></a>
+<a id="orgb096081"></a>
 
 ## Spread and Rest Operator
 
@@ -268,7 +270,7 @@ age: 20
 ```
 
 
-<a id="org62e1e78"></a>
+<a id="org879f54a"></a>
 
 ## Destructuring
 
@@ -284,12 +286,12 @@ age: 20
 ```
 
 
-<a id="orga862492"></a>
+<a id="org0c575c8"></a>
 
 # Understanding the Base Features & Syntax
 
 
-<a id="org1b78520"></a>
+<a id="org811d126"></a>
 
 ## Using a Build Workflow
 
@@ -308,22 +310,38 @@ age: 20
 -   Use a Development Server
 
 
-<a id="orgf334806"></a>
+<a id="orgd428b4a"></a>
 
 # Working with Lists and Conditionals
 
 
-<a id="orgd60ef3a"></a>
+<a id="orgd53e658"></a>
+
+## JSX
+
+
+<a id="org5ec40df"></a>
+
+## Components
+
+Components are the core building block of React apps. Actually, React really is just a library for creating components in its core. A typical React app therefore could be depicted as a component tree - having one root component (&ldquo;App&rdquo;) and then an potentially infinite amount of nested child components. Each component needs to return/ render some JSX code - it defines which HTML code React should render to the real DOM in the end.
+
+-   Functional Components (also referred to as &ldquo;presentational&rdquo;, &ldquo;dumb&rdquo; or &ldquo;stateless&rdquo; components - more about this later in the course) => const cmp = () => { return <div>some JSX</div> } (using ES6 arrow functions as shown here is recommended but optional)
+
+-   Class Components (also referred to as &ldquo;containers&rdquo;, &ldquo;smart&rdquo; or &ldquo;stateful&rdquo; components) => class Cmp extends Component { render () { return <div>some JSX</div> } }
+
+
+<a id="org7ce0b31"></a>
 
 # Styling React Components & Elements
 
 
-<a id="orgda561f1"></a>
+<a id="org4640627"></a>
 
 # Debugging React Apps
 
 
-<a id="orgadc7c25"></a>
+<a id="org2dbbca6"></a>
 
 # Diving Deeper into Components & React internals
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Person from "./Person/Person";
 import "./App.css";
 
 class App extends Component {
@@ -11,7 +12,11 @@ class App extends Component {
     return (
       <div className="App">
         <h1>A React App</h1>
-        <p>A paragraph example</p>
+
+        <Person name="John" age="24"/>
+        <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
+        <Person name="Poe" age="16"/>
+
       </div>
     );
   }
