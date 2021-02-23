@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import "./App.css";
 
 class App extends Component {
+  // Class for example, which we would use in normal html to assign a css class can't be used because it's a reserved word in javascript,
+  // used to create a new class. This is why class name must be used.
+
+  // The jsx expression must always have a parent element.
+
   render() {
     return (
       <div className="App">
         <h1>A React App</h1>
+        <p>A paragraph example</p>
       </div>
     );
   }
