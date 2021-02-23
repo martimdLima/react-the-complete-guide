@@ -8,15 +8,37 @@ class App extends Component {
 
   // The jsx expression must always have a parent element.
 
+  // state is managed within the component (similar to variables declared within a function)
+  state = {
+    persons: [
+      { name: "John", age: 24 },
+      { name: "Doe", age: 35 },
+      { name: "Poe", age: 17 },
+    ],
+  };
+
   render() {
     return (
       <div className="App">
         <h1>A React App</h1>
-
-        <Person name="John" age="24"/>
-        <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
-        <Person name="Poe" age="16"/>
-
+        <button>Switch Name</button>
+        {/* <Person name="John" age="24"/> */}
+        {/* <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
+        <Person name="Poe" age="16"/> */}
+        <Person
+          name={this.state.persons[0].name}
+          age={this.state.persons[0].age}
+        />
+        <Person
+          name={this.state.persons[1].name}
+          age={this.state.persons[1].age}
+        >
+          My Hobbies are: Cinema
+        </Person>
+        <Person
+          name={this.state.persons[2].name}
+          age={this.state.persons[2].age}
+        />
       </div>
     );
   }

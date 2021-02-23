@@ -1,33 +1,35 @@
-- [Introduction](#org2a895c3)
-  - [What is React?](#org90c9547)
-  - [Why React?](#org26d3ccb)
-  - [Single Page Applications / Multi Page Applications](#orge8b7839)
-- [Refreshing Next Generation Javascript](#org0f50fb1)
-  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org7ce9c53)
-  - [Arrow Functions](#org98bf8d3)
-  - [Exports & Imports (Modules)](#org6ed8ae3)
-  - [Classes](#org04314ab)
-  - [Classes, Properties and Methods](#org2954ddb)
-  - [Spread and Rest Operator](#orgb096081)
-  - [Destructuring](#org879f54a)
-- [Understanding the Base Features & Syntax](#org0c575c8)
-  - [Using a Build Workflow](#org811d126)
-- [Working with Lists and Conditionals](#orgd428b4a)
-  - [JSX](#orgd53e658)
-  - [Components](#org5ec40df)
-- [Styling React Components & Elements](#org7ce0b31)
-- [Debugging React Apps](#org4640627)
-- [Diving Deeper into Components & React internals](#org2dbbca6)
+- [Introduction](#org0ec27d3)
+  - [What is React?](#orgb64bc33)
+  - [Why React?](#org075ce3b)
+  - [Single Page Applications / Multi Page Applications](#orgfc9b736)
+- [Refreshing Next Generation Javascript](#orgd2544e5)
+  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org71cfcb9)
+  - [Arrow Functions](#org09b3caa)
+  - [Exports & Imports (Modules)](#org65dd0d2)
+  - [Classes](#orgc6b5e65)
+  - [Classes, Properties and Methods](#org9471106)
+  - [Spread and Rest Operator](#org4a3c122)
+  - [Destructuring](#orge8b452d)
+- [Understanding the Base Features & Syntax](#org3a052a0)
+  - [Using a Build Workflow](#org49c045b)
+- [Working with Lists and Conditionals](#orgea1d633)
+  - [JSX](#org1cb513e)
+  - [Components](#org4408a45)
+  - [Props and State](#org158b512)
+- [Styling React Components & Elements](#org7bb3909)
+- [Debugging React Apps](#orgfaef2e2)
+- [Diving Deeper into Components & React internals](#orgd906f0b)
+- [Useful Resources & Links](#orgc981d5f)
 
 ---
 
 
-<a id="org2a895c3"></a>
+<a id="org0ec27d3"></a>
 
 # Introduction
 
 
-<a id="org90c9547"></a>
+<a id="orgb64bc33"></a>
 
 ## What is React?
 
@@ -38,7 +40,7 @@ A browser side javascript framework - no need for server side rendering
 user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
 
 
-<a id="org26d3ccb"></a>
+<a id="org075ce3b"></a>
 
 ## Why React?
 
@@ -47,7 +49,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Huge Ecosystem, Active Community, High Performance
 
 
-<a id="orge8b7839"></a>
+<a id="orgfc9b736"></a>
 
 ## Single Page Applications / Multi Page Applications
 
@@ -56,12 +58,12 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per &ldquo;widget&rdquo;
 
 
-<a id="org0f50fb1"></a>
+<a id="orgd2544e5"></a>
 
 # Refreshing Next Generation Javascript
 
 
-<a id="org7ce9c53"></a>
+<a id="org71cfcb9"></a>
 
 ## &ldquo;let&rdquo; and &ldquo;const&rdquo;
 
@@ -71,7 +73,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   const - constant values
 
 
-<a id="org98bf8d3"></a>
+<a id="org09b3caa"></a>
 
 ## Arrow Functions
 
@@ -97,7 +99,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 ```
 
 
-<a id="org6ed8ae3"></a>
+<a id="org65dd0d2"></a>
 
 ## Exports & Imports (Modules)
 
@@ -132,7 +134,7 @@ import * from './utility' // importing all using an alias from module
 ```
 
 
-<a id="org04314ab"></a>
+<a id="orgc6b5e65"></a>
 
 ## Classes
 
@@ -175,7 +177,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org2954ddb"></a>
+<a id="org9471106"></a>
 
 ## Classes, Properties and Methods
 
@@ -233,7 +235,7 @@ somePerson.printGender();
 ```
 
 
-<a id="orgb096081"></a>
+<a id="org4a3c122"></a>
 
 ## Spread and Rest Operator
 
@@ -270,7 +272,7 @@ age: 20
 ```
 
 
-<a id="org879f54a"></a>
+<a id="orge8b452d"></a>
 
 ## Destructuring
 
@@ -286,12 +288,12 @@ age: 20
 ```
 
 
-<a id="org0c575c8"></a>
+<a id="org3a052a0"></a>
 
 # Understanding the Base Features & Syntax
 
 
-<a id="org811d126"></a>
+<a id="org49c045b"></a>
 
 ## Using a Build Workflow
 
@@ -310,17 +312,17 @@ age: 20
 -   Use a Development Server
 
 
-<a id="orgd428b4a"></a>
+<a id="orgea1d633"></a>
 
 # Working with Lists and Conditionals
 
 
-<a id="orgd53e658"></a>
+<a id="org1cb513e"></a>
 
 ## JSX
 
 
-<a id="org5ec40df"></a>
+<a id="org4408a45"></a>
 
 ## Components
 
@@ -331,19 +333,99 @@ Components are the core building block of React apps. Actually, React really is 
 -   Class Components (also referred to as &ldquo;containers&rdquo;, &ldquo;smart&rdquo; or &ldquo;stateful&rdquo; components) => class Cmp extends Component { render () { return <div>some JSX</div> } }
 
 
-<a id="org7ce0b31"></a>
+<a id="org158b512"></a>
+
+## Props and State
+
+props and state are CORE concepts of React. Actually, only changes in props and/ or state trigger React to re-render your components and potentially update the DOM in the browser (a detailed look at how React checks whether to really touch the real DOM is provided in section 6).
+
+**Props**
+
+props allow you to pass data from a parent (wrapping) component to a child (embedded) component.
+
+**Example:**
+
+**AllPosts Component:**
+
+```javascript
+const posts = () => {
+    return (
+        <div>
+            <Post title="My first Post" />
+        </div>
+    );
+}
+```
+
+Here, title is the custom property (prop ) set up on the custom Post component. We basically replicate the default HTML attribute behavior we already know (e.g. <input type=&ldquo;text&rdquo;> informs the browser about how to handle that input).
+
+**Post Component:**
+
+```javascript
+const post = (props) => {
+    return (
+        <div>
+            <h1>{props.title}</h1>
+        </div>
+    );
+}
+```
+
+The Post component receives the props argument. You can of course name this argument whatever you want - it&rsquo;s your function definition, React doesn&rsquo;t care! But React will pass one argument to your component function => An object, which contains all properties you set up on <Post &#x2026; /> .
+
+{props.title} then dynamically outputs the title property of the props object - which is available since we set the title property inside AllPosts component (see above).
+
+**State**
+
+Whilst props allow you to pass data down the component tree (and hence trigger an UI update), state is used to change the component, well, state from within. Changes to state also trigger an UI update.
+
+**Example:**
+
+**NewPost Component:**
+
+```javascript
+class NewPost extends Component { // state can only be accessed in class-based components!
+    state = {
+        counter: 1
+    };
+
+    render () { // Needs to be implemented in class-based components! Needs to return some JSX!
+        return (
+            <div>{this.state.counter}</div>
+        );
+    }
+}
+```
+
+Here, the NewPost component contains state . Only class-based components can define and use state . You can of course pass the state down to functional components, but these then can&rsquo;t directly edit it.
+
+state simply is a property of the component class, you have to call it state though - the name is not optional. You can then access it via this.state in your class JSX code (which you return in the required render() method).
+
+Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props is, that this happens within one and the same component - you don&rsquo;t receive new data (props ) from outside!
+
+
+<a id="org7bb3909"></a>
 
 # Styling React Components & Elements
 
 
-<a id="org4640627"></a>
+<a id="orgfaef2e2"></a>
 
 # Debugging React Apps
 
 
-<a id="org2dbbca6"></a>
+<a id="orgd906f0b"></a>
 
 # Diving Deeper into Components & React internals
+
+
+<a id="orgc981d5f"></a>
+
+# Useful Resources & Links
+
+-   [State and Props](https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper)
+
+-   [ReactJs: Props vs. State](https://lucybain.com/blog/2016/react-state-vs-pros/)
 
 
 ```javascript

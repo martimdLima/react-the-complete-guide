@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-02-23 ter 15:07 -->
+<!-- 2021-02-23 ter 15:46 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>React - The Complete Guide</title>
@@ -229,51 +229,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org796614f">Introduction</a>
+<li><a href="#org5848f5b">Introduction</a>
 <ul>
-<li><a href="#org0a67d56">What is React?</a></li>
-<li><a href="#org1dc2dd7">Why React?</a></li>
-<li><a href="#org4c2380b">Single Page Applications / Multi Page Applications</a></li>
+<li><a href="#org8290851">What is React?</a></li>
+<li><a href="#org98e1247">Why React?</a></li>
+<li><a href="#org326b508">Single Page Applications / Multi Page Applications</a></li>
 </ul>
 </li>
-<li><a href="#orgd321098">Refreshing Next Generation Javascript</a>
+<li><a href="#org7965f14">Refreshing Next Generation Javascript</a>
 <ul>
-<li><a href="#orgaabfed3">&ldquo;let&rdquo; and &ldquo;const&rdquo;</a></li>
-<li><a href="#orgbd0509d">Arrow Functions</a></li>
-<li><a href="#orgdbf5ab6">Exports &amp; Imports (Modules)</a></li>
-<li><a href="#orgc976c79">Classes</a></li>
-<li><a href="#org95c4fa6">Classes, Properties and Methods</a></li>
-<li><a href="#orge89a6bd">Spread and Rest Operator</a></li>
-<li><a href="#org1089b8a">Destructuring</a></li>
+<li><a href="#orga435c3c">&ldquo;let&rdquo; and &ldquo;const&rdquo;</a></li>
+<li><a href="#org5b5cb1a">Arrow Functions</a></li>
+<li><a href="#org223bdce">Exports &amp; Imports (Modules)</a></li>
+<li><a href="#org6fb3e56">Classes</a></li>
+<li><a href="#org98bd568">Classes, Properties and Methods</a></li>
+<li><a href="#orgb151097">Spread and Rest Operator</a></li>
+<li><a href="#orgb37e301">Destructuring</a></li>
 </ul>
 </li>
-<li><a href="#orgff645a2">Understanding the Base Features &amp; Syntax</a>
+<li><a href="#org2745cfb">Understanding the Base Features &amp; Syntax</a>
 <ul>
-<li><a href="#org2b31712">Using a Build Workflow</a></li>
+<li><a href="#org4936e69">Using a Build Workflow</a></li>
 </ul>
 </li>
-<li><a href="#org93f2969">Working with Lists and Conditionals</a>
+<li><a href="#org02262ba">Working with Lists and Conditionals</a>
 <ul>
-<li><a href="#org14bc4ff">JSX</a></li>
-<li><a href="#orgce8975a">Components</a></li>
+<li><a href="#org8e35b96">JSX</a></li>
+<li><a href="#orga3a863c">Components</a></li>
+<li><a href="#org275eb1d">Props and State</a></li>
 </ul>
 </li>
-<li><a href="#org27cf6da">Styling React Components &amp; Elements</a></li>
-<li><a href="#org0f200fc">Debugging React Apps</a></li>
-<li><a href="#orgbc5f8fa">Diving Deeper into Components &amp; React internals</a></li>
+<li><a href="#orgd52ec1b">Styling React Components &amp; Elements</a></li>
+<li><a href="#orgdb52abf">Debugging React Apps</a></li>
+<li><a href="#orgde6c549">Diving Deeper into Components &amp; React internals</a></li>
+<li><a href="#org24336d4">Useful Resources &amp; Links</a></li>
 </ul>
 </div>
 </div>
 <hr />
 
-<div id="outline-container-org796614f" class="outline-2">
-<h2 id="org796614f">Introduction</h2>
-<div class="outline-text-2" id="text-org796614f">
+<div id="outline-container-org5848f5b" class="outline-2">
+<h2 id="org5848f5b">Introduction</h2>
+<div class="outline-text-2" id="text-org5848f5b">
 </div>
 
-<div id="outline-container-org0a67d56" class="outline-3">
-<h3 id="org0a67d56">What is React?</h3>
-<div class="outline-text-3" id="text-org0a67d56">
+<div id="outline-container-org8290851" class="outline-3">
+<h3 id="org8290851">What is React?</h3>
+<div class="outline-text-3" id="text-org8290851">
 <p>
 &ldquo;A javascript Library for building User Interfaces&rdquo;
 </p>
@@ -288,9 +290,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org1dc2dd7" class="outline-3">
-<h3 id="org1dc2dd7">Why React?</h3>
-<div class="outline-text-3" id="text-org1dc2dd7">
+<div id="outline-container-org98e1247" class="outline-3">
+<h3 id="org98e1247">Why React?</h3>
+<div class="outline-text-3" id="text-org98e1247">
 <ul class="org-ul">
 <li>UI State becomes difficult to handle with Vanilla Javascript</li>
 <li>Focus on Business Logic, not on preventing your App from exploding</li>
@@ -299,9 +301,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org4c2380b" class="outline-3">
-<h3 id="org4c2380b">Single Page Applications / Multi Page Applications</h3>
-<div class="outline-text-3" id="text-org4c2380b">
+<div id="outline-container-org326b508" class="outline-3">
+<h3 id="org326b508">Single Page Applications / Multi Page Applications</h3>
+<div class="outline-text-3" id="text-org326b508">
 <ul class="org-ul">
 <li>Single Page Applications - Only ONE HTML Page, Content is (re)rendered on Client - Typically only ONE ReactDOM.render() call</li>
 
@@ -311,14 +313,14 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-orgd321098" class="outline-2">
-<h2 id="orgd321098">Refreshing Next Generation Javascript</h2>
-<div class="outline-text-2" id="text-orgd321098">
+<div id="outline-container-org7965f14" class="outline-2">
+<h2 id="org7965f14">Refreshing Next Generation Javascript</h2>
+<div class="outline-text-2" id="text-org7965f14">
 </div>
 
-<div id="outline-container-orgaabfed3" class="outline-3">
-<h3 id="orgaabfed3">&ldquo;let&rdquo; and &ldquo;const&rdquo;</h3>
-<div class="outline-text-3" id="text-orgaabfed3">
+<div id="outline-container-orga435c3c" class="outline-3">
+<h3 id="orga435c3c">&ldquo;let&rdquo; and &ldquo;const&rdquo;</h3>
+<div class="outline-text-3" id="text-orga435c3c">
 <ul class="org-ul">
 <li>var - creates a variable in javascript</li>
 
@@ -329,9 +331,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 
 
-<div id="outline-container-orgbd0509d" class="outline-3">
-<h3 id="orgbd0509d">Arrow Functions</h3>
-<div class="outline-text-3" id="text-orgbd0509d">
+<div id="outline-container-org5b5cb1a" class="outline-3">
+<h3 id="org5b5cb1a">Arrow Functions</h3>
+<div class="outline-text-3" id="text-org5b5cb1a">
 <blockquote>
 <p>
 Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this  keyword
@@ -370,9 +372,9 @@ Arrow Function Syntax
 </div>
 
 
-<div id="outline-container-orgdbf5ab6" class="outline-3">
-<h3 id="orgdbf5ab6">Exports &amp; Imports (Modules)</h3>
-<div class="outline-text-3" id="text-orgdbf5ab6">
+<div id="outline-container-org223bdce" class="outline-3">
+<h3 id="org223bdce">Exports &amp; Imports (Modules)</h3>
+<div class="outline-text-3" id="text-org223bdce">
 <blockquote>
 <p>
 person.js
@@ -423,9 +425,9 @@ app.js
 </div>
 
 
-<div id="outline-container-orgc976c79" class="outline-3">
-<h3 id="orgc976c79">Classes</h3>
-<div class="outline-text-3" id="text-orgc976c79">
+<div id="outline-container-org6fb3e56" class="outline-3">
+<h3 id="org6fb3e56">Classes</h3>
+<div class="outline-text-3" id="text-org6fb3e56">
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #405A61;">// </span><span style="color: #405A61;">class declaration</span>
 <span style="color: #859900; font-weight: bold;">class</span> Human {
@@ -467,9 +469,9 @@ somePerson.printGender();
 </div>
 </div>
 
-<div id="outline-container-org95c4fa6" class="outline-3">
-<h3 id="org95c4fa6">Classes, Properties and Methods</h3>
-<div class="outline-text-3" id="text-org95c4fa6">
+<div id="outline-container-org98bd568" class="outline-3">
+<h3 id="org98bd568">Classes, Properties and Methods</h3>
+<div class="outline-text-3" id="text-org98bd568">
 <ul class="org-ul">
 <li>Properties are like &ldquo;variables attached to classes/objects&rdquo;</li>
 </ul>
@@ -535,9 +537,9 @@ somePerson.printGender();
 </div>
 
 
-<div id="outline-container-orge89a6bd" class="outline-3">
-<h3 id="orge89a6bd">Spread and Rest Operator</h3>
-<div class="outline-text-3" id="text-orge89a6bd">
+<div id="outline-container-orgb151097" class="outline-3">
+<h3 id="orgb151097">Spread and Rest Operator</h3>
+<div class="outline-text-3" id="text-orgb151097">
 <ul class="org-ul">
 <li>Spread - Used to split up array elements or object properties</li>
 </ul>
@@ -579,9 +581,9 @@ age: <span style="color: #d33682; font-weight: bold;">20</span>
 </div>
 </div>
 
-<div id="outline-container-org1089b8a" class="outline-3">
-<h3 id="org1089b8a">Destructuring</h3>
-<div class="outline-text-3" id="text-org1089b8a">
+<div id="outline-container-orgb37e301" class="outline-3">
+<h3 id="orgb37e301">Destructuring</h3>
+<div class="outline-text-3" id="text-orgb37e301">
 <blockquote>
 <p>
 Easily extract array elements or object properties and store them in variables
@@ -603,14 +605,14 @@ Easily extract array elements or object properties and store them in variables
 </div>
 
 
-<div id="outline-container-orgff645a2" class="outline-2">
-<h2 id="orgff645a2">Understanding the Base Features &amp; Syntax</h2>
-<div class="outline-text-2" id="text-orgff645a2">
+<div id="outline-container-org2745cfb" class="outline-2">
+<h2 id="org2745cfb">Understanding the Base Features &amp; Syntax</h2>
+<div class="outline-text-2" id="text-org2745cfb">
 </div>
 
-<div id="outline-container-org2b31712" class="outline-3">
-<h3 id="org2b31712">Using a Build Workflow</h3>
-<div class="outline-text-3" id="text-org2b31712">
+<div id="outline-container-org4936e69" class="outline-3">
+<h3 id="org4936e69">Using a Build Workflow</h3>
+<div class="outline-text-3" id="text-org4936e69">
 <p>
 <b>Why?</b>
 </p>
@@ -635,18 +637,18 @@ Easily extract array elements or object properties and store them in variables
 </div>
 
 
-<div id="outline-container-org93f2969" class="outline-2">
-<h2 id="org93f2969">Working with Lists and Conditionals</h2>
-<div class="outline-text-2" id="text-org93f2969">
+<div id="outline-container-org02262ba" class="outline-2">
+<h2 id="org02262ba">Working with Lists and Conditionals</h2>
+<div class="outline-text-2" id="text-org02262ba">
 </div>
 
-<div id="outline-container-org14bc4ff" class="outline-3">
-<h3 id="org14bc4ff">JSX</h3>
+<div id="outline-container-org8e35b96" class="outline-3">
+<h3 id="org8e35b96">JSX</h3>
 </div>
 
-<div id="outline-container-orgce8975a" class="outline-3">
-<h3 id="orgce8975a">Components</h3>
-<div class="outline-text-3" id="text-orgce8975a">
+<div id="outline-container-orga3a863c" class="outline-3">
+<h3 id="orga3a863c">Components</h3>
+<div class="outline-text-3" id="text-orga3a863c">
 <p>
 Components are the core building block of React apps. Actually, React really is just a library for creating components in its core.
 A typical React app therefore could be depicted as a component tree - having one root component (&ldquo;App&rdquo;) and then an potentially infinite amount of nested child components.
@@ -660,24 +662,150 @@ Each component needs to return/ render some JSX code - it defines which HTML cod
 </ul>
 </div>
 </div>
+
+<div id="outline-container-org275eb1d" class="outline-3">
+<h3 id="org275eb1d">Props and State</h3>
+<div class="outline-text-3" id="text-org275eb1d">
+<p>
+props  and state  are CORE concepts of React. Actually, only changes in props  and/ or state  trigger React to re-render your components and potentially update the DOM in the browser (a detailed look at how React checks whether to really touch the real DOM is provided in section 6).
+</p>
+
+<p>
+<b>Props</b>
+</p>
+
+<p>
+props  allow you to pass data from a parent (wrapping) component to a child (embedded) component.
+</p>
+
+<p>
+<b>Example:</b>
+</p>
+
+<p>
+<b>AllPosts Component:</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">posts</span> = () =&gt; {
+    <span style="color: #859900; font-weight: bold;">return</span> (
+        &lt;div&gt;
+            &lt;Post title=<span style="color: #2aa198;">"My first Post"</span> /&gt;
+        &lt;/div&gt;
+    );
+}
+</pre>
+</div>
+
+<p>
+Here, title  is the custom property (prop ) set up on the custom Post  component. We basically replicate the default HTML attribute behavior we already know (e.g. &lt;input type=&ldquo;text&rdquo;&gt;  informs the browser about how to handle that input).
+</p>
+
+<p>
+<b>Post Component:</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">post</span> = (props) =&gt; {
+    <span style="color: #859900; font-weight: bold;">return</span> (
+        &lt;div&gt;
+            &lt;h1&gt;{props.title}&lt;/h1&gt;
+        &lt;/div&gt;
+    );
+}
+</pre>
+</div>
+
+<p>
+The Post  component receives the props  argument. You can of course name this argument whatever you want - it&rsquo;s your function definition, React doesn&rsquo;t care! But React will pass one argument to your component function =&gt; An object, which contains all properties you set up on &lt;Post &#x2026; /&gt; .
+</p>
+
+<p>
+{props.title}  then dynamically outputs the title  property of the props  object - which is available since we set the title  property inside AllPosts  component (see above).
+</p>
+
+
+<p>
+<b>State</b>
+</p>
+
+<p>
+Whilst props allow you to pass data down the component tree (and hence trigger an UI update), state is used to change the component, well, state from within.
+Changes to state also trigger an UI update.
+</p>
+
+<p>
+<b>Example:</b>
+</p>
+
+<p>
+<b>NewPost Component:</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">class</span> NewPost <span style="color: #859900; font-weight: bold;">extends</span> Component { <span style="color: #405A61;">// </span><span style="color: #405A61;">state can only be accessed in class-based components!</span>
+    state = {
+        counter: <span style="color: #d33682; font-weight: bold;">1</span>
+    };
+
+    render () { <span style="color: #405A61;">// </span><span style="color: #405A61;">Needs to be implemented in class-based components! Needs to return some JSX!</span>
+        <span style="color: #859900; font-weight: bold;">return</span> (
+            &lt;div&gt;{<span style="color: #d33682; font-weight: bold;">this</span>.state.counter}&lt;/div&gt;
+        );
+    }
+}
+</pre>
+</div>
+
+<p>
+Here, the NewPost  component contains state . Only class-based components can define and use state . You can of course pass the state  down to functional components, but these then can&rsquo;t directly edit it.
+</p>
+
+<p>
+state  simply is a property of the component class, you have to call it state  though - the name is not optional. You can then access it via this.state  in your class JSX code (which you return in the required render()  method).
+</p>
+
+<p>
+Whenever state  changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props  is, that this happens within one and the same component - you don&rsquo;t receive new data (props ) from outside!
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd52ec1b" class="outline-2">
+<h2 id="orgd52ec1b">Styling React Components &amp; Elements</h2>
+<div class="outline-text-2" id="text-orgd52ec1b">
+</div>
+</div>
+
+<div id="outline-container-orgdb52abf" class="outline-2">
+<h2 id="orgdb52abf">Debugging React Apps</h2>
+<div class="outline-text-2" id="text-orgdb52abf">
+</div>
+</div>
+
+<div id="outline-container-orgde6c549" class="outline-2">
+<h2 id="orgde6c549">Diving Deeper into Components &amp; React internals</h2>
+<div class="outline-text-2" id="text-orgde6c549">
+</div>
 </div>
 
 
-<div id="outline-container-org27cf6da" class="outline-2">
-<h2 id="org27cf6da">Styling React Components &amp; Elements</h2>
-<div class="outline-text-2" id="text-org27cf6da">
-</div>
-</div>
+<div id="outline-container-org24336d4" class="outline-2">
+<h2 id="org24336d4">Useful Resources &amp; Links</h2>
+<div class="outline-text-2" id="text-org24336d4">
+<ul class="org-ul">
+<li><a href="https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper">State and Props</a></li>
 
-<div id="outline-container-org0f200fc" class="outline-2">
-<h2 id="org0f200fc">Debugging React Apps</h2>
-<div class="outline-text-2" id="text-org0f200fc">
-</div>
-</div>
+<li><a href="https://lucybain.com/blog/2016/react-state-vs-pros/">ReactJs: Props vs. State</a></li>
+</ul>
 
-<div id="outline-container-orgbc5f8fa" class="outline-2">
-<h2 id="orgbc5f8fa">Diving Deeper into Components &amp; React internals</h2>
-<div class="outline-text-2" id="text-orgbc5f8fa">
+
+
+
+
+
+
 <blockquote>
 <p>
 
@@ -694,7 +822,7 @@ Each component needs to return/ render some JSX code - it defines which HTML cod
 <div id="postamble" class="status">
 <p class="date">Date: 10-10-2020</p>
 <p class="author">Author: Martim Lima</p>
-<p class="date">Created: 2021-02-23 ter 15:07</p>
+<p class="date">Created: 2021-02-23 ter 15:46</p>
 </div>
 </body>
 </html>
