@@ -23,10 +23,10 @@ class App extends Component {
   };
 
   // it's a good pratice to name all event handlers with the word "handler" to expliclitly mention its purpose
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
     this.setState({
       persons: [
-        { name: "Texas", age: 23 },
+        { name: newName, age: 23 },
         { name: "Madrid", age: 34 },
         { name: "Tokyo", age: 19 },
       ],
@@ -37,7 +37,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>A React App</h1>
-        <button onClick={this.switchNameHandler}>Switch Name</button>
+        <button onClick={this.switchNameHandler.bind(this, "Lisbon")}>
+          Switch Name
+        </button>
         {/* <Person name="John" age="24"/> */}
         {/* <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
         <Person name="Poe" age="16"/> */}
@@ -48,6 +50,7 @@ class App extends Component {
         <Person
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
+          click={() => this.switchNameHandler("London")}
         >
           My Hobbies are: Cinema
         </Person>

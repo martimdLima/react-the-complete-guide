@@ -10,8 +10,8 @@ import React from "react";
 const person = (props) => {
   return (
     <div>
-      <p>
-        This is {props.name} that is {props.age} old!
+      <p onClick={props.click}>
+        This is {props.name} and it's {props.age} old!
       </p>
       <p>{props.children}</p>
     </div>
