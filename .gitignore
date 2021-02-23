@@ -1,1 +1,12 @@
 */out/
+*/docs/
+*/node_modules/
+**/node_modules
+*/build
+**/build
+*/package-lock.json
+**/package-lock.json
+*/server.cert
+*/server.key
+dirloc.txt
+.vscode/*
