@@ -10,11 +10,11 @@
 -----
 
 * Introduction
-
-** What is React?
-  :PROPERTIES:
+ :PROPERTIES:
   :CATEGORY: Introduction
   :END:
+
+** What is React?
 
 "A javascript Library for building User Interfaces"
 
@@ -27,23 +27,297 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
     :CATEGORY: Introduction
     :END:
 
-- UI State becomes diffcult to hadnle with Vanilla Javascript
-- Focus on Business Logic, not on preventing your App from exploding
-- Huge Ecosystem, Active Community, High Performance
++ UI State becomes diffcult to hadnle with Vanilla Javascript
++ Focus on Business Logic, not on preventing your App from exploding
++ Huge Ecosystem, Active Community, High Performance
 
 ** Single Page Applications / Multi Page Applications
 
- - Single Page Applications - Only ONE HTML Page, Content is (re)rendered on Client - Typically only ONE ReactDOM.render() call
+ + Single Page Applications - Only ONE HTML Page, Content is (re)rendered on Client - Typically only ONE ReactDOM.render() call
 
- - Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per "widget"
+ + Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per "widget"
+
+* Refreshing Next Generation Javascript
+  :PROPERTIES:
+  :CATEGORY: Next Generation Javascript
+  :END:
+
+** "let" and "const"
+
++ var - creates a variable in javascript
+
++ let - variable values
++ const - constant values
+
+
+** Arrow Functions
+
+#+BEGIN_QUOTE
+Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this  keyword
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+Normal Javascript Function Syntax
+#+END_QUOTE
+
+#+BEGIN_SRC javascript
+    function myFnc(arg) {
+        console.log(arg);
+    }
+#+END_SRC
+
+#+BEGIN_QUOTE
+Arrow Function Syntax
+#+END_QUOTE
+
+#+BEGIN_SRC  javascript
+
+    // if there is just one argument the parenthesis can be omitted, but if there is none or multiple arguments they must be present
+
+    const myFnc = (arg) {
+        console.log(arg);
+    }
+#+END_SRC
+
+
+** Exports & Imports (Modules)
+
+#+BEGIN_QUOTE
+person.js
+#+END_QUOTE
+
+#+BEGIN_SRC  javascript
+    const person = {
+    name: 'Max'
+    }
+
+exports default person
+#+END_SRC
+
+
+#+BEGIN_QUOTE
+utility.js
+#+END_QUOTE
+
+#+BEGIN_SRC  javascript
+    export const clean = () => {...}
+    export const baseData = 10;
+#+END_SRC
+
+
+#+BEGIN_QUOTE
+app.js
+#+END_QUOTE
+
+#+BEGIN_SRC  javascript
+// default export
+import person from './person.js'
+import prs from './person.js'
+
+// named export
+import { baseData } from '.utility.js'
+import { clean as cln } from './utility.js' // using an alias
+import * from './utility' // importing all using an alias from module
+#+END_SRC
+
+
+** Classes
+
+#+BEGIN_SRC  javascript
+// class declaration
+class Human {
+
+    let gender;
+
+    constructor() {
+        this.gender = 'male';
+    }
+
+    printGender() {
+        console.log(this.gender);
+    }
+
+}
+
+// Inheritance
+class Person extends Human {
+
+    let name;
+
+    constructor() {
+        super();
+        this.name = 'user';
+    }
+
+    printUserName() {
+    console.log(this.name)
+    }
+}
+
+// class usage
+const somePerson = new Person()
+
+somePerson.printUserName();
+somePerson.printGender();
+#+END_SRC
+
+** Classes, Properties and Methods
+
+- Properties are like "variables attached to classes/objects"
+
+#+BEGIN_SRC javascript
+// ES6
+constructor() {
+this.property = "value";
+}
+
+//ES7
+this.property = "value";
+#+END_SRC
+
+
+- Methods are like "functions attached to classes/objects"
+
+#+BEGIN_SRC javascript
+// ES6
+someMethod () { ... }
+
+//ES7
+someMethod = () => { ... }
+#+END_SRC
+
+
+#+BEGIN_SRC javascript
+// class declaration
+class Human {
+
+    let gender = 'male'
+
+    printGender = () => {
+        console.log(this.gender);
+    }
+
+}
+
+// Inheritance
+class Person extends Human {
+
+    name = "user"
+    gender = "female"
+
+    printUserName() {
+    console.log(this.name)
+    }
+}
+
+// class usage
+const somePerson = new Person()
+
+somePerson.printUserName();
+somePerson.printGender();
+
+#+END_SRC
+
+
+** Spread and Rest Operator
+
+- Spread - Used to split up array elements or object properties
+
+#+BEGIN_SRC javascript
+const newArray = [...oldArray, 1, 2];
+
+const newObject =  { ...oldObject, newProp: 5 };
+#+END_SRC
+
+#+BEGIN_SRC javascript
+const numbers = [1, 2, 3];
+const newNumbers = [...numbers, 4]
+#+END_SRC
+
+- Rest - Used to merge a list of function arguments into an array
+#+BEGIN_SRC javascript
+function sortArgs(args) {
+    return args.sort()
+}
+#+END_SRC
+
+#+BEGIN_SRC javascript
+const person = {
+name: 'Doe'
+};
+
+const newPerson =0 {
+...person,
+age: 20
+};
+#+END_SRC
+
+** Destructuring
+
+#+BEGIN_QUOTE
+Easily extract array elements or object properties and store them in variables
+#+END_QUOTE
+
+#+BEGIN_SRC javascript
+// Array Destructuring
+[a, b] = ['Hello', 'Max']
+#+END_SRC
+
+#+BEGIN_SRC javascript
+{name} = {name: 'Doe', age: 20}
+#+END_SRC
 
 
 * Understanding the Base Features & Syntax
+  :PROPERTIES:
+  :CATEGORY: Base Features & Syntax
+  :END:
+
+** Using a Build Workflow
+
+*Why?*
+ + Recommended for SPAs and MPAs
+ + Optimize Code
+ + Use Next-Gen JavaScript Features
+ + Be more Productive
+
+*How?*
+ + Use Dependency Management Tool (npm or yarn)
+ + use Bundler (recommended: Webpack)
+ + Use Compoler (Next-Gen JavaScript) Babel + presets
+ + Use a Development Server
+
 
 * Working with Lists and Conditionals
+  :PROPERTIES:
+  :CATEGORY: Lists & Conditionals
+  :END:
 
 * Styling React Components & Elements
+  :PROPERTIES:
+  :CATEGORY: Styling React Components & Elements
+  :END:
 
 * Debugging React Apps
+  :PROPERTIES:
+  :CATEGORY: Debugging React Apps
+  :END:
 
-* Diving Deeper into COmponents & React internals
+* Diving Deeper into Components & React internals
+  :PROPERTIES:
+  :CATEGORY: Components & React Internals
+  :END:
+
+
+
+
+
+
+
+#+BEGIN_QUOTE
+
+#+END_QUOTE
+
+#+BEGIN_SRC javascript
+
+#+END_SRC
