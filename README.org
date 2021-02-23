@@ -284,7 +284,7 @@ Easily extract array elements or object properties and store them in variables
 *How?*
  + Use Dependency Management Tool (npm or yarn)
  + use Bundler (recommended: Webpack)
- + Use Compoler (Next-Gen JavaScript) Babel + presets
+ + Use Compiler (Next-Gen JavaScript) Babel + presets
  + Use a Development Server
 
 
@@ -374,6 +374,101 @@ state  simply is a property of the component class, you have to call it state  t
 
 Whenever state  changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props  is, that this happens within one and the same component - you don't receive new data (props ) from outside!
 
+
+** Class, Pure and Function Components
+
+React components come in different flavors to tackle different problems. In typical programming fashion, choosing which one works best gets an “it depends.” Each component type has its pros and cons depending on the problem at hand. The main takeaway is knowing how each component type is useful for a given scenario.
+
+*** Class components (formerly ‘Stateful’ components)
+The one component type we see all over the place is the class component. It is a stateful component because it has both state and props. This component has a ton of flexibility which is the reason why it is all over the place. A plus here is this has all component lifecycle methods in their raw form. This helps in tailoring the component to fit specific use cases. For example, firing an Ajax request right after the component mounts. One con is managing state manually with setState because of complexity and risk increase.
+
+Type definition for class components looks like this:
+#+BEGIN_SRC javascript
+interface Component<P = {}, S = {}, SS = any> extends ComponentLifecycle<P, S, SS> { }
+#+END_SRC
+
+
+The ComponentLifecycle type definition has:
+#+BEGIN_SRC javascript
+interface ComponentLifecycle<P, S, SS = any> extends NewLifecycle<P, S, SS>, DeprecatedLifecycle<P, S> {
+  componentDidMount?(): void;
+  shouldComponentUpdate?(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: any): boolean;
+  componentWillUnmount?(): void;
+  componentDidCatch?(error: Error, errorInfo: ErrorInfo): void;
+}
+#+END_SRC
+
+The following lifecycle methods are of interest:
++ *componentDidMount*: runs right after a component is mounted, setting state here triggers re-rendering
++ *shouldComponentUpdate*: determines whether changes in props and state warrants re-render, class components return true by default
++ *componentWillUnmount*: runs right before a component is destroyed, can do any necessary cleanup such as canceled network requests
++ *componentDidCatch*: catches exceptions from child components, unhandled exceptions unmount the component
+
+With class components, we get all React has to offer. One check is to see if any lifecycle methods are necessary. If not, class components are too complex for the job at hand. Best to look at other ways to solve the problem by reducing complexity.
+
+On the flip side, if complexity is a big concern, look into web hooks. Web hooks allow a functional paradigm while tapping into component state.
+
+*** Pure components
+
+Pure components have this type definition:
+#+BEGIN_SRC javascript
+class PureComponent<P = {}, S = {}, SS = any> extends Component<P, S, SS> { }
+#+END_SRC
+
+This means pure components support everything class components have plus more. For example, a pure component does a shallow comparison in shouldComponentUpdate by default. This optimization comes for free with pure components without any code. Unlike class components that return true by default, pure components optimize re-renders. One gotcha is to check that props and state are not complex nested objects. Also, avoid large props and state objects as this will affect React’s performance.
+
+A shallow comparison goes one-level deep in props and state, for example:
+#+BEGIN_SRC javascript
+{
+  "item": "strict value comparison",
+  "nestedObject": {
+    "item": "reference comparison"
+  },
+  "nestedArray": ["reference comparison"]
+}
+#+END_SRC
+
+For this object, item gets a strict comparison of its value. But, nestedItem and nestedArray only get reference comparisons, or where it lives in memory. A shallow comparison stays at the top level to remain performant. It does not drill into nested objects or arrays because it is not a value comparison. One gotcha is shallow comparison might skip updates when only nested properties change. This can hide bugs that are difficult to track.
+
+Consider using pure components for one-level deep state and props. Here, we get a bit of a boost by not re-rendering when state mutates. These components can live in tree leaf nodes which have simple data shapes.
+
+For example:
+#+BEGIN_SRC javascript
+class LeafItem extends React.PureComponent {
+  render() {
+    return (<>
+      {this.props.name} {this.props.description}
+    </>);
+  }
+}
+#+END_SRC
+
+*** Function components (formerly ‘Stateless’ components)
+
+A function component in React is defined like this:
+#+BEGIN_SRC javascript
+interface FunctionComponent<P = {}> {
+  (props: PropsWithChildren<P>, context?: any): ReactElement | null;
+  propTypes?: WeakValidationMap<P>;
+  contextTypes?: ValidationMap<any>;
+  defaultProps?: Partial<P>;
+  displayName?: string;
+}
+#+END_SRC
+
+This component type does not have any lifecycle methods. At a minimum, it must define a JavaScript function that returns ReactElement or null. All other properties such as propTypes and displayName are optional. A function component does not take in state and does not have setState. State mutation may happen in a parent component or a state machine like Redux. Function components re-render when state mutates and does not allow optimizations. This is not a deal-breaker because React performs reconciliation. Library internals figure out an optimal way to reconcile the virtual DOM with the one in the browser. This reconciliation process takes care of most performance concerns in React.
+
+If performance is a big concern because reconciliation is not enough, take a look at React.memo. This is much like React.PureComponents but for function components vs classes.
+
+Abstracting state mutation through Redux allows function components to focus on presentation. This makes it easy to test function components in a shallow renderer like Enzyme. A shallow renderer can check all test conditions by setting props. Reducers in Redux are pure functions that are also testable. This is because pure functions have a one-to-one mapping between input and output. A plus is all UI “logic” gets abstracted away from the presentation layer. This reduces cognitive load and aids dev creativity. Function components solve for most use cases in a neat clean way.
+
+In simple terms, this is a function component:
+#+BEGIN_SRC javascript
+const LeafItem = ({name, description}) => <>{name} {description}</>;
+ #+END_SRC
+
+
+
 * Styling React Components & Elements
   :PROPERTIES:
   :CATEGORY: Styling React Components & Elements
@@ -395,20 +490,18 @@ Whenever state  changes (taught over the next lectures), the component will re-r
   :CATEGORY: Useful Resources & Links
   :END:
 
++ [[https://github.com/facebookincubator/create-react-app][create-react-app]]
+
++ [[https://reactjs.org/docs/introducing-jsx.html][Introducing JSX]]
+
++ [[https://reactjs.org/docs/rendering-elements.html][Rendering Elements]]
+
++ [[https://reactjs.org/docs/components-and-props.html][Components & Props
+  ]]
++ [[https://blog.jscrambler.com/stateful-vs-stateless-vs-pure-react-components/][stateful-vs-stateless-vs-pure-react-components]]
+
++ [[https://reactjs.org/docs/events.html][Listenable Events]]
+
 + [[https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper][State and Props]]
 
 + [[https://lucybain.com/blog/2016/react-state-vs-pros/][ReactJs: Props vs. State]]
-
-
-
-
-
-
-
-#+BEGIN_QUOTE
-
-#+END_QUOTE
-
-#+BEGIN_SRC javascript
-
-#+END_SRC

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-02-23 ter 15:46 -->
+<!-- 2021-02-23 ter 21:51 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>React - The Complete Guide</title>
@@ -229,53 +229,54 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org5848f5b">Introduction</a>
+<li><a href="#org1781315">Introduction</a>
 <ul>
-<li><a href="#org8290851">What is React?</a></li>
-<li><a href="#org98e1247">Why React?</a></li>
-<li><a href="#org326b508">Single Page Applications / Multi Page Applications</a></li>
+<li><a href="#orgbb67469">What is React?</a></li>
+<li><a href="#org2a6852e">Why React?</a></li>
+<li><a href="#orgb373083">Single Page Applications / Multi Page Applications</a></li>
 </ul>
 </li>
-<li><a href="#org7965f14">Refreshing Next Generation Javascript</a>
+<li><a href="#org77ea0bc">Refreshing Next Generation Javascript</a>
 <ul>
-<li><a href="#orga435c3c">&ldquo;let&rdquo; and &ldquo;const&rdquo;</a></li>
-<li><a href="#org5b5cb1a">Arrow Functions</a></li>
-<li><a href="#org223bdce">Exports &amp; Imports (Modules)</a></li>
-<li><a href="#org6fb3e56">Classes</a></li>
-<li><a href="#org98bd568">Classes, Properties and Methods</a></li>
-<li><a href="#orgb151097">Spread and Rest Operator</a></li>
-<li><a href="#orgb37e301">Destructuring</a></li>
+<li><a href="#org0c3f3f3">&ldquo;let&rdquo; and &ldquo;const&rdquo;</a></li>
+<li><a href="#org443f479">Arrow Functions</a></li>
+<li><a href="#orgd358e63">Exports &amp; Imports (Modules)</a></li>
+<li><a href="#orgb9e6059">Classes</a></li>
+<li><a href="#orgf17323e">Classes, Properties and Methods</a></li>
+<li><a href="#org53cdc53">Spread and Rest Operator</a></li>
+<li><a href="#orgc0514bc">Destructuring</a></li>
 </ul>
 </li>
-<li><a href="#org2745cfb">Understanding the Base Features &amp; Syntax</a>
+<li><a href="#org98a0096">Understanding the Base Features &amp; Syntax</a>
 <ul>
-<li><a href="#org4936e69">Using a Build Workflow</a></li>
+<li><a href="#org1084c58">Using a Build Workflow</a></li>
 </ul>
 </li>
-<li><a href="#org02262ba">Working with Lists and Conditionals</a>
+<li><a href="#orga1318fc">Working with Lists and Conditionals</a>
 <ul>
-<li><a href="#org8e35b96">JSX</a></li>
-<li><a href="#orga3a863c">Components</a></li>
-<li><a href="#org275eb1d">Props and State</a></li>
+<li><a href="#org18973a4">JSX</a></li>
+<li><a href="#orgecba532">Components</a></li>
+<li><a href="#org8726b97">Props and State</a></li>
+<li><a href="#org49f09c1">Class, Pure and Function Components</a></li>
 </ul>
 </li>
-<li><a href="#orgd52ec1b">Styling React Components &amp; Elements</a></li>
-<li><a href="#orgdb52abf">Debugging React Apps</a></li>
-<li><a href="#orgde6c549">Diving Deeper into Components &amp; React internals</a></li>
-<li><a href="#org24336d4">Useful Resources &amp; Links</a></li>
+<li><a href="#org7cebc90">Styling React Components &amp; Elements</a></li>
+<li><a href="#orgfdbd4ee">Debugging React Apps</a></li>
+<li><a href="#org3647020">Diving Deeper into Components &amp; React internals</a></li>
+<li><a href="#org6f8b913">Useful Resources &amp; Links</a></li>
 </ul>
 </div>
 </div>
 <hr />
 
-<div id="outline-container-org5848f5b" class="outline-2">
-<h2 id="org5848f5b">Introduction</h2>
-<div class="outline-text-2" id="text-org5848f5b">
+<div id="outline-container-org1781315" class="outline-2">
+<h2 id="org1781315">Introduction</h2>
+<div class="outline-text-2" id="text-org1781315">
 </div>
 
-<div id="outline-container-org8290851" class="outline-3">
-<h3 id="org8290851">What is React?</h3>
-<div class="outline-text-3" id="text-org8290851">
+<div id="outline-container-orgbb67469" class="outline-3">
+<h3 id="orgbb67469">What is React?</h3>
+<div class="outline-text-3" id="text-orgbb67469">
 <p>
 &ldquo;A javascript Library for building User Interfaces&rdquo;
 </p>
@@ -290,9 +291,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org98e1247" class="outline-3">
-<h3 id="org98e1247">Why React?</h3>
-<div class="outline-text-3" id="text-org98e1247">
+<div id="outline-container-org2a6852e" class="outline-3">
+<h3 id="org2a6852e">Why React?</h3>
+<div class="outline-text-3" id="text-org2a6852e">
 <ul class="org-ul">
 <li>UI State becomes difficult to handle with Vanilla Javascript</li>
 <li>Focus on Business Logic, not on preventing your App from exploding</li>
@@ -301,9 +302,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org326b508" class="outline-3">
-<h3 id="org326b508">Single Page Applications / Multi Page Applications</h3>
-<div class="outline-text-3" id="text-org326b508">
+<div id="outline-container-orgb373083" class="outline-3">
+<h3 id="orgb373083">Single Page Applications / Multi Page Applications</h3>
+<div class="outline-text-3" id="text-orgb373083">
 <ul class="org-ul">
 <li>Single Page Applications - Only ONE HTML Page, Content is (re)rendered on Client - Typically only ONE ReactDOM.render() call</li>
 
@@ -313,14 +314,14 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org7965f14" class="outline-2">
-<h2 id="org7965f14">Refreshing Next Generation Javascript</h2>
-<div class="outline-text-2" id="text-org7965f14">
+<div id="outline-container-org77ea0bc" class="outline-2">
+<h2 id="org77ea0bc">Refreshing Next Generation Javascript</h2>
+<div class="outline-text-2" id="text-org77ea0bc">
 </div>
 
-<div id="outline-container-orga435c3c" class="outline-3">
-<h3 id="orga435c3c">&ldquo;let&rdquo; and &ldquo;const&rdquo;</h3>
-<div class="outline-text-3" id="text-orga435c3c">
+<div id="outline-container-org0c3f3f3" class="outline-3">
+<h3 id="org0c3f3f3">&ldquo;let&rdquo; and &ldquo;const&rdquo;</h3>
+<div class="outline-text-3" id="text-org0c3f3f3">
 <ul class="org-ul">
 <li>var - creates a variable in javascript</li>
 
@@ -331,9 +332,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 
 
-<div id="outline-container-org5b5cb1a" class="outline-3">
-<h3 id="org5b5cb1a">Arrow Functions</h3>
-<div class="outline-text-3" id="text-org5b5cb1a">
+<div id="outline-container-org443f479" class="outline-3">
+<h3 id="org443f479">Arrow Functions</h3>
+<div class="outline-text-3" id="text-org443f479">
 <blockquote>
 <p>
 Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this  keyword
@@ -372,9 +373,9 @@ Arrow Function Syntax
 </div>
 
 
-<div id="outline-container-org223bdce" class="outline-3">
-<h3 id="org223bdce">Exports &amp; Imports (Modules)</h3>
-<div class="outline-text-3" id="text-org223bdce">
+<div id="outline-container-orgd358e63" class="outline-3">
+<h3 id="orgd358e63">Exports &amp; Imports (Modules)</h3>
+<div class="outline-text-3" id="text-orgd358e63">
 <blockquote>
 <p>
 person.js
@@ -425,9 +426,9 @@ app.js
 </div>
 
 
-<div id="outline-container-org6fb3e56" class="outline-3">
-<h3 id="org6fb3e56">Classes</h3>
-<div class="outline-text-3" id="text-org6fb3e56">
+<div id="outline-container-orgb9e6059" class="outline-3">
+<h3 id="orgb9e6059">Classes</h3>
+<div class="outline-text-3" id="text-orgb9e6059">
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #405A61;">// </span><span style="color: #405A61;">class declaration</span>
 <span style="color: #859900; font-weight: bold;">class</span> Human {
@@ -469,9 +470,9 @@ somePerson.printGender();
 </div>
 </div>
 
-<div id="outline-container-org98bd568" class="outline-3">
-<h3 id="org98bd568">Classes, Properties and Methods</h3>
-<div class="outline-text-3" id="text-org98bd568">
+<div id="outline-container-orgf17323e" class="outline-3">
+<h3 id="orgf17323e">Classes, Properties and Methods</h3>
+<div class="outline-text-3" id="text-orgf17323e">
 <ul class="org-ul">
 <li>Properties are like &ldquo;variables attached to classes/objects&rdquo;</li>
 </ul>
@@ -537,9 +538,9 @@ somePerson.printGender();
 </div>
 
 
-<div id="outline-container-orgb151097" class="outline-3">
-<h3 id="orgb151097">Spread and Rest Operator</h3>
-<div class="outline-text-3" id="text-orgb151097">
+<div id="outline-container-org53cdc53" class="outline-3">
+<h3 id="org53cdc53">Spread and Rest Operator</h3>
+<div class="outline-text-3" id="text-org53cdc53">
 <ul class="org-ul">
 <li>Spread - Used to split up array elements or object properties</li>
 </ul>
@@ -581,9 +582,9 @@ age: <span style="color: #d33682; font-weight: bold;">20</span>
 </div>
 </div>
 
-<div id="outline-container-orgb37e301" class="outline-3">
-<h3 id="orgb37e301">Destructuring</h3>
-<div class="outline-text-3" id="text-orgb37e301">
+<div id="outline-container-orgc0514bc" class="outline-3">
+<h3 id="orgc0514bc">Destructuring</h3>
+<div class="outline-text-3" id="text-orgc0514bc">
 <blockquote>
 <p>
 Easily extract array elements or object properties and store them in variables
@@ -605,14 +606,14 @@ Easily extract array elements or object properties and store them in variables
 </div>
 
 
-<div id="outline-container-org2745cfb" class="outline-2">
-<h2 id="org2745cfb">Understanding the Base Features &amp; Syntax</h2>
-<div class="outline-text-2" id="text-org2745cfb">
+<div id="outline-container-org98a0096" class="outline-2">
+<h2 id="org98a0096">Understanding the Base Features &amp; Syntax</h2>
+<div class="outline-text-2" id="text-org98a0096">
 </div>
 
-<div id="outline-container-org4936e69" class="outline-3">
-<h3 id="org4936e69">Using a Build Workflow</h3>
-<div class="outline-text-3" id="text-org4936e69">
+<div id="outline-container-org1084c58" class="outline-3">
+<h3 id="org1084c58">Using a Build Workflow</h3>
+<div class="outline-text-3" id="text-org1084c58">
 <p>
 <b>Why?</b>
 </p>
@@ -629,7 +630,7 @@ Easily extract array elements or object properties and store them in variables
 <ul class="org-ul">
 <li>Use Dependency Management Tool (npm or yarn)</li>
 <li>use Bundler (recommended: Webpack)</li>
-<li>Use Compoler (Next-Gen JavaScript) Babel + presets</li>
+<li>Use Compiler (Next-Gen JavaScript) Babel + presets</li>
 <li>Use a Development Server</li>
 </ul>
 </div>
@@ -637,18 +638,18 @@ Easily extract array elements or object properties and store them in variables
 </div>
 
 
-<div id="outline-container-org02262ba" class="outline-2">
-<h2 id="org02262ba">Working with Lists and Conditionals</h2>
-<div class="outline-text-2" id="text-org02262ba">
+<div id="outline-container-orga1318fc" class="outline-2">
+<h2 id="orga1318fc">Working with Lists and Conditionals</h2>
+<div class="outline-text-2" id="text-orga1318fc">
 </div>
 
-<div id="outline-container-org8e35b96" class="outline-3">
-<h3 id="org8e35b96">JSX</h3>
+<div id="outline-container-org18973a4" class="outline-3">
+<h3 id="org18973a4">JSX</h3>
 </div>
 
-<div id="outline-container-orga3a863c" class="outline-3">
-<h3 id="orga3a863c">Components</h3>
-<div class="outline-text-3" id="text-orga3a863c">
+<div id="outline-container-orgecba532" class="outline-3">
+<h3 id="orgecba532">Components</h3>
+<div class="outline-text-3" id="text-orgecba532">
 <p>
 Components are the core building block of React apps. Actually, React really is just a library for creating components in its core.
 A typical React app therefore could be depicted as a component tree - having one root component (&ldquo;App&rdquo;) and then an potentially infinite amount of nested child components.
@@ -663,9 +664,9 @@ Each component needs to return/ render some JSX code - it defines which HTML cod
 </div>
 </div>
 
-<div id="outline-container-org275eb1d" class="outline-3">
-<h3 id="org275eb1d">Props and State</h3>
-<div class="outline-text-3" id="text-org275eb1d">
+<div id="outline-container-org8726b97" class="outline-3">
+<h3 id="org8726b97">Props and State</h3>
+<div class="outline-text-3" id="text-org8726b97">
 <p>
 props  and state  are CORE concepts of React. Actually, only changes in props  and/ or state  trigger React to re-render your components and potentially update the DOM in the browser (a detailed look at how React checks whether to really touch the real DOM is provided in section 6).
 </p>
@@ -770,59 +771,207 @@ Whenever state  changes (taught over the next lectures), the component will re-r
 </p>
 </div>
 </div>
-</div>
-
-<div id="outline-container-orgd52ec1b" class="outline-2">
-<h2 id="orgd52ec1b">Styling React Components &amp; Elements</h2>
-<div class="outline-text-2" id="text-orgd52ec1b">
-</div>
-</div>
-
-<div id="outline-container-orgdb52abf" class="outline-2">
-<h2 id="orgdb52abf">Debugging React Apps</h2>
-<div class="outline-text-2" id="text-orgdb52abf">
-</div>
-</div>
-
-<div id="outline-container-orgde6c549" class="outline-2">
-<h2 id="orgde6c549">Diving Deeper into Components &amp; React internals</h2>
-<div class="outline-text-2" id="text-orgde6c549">
-</div>
-</div>
 
 
-<div id="outline-container-org24336d4" class="outline-2">
-<h2 id="org24336d4">Useful Resources &amp; Links</h2>
-<div class="outline-text-2" id="text-org24336d4">
+<div id="outline-container-org49f09c1" class="outline-3">
+<h3 id="org49f09c1">Class, Pure and Function Components</h3>
+<div class="outline-text-3" id="text-org49f09c1">
+<p>
+React components come in different flavors to tackle different problems. In typical programming fashion, choosing which one works best gets an “it depends.” Each component type has its pros and cons depending on the problem at hand. The main takeaway is knowing how each component type is useful for a given scenario.
+</p>
+</div>
+
+<div id="outline-container-org6be0b55" class="outline-4">
+<h4 id="org6be0b55">Class components (formerly ‘Stateful’ components)</h4>
+<div class="outline-text-4" id="text-org6be0b55">
+<p>
+The one component type we see all over the place is the class component. It is a stateful component because it has both state and props. This component has a ton of flexibility which is the reason why it is all over the place. A plus here is this has all component lifecycle methods in their raw form. This helps in tailoring the component to fit specific use cases. For example, firing an Ajax request right after the component mounts. One con is managing state manually with setState because of complexity and risk increase.
+</p>
+
+<p>
+Type definition for class components looks like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">interface</span> Component&lt;P = {}, S = {}, SS = any&gt; <span style="color: #859900; font-weight: bold;">extends</span> ComponentLifecycle&lt;P, S, SS&gt; { }
+</pre>
+</div>
+
+
+<p>
+The ComponentLifecycle type definition has:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">interface</span> ComponentLifecycle&lt;P, S, SS = any&gt; <span style="color: #859900; font-weight: bold;">extends</span> NewLifecycle&lt;P, S, SS&gt;, DeprecatedLifecycle&lt;P, S&gt; {
+  componentDidMount?(): <span style="color: #859900; font-weight: bold;">void</span>;
+  shouldComponentUpdate?(nextProps: Readonly&lt;P&gt;, nextState: Readonly&lt;S&gt;, nextContext: any): <span style="color: #b58900;">boolean</span>;
+  componentWillUnmount?(): <span style="color: #859900; font-weight: bold;">void</span>;
+  componentDidCatch?(error: Error, errorInfo: ErrorInfo): <span style="color: #859900; font-weight: bold;">void</span>;
+}
+</pre>
+</div>
+
+<p>
+The following lifecycle methods are of interest:
+</p>
 <ul class="org-ul">
+<li><b>componentDidMount</b>: runs right after a component is mounted, setting state here triggers re-rendering</li>
+<li><b>shouldComponentUpdate</b>: determines whether changes in props and state warrants re-render, class components return true by default</li>
+<li><b>componentWillUnmount</b>: runs right before a component is destroyed, can do any necessary cleanup such as canceled network requests</li>
+<li><b>componentDidCatch</b>: catches exceptions from child components, unhandled exceptions unmount the component</li>
+</ul>
+
+<p>
+With class components, we get all React has to offer. One check is to see if any lifecycle methods are necessary. If not, class components are too complex for the job at hand. Best to look at other ways to solve the problem by reducing complexity.
+</p>
+
+<p>
+On the flip side, if complexity is a big concern, look into web hooks. Web hooks allow a functional paradigm while tapping into component state.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org76585e6" class="outline-4">
+<h4 id="org76585e6">Pure components</h4>
+<div class="outline-text-4" id="text-org76585e6">
+<p>
+Pure components have this type definition:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">class</span> PureComponent&lt;P = {}, S = {}, SS = any&gt; <span style="color: #859900; font-weight: bold;">extends</span> Component&lt;P, S, SS&gt; { }
+</pre>
+</div>
+
+<p>
+This means pure components support everything class components have plus more. For example, a pure component does a shallow comparison in shouldComponentUpdate by default. This optimization comes for free with pure components without any code. Unlike class components that return true by default, pure components optimize re-renders. One gotcha is to check that props and state are not complex nested objects. Also, avoid large props and state objects as this will affect React’s performance.
+</p>
+
+<p>
+A shallow comparison goes one-level deep in props and state, for example:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript">{
+  <span style="color: #2aa198;">"item"</span>: <span style="color: #2aa198;">"strict value comparison"</span>,
+  <span style="color: #2aa198;">"nestedObject"</span>: {
+    <span style="color: #2aa198;">"item"</span>: <span style="color: #2aa198;">"reference comparison"</span>
+  },
+  <span style="color: #2aa198;">"nestedArray"</span>: [<span style="color: #2aa198;">"reference comparison"</span>]
+}
+</pre>
+</div>
+
+<p>
+For this object, item gets a strict comparison of its value. But, nestedItem and nestedArray only get reference comparisons, or where it lives in memory. A shallow comparison stays at the top level to remain performant. It does not drill into nested objects or arrays because it is not a value comparison. One gotcha is shallow comparison might skip updates when only nested properties change. This can hide bugs that are difficult to track.
+</p>
+
+<p>
+Consider using pure components for one-level deep state and props. Here, we get a bit of a boost by not re-rendering when state mutates. These components can live in tree leaf nodes which have simple data shapes.
+</p>
+
+<p>
+For example:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">class</span> LeafItem <span style="color: #859900; font-weight: bold;">extends</span> React.PureComponent {
+  render() {
+    <span style="color: #859900; font-weight: bold;">return</span> (&lt;&gt;
+      {<span style="color: #d33682; font-weight: bold;">this</span>.props.name} {<span style="color: #d33682; font-weight: bold;">this</span>.props.description}
+    &lt;/&gt;);
+  }
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org530c8a0" class="outline-4">
+<h4 id="org530c8a0">Function components (formerly ‘Stateless’ components)</h4>
+<div class="outline-text-4" id="text-org530c8a0">
+<p>
+A function component in React is defined like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">interface</span> FunctionComponent&lt;P = {}&gt; {
+  (props: PropsWithChildren&lt;P&gt;, context?: any): ReactElement | <span style="color: #d33682; font-weight: bold;">null</span>;
+  propTypes?: WeakValidationMap&lt;P&gt;;
+  contextTypes?: ValidationMap&lt;any&gt;;
+  defaultProps?: Partial&lt;P&gt;;
+  displayName?: string;
+}
+</pre>
+</div>
+
+<p>
+This component type does not have any lifecycle methods. At a minimum, it must define a JavaScript function that returns ReactElement or null. All other properties such as propTypes and displayName are optional. A function component does not take in state and does not have setState. State mutation may happen in a parent component or a state machine like Redux. Function components re-render when state mutates and does not allow optimizations. This is not a deal-breaker because React performs reconciliation. Library internals figure out an optimal way to reconcile the virtual DOM with the one in the browser. This reconciliation process takes care of most performance concerns in React.
+</p>
+
+<p>
+If performance is a big concern because reconciliation is not enough, take a look at React.memo. This is much like React.PureComponents but for function components vs classes.
+</p>
+
+<p>
+Abstracting state mutation through Redux allows function components to focus on presentation. This makes it easy to test function components in a shallow renderer like Enzyme. A shallow renderer can check all test conditions by setting props. Reducers in Redux are pure functions that are also testable. This is because pure functions have a one-to-one mapping between input and output. A plus is all UI “logic” gets abstracted away from the presentation layer. This reduces cognitive load and aids dev creativity. Function components solve for most use cases in a neat clean way.
+</p>
+
+<p>
+In simple terms, this is a function component:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">LeafItem</span> = ({name, description}) =&gt; &lt;&gt;{name} {description}&lt;/&gt;;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org7cebc90" class="outline-2">
+<h2 id="org7cebc90">Styling React Components &amp; Elements</h2>
+<div class="outline-text-2" id="text-org7cebc90">
+</div>
+</div>
+
+<div id="outline-container-orgfdbd4ee" class="outline-2">
+<h2 id="orgfdbd4ee">Debugging React Apps</h2>
+<div class="outline-text-2" id="text-orgfdbd4ee">
+</div>
+</div>
+
+<div id="outline-container-org3647020" class="outline-2">
+<h2 id="org3647020">Diving Deeper into Components &amp; React internals</h2>
+<div class="outline-text-2" id="text-org3647020">
+</div>
+</div>
+
+
+<div id="outline-container-org6f8b913" class="outline-2">
+<h2 id="org6f8b913">Useful Resources &amp; Links</h2>
+<div class="outline-text-2" id="text-org6f8b913">
+<ul class="org-ul">
+<li><a href="https://github.com/facebookincubator/create-react-app">create-react-app</a></li>
+
+<li><a href="https://reactjs.org/docs/introducing-jsx.html">Introducing JSX</a></li>
+
+<li><a href="https://reactjs.org/docs/rendering-elements.html">Rendering Elements</a></li>
+
+<li><a href="https://reactjs.org/docs/components-and-props.html">Components &amp; Props
+</a></li>
+<li><a href="https://blog.jscrambler.com/stateful-vs-stateless-vs-pure-react-components/">stateful-vs-stateless-vs-pure-react-components</a></li>
+
+<li><a href="https://reactjs.org/docs/events.html">Listenable Events</a></li>
+
 <li><a href="https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper">State and Props</a></li>
 
 <li><a href="https://lucybain.com/blog/2016/react-state-vs-pros/">ReactJs: Props vs. State</a></li>
 </ul>
-
-
-
-
-
-
-
-<blockquote>
-<p>
-
-</p>
-</blockquote>
-
-<div class="org-src-container">
-<pre class="src src-javascript">
-</pre>
-</div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 10-10-2020</p>
 <p class="author">Author: Martim Lima</p>
-<p class="date">Created: 2021-02-23 ter 15:46</p>
+<p class="date">Created: 2021-02-23 ter 21:51</p>
 </div>
 </body>
 </html>

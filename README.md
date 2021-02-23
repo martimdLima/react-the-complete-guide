@@ -1,35 +1,36 @@
-- [Introduction](#org0ec27d3)
-  - [What is React?](#orgb64bc33)
-  - [Why React?](#org075ce3b)
-  - [Single Page Applications / Multi Page Applications](#orgfc9b736)
-- [Refreshing Next Generation Javascript](#orgd2544e5)
-  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org71cfcb9)
-  - [Arrow Functions](#org09b3caa)
-  - [Exports & Imports (Modules)](#org65dd0d2)
-  - [Classes](#orgc6b5e65)
-  - [Classes, Properties and Methods](#org9471106)
-  - [Spread and Rest Operator](#org4a3c122)
-  - [Destructuring](#orge8b452d)
-- [Understanding the Base Features & Syntax](#org3a052a0)
-  - [Using a Build Workflow](#org49c045b)
-- [Working with Lists and Conditionals](#orgea1d633)
-  - [JSX](#org1cb513e)
-  - [Components](#org4408a45)
-  - [Props and State](#org158b512)
-- [Styling React Components & Elements](#org7bb3909)
-- [Debugging React Apps](#orgfaef2e2)
-- [Diving Deeper into Components & React internals](#orgd906f0b)
-- [Useful Resources & Links](#orgc981d5f)
+- [Introduction](#orgcb83c79)
+  - [What is React?](#orgffc3cee)
+  - [Why React?](#orga684fbf)
+  - [Single Page Applications / Multi Page Applications](#org6c3441a)
+- [Refreshing Next Generation Javascript](#org298ae57)
+  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org71cb0b6)
+  - [Arrow Functions](#org1e95d22)
+  - [Exports & Imports (Modules)](#orged3e780)
+  - [Classes](#org419a672)
+  - [Classes, Properties and Methods](#org952812d)
+  - [Spread and Rest Operator](#org1d1690e)
+  - [Destructuring](#org0f054b3)
+- [Understanding the Base Features & Syntax](#orgdd787f9)
+  - [Using a Build Workflow](#org1134f76)
+- [Working with Lists and Conditionals](#orgf46f389)
+  - [JSX](#org75752a0)
+  - [Components](#orgf7563fb)
+  - [Props and State](#orgf66d5cd)
+  - [Class, Pure and Function Components](#org822c472)
+- [Styling React Components & Elements](#orgb6d9aac)
+- [Debugging React Apps](#org0a1ec5c)
+- [Diving Deeper into Components & React internals](#org504cc66)
+- [Useful Resources & Links](#org306f03d)
 
 ---
 
 
-<a id="org0ec27d3"></a>
+<a id="orgcb83c79"></a>
 
 # Introduction
 
 
-<a id="orgb64bc33"></a>
+<a id="orgffc3cee"></a>
 
 ## What is React?
 
@@ -40,7 +41,7 @@ A browser side javascript framework - no need for server side rendering
 user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
 
 
-<a id="org075ce3b"></a>
+<a id="orga684fbf"></a>
 
 ## Why React?
 
@@ -49,7 +50,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Huge Ecosystem, Active Community, High Performance
 
 
-<a id="orgfc9b736"></a>
+<a id="org6c3441a"></a>
 
 ## Single Page Applications / Multi Page Applications
 
@@ -58,12 +59,12 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per &ldquo;widget&rdquo;
 
 
-<a id="orgd2544e5"></a>
+<a id="org298ae57"></a>
 
 # Refreshing Next Generation Javascript
 
 
-<a id="org71cfcb9"></a>
+<a id="org71cb0b6"></a>
 
 ## &ldquo;let&rdquo; and &ldquo;const&rdquo;
 
@@ -73,7 +74,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   const - constant values
 
 
-<a id="org09b3caa"></a>
+<a id="org1e95d22"></a>
 
 ## Arrow Functions
 
@@ -99,7 +100,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 ```
 
 
-<a id="org65dd0d2"></a>
+<a id="orged3e780"></a>
 
 ## Exports & Imports (Modules)
 
@@ -134,7 +135,7 @@ import * from './utility' // importing all using an alias from module
 ```
 
 
-<a id="orgc6b5e65"></a>
+<a id="org419a672"></a>
 
 ## Classes
 
@@ -177,7 +178,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org9471106"></a>
+<a id="org952812d"></a>
 
 ## Classes, Properties and Methods
 
@@ -235,7 +236,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org4a3c122"></a>
+<a id="org1d1690e"></a>
 
 ## Spread and Rest Operator
 
@@ -272,7 +273,7 @@ age: 20
 ```
 
 
-<a id="orge8b452d"></a>
+<a id="org0f054b3"></a>
 
 ## Destructuring
 
@@ -288,12 +289,12 @@ age: 20
 ```
 
 
-<a id="org3a052a0"></a>
+<a id="orgdd787f9"></a>
 
 # Understanding the Base Features & Syntax
 
 
-<a id="org49c045b"></a>
+<a id="org1134f76"></a>
 
 ## Using a Build Workflow
 
@@ -308,21 +309,21 @@ age: 20
 
 -   Use Dependency Management Tool (npm or yarn)
 -   use Bundler (recommended: Webpack)
--   Use Compoler (Next-Gen JavaScript) Babel + presets
+-   Use Compiler (Next-Gen JavaScript) Babel + presets
 -   Use a Development Server
 
 
-<a id="orgea1d633"></a>
+<a id="orgf46f389"></a>
 
 # Working with Lists and Conditionals
 
 
-<a id="org1cb513e"></a>
+<a id="org75752a0"></a>
 
 ## JSX
 
 
-<a id="org4408a45"></a>
+<a id="orgf7563fb"></a>
 
 ## Components
 
@@ -333,7 +334,7 @@ Components are the core building block of React apps. Actually, React really is 
 -   Class Components (also referred to as &ldquo;containers&rdquo;, &ldquo;smart&rdquo; or &ldquo;stateful&rdquo; components) => class Cmp extends Component { render () { return <div>some JSX</div> } }
 
 
-<a id="org158b512"></a>
+<a id="orgf66d5cd"></a>
 
 ## Props and State
 
@@ -404,30 +405,142 @@ state simply is a property of the component class, you have to call it state tho
 Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props is, that this happens within one and the same component - you don&rsquo;t receive new data (props ) from outside!
 
 
-<a id="org7bb3909"></a>
+<a id="org822c472"></a>
+
+## Class, Pure and Function Components
+
+React components come in different flavors to tackle different problems. In typical programming fashion, choosing which one works best gets an “it depends.” Each component type has its pros and cons depending on the problem at hand. The main takeaway is knowing how each component type is useful for a given scenario.
+
+
+### Class components (formerly ‘Stateful’ components)
+
+The one component type we see all over the place is the class component. It is a stateful component because it has both state and props. This component has a ton of flexibility which is the reason why it is all over the place. A plus here is this has all component lifecycle methods in their raw form. This helps in tailoring the component to fit specific use cases. For example, firing an Ajax request right after the component mounts. One con is managing state manually with setState because of complexity and risk increase.
+
+Type definition for class components looks like this:
+
+```javascript
+interface Component<P = {}, S = {}, SS = any> extends ComponentLifecycle<P, S, SS> { }
+```
+
+The ComponentLifecycle type definition has:
+
+```javascript
+interface ComponentLifecycle<P, S, SS = any> extends NewLifecycle<P, S, SS>, DeprecatedLifecycle<P, S> {
+  componentDidMount?(): void;
+  shouldComponentUpdate?(nextProps: Readonly<P>, nextState: Readonly<S>, nextContext: any): boolean;
+  componentWillUnmount?(): void;
+  componentDidCatch?(error: Error, errorInfo: ErrorInfo): void;
+}
+```
+
+The following lifecycle methods are of interest:
+
+-   **componentDidMount**: runs right after a component is mounted, setting state here triggers re-rendering
+-   **shouldComponentUpdate**: determines whether changes in props and state warrants re-render, class components return true by default
+-   **componentWillUnmount**: runs right before a component is destroyed, can do any necessary cleanup such as canceled network requests
+-   **componentDidCatch**: catches exceptions from child components, unhandled exceptions unmount the component
+
+With class components, we get all React has to offer. One check is to see if any lifecycle methods are necessary. If not, class components are too complex for the job at hand. Best to look at other ways to solve the problem by reducing complexity.
+
+On the flip side, if complexity is a big concern, look into web hooks. Web hooks allow a functional paradigm while tapping into component state.
+
+
+### Pure components
+
+Pure components have this type definition:
+
+```javascript
+class PureComponent<P = {}, S = {}, SS = any> extends Component<P, S, SS> { }
+```
+
+This means pure components support everything class components have plus more. For example, a pure component does a shallow comparison in shouldComponentUpdate by default. This optimization comes for free with pure components without any code. Unlike class components that return true by default, pure components optimize re-renders. One gotcha is to check that props and state are not complex nested objects. Also, avoid large props and state objects as this will affect React’s performance.
+
+A shallow comparison goes one-level deep in props and state, for example:
+
+```javascript
+{
+  "item": "strict value comparison",
+  "nestedObject": {
+    "item": "reference comparison"
+  },
+  "nestedArray": ["reference comparison"]
+}
+```
+
+For this object, item gets a strict comparison of its value. But, nestedItem and nestedArray only get reference comparisons, or where it lives in memory. A shallow comparison stays at the top level to remain performant. It does not drill into nested objects or arrays because it is not a value comparison. One gotcha is shallow comparison might skip updates when only nested properties change. This can hide bugs that are difficult to track.
+
+Consider using pure components for one-level deep state and props. Here, we get a bit of a boost by not re-rendering when state mutates. These components can live in tree leaf nodes which have simple data shapes.
+
+For example:
+
+```javascript
+class LeafItem extends React.PureComponent {
+  render() {
+    return (<>
+      {this.props.name} {this.props.description}
+    </>);
+  }
+}
+```
+
+
+### Function components (formerly ‘Stateless’ components)
+
+A function component in React is defined like this:
+
+```javascript
+interface FunctionComponent<P = {}> {
+  (props: PropsWithChildren<P>, context?: any): ReactElement | null;
+  propTypes?: WeakValidationMap<P>;
+  contextTypes?: ValidationMap<any>;
+  defaultProps?: Partial<P>;
+  displayName?: string;
+}
+```
+
+This component type does not have any lifecycle methods. At a minimum, it must define a JavaScript function that returns ReactElement or null. All other properties such as propTypes and displayName are optional. A function component does not take in state and does not have setState. State mutation may happen in a parent component or a state machine like Redux. Function components re-render when state mutates and does not allow optimizations. This is not a deal-breaker because React performs reconciliation. Library internals figure out an optimal way to reconcile the virtual DOM with the one in the browser. This reconciliation process takes care of most performance concerns in React.
+
+If performance is a big concern because reconciliation is not enough, take a look at React.memo. This is much like React.PureComponents but for function components vs classes.
+
+Abstracting state mutation through Redux allows function components to focus on presentation. This makes it easy to test function components in a shallow renderer like Enzyme. A shallow renderer can check all test conditions by setting props. Reducers in Redux are pure functions that are also testable. This is because pure functions have a one-to-one mapping between input and output. A plus is all UI “logic” gets abstracted away from the presentation layer. This reduces cognitive load and aids dev creativity. Function components solve for most use cases in a neat clean way.
+
+In simple terms, this is a function component:
+
+```javascript
+const LeafItem = ({name, description}) => <>{name} {description}</>;
+```
+
+
+<a id="orgb6d9aac"></a>
 
 # Styling React Components & Elements
 
 
-<a id="orgfaef2e2"></a>
+<a id="org0a1ec5c"></a>
 
 # Debugging React Apps
 
 
-<a id="orgd906f0b"></a>
+<a id="org504cc66"></a>
 
 # Diving Deeper into Components & React internals
 
 
-<a id="orgc981d5f"></a>
+<a id="org306f03d"></a>
 
 # Useful Resources & Links
+
+-   [create-react-app](https://github.com/facebookincubator/create-react-app)
+
+-   [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
+
+-   [Rendering Elements](https://reactjs.org/docs/rendering-elements.html)
+
+-   [Components & Props ](https://reactjs.org/docs/components-and-props.html)
+-   [stateful-vs-stateless-vs-pure-react-components](https://blog.jscrambler.com/stateful-vs-stateless-vs-pure-react-components/)
+
+-   [Listenable Events](https://reactjs.org/docs/events.html)
 
 -   [State and Props](https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper)
 
 -   [ReactJs: Props vs. State](https://lucybain.com/blog/2016/react-state-vs-pros/)
-
-
-```javascript
-
-```
