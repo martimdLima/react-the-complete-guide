@@ -9,6 +9,11 @@ class App extends Component {
   // The jsx expression must always have a parent element.
 
   // state is managed within the component (similar to variables declared within a function)
+
+  // If state changes or props changes, it basically analyzes the code it already rendered to the DOM and the code it would now render if it
+  // were to re-render everything and then it updates the existing DOM in all the places where it needs to update it to reflect your new state
+  // and props. New state in app.js, new props in person.js.
+
   state = {
     persons: [
       { name: "John", age: 24 },
@@ -17,11 +22,22 @@ class App extends Component {
     ],
   };
 
+  // it's a good pratice to name all event handlers with the word "handler" to expliclitly mention its purpose
+  switchNameHandler = () => {
+    this.setState({
+      persons: [
+        { name: "Texas", age: 23 },
+        { name: "Madrid", age: 34 },
+        { name: "Tokyo", age: 19 },
+      ],
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <h1>A React App</h1>
-        <button>Switch Name</button>
+        <button onClick={this.switchNameHandler}>Switch Name</button>
         {/* <Person name="John" age="24"/> */}
         {/* <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
         <Person name="Poe" age="16"/> */}
