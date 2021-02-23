@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Person from "./Person/Person";
 import "./App.css";
 
-class App extends Component {
-  // Class for example, which we would use in normal html to assign a css class can't be used because it's a reserved word in javascript,
-  // used to create a new class. This is why class name must be used.
+// Class for example, which we would use in normal html to assign a css class can't be used because it's a reserved word in javascript,
+// used to create a new class. This is why class name must be used.
 
+class App extends Component {
   // The jsx expression must always have a parent element.
 
   // state is managed within the component (similar to variables declared within a function)
@@ -76,3 +76,55 @@ class App extends Component {
 }
 
 export default App;
+
+// Using the useState() Hook for State Manipulation
+// const app = (props) => {
+
+//   // useState is the most important React hook. It allows us to manage state in a functiona component.
+
+//   // useState is used by calling it like a function and passing the inital state.
+//   const [ personsState, setPersonsState] = useState({
+//     persons: [
+//       { name: "John", age: 24 },
+//       { name: "Doe", age: 35 },
+//       { name: "Poe", age: 17 },
+//     ]
+//   });
+
+//   const [otherState, setOtherState] = useState({otherState: "some other value"});
+
+//   console.log(personsState, otherState);
+
+//     const switchNameHandler = () => {
+//     setPersonsState({
+//       persons: [
+//         { name: "Texas", age: 23 },
+//         { name: "Madrid", age: 34 },
+//         { name: "Tokyo", age: 19 },
+//       ],
+//     });
+//   };
+
+//   return (
+//     <div className="App">
+//       <h1>A React App</h1>
+//       <button onClick={switchNameHandler}>Switch Name</button>
+//       {/* <Person name="John" age="24"/> */}
+//       {/* <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
+//         <Person name="Poe" age="16"/> */}
+//       <Person
+//         name={personsState.persons[0].name}
+//         age={personsState.persons[0].age}
+//       />
+//       <Person name={personsState.persons[1].name} age={personsState.persons[1].age}>
+//         My Hobbies are: Cinema
+//       </Person>
+//       <Person
+//         name={personsState.persons[2].name}
+//         age={personsState.persons[2].age}
+//       />
+//     </div>
+//   );
+// };
+
+// export default app;
