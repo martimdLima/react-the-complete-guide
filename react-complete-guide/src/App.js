@@ -17,9 +17,9 @@ class App extends Component {
 
   state = {
     persons: [
-      { name: "John", age: 24 },
-      { name: "Doe", age: 35 },
-      { name: "Poe", age: 17 },
+      { id: "aa24f", name: "John", age: 24 },
+      { id: "aa22r", name: "Doe", age: 35 },
+      { id: "aa26c", name: "Poe", age: 17 },
     ],
     otherState: "some value",
     showePersons: false,
@@ -88,6 +88,7 @@ class App extends Component {
                 click={() => this.deletePersonHandler(index)}
                 name={person.name}
                 age={person.age}
+                key={person.id}
               />
             );
           })}
@@ -101,7 +102,6 @@ class App extends Component {
         <button style={style} onClick={this.tooglePersonHandler}>
           Toogle Persons
         </button>
-
         {/* By using a ternary expression, we can show the div based on the state of the showePersons property 
           this.state.showPersons ? <div> ... </div> : null */}
         {persons}
