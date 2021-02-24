@@ -1,28 +1,28 @@
 import React, { Component, useState } from "react";
 
 // import Radium, { StyleRoot } from "radium";
-import styled from "styled-components";
+// import styled from "styled-components";
 
 import Person from "./Person/Person";
 
-import "./App.css";
+import classes from "./App.css";
 
 // Class for example, which we would use in normal html to assign a css class can't be used because it's a reserved word in javascript,
 // used to create a new class. This is why class name must be used.
 
-const StyledButton = styled.button`
-  background-color: ${(props) => (props.alt ? "red" : "blue")};
-  color: white;
-  font: inherit;
-  border: 1px solid blue;
-  padding: 8px;
-  cursor: pointer;
+// const StyledButton = styled.button`
+  // background-color: ${(props) => (props.alt ? "red" : "blue")};
+  // color: white;
+  // font: inherit;
+  // border: 1px solid blue;
+  // padding: 8px;
+  // cursor: pointer;
 
-  &:hover {
-    background-color: ${(props) => (props.alt ? "lightred" : "lightblue")};
-    color: black;
-  }
-`;
+  // &:hover {
+  //   background-color: ${(props) => (props.alt ? "lightred" : "lightblue")};
+  //   color: black;
+  // }
+// `;
 
 class App extends Component {
   // The jsx expression must always have a parent element.
@@ -104,6 +104,7 @@ class App extends Component {
     // handling dynamic content
     // if showPersons is true, then set the persons variable to the Persons components
     let persons = null;
+    let buttonClasses = [classes.Button]
 
     if (this.state.showPersons) {
       persons = (
@@ -122,27 +123,29 @@ class App extends Component {
           })}
         </div>
       );
+
+      buttonClasses.push(classes.Red);
     }
 
-    let classes = [];
+    let assignedClasses = [];
 
     if (this.state.persons.length <= 2) {
-      classes.push("red");
+      assignedClasses.push(classes.red);
     }
 
     if (this.state.persons.length <= 1) {
-      classes.push("bold italic");
+      assignedClasses.push(classes.bold);
     }
 
     return (
-      <div className="App">
-        <h1 className={classes.join(" ")}>A React App</h1>
-        <StyledButton
-          alt={this.state.showPersons}
+      <div className={classes.App}>
+        <h1 className={assignedClasses.join(" ")}>A React App</h1>
+        <button
+        className={buttonClasses.join(" ")}
           onClick={this.tooglePersonHandler}
         >
           Toogle Persons
-        </StyledButton>
+        </button>
         {/* By using a ternary expression, we can show the div based on the state of the showPersons property 
           this.state.showPersons ? <div> ... </div> : null */}
         {persons}
