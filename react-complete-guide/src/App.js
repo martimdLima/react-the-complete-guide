@@ -21,6 +21,7 @@ class App extends Component {
       { name: "Doe", age: 35 },
       { name: "Poe", age: 17 },
     ],
+    otherState: "some value"
   };
 
   // it's a good pratice to name all event handlers with the word "handler" to expliclitly mention its purpose
@@ -31,6 +32,19 @@ class App extends Component {
         { name: "Madrid", age: 34 },
         { name: "Tokyo", age: 19 },
       ],
+      otherState: "some value"
+    });
+  };
+
+
+  // rendering content conditionally
+  // this method will show/hide names ba
+  tooglePersonHandler = () => {
+
+    const doesShow = this.state.showPersons;
+
+    this.setState({
+      showPersons: !doesShow
     });
   };
 
@@ -42,6 +56,7 @@ class App extends Component {
         { name: event.target.value, age: 34 },
         { name: "Tokyo", age: 19 },
       ],
+      otherState: "some value"
     });
   };
 
@@ -59,13 +74,17 @@ class App extends Component {
         <h1>A React App</h1>
         <button
           style={style}
-          onClick={this.switchNameHandler.bind(this, "Lisbon")}
+          onClick={this.tooglePersonHandler}
         >
           Switch Name
         </button>
-        {/* <Person name="John" age="24"/> */}
-        {/* <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
+        {/* <Person name="John" age="24"/> */
+        /* <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
         <Person name="Poe" age="16"/> */}
+
+        { /* By using a ternary expression, we can show the div based on the state of the showePersons property */}
+        {this.state.showPersons ? 
+          <div>
         <Person
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
@@ -82,6 +101,8 @@ class App extends Component {
           name={this.state.persons[2].name}
           age={this.state.persons[2].age}
         />
+        </div> : null
+        }
       </div>
     );
   }
