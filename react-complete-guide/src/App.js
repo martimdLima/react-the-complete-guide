@@ -53,14 +53,31 @@ class App extends Component {
     });
   };
 
-  // two way binding
-  nameChangeHandler = (event) => {
+  // Flexible Lists
+  nameChangedHandler = (event, id) => {
+    // gets the person index from the persons array, if the choosen person's id is equal to any id in the array
+    const personIndex = this.state.persons.findIndex((p) => {
+      return p.id === id;
+    });
+
+    // gets the person from the persons array, by creating a copy of it with the spread operator
+    const person = {
+      ...this.state.persons[personIndex],
+    };
+
+    // updates the name of the person based on the event target value.
+    // Each input in the input field, updates the name.
+    person.name = event.target.value;
+
+    // gets the persons array by creating a copy of it with the spread operator
+    const persons = [...this.state.persons];
+
+    // updates the persons array in the position of the person index to the update person
+    persons[personIndex] = person;
+
+    // finally sets the state with the new persons array
     this.setState({
-      persons: [
-        { name: "Lisbon", age: 23 },
-        { name: event.target.value, age: 34 },
-        { name: "Tokyo", age: 19 },
-      ],
+      persons: persons,
       otherState: "some value",
     });
   };
@@ -89,6 +106,7 @@ class App extends Component {
                 name={person.name}
                 age={person.age}
                 key={person.id}
+                changed={(event) => this.nameChangedHandler(event, person.id)}
               />
             );
           })}
