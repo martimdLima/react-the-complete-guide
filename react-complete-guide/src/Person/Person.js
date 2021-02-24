@@ -1,5 +1,7 @@
 import React from "react";
 
+import Radium from "radium";
+
 import "./Person.css";
 // in its simplest form, a component is a function returning some jsx.
 
@@ -22,4 +24,4 @@ const person = (props) => {
   );
 };
 
-export default person;
+export default Radium(person);

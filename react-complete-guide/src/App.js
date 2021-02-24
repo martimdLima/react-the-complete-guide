@@ -1,4 +1,7 @@
 import React, { Component, useState } from "react";
+
+import Radium from "radium";
+
 import Person from "./Person/Person";
 
 import "./App.css";
@@ -90,6 +93,10 @@ class App extends Component {
       border: "1px solid blue",
       padding: "8px",
       cursor: "pointer",
+      ":hover": {
+        backgroundColor: "lightblue",
+        color: "black",
+      },
     };
 
     // handling dynamic content
@@ -115,6 +122,10 @@ class App extends Component {
       );
 
       style.backgroundColor = "red";
+      style[":hover"] = {
+        backgroundColor: "lightred",
+        color: "black",
+      };
     }
 
     let classes = [];
@@ -124,7 +135,7 @@ class App extends Component {
     }
 
     if (this.state.persons.length <= 1) {
-      classes.push("bold");
+      classes.push("bold italic");
     }
 
     return (
@@ -141,4 +152,5 @@ class App extends Component {
   }
 }
 
-export default App;
+// example of an Higher Order Component
+export default Radium(App);
