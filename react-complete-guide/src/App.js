@@ -25,8 +25,19 @@ class App extends Component {
     showePersons: false,
   };
 
+  // The flaw of this approach is that in javascript, objects and arrays are reference types,
+  // so when I get persons from my state as I do here I actually get a pointer to the original person's object
+  // managed by react, to the original state I should say. If I then splice it here, I already mutate this original data
+  // and whilst it does work without throwing an error, this is not really how you should do it, this can lead to unpredictable apps
+  // and is definitely a bad practice. A good practice is to create a copy of your persons array before manipulating it and a simple way
+  // of doing this is by calling the slice method. Slice without arguments simply copies the full array and returns a new one
+  // which is then stored here. And you can now safely edit this new one and then update to react state with your new array.
+  // An alternative to this approach would be to use it a ES6 feature, the spread operator. You can simply
+  // set persons equal to a new array and this new array can now use the spread operator which are three dots
+
   deletePersonHandler = (personIndex) => {
-    const persons = this.state.persons;
+    //const persons = this.state.persons.slice();
+    const persons = [...this.state.persons];
     persons.splice(personIndex, 1);
     this.setState({ persons: persons });
   };
