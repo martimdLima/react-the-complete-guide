@@ -1,36 +1,36 @@
-- [Introduction](#orgcb83c79)
-  - [What is React?](#orgffc3cee)
-  - [Why React?](#orga684fbf)
-  - [Single Page Applications / Multi Page Applications](#org6c3441a)
-- [Refreshing Next Generation Javascript](#org298ae57)
-  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org71cb0b6)
-  - [Arrow Functions](#org1e95d22)
-  - [Exports & Imports (Modules)](#orged3e780)
-  - [Classes](#org419a672)
-  - [Classes, Properties and Methods](#org952812d)
-  - [Spread and Rest Operator](#org1d1690e)
-  - [Destructuring](#org0f054b3)
-- [Understanding the Base Features & Syntax](#orgdd787f9)
-  - [Using a Build Workflow](#org1134f76)
-- [Working with Lists and Conditionals](#orgf46f389)
-  - [JSX](#org75752a0)
-  - [Components](#orgf7563fb)
-  - [Props and State](#orgf66d5cd)
-  - [Class, Pure and Function Components](#org822c472)
-- [Styling React Components & Elements](#orgb6d9aac)
-- [Debugging React Apps](#org0a1ec5c)
-- [Diving Deeper into Components & React internals](#org504cc66)
-- [Useful Resources & Links](#org306f03d)
+- [Introduction](#org86f043f)
+  - [What is React?](#org87343f3)
+  - [Why React?](#org24ed722)
+  - [Single Page Applications / Multi Page Applications](#orga260e76)
+- [Refreshing Next Generation Javascript](#org2cd4862)
+  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#orgd570fa4)
+  - [Arrow Functions](#orgf6c4658)
+  - [Exports & Imports (Modules)](#org1a3fb58)
+  - [Classes](#org9dab36d)
+  - [Classes, Properties and Methods](#org0436ef4)
+  - [Spread and Rest Operator](#org16d23ea)
+  - [Destructuring](#orgf0d309b)
+- [Understanding the Base Features & Syntax](#org3368fe2)
+  - [Using a Build Workflow](#org0ae13cd)
+- [Working with Lists and Conditionals](#orgc7cc5c4)
+  - [JSX](#orgdc26204)
+  - [Components](#org957a5d9)
+  - [Props and State](#org9a1e806)
+  - [Class, Pure and Function Components](#orgd36a128)
+- [Styling React Components & Elements](#org5118c17)
+- [Debugging React Apps](#orgc4b6c31)
+- [Diving Deeper into Components & React internals](#org0bcd97c)
+- [Useful Resources & Links](#org888575b)
 
 ---
 
 
-<a id="orgcb83c79"></a>
+<a id="org86f043f"></a>
 
 # Introduction
 
 
-<a id="orgffc3cee"></a>
+<a id="org87343f3"></a>
 
 ## What is React?
 
@@ -41,7 +41,7 @@ A browser side javascript framework - no need for server side rendering
 user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
 
 
-<a id="orga684fbf"></a>
+<a id="org24ed722"></a>
 
 ## Why React?
 
@@ -50,7 +50,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Huge Ecosystem, Active Community, High Performance
 
 
-<a id="org6c3441a"></a>
+<a id="orga260e76"></a>
 
 ## Single Page Applications / Multi Page Applications
 
@@ -59,12 +59,12 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per &ldquo;widget&rdquo;
 
 
-<a id="org298ae57"></a>
+<a id="org2cd4862"></a>
 
 # Refreshing Next Generation Javascript
 
 
-<a id="org71cb0b6"></a>
+<a id="orgd570fa4"></a>
 
 ## &ldquo;let&rdquo; and &ldquo;const&rdquo;
 
@@ -74,7 +74,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   const - constant values
 
 
-<a id="org1e95d22"></a>
+<a id="orgf6c4658"></a>
 
 ## Arrow Functions
 
@@ -100,7 +100,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 ```
 
 
-<a id="orged3e780"></a>
+<a id="org1a3fb58"></a>
 
 ## Exports & Imports (Modules)
 
@@ -135,7 +135,7 @@ import * from './utility' // importing all using an alias from module
 ```
 
 
-<a id="org419a672"></a>
+<a id="org9dab36d"></a>
 
 ## Classes
 
@@ -178,7 +178,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org952812d"></a>
+<a id="org0436ef4"></a>
 
 ## Classes, Properties and Methods
 
@@ -236,7 +236,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org1d1690e"></a>
+<a id="org16d23ea"></a>
 
 ## Spread and Rest Operator
 
@@ -273,7 +273,7 @@ age: 20
 ```
 
 
-<a id="org0f054b3"></a>
+<a id="orgf0d309b"></a>
 
 ## Destructuring
 
@@ -289,12 +289,12 @@ age: 20
 ```
 
 
-<a id="orgdd787f9"></a>
+<a id="org3368fe2"></a>
 
 # Understanding the Base Features & Syntax
 
 
-<a id="org1134f76"></a>
+<a id="org0ae13cd"></a>
 
 ## Using a Build Workflow
 
@@ -313,17 +313,17 @@ age: 20
 -   Use a Development Server
 
 
-<a id="orgf46f389"></a>
+<a id="orgc7cc5c4"></a>
 
 # Working with Lists and Conditionals
 
 
-<a id="org75752a0"></a>
+<a id="orgdc26204"></a>
 
 ## JSX
 
 
-<a id="orgf7563fb"></a>
+<a id="org957a5d9"></a>
 
 ## Components
 
@@ -334,7 +334,7 @@ Components are the core building block of React apps. Actually, React really is 
 -   Class Components (also referred to as &ldquo;containers&rdquo;, &ldquo;smart&rdquo; or &ldquo;stateful&rdquo; components) => class Cmp extends Component { render () { return <div>some JSX</div> } }
 
 
-<a id="orgf66d5cd"></a>
+<a id="org9a1e806"></a>
 
 ## Props and State
 
@@ -405,7 +405,7 @@ state simply is a property of the component class, you have to call it state tho
 Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props is, that this happens within one and the same component - you don&rsquo;t receive new data (props ) from outside!
 
 
-<a id="org822c472"></a>
+<a id="orgd36a128"></a>
 
 ## Class, Pure and Function Components
 
@@ -511,22 +511,22 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 ```
 
 
-<a id="orgb6d9aac"></a>
+<a id="org5118c17"></a>
 
 # Styling React Components & Elements
 
 
-<a id="org0a1ec5c"></a>
+<a id="orgc4b6c31"></a>
 
 # Debugging React Apps
 
 
-<a id="org504cc66"></a>
+<a id="org0bcd97c"></a>
 
 # Diving Deeper into Components & React internals
 
 
-<a id="org306f03d"></a>
+<a id="org888575b"></a>
 
 # Useful Resources & Links
 
@@ -536,7 +536,8 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 
 -   [Rendering Elements](https://reactjs.org/docs/rendering-elements.html)
 
--   [Components & Props ](https://reactjs.org/docs/components-and-props.html)
+-   [Components & Props](https://reactjs.org/docs/components-and-props.html)
+
 -   [stateful-vs-stateless-vs-pure-react-components](https://blog.jscrambler.com/stateful-vs-stateless-vs-pure-react-components/)
 
 -   [Listenable Events](https://reactjs.org/docs/events.html)
@@ -544,3 +545,7 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 -   [State and Props](https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper)
 
 -   [ReactJs: Props vs. State](https://lucybain.com/blog/2016/react-state-vs-pros/)
+
+-   [Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
+
+-   [Lists & Keys](https://reactjs.org/docs/lists-and-keys.html)

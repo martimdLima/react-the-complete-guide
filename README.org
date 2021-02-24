@@ -496,8 +496,8 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 
 + [[https://reactjs.org/docs/rendering-elements.html][Rendering Elements]]
 
-+ [[https://reactjs.org/docs/components-and-props.html][Components & Props
-  ]]
++ [[https://reactjs.org/docs/components-and-props.html][Components & Props]]
+
 + [[https://blog.jscrambler.com/stateful-vs-stateless-vs-pure-react-components/][stateful-vs-stateless-vs-pure-react-components]]
 
 + [[https://reactjs.org/docs/events.html][Listenable Events]]
@@ -505,3 +505,7 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 + [[https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper][State and Props]]
 
 + [[https://lucybain.com/blog/2016/react-state-vs-pros/][ReactJs: Props vs. State]]
+
++ [[https://reactjs.org/docs/conditional-rendering.html][Conditional Rendering]]
+
++ [[https://reactjs.org/docs/lists-and-keys.html][Lists & Keys]]
