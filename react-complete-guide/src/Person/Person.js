@@ -12,8 +12,15 @@ import "./Person.css";
 // whereas state is managed within the component (similar to variables declared within a function).
 
 const person = (props) => {
+  // using a media query
+  const style = {
+    "@media (min-width: 500px)": {
+      width: "450px",
+    },
+  };
+
   return (
-    <div className="Person">
+    <div className="Person" style={style}>
       <p onClick={props.click}>
         This is {props.name} and it's {props.age} old!
       </p>

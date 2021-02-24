@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 
-import Radium from "radium";
+import Radium, { StyleRoot } from "radium";
 
 import Person from "./Person/Person";
 
@@ -139,15 +139,17 @@ class App extends Component {
     }
 
     return (
-      <div className="App">
-        <h1 className={classes.join(" ")}>A React App</h1>
-        <button style={style} onClick={this.tooglePersonHandler}>
-          Toogle Persons
-        </button>
-        {/* By using a ternary expression, we can show the div based on the state of the showePersons property 
+      <StyleRoot>
+        <div className="App">
+          <h1 className={classes.join(" ")}>A React App</h1>
+          <button style={style} onClick={this.tooglePersonHandler}>
+            Toogle Persons
+          </button>
+          {/* By using a ternary expression, we can show the div based on the state of the showePersons property 
           this.state.showPersons ? <div> ... </div> : null */}
-        {persons}
-      </div>
+          {persons}
+        </div>
+      </StyleRoot>
     );
   }
 }
