@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 
-import Radium, { StyleRoot } from "radium";
+// import Radium, { StyleRoot } from "radium";
 
 import Person from "./Person/Person";
 
@@ -139,20 +139,20 @@ class App extends Component {
     }
 
     return (
-      <StyleRoot>
-        <div className="App">
-          <h1 className={classes.join(" ")}>A React App</h1>
-          <button style={style} onClick={this.tooglePersonHandler}>
-            Toogle Persons
-          </button>
-          {/* By using a ternary expression, we can show the div based on the state of the showePersons property 
+      <div className="App">
+        <h1 className={classes.join(" ")}>A React App</h1>
+        <button style={style} onClick={this.tooglePersonHandler}>
+          Toogle Persons
+        </button>
+        {/* By using a ternary expression, we can show the div based on the state of the showePersons property 
           this.state.showPersons ? <div> ... </div> : null */}
-          {persons}
-        </div>
-      </StyleRoot>
+        {persons}
+      </div>
     );
   }
 }
 
+export default App;
+
 // example of an Higher Order Component
-export default Radium(App);
+// export default Radium(App);
