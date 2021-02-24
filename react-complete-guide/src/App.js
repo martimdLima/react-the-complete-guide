@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 
 // import Radium, { StyleRoot } from "radium";
+import styled from "styled-components";
 
 import Person from "./Person/Person";
 
@@ -8,6 +9,20 @@ import "./App.css";
 
 // Class for example, which we would use in normal html to assign a css class can't be used because it's a reserved word in javascript,
 // used to create a new class. This is why class name must be used.
+
+const StyledButton = styled.button`
+  background-color: blue;
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: lightblue;
+    color: black;
+  }
+`;
 
 class App extends Component {
   // The jsx expression must always have a parent element.
@@ -94,7 +109,7 @@ class App extends Component {
       padding: "8px",
       cursor: "pointer",
       ":hover": {
-        backgroundColor: "lightblue",
+        backgroundColor: "blue",
         color: "black",
       },
     };
@@ -122,10 +137,10 @@ class App extends Component {
       );
 
       style.backgroundColor = "red";
-      style[":hover"] = {
-        backgroundColor: "lightred",
+/*       style[":hover"] = {
+        backgroundColor: "red",
         color: "black",
-      };
+      }; */
     }
 
     let classes = [];
@@ -141,9 +156,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className={classes.join(" ")}>A React App</h1>
-        <button style={style} onClick={this.tooglePersonHandler}>
+        <StyledButton onClick={this.tooglePersonHandler}>
           Toogle Persons
-        </button>
+        </StyledButton>
         {/* By using a ternary expression, we can show the div based on the state of the showePersons property 
           this.state.showPersons ? <div> ... </div> : null */}
         {persons}
