@@ -11,17 +11,17 @@ import classes from "./App.css";
 // used to create a new class. This is why class name must be used.
 
 // const StyledButton = styled.button`
-  // background-color: ${(props) => (props.alt ? "red" : "blue")};
-  // color: white;
-  // font: inherit;
-  // border: 1px solid blue;
-  // padding: 8px;
-  // cursor: pointer;
+// background-color: ${(props) => (props.alt ? "red" : "blue")};
+// color: white;
+// font: inherit;
+// border: 1px solid blue;
+// padding: 8px;
+// cursor: pointer;
 
-  // &:hover {
-  //   background-color: ${(props) => (props.alt ? "lightred" : "lightblue")};
-  //   color: black;
-  // }
+// &:hover {
+//   background-color: ${(props) => (props.alt ? "lightred" : "lightblue")};
+//   color: black;
+// }
 // `;
 
 class App extends Component {
@@ -104,7 +104,7 @@ class App extends Component {
     // handling dynamic content
     // if showPersons is true, then set the persons variable to the Persons components
     let persons = null;
-    let buttonClasses = [classes.Button]
+    let buttonClasses = [classes.Button];
 
     if (this.state.showPersons) {
       persons = (
@@ -141,7 +141,7 @@ class App extends Component {
       <div className={classes.App}>
         <h1 className={assignedClasses.join(" ")}>A React App</h1>
         <button
-        className={buttonClasses.join(" ")}
+          className={buttonClasses.join(" ")}
           onClick={this.tooglePersonHandler}
         >
           Toogle Persons

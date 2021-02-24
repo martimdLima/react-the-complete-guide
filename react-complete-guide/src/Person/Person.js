@@ -1,5 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+//import styled from "styled-components";
+
+import classes from "./Person.css";
 /* import Radium from "radium"; */
 
 /* import "./Person.css"; */
@@ -11,31 +13,17 @@ import styled from "styled-components";
 // props get passed to the component (similar to function parameters)
 // whereas state is managed within the component (similar to variables declared within a function).
 
-const StyledDiv = styled.div`
-  width: 60%;
-  margin: 16px auto;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 3px #ccc;
-  padding: 16px;
-  text-align: center;
-
-  @media (min-width: 500px) {
-    width: 450px;
-  }
-`;
-
 const person = (props) => {
-
   return (
     // <div className="Person" style={style}>
-    <StyledDiv>
+    <div className={classes.person}>
       <p onClick={props.click}>
         This is {props.name} and it's {props.age} old!
       </p>
       <p>{props.children}</p>
       {/* two way binding */}
       <input type="text" onChange={props.changed} value={props.name} />
-    </StyledDiv>
+    </div>
   );
 };
 
