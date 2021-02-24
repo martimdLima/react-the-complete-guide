@@ -11,15 +11,15 @@ import "./App.css";
 // used to create a new class. This is why class name must be used.
 
 const StyledButton = styled.button`
-  background-color: blue;
+  background-color: ${(props) => (props.alt ? "red" : "blue")};
   color: white;
   font: inherit;
   border: 1px solid blue;
   padding: 8px;
   cursor: pointer;
-  
+
   &:hover {
-    background-color: lightblue;
+    background-color: ${(props) => (props.alt ? "lightred" : "lightblue")};
     color: black;
   }
 `;
@@ -40,7 +40,7 @@ class App extends Component {
       { id: "aa26c", name: "Poe", age: 17 },
     ],
     otherState: "some value",
-    showePersons: false,
+    showPersons: false,
   };
 
   // The flaw of this approach is that in javascript, objects and arrays are reference types,
@@ -101,19 +101,6 @@ class App extends Component {
   };
 
   render() {
-    const style = {
-      backgroundColor: "blue",
-      color: "white",
-      font: "inherit",
-      border: "1px solid blue",
-      padding: "8px",
-      cursor: "pointer",
-      ":hover": {
-        backgroundColor: "blue",
-        color: "black",
-      },
-    };
-
     // handling dynamic content
     // if showPersons is true, then set the persons variable to the Persons components
     let persons = null;
@@ -135,12 +122,6 @@ class App extends Component {
           })}
         </div>
       );
-
-      style.backgroundColor = "red";
-/*       style[":hover"] = {
-        backgroundColor: "red",
-        color: "black",
-      }; */
     }
 
     let classes = [];
@@ -156,10 +137,13 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className={classes.join(" ")}>A React App</h1>
-        <StyledButton onClick={this.tooglePersonHandler}>
+        <StyledButton
+          alt={this.state.showPersons}
+          onClick={this.tooglePersonHandler}
+        >
           Toogle Persons
         </StyledButton>
-        {/* By using a ternary expression, we can show the div based on the state of the showePersons property 
+        {/* By using a ternary expression, we can show the div based on the state of the showPersons property 
           this.state.showPersons ? <div> ... </div> : null */}
         {persons}
       </div>
