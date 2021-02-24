@@ -21,7 +21,7 @@ class App extends Component {
       { name: "Doe", age: 35 },
       { name: "Poe", age: 17 },
     ],
-    otherState: "some value"
+    otherState: "some value",
   };
 
   // it's a good pratice to name all event handlers with the word "handler" to expliclitly mention its purpose
@@ -32,19 +32,17 @@ class App extends Component {
         { name: "Madrid", age: 34 },
         { name: "Tokyo", age: 19 },
       ],
-      otherState: "some value"
+      otherState: "some value",
     });
   };
-
 
   // rendering content conditionally
   // this method will show/hide names ba
   tooglePersonHandler = () => {
-
     const doesShow = this.state.showPersons;
 
     this.setState({
-      showPersons: !doesShow
+      showPersons: !doesShow,
     });
   };
 
@@ -56,7 +54,7 @@ class App extends Component {
         { name: event.target.value, age: 34 },
         { name: "Tokyo", age: 19 },
       ],
-      otherState: "some value"
+      otherState: "some value",
     });
   };
 
@@ -69,40 +67,43 @@ class App extends Component {
       cursor: "pointer",
     };
 
+    // handling dynamic content
+    // if showPersons is true, then set the persons variable to the Persons components
+    let persons = null;
+
+    if (this.state.showPersons) {
+      persons = (
+        <div>
+          <Person
+            name={this.state.persons[0].name}
+            age={this.state.persons[0].age}
+          />
+          <Person
+            name={this.state.persons[1].name}
+            age={this.state.persons[1].age}
+            click={() => this.switchNameHandler("London")}
+            changed={this.nameChangeHandler}
+          >
+            My Hobbies are: Cinema
+          </Person>
+          <Person
+            name={this.state.persons[2].name}
+            age={this.state.persons[2].age}
+          />
+        </div>
+      );
+    }
+
     return (
       <div className="App">
         <h1>A React App</h1>
-        <button
-          style={style}
-          onClick={this.tooglePersonHandler}
-        >
-          Switch Name
+        <button style={style} onClick={this.tooglePersonHandler}>
+          Toogle Persons
         </button>
-        {/* <Person name="John" age="24"/> */
-        /* <Person name="Doe" age="53">My Hobbies are: Cinema</Person>
-        <Person name="Poe" age="16"/> */}
 
-        { /* By using a ternary expression, we can show the div based on the state of the showePersons property */}
-        {this.state.showPersons ? 
-          <div>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          click={() => this.switchNameHandler("London")}
-          changed={this.nameChangeHandler}
-        >
-          My Hobbies are: Cinema
-        </Person>
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        />
-        </div> : null
-        }
+        {/* By using a ternary expression, we can show the div based on the state of the showePersons property 
+          this.state.showPersons ? <div> ... </div> : null */}
+        {persons}
       </div>
     );
   }
