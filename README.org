@@ -495,6 +495,277 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
   :CATEGORY: Components & React Internals
   :END:
 
+** Components: stateful, stateless, dumb and smart
+
+There are many terms to describe components: stateless, stateful, dumb, smart, container, presentational.
+
+*** Stateful vs Stateless
+
+A stateless component is a component without an internal state. What’s a state? It depends, in Angular it can be represented by internal properties of a class, in React it may be represented by the property this.state or by a hook, in StencilJS it may be indicated by a @State decorator, and so on… Let’s say that a component has an internal state whenever it can change behavior without receiving a property (or an input) from the outside.
+
+Let’s take a simple case: an Accordion. How does it work? The user clicks on a tab and that tab opens, becoming visible. So, the internal state of an accordion could simply be the index of the open tab (or tabs, if we can keep multiple tabs open at the same time).
+
+Therefore, an accordion which is completely stateless shouldn’t worry about changing its state autonomously, it should only rely on his parent component. This should be the flow:
+1. The parent gives the initial index of the open tab to the accordion.
+2. When the user clicks, the accordion just tells the parent which tab was clicked.
+3. The father then gives back to the accordion the index of the new tab.
+
+As you can see, this is an unusual behavior: the accordion already knows which tab to open! In fact, every accordion you’ll find in component libraries will be stateful, it’ll update its state independently whenever the user clicks.
+
+#+BEGIN_QUOTE
+Watch out: a stateful component is a good thing (it doesn’t affect in any way the quality of your code, if it’s well-written), but if we want to do things properly we should take care to notify the parent whenever the internal state changes, and accept a new state as input. This way, we can continue to maneuver it from the outside if we must.
+#+END_QUOTE
+
+So, as we said, it’s fine to create stateful components, but do it only if your component needs to be autonomous. It could save your life in some cases, saving you hundreds of repeated lines of code, but remember that a stateless component is typically more performant, easier to understand and to reason about, and we say it becomes more predictable: that means that if a change happens, it will be easier to understand the result.
+
+A stateless component is to be preferred is many cases, but this is only a general rule. Don’t bang your head on this wall and don’t let this be your life mission: if it’s logic that a component should maintain its internal state, there’s nothing wrong with that. As a matter of fact, wanting to create stateless components at all costs can be dangerous and can make your application more complex than it needs to be.
+
+*** Dumb vs Smart
+There’s a lot of confusion here, so let’s clarify what these terms don’t mean: dumb doesn’t mean stateless and smart doesn’t mean stateful.
+
+We can think of it this way: a dumb component is one that has no dependencies from outside. Vice versa, a smart component has dependencies! It means that it knows where he is, it knows that he’s part of a bigger application. It is aware of its surroundings. It’s a living thing. Sort of.
+
+The classic example is with a State Manager (such as Redux): typically, for every route there’s one smart component which is connected to the Application State (via Dependency Injection in Angular, for example), which can take things from the current state in order to pass it to the children, and it listens to the events emitted by the children in order to update the state.
+
+Consequently, it’s a good practice to write every child component as dumb. Let the parent be the one who interferes with the state, don’t touch it directly. If it happened, we’d have an application which is hard to maintain, with inconsistent behaviors: it’d become hard to understand who updates the state and why.
+
+#+CAPTION: stateful, stateless, dumb and smart
+#+ATTR_HTML: :alt components :title stateful, stateless, dumb and smart :align center
+#+ATTR_HTML: :width 50% :height 50%
+#+NAME:   fig:stateful,stateless,dumbandsmart
+[[/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/components.jpeg]]
+
+It could happen that a smart component may have the need to have its own internal state regardless of the global state (from the State Manager): maybe we’ve chosen not to keep a part of the state at the global level, like a form which could be pretty big or useless if serialized (it’s just an example, you could also keep a form in the global state).
+
+*** Recap
+
+So, in a typical component-based architecture scenario, these are the categories we can find:
+- Stateless Component: it doesn’t have its internal state, it’s driven by the parent which gives it all it needs at the moment.
+- Stateful Component: it can be guided by the father, but it has its own internal state for convenience. But it’s a good thing if this state is controllable by the parent component, so it doesn’t go out of control.
+- Dumb/Presentational Component: it has no dependencies on the rest of the app (apart from the ones he needs in order to exist, obviously) and it shows some data with its template. It’s typically stateless, but it’s not always the case.
+- Smart/Container Component: it can have external dependencies (eg. Redux), it organizes the route using child dumb components, it’s in charge of passing the state to the children and uses their events to update the global state (or its state).
+
+** Functional Components vs. Class Components
+
+React uses a declarative approach and simplifies the creation of user interfaces. A web application built in React is structured in several small and isolated pieces of code called React components. There are two main types of components:
+ - Functional components
+ - Class components
+
+To understand the differences, it’s important to know what the React ecosystem used to be like. Years ago, functional components were used only to render JSX to show content to the user. On the other hand, class components were also able to utilize the lifecycle method system or the state system.
+
+#+CAPTION: functional and class components worked
+#+ATTR_HTML: :alt functional and class components :title functional and class components worked :align center
+#+ATTR_HTML: :width 50% :height 50%
+#+NAME:   fig:functional-and-class-components-worked
+[[/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components.jpeg]]
+
+In February 2019, the React team introduced Hooks as a new addition to React v16.8.0. React Hooks gave functional components the same capabilities as class components, with the possibility to use the state system and achieve the same results as the class components’ lifecycle methods.
+
+#+CAPTION: functional and class components work currently
+#+ATTR_HTML: :alt functional and class components current :title functional and class components work currently :align center
+#+ATTR_HTML: :width 50% :height 50%
+#+NAME:   fig:functional-and-class-components-worked
+[[/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components-current.jpeg]]
+
+
+*** 1. Rendering JSX to Show Content
+JSX stands for JavaScript XML, it “allows us to write HTML elements in JavaScript and place them in the DOM without using any createElement() and/or appendChild() methods”.
+
+*Rendering JSX in a class component*
+
+Class components are ES6 classes that extend the rendering method of React.Component:
+#+BEGIN_SRC javascript
+import React from "react";
+
+class App extends React.Component {
+  render() {
+    return <h1>This is a Class Component!!</h1>;
+  }
+}
+
+export default App;
+#+END_SRC
+
+You can also achieve the same result using destructuring:
+#+BEGIN_SRC javascript
+import React, { Component } from "react";
+
+class App extends Component {
+  render() {
+    return <h1>This is a Class Component!!</h1>;
+  }
+}
+
+export default App;
+#+END_SRC
+
+*Rendering JSX in a functional component*
+
+Functional components are JavaScript functions that return JSX:
+#+BEGIN_SRC javascript
+import React from "react";
+
+const App = () => {
+  return <h1>Function Components are the best!</h1>;
+};
+
+export default App;
+
+#+END_SRC
+
+*** 2. Handling State
+
+With the state system, we create a JavaScript object containing some data strictly relevant to the component we’re working on. Before Hooks, the state system was only usable with class components. But with this new addition, it is now possible to obtain the same result with functional components.
+
+To better see the differences between the two components, let’s make a simple counter that starts from zero and increments by clicking on the + button.
+
+*Handling state in a class component*
+
+#+BEGIN_SRC javascript
+import React, { Component } from "react";
+
+class Counter extends Component {
+  state = {
+    count: 0,
+  };
+  render() {
+    return (
+      <div>
+          <p>Count: {this.state.count}</p>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}> + </button>
+      </div>
+    );
+  }
+}
+export default Counter;
+#+END_SRC
+
+In a class component, we initialize our state object at the top containing a property called count and set it to 0. We reference our piece of state inside the render method with this.state.count. Finally, we call an arrow function that changes the state of count with this.setState whenever a user clicks on +.
+
+*Handling state in a functional component*
+
+#+BEGIN_SRC javascript
+import React, { useState } from "react";
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </div>
+  );
+};
+
+export default Counter;
+
+#+END_SRC
+
+In a functional component, first, we have to get the useState function from the React library. Then, we make use of array destructuring to initialize a new piece of state. The first variable inside the count array is the piece of state that we are trying to keep track of, while the second element (setCount) is a function that we call to update our piece of state. useState takes in one argument that is the default value for our piece of state. Finally, we call an arrow function that changes the state of count with the use of setCount whenever a user clicks on +.
+
+*** 3. Passing Props
+
+To pass data as parameters from one React component to another, we use React’s props.
+
+*Passing props in a class component*
+
+#+BEGIN_SRC javascript
+import React from "react";
+import FunctionalComponent from "./ClassComponent";
+
+const App = () => {
+  return <FunctionalComponent name="Theresa" />;
+};
+
+export default App;
+#+END_SRC
+
+
+#+BEGIN_SRC javascript
+import React, { Component } from "react";
+
+class ClassComponent extends Component {
+  render() {
+    const { name } = this.props;
+    return <h1>Hi! My name is {name}</h1>;
+  }
+}
+
+export default ClassComponent;
+#+END_SRC
+
+In a class component, props are received via the use of this.
+
+*Passing props in a functional component*
+
+#+BEGIN_SRC javascript
+import React from "react";
+import FunctionalComponent from "./FunctionalComponent";
+
+const App = () => {
+  return <FunctionalComponent name="Gianmarco" />;
+};
+
+export default App;
+#+END_SRC
+
+
+#+BEGIN_SRC javascript
+import React from "react";
+
+const FunctionalComponent = ({ name }) => {
+  return <h1>Hi! My name is {name}</h1>;
+};
+
+export default FunctionalComponent;
+#+END_SRC
+
+In a functional component, we are passing props as an argument of the function.
+
+*** 4. Lifecycle Method System
+
+Every component in React goes through a lifecycle of events. Lifecycles have a significant role in the timing of rendering. An example of a lifecycle method is the componentDidMount() that corresponds to the useEffect() method in a functional component.
+
+*componentDidMount() in a class component*
+
+#+BEGIN_SRC javascript
+import React from "react";
+
+class App extends React.Component {
+  componentDidMount() {
+    console.log("After the component did mount!");
+  }
+
+  render() {
+    console.log("Component did mount!");
+    return <h1>Hello world!</h1>;
+  }
+}
+
+export default App;
+#+END_SRC
+
+componentDidMount is a lifecycle method that is called after the component gets mounted on the DOM.
+
+*useEffect() in a functional component*
+
+#+BEGIN_SRC javascript
+import React from "react";
+
+const App = () => {
+  React.useEffect(() => {
+      console.log("Second!");
+  }, []);
+
+  console.log("First!")
+  return <h1>Hello World!</h1>;
+ };
+
+export default App;
+#+END_SRC
+
+To obtain the same result in a functional component, we use the useEffect hook with the second argument of [].
+
 * Project Modules & Services
 
 ** Modules used:
@@ -516,6 +787,10 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 + [[https://reactjs.org/docs/components-and-props.html][Components & Props]]
 
 + [[https://blog.jscrambler.com/stateful-vs-stateless-vs-pure-react-components/][stateful-vs-stateless-vs-pure-react-components]]
+
++ [[https://medium.com/@michelestieven/components-stateful-stateless-dumb-and-smart-2847dd4092f2][Components: stateful, stateless, dumb and smart]]
+
++ [[https://betterprogramming.pub/functional-components-vs-class-components-in-react-2f28adccc993][Functional Components vs. Class Components in React]]
 
 + [[https://reactjs.org/docs/events.html][Listenable Events]]
 

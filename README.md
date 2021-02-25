@@ -1,36 +1,44 @@
-- [Introduction](#org86f043f)
-  - [What is React?](#org87343f3)
-  - [Why React?](#org24ed722)
-  - [Single Page Applications / Multi Page Applications](#orga260e76)
-- [Refreshing Next Generation Javascript](#org2cd4862)
-  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#orgd570fa4)
-  - [Arrow Functions](#orgf6c4658)
-  - [Exports & Imports (Modules)](#org1a3fb58)
-  - [Classes](#org9dab36d)
-  - [Classes, Properties and Methods](#org0436ef4)
-  - [Spread and Rest Operator](#org16d23ea)
-  - [Destructuring](#orgf0d309b)
-- [Understanding the Base Features & Syntax](#org3368fe2)
-  - [Using a Build Workflow](#org0ae13cd)
-- [Working with Lists and Conditionals](#orgc7cc5c4)
-  - [JSX](#orgdc26204)
-  - [Components](#org957a5d9)
-  - [Props and State](#org9a1e806)
-  - [Class, Pure and Function Components](#orgd36a128)
-- [Styling React Components & Elements](#org5118c17)
-- [Debugging React Apps](#orgc4b6c31)
-- [Diving Deeper into Components & React internals](#org0bcd97c)
-- [Useful Resources & Links](#org888575b)
+- [Introduction](#org105be15)
+  - [What is React?](#org53713c0)
+  - [Why React?](#org54ce883)
+  - [Single Page Applications / Multi Page Applications](#org688c87a)
+- [Refreshing Next Generation Javascript](#orgbc13287)
+  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#orge5c9a45)
+  - [Arrow Functions](#org5b521f1)
+  - [Exports & Imports (Modules)](#org454c3c9)
+  - [Classes](#org4024a70)
+  - [Classes, Properties and Methods](#orgee49f0d)
+  - [Spread and Rest Operator](#org21f2a36)
+  - [Destructuring](#org5af1a6b)
+- [Understanding the Base Features & Syntax](#org17bfafc)
+  - [Using a Build Workflow](#org17b8b5b)
+- [Working with Lists and Conditionals](#org14b668e)
+  - [JSX](#org1731ccf)
+  - [Components](#orgd486a33)
+  - [Props and State](#org0f0d523)
+  - [Class, Pure and Function Components](#orgd44565c)
+- [Styling React Components & Elements](#orgafcd074)
+- [Debugging React Apps](#org136a271)
+  - [Understanding Error Messages](#orgdb4022b)
+  - [Using Dev Tools & Sourcemaps to find Logical Errors](#orgaaf2208)
+  - [Using React Developer Tools](#org8a0ffca)
+  - [Using Error Boundaries](#orgb2c6387)
+- [Diving Deeper into Components & React internals](#orgaa020bd)
+  - [Components: stateful, stateless, dumb and smart](#org63cac8d)
+  - [Functional Components vs. Class Components](#org28b566d)
+- [Project Modules & Services](#orgc66175c)
+  - [Modules used:](#orga818601)
+- [Useful Resources & Links](#org635e598)
 
 ---
 
 
-<a id="org86f043f"></a>
+<a id="org105be15"></a>
 
 # Introduction
 
 
-<a id="org87343f3"></a>
+<a id="org53713c0"></a>
 
 ## What is React?
 
@@ -41,7 +49,7 @@ A browser side javascript framework - no need for server side rendering
 user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
 
 
-<a id="org24ed722"></a>
+<a id="org54ce883"></a>
 
 ## Why React?
 
@@ -50,7 +58,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Huge Ecosystem, Active Community, High Performance
 
 
-<a id="orga260e76"></a>
+<a id="org688c87a"></a>
 
 ## Single Page Applications / Multi Page Applications
 
@@ -59,12 +67,12 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per &ldquo;widget&rdquo;
 
 
-<a id="org2cd4862"></a>
+<a id="orgbc13287"></a>
 
 # Refreshing Next Generation Javascript
 
 
-<a id="orgd570fa4"></a>
+<a id="orge5c9a45"></a>
 
 ## &ldquo;let&rdquo; and &ldquo;const&rdquo;
 
@@ -74,7 +82,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   const - constant values
 
 
-<a id="orgf6c4658"></a>
+<a id="org5b521f1"></a>
 
 ## Arrow Functions
 
@@ -100,7 +108,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 ```
 
 
-<a id="org1a3fb58"></a>
+<a id="org454c3c9"></a>
 
 ## Exports & Imports (Modules)
 
@@ -135,7 +143,7 @@ import * from './utility' // importing all using an alias from module
 ```
 
 
-<a id="org9dab36d"></a>
+<a id="org4024a70"></a>
 
 ## Classes
 
@@ -178,7 +186,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org0436ef4"></a>
+<a id="orgee49f0d"></a>
 
 ## Classes, Properties and Methods
 
@@ -236,7 +244,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org16d23ea"></a>
+<a id="org21f2a36"></a>
 
 ## Spread and Rest Operator
 
@@ -273,7 +281,7 @@ age: 20
 ```
 
 
-<a id="orgf0d309b"></a>
+<a id="org5af1a6b"></a>
 
 ## Destructuring
 
@@ -289,12 +297,12 @@ age: 20
 ```
 
 
-<a id="org3368fe2"></a>
+<a id="org17bfafc"></a>
 
 # Understanding the Base Features & Syntax
 
 
-<a id="org0ae13cd"></a>
+<a id="org17b8b5b"></a>
 
 ## Using a Build Workflow
 
@@ -313,17 +321,17 @@ age: 20
 -   Use a Development Server
 
 
-<a id="orgc7cc5c4"></a>
+<a id="org14b668e"></a>
 
 # Working with Lists and Conditionals
 
 
-<a id="orgdc26204"></a>
+<a id="org1731ccf"></a>
 
 ## JSX
 
 
-<a id="org957a5d9"></a>
+<a id="orgd486a33"></a>
 
 ## Components
 
@@ -334,7 +342,7 @@ Components are the core building block of React apps. Actually, React really is 
 -   Class Components (also referred to as &ldquo;containers&rdquo;, &ldquo;smart&rdquo; or &ldquo;stateful&rdquo; components) => class Cmp extends Component { render () { return <div>some JSX</div> } }
 
 
-<a id="org9a1e806"></a>
+<a id="org0f0d523"></a>
 
 ## Props and State
 
@@ -405,7 +413,7 @@ state simply is a property of the component class, you have to call it state tho
 Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props is, that this happens within one and the same component - you don&rsquo;t receive new data (props ) from outside!
 
 
-<a id="orgd36a128"></a>
+<a id="orgd44565c"></a>
 
 ## Class, Pure and Function Components
 
@@ -511,22 +519,331 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 ```
 
 
-<a id="org5118c17"></a>
+<a id="orgafcd074"></a>
 
 # Styling React Components & Elements
 
 
-<a id="orgc4b6c31"></a>
+<a id="org136a271"></a>
 
 # Debugging React Apps
 
 
-<a id="org0bcd97c"></a>
+<a id="orgdb4022b"></a>
+
+## Understanding Error Messages
+
+
+<a id="orgaaf2208"></a>
+
+## Using Dev Tools & Sourcemaps to find Logical Errors
+
+
+<a id="org8a0ffca"></a>
+
+## Using React Developer Tools
+
+
+<a id="orgb2c6387"></a>
+
+## Using Error Boundaries
+
+
+<a id="orgaa020bd"></a>
 
 # Diving Deeper into Components & React internals
 
 
-<a id="org888575b"></a>
+<a id="org63cac8d"></a>
+
+## Components: stateful, stateless, dumb and smart
+
+There are many terms to describe components: stateless, stateful, dumb, smart, container, presentational.
+
+
+### Stateful vs Stateless
+
+A stateless component is a component without an internal state. What’s a state? It depends, in Angular it can be represented by internal properties of a class, in React it may be represented by the property this.state or by a hook, in StencilJS it may be indicated by a @State decorator, and so on… Let’s say that a component has an internal state whenever it can change behavior without receiving a property (or an input) from the outside.
+
+Let’s take a simple case: an Accordion. How does it work? The user clicks on a tab and that tab opens, becoming visible. So, the internal state of an accordion could simply be the index of the open tab (or tabs, if we can keep multiple tabs open at the same time).
+
+Therefore, an accordion which is completely stateless shouldn’t worry about changing its state autonomously, it should only rely on his parent component. This should be the flow:
+
+1.  The parent gives the initial index of the open tab to the accordion.
+2.  When the user clicks, the accordion just tells the parent which tab was clicked.
+3.  The father then gives back to the accordion the index of the new tab.
+
+As you can see, this is an unusual behavior: the accordion already knows which tab to open! In fact, every accordion you’ll find in component libraries will be stateful, it’ll update its state independently whenever the user clicks.
+
+> Watch out: a stateful component is a good thing (it doesn’t affect in any way the quality of your code, if it’s well-written), but if we want to do things properly we should take care to notify the parent whenever the internal state changes, and accept a new state as input. This way, we can continue to maneuver it from the outside if we must.
+
+So, as we said, it’s fine to create stateful components, but do it only if your component needs to be autonomous. It could save your life in some cases, saving you hundreds of repeated lines of code, but remember that a stateless component is typically more performant, easier to understand and to reason about, and we say it becomes more predictable: that means that if a change happens, it will be easier to understand the result.
+
+A stateless component is to be preferred is many cases, but this is only a general rule. Don’t bang your head on this wall and don’t let this be your life mission: if it’s logic that a component should maintain its internal state, there’s nothing wrong with that. As a matter of fact, wanting to create stateless components at all costs can be dangerous and can make your application more complex than it needs to be.
+
+
+### Dumb vs Smart
+
+There’s a lot of confusion here, so let’s clarify what these terms don’t mean: dumb doesn’t mean stateless and smart doesn’t mean stateful.
+
+We can think of it this way: a dumb component is one that has no dependencies from outside. Vice versa, a smart component has dependencies! It means that it knows where he is, it knows that he’s part of a bigger application. It is aware of its surroundings. It’s a living thing. Sort of.
+
+The classic example is with a State Manager (such as Redux): typically, for every route there’s one smart component which is connected to the Application State (via Dependency Injection in Angular, for example), which can take things from the current state in order to pass it to the children, and it listens to the events emitted by the children in order to update the state.
+
+Consequently, it’s a good practice to write every child component as dumb. Let the parent be the one who interferes with the state, don’t touch it directly. If it happened, we’d have an application which is hard to maintain, with inconsistent behaviors: it’d become hard to understand who updates the state and why.
+
+![img](/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/components.jpeg "stateful, stateless, dumb and smart")
+
+It could happen that a smart component may have the need to have its own internal state regardless of the global state (from the State Manager): maybe we’ve chosen not to keep a part of the state at the global level, like a form which could be pretty big or useless if serialized (it’s just an example, you could also keep a form in the global state).
+
+
+### Recap
+
+So, in a typical component-based architecture scenario, these are the categories we can find:
+
+-   Stateless Component: it doesn’t have its internal state, it’s driven by the parent which gives it all it needs at the moment.
+-   Stateful Component: it can be guided by the father, but it has its own internal state for convenience. But it’s a good thing if this state is controllable by the parent component, so it doesn’t go out of control.
+-   Dumb/Presentational Component: it has no dependencies on the rest of the app (apart from the ones he needs in order to exist, obviously) and it shows some data with its template. It’s typically stateless, but it’s not always the case.
+-   Smart/Container Component: it can have external dependencies (eg. Redux), it organizes the route using child dumb components, it’s in charge of passing the state to the children and uses their events to update the global state (or its state).
+
+
+<a id="org28b566d"></a>
+
+## Functional Components vs. Class Components
+
+React uses a declarative approach and simplifies the creation of user interfaces. A web application built in React is structured in several small and isolated pieces of code called React components. There are two main types of components:
+
+-   Functional components
+-   Class components
+
+To understand the differences, it’s important to know what the React ecosystem used to be like. Years ago, functional components were used only to render JSX to show content to the user. On the other hand, class components were also able to utilize the lifecycle method system or the state system.
+
+![img](/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components.jpeg "functional and class components worked")
+
+In February 2019, the React team introduced Hooks as a new addition to React v16.8.0. React Hooks gave functional components the same capabilities as class components, with the possibility to use the state system and achieve the same results as the class components’ lifecycle methods.
+
+![img](/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components-current.jpeg "functional and class components work currently")
+
+
+### 1. Rendering JSX to Show Content
+
+JSX stands for JavaScript XML, it “allows us to write HTML elements in JavaScript and place them in the DOM without using any createElement() and/or appendChild() methods”.
+
+**Rendering JSX in a class component**
+
+Class components are ES6 classes that extend the rendering method of React.Component:
+
+```javascript
+import React from "react";
+
+class App extends React.Component {
+  render() {
+    return <h1>This is a Class Component!!</h1>;
+  }
+}
+
+export default App;
+```
+
+You can also achieve the same result using destructuring:
+
+```javascript
+import React, { Component } from "react";
+
+class App extends Component {
+  render() {
+    return <h1>This is a Class Component!!</h1>;
+  }
+}
+
+export default App;
+```
+
+**Rendering JSX in a functional component**
+
+Functional components are JavaScript functions that return JSX:
+
+```javascript
+import React from "react";
+
+const App = () => {
+  return <h1>Function Components are the best!</h1>;
+};
+
+export default App;
+
+```
+
+
+### 2. Handling State
+
+With the state system, we create a JavaScript object containing some data strictly relevant to the component we’re working on. Before Hooks, the state system was only usable with class components. But with this new addition, it is now possible to obtain the same result with functional components.
+
+To better see the differences between the two components, let’s make a simple counter that starts from zero and increments by clicking on the + button.
+
+**Handling state in a class component**
+
+```javascript
+import React, { Component } from "react";
+
+class Counter extends Component {
+  state = {
+    count: 0,
+  };
+  render() {
+    return (
+      <div>
+          <p>Count: {this.state.count}</p>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}> + </button>
+      </div>
+    );
+  }
+}
+export default Counter;
+```
+
+In a class component, we initialize our state object at the top containing a property called count and set it to 0. We reference our piece of state inside the render method with this.state.count. Finally, we call an arrow function that changes the state of count with this.setState whenever a user clicks on +.
+
+**Handling state in a functional component**
+
+```javascript
+import React, { useState } from "react";
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>+</button>
+    </div>
+  );
+};
+
+export default Counter;
+
+```
+
+In a functional component, first, we have to get the useState function from the React library. Then, we make use of array destructuring to initialize a new piece of state. The first variable inside the count array is the piece of state that we are trying to keep track of, while the second element (setCount) is a function that we call to update our piece of state. useState takes in one argument that is the default value for our piece of state. Finally, we call an arrow function that changes the state of count with the use of setCount whenever a user clicks on +.
+
+
+### 3. Passing Props
+
+To pass data as parameters from one React component to another, we use React’s props.
+
+**Passing props in a class component**
+
+```javascript
+import React from "react";
+import FunctionalComponent from "./ClassComponent";
+
+const App = () => {
+  return <FunctionalComponent name="Theresa" />;
+};
+
+export default App;
+```
+
+```javascript
+import React, { Component } from "react";
+
+class ClassComponent extends Component {
+  render() {
+    const { name } = this.props;
+    return <h1>Hi! My name is {name}</h1>;
+  }
+}
+
+export default ClassComponent;
+```
+
+In a class component, props are received via the use of this.
+
+**Passing props in a functional component**
+
+```javascript
+import React from "react";
+import FunctionalComponent from "./FunctionalComponent";
+
+const App = () => {
+  return <FunctionalComponent name="Gianmarco" />;
+};
+
+export default App;
+```
+
+```javascript
+import React from "react";
+
+const FunctionalComponent = ({ name }) => {
+  return <h1>Hi! My name is {name}</h1>;
+};
+
+export default FunctionalComponent;
+```
+
+In a functional component, we are passing props as an argument of the function.
+
+
+### 4. Lifecycle Method System
+
+Every component in React goes through a lifecycle of events. Lifecycles have a significant role in the timing of rendering. An example of a lifecycle method is the componentDidMount() that corresponds to the useEffect() method in a functional component.
+
+**componentDidMount() in a class component**
+
+```javascript
+import React from "react";
+
+class App extends React.Component {
+  componentDidMount() {
+    console.log("After the component did mount!");
+  }
+
+  render() {
+    console.log("Component did mount!");
+    return <h1>Hello world!</h1>;
+  }
+}
+
+export default App;
+```
+
+componentDidMount is a lifecycle method that is called after the component gets mounted on the DOM.
+
+**useEffect() in a functional component**
+
+```javascript
+import React from "react";
+
+const App = () => {
+  React.useEffect(() => {
+      console.log("Second!");
+  }, []);
+
+  console.log("First!")
+  return <h1>Hello World!</h1>;
+ };
+
+export default App;
+```
+
+To obtain the same result in a functional component, we use the useEffect hook with the second argument of [].
+
+
+<a id="orgc66175c"></a>
+
+# Project Modules & Services
+
+
+<a id="orga818601"></a>
+
+## Modules used:
+
+-   create-react-app
+-   radium
+-   styled-components
+
+
+<a id="org635e598"></a>
 
 # Useful Resources & Links
 
@@ -549,3 +866,11 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 -   [Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
 
 -   [Lists & Keys](https://reactjs.org/docs/lists-and-keys.html)
+
+-   [Using CSS Modules in create-react-app Projects](https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2)
+
+-   [More information about CSS Modules](https://github.com/css-modules/css-modules)
+
+-   [Error Boundaries](https://reactjs.org/docs/error-boundaries.html)
+
+-   [Chrome Devtool Debugging](https://developers.google.com/web/tools/chrome-devtools/javascript/)

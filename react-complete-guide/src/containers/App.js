@@ -91,7 +91,7 @@ class App extends Component {
         <div>
           <Persons
             persons={this.state.persons}
-            click={this.deletePersonHandler}
+            clicked={this.deletePersonHandler}
             changed={this.nameChangedHandler}
           />
         </div>
@@ -101,6 +101,7 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Cockpit
+          title={this.props.appTitle}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
           onClick={this.tooglePersonHandler}

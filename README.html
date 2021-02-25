@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-02-24 qua 15:27 -->
+<!-- 2021-02-25 qui 15:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>React - The Complete Guide</title>
@@ -229,54 +229,71 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7942f03">Introduction</a>
+<li><a href="#orgd158a76">Introduction</a>
 <ul>
-<li><a href="#orgcb6ad3b">What is React?</a></li>
-<li><a href="#orgf68bca0">Why React?</a></li>
-<li><a href="#org5326f77">Single Page Applications / Multi Page Applications</a></li>
+<li><a href="#orgb892e75">What is React?</a></li>
+<li><a href="#org45b06e3">Why React?</a></li>
+<li><a href="#orgc987c51">Single Page Applications / Multi Page Applications</a></li>
 </ul>
 </li>
-<li><a href="#orgbcd496d">Refreshing Next Generation Javascript</a>
+<li><a href="#orgac3c77b">Refreshing Next Generation Javascript</a>
 <ul>
-<li><a href="#org529f0f2">&ldquo;let&rdquo; and &ldquo;const&rdquo;</a></li>
-<li><a href="#org0ba9829">Arrow Functions</a></li>
-<li><a href="#orga59a7e0">Exports &amp; Imports (Modules)</a></li>
-<li><a href="#org5d054eb">Classes</a></li>
-<li><a href="#org1dab226">Classes, Properties and Methods</a></li>
-<li><a href="#orgffcd583">Spread and Rest Operator</a></li>
-<li><a href="#org7d2b2d0">Destructuring</a></li>
+<li><a href="#org4038629">&ldquo;let&rdquo; and &ldquo;const&rdquo;</a></li>
+<li><a href="#org097973b">Arrow Functions</a></li>
+<li><a href="#org104457a">Exports &amp; Imports (Modules)</a></li>
+<li><a href="#org126e9b6">Classes</a></li>
+<li><a href="#org5594a03">Classes, Properties and Methods</a></li>
+<li><a href="#orgfba7611">Spread and Rest Operator</a></li>
+<li><a href="#orgc7361ea">Destructuring</a></li>
 </ul>
 </li>
-<li><a href="#orgc606144">Understanding the Base Features &amp; Syntax</a>
+<li><a href="#org908e021">Understanding the Base Features &amp; Syntax</a>
 <ul>
-<li><a href="#org5339445">Using a Build Workflow</a></li>
+<li><a href="#orgc55235c">Using a Build Workflow</a></li>
 </ul>
 </li>
-<li><a href="#org8cf0659">Working with Lists and Conditionals</a>
+<li><a href="#orgaa3a1f1">Working with Lists and Conditionals</a>
 <ul>
-<li><a href="#orgeee67ee">JSX</a></li>
-<li><a href="#org46ff403">Components</a></li>
-<li><a href="#org28a2b80">Props and State</a></li>
-<li><a href="#org78ea21c">Class, Pure and Function Components</a></li>
+<li><a href="#orgdfd298b">JSX</a></li>
+<li><a href="#org8e9bb2c">Components</a></li>
+<li><a href="#org4822339">Props and State</a></li>
+<li><a href="#orgef693ef">Class, Pure and Function Components</a></li>
 </ul>
 </li>
-<li><a href="#orga4b160a">Styling React Components &amp; Elements</a></li>
-<li><a href="#orgecc10ed">Debugging React Apps</a></li>
-<li><a href="#org848377d">Diving Deeper into Components &amp; React internals</a></li>
-<li><a href="#org82d069b">Useful Resources &amp; Links</a></li>
+<li><a href="#orga7117bf">Styling React Components &amp; Elements</a></li>
+<li><a href="#org8b545bc">Debugging React Apps</a>
+<ul>
+<li><a href="#orgebb4cd9">Understanding Error Messages</a></li>
+<li><a href="#org7e65fdc">Using Dev Tools &amp; Sourcemaps to find Logical Errors</a></li>
+<li><a href="#org0ba2a56">Using React Developer Tools</a></li>
+<li><a href="#org6fd19cc">Using Error Boundaries</a></li>
+</ul>
+</li>
+<li><a href="#org00af890">Diving Deeper into Components &amp; React internals</a>
+<ul>
+<li><a href="#org65b5748">Components: stateful, stateless, dumb and smart</a></li>
+<li><a href="#org66c6465">Functional Components vs. Class Components</a></li>
+</ul>
+</li>
+<li><a href="#orgfdb73e5">Project Modules &amp; Services</a>
+<ul>
+<li><a href="#org2160849">Modules used:</a></li>
+</ul>
+</li>
+<li><a href="#orgf85fb8b">Useful Resources &amp; Links</a></li>
 </ul>
 </div>
 </div>
 <hr />
 
-<div id="outline-container-org7942f03" class="outline-2">
-<h2 id="org7942f03">Introduction</h2>
-<div class="outline-text-2" id="text-org7942f03">
+<div id="outline-container-orgd158a76" class="outline-2">
+<h2 id="orgd158a76">Introduction</h2>
+<div class="outline-text-2" id="text-orgd158a76">
 </div>
 
-<div id="outline-container-orgcb6ad3b" class="outline-3">
-<h3 id="orgcb6ad3b">What is React?</h3>
-<div class="outline-text-3" id="text-orgcb6ad3b">
+<div id="outline-container-orgb892e75" class="outline-3">
+<h3 id="orgb892e75">What is React?</h3>
+<div class="outline-text-3" id="text-orgb892e75">
 <p>
 &ldquo;A javascript Library for building User Interfaces&rdquo;
 </p>
@@ -291,9 +308,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-orgf68bca0" class="outline-3">
-<h3 id="orgf68bca0">Why React?</h3>
-<div class="outline-text-3" id="text-orgf68bca0">
+<div id="outline-container-org45b06e3" class="outline-3">
+<h3 id="org45b06e3">Why React?</h3>
+<div class="outline-text-3" id="text-org45b06e3">
 <ul class="org-ul">
 <li>UI State becomes difficult to handle with Vanilla Javascript</li>
 <li>Focus on Business Logic, not on preventing your App from exploding</li>
@@ -302,9 +319,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org5326f77" class="outline-3">
-<h3 id="org5326f77">Single Page Applications / Multi Page Applications</h3>
-<div class="outline-text-3" id="text-org5326f77">
+<div id="outline-container-orgc987c51" class="outline-3">
+<h3 id="orgc987c51">Single Page Applications / Multi Page Applications</h3>
+<div class="outline-text-3" id="text-orgc987c51">
 <ul class="org-ul">
 <li>Single Page Applications - Only ONE HTML Page, Content is (re)rendered on Client - Typically only ONE ReactDOM.render() call</li>
 
@@ -314,14 +331,14 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-orgbcd496d" class="outline-2">
-<h2 id="orgbcd496d">Refreshing Next Generation Javascript</h2>
-<div class="outline-text-2" id="text-orgbcd496d">
+<div id="outline-container-orgac3c77b" class="outline-2">
+<h2 id="orgac3c77b">Refreshing Next Generation Javascript</h2>
+<div class="outline-text-2" id="text-orgac3c77b">
 </div>
 
-<div id="outline-container-org529f0f2" class="outline-3">
-<h3 id="org529f0f2">&ldquo;let&rdquo; and &ldquo;const&rdquo;</h3>
-<div class="outline-text-3" id="text-org529f0f2">
+<div id="outline-container-org4038629" class="outline-3">
+<h3 id="org4038629">&ldquo;let&rdquo; and &ldquo;const&rdquo;</h3>
+<div class="outline-text-3" id="text-org4038629">
 <ul class="org-ul">
 <li>var - creates a variable in javascript</li>
 
@@ -332,9 +349,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 
 
-<div id="outline-container-org0ba9829" class="outline-3">
-<h3 id="org0ba9829">Arrow Functions</h3>
-<div class="outline-text-3" id="text-org0ba9829">
+<div id="outline-container-org097973b" class="outline-3">
+<h3 id="org097973b">Arrow Functions</h3>
+<div class="outline-text-3" id="text-org097973b">
 <blockquote>
 <p>
 Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this  keyword
@@ -373,9 +390,9 @@ Arrow Function Syntax
 </div>
 
 
-<div id="outline-container-orga59a7e0" class="outline-3">
-<h3 id="orga59a7e0">Exports &amp; Imports (Modules)</h3>
-<div class="outline-text-3" id="text-orga59a7e0">
+<div id="outline-container-org104457a" class="outline-3">
+<h3 id="org104457a">Exports &amp; Imports (Modules)</h3>
+<div class="outline-text-3" id="text-org104457a">
 <blockquote>
 <p>
 person.js
@@ -426,9 +443,9 @@ app.js
 </div>
 
 
-<div id="outline-container-org5d054eb" class="outline-3">
-<h3 id="org5d054eb">Classes</h3>
-<div class="outline-text-3" id="text-org5d054eb">
+<div id="outline-container-org126e9b6" class="outline-3">
+<h3 id="org126e9b6">Classes</h3>
+<div class="outline-text-3" id="text-org126e9b6">
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #405A61;">// </span><span style="color: #405A61;">class declaration</span>
 <span style="color: #859900; font-weight: bold;">class</span> Human {
@@ -470,9 +487,9 @@ somePerson.printGender();
 </div>
 </div>
 
-<div id="outline-container-org1dab226" class="outline-3">
-<h3 id="org1dab226">Classes, Properties and Methods</h3>
-<div class="outline-text-3" id="text-org1dab226">
+<div id="outline-container-org5594a03" class="outline-3">
+<h3 id="org5594a03">Classes, Properties and Methods</h3>
+<div class="outline-text-3" id="text-org5594a03">
 <ul class="org-ul">
 <li>Properties are like &ldquo;variables attached to classes/objects&rdquo;</li>
 </ul>
@@ -538,9 +555,9 @@ somePerson.printGender();
 </div>
 
 
-<div id="outline-container-orgffcd583" class="outline-3">
-<h3 id="orgffcd583">Spread and Rest Operator</h3>
-<div class="outline-text-3" id="text-orgffcd583">
+<div id="outline-container-orgfba7611" class="outline-3">
+<h3 id="orgfba7611">Spread and Rest Operator</h3>
+<div class="outline-text-3" id="text-orgfba7611">
 <ul class="org-ul">
 <li>Spread - Used to split up array elements or object properties</li>
 </ul>
@@ -582,9 +599,9 @@ age: <span style="color: #d33682; font-weight: bold;">20</span>
 </div>
 </div>
 
-<div id="outline-container-org7d2b2d0" class="outline-3">
-<h3 id="org7d2b2d0">Destructuring</h3>
-<div class="outline-text-3" id="text-org7d2b2d0">
+<div id="outline-container-orgc7361ea" class="outline-3">
+<h3 id="orgc7361ea">Destructuring</h3>
+<div class="outline-text-3" id="text-orgc7361ea">
 <blockquote>
 <p>
 Easily extract array elements or object properties and store them in variables
@@ -606,14 +623,14 @@ Easily extract array elements or object properties and store them in variables
 </div>
 
 
-<div id="outline-container-orgc606144" class="outline-2">
-<h2 id="orgc606144">Understanding the Base Features &amp; Syntax</h2>
-<div class="outline-text-2" id="text-orgc606144">
+<div id="outline-container-org908e021" class="outline-2">
+<h2 id="org908e021">Understanding the Base Features &amp; Syntax</h2>
+<div class="outline-text-2" id="text-org908e021">
 </div>
 
-<div id="outline-container-org5339445" class="outline-3">
-<h3 id="org5339445">Using a Build Workflow</h3>
-<div class="outline-text-3" id="text-org5339445">
+<div id="outline-container-orgc55235c" class="outline-3">
+<h3 id="orgc55235c">Using a Build Workflow</h3>
+<div class="outline-text-3" id="text-orgc55235c">
 <p>
 <b>Why?</b>
 </p>
@@ -638,18 +655,18 @@ Easily extract array elements or object properties and store them in variables
 </div>
 
 
-<div id="outline-container-org8cf0659" class="outline-2">
-<h2 id="org8cf0659">Working with Lists and Conditionals</h2>
-<div class="outline-text-2" id="text-org8cf0659">
+<div id="outline-container-orgaa3a1f1" class="outline-2">
+<h2 id="orgaa3a1f1">Working with Lists and Conditionals</h2>
+<div class="outline-text-2" id="text-orgaa3a1f1">
 </div>
 
-<div id="outline-container-orgeee67ee" class="outline-3">
-<h3 id="orgeee67ee">JSX</h3>
+<div id="outline-container-orgdfd298b" class="outline-3">
+<h3 id="orgdfd298b">JSX</h3>
 </div>
 
-<div id="outline-container-org46ff403" class="outline-3">
-<h3 id="org46ff403">Components</h3>
-<div class="outline-text-3" id="text-org46ff403">
+<div id="outline-container-org8e9bb2c" class="outline-3">
+<h3 id="org8e9bb2c">Components</h3>
+<div class="outline-text-3" id="text-org8e9bb2c">
 <p>
 Components are the core building block of React apps. Actually, React really is just a library for creating components in its core.
 A typical React app therefore could be depicted as a component tree - having one root component (&ldquo;App&rdquo;) and then an potentially infinite amount of nested child components.
@@ -664,9 +681,9 @@ Each component needs to return/ render some JSX code - it defines which HTML cod
 </div>
 </div>
 
-<div id="outline-container-org28a2b80" class="outline-3">
-<h3 id="org28a2b80">Props and State</h3>
-<div class="outline-text-3" id="text-org28a2b80">
+<div id="outline-container-org4822339" class="outline-3">
+<h3 id="org4822339">Props and State</h3>
+<div class="outline-text-3" id="text-org4822339">
 <p>
 props  and state  are CORE concepts of React. Actually, only changes in props  and/ or state  trigger React to re-render your components and potentially update the DOM in the browser (a detailed look at how React checks whether to really touch the real DOM is provided in section 6).
 </p>
@@ -773,17 +790,17 @@ Whenever state  changes (taught over the next lectures), the component will re-r
 </div>
 
 
-<div id="outline-container-org78ea21c" class="outline-3">
-<h3 id="org78ea21c">Class, Pure and Function Components</h3>
-<div class="outline-text-3" id="text-org78ea21c">
+<div id="outline-container-orgef693ef" class="outline-3">
+<h3 id="orgef693ef">Class, Pure and Function Components</h3>
+<div class="outline-text-3" id="text-orgef693ef">
 <p>
 React components come in different flavors to tackle different problems. In typical programming fashion, choosing which one works best gets an “it depends.” Each component type has its pros and cons depending on the problem at hand. The main takeaway is knowing how each component type is useful for a given scenario.
 </p>
 </div>
 
-<div id="outline-container-org7b395fe" class="outline-4">
-<h4 id="org7b395fe">Class components (formerly ‘Stateful’ components)</h4>
-<div class="outline-text-4" id="text-org7b395fe">
+<div id="outline-container-orgad6f086" class="outline-4">
+<h4 id="orgad6f086">Class components (formerly ‘Stateful’ components)</h4>
+<div class="outline-text-4" id="text-orgad6f086">
 <p>
 The one component type we see all over the place is the class component. It is a stateful component because it has both state and props. This component has a ton of flexibility which is the reason why it is all over the place. A plus here is this has all component lifecycle methods in their raw form. This helps in tailoring the component to fit specific use cases. For example, firing an Ajax request right after the component mounts. One con is managing state manually with setState because of complexity and risk increase.
 </p>
@@ -830,9 +847,9 @@ On the flip side, if complexity is a big concern, look into web hooks. Web hooks
 </div>
 </div>
 
-<div id="outline-container-orgb08eca6" class="outline-4">
-<h4 id="orgb08eca6">Pure components</h4>
-<div class="outline-text-4" id="text-orgb08eca6">
+<div id="outline-container-org0c78461" class="outline-4">
+<h4 id="org0c78461">Pure components</h4>
+<div class="outline-text-4" id="text-org0c78461">
 <p>
 Pure components have this type definition:
 </p>
@@ -883,9 +900,9 @@ For example:
 </div>
 </div>
 
-<div id="outline-container-orgb3f8f0b" class="outline-4">
-<h4 id="orgb3f8f0b">Function components (formerly ‘Stateless’ components)</h4>
-<div class="outline-text-4" id="text-orgb3f8f0b">
+<div id="outline-container-org97c105e" class="outline-4">
+<h4 id="org97c105e">Function components (formerly ‘Stateless’ components)</h4>
+<div class="outline-text-4" id="text-org97c105e">
 <p>
 A function component in React is defined like this:
 </p>
@@ -926,28 +943,460 @@ In simple terms, this is a function component:
 
 
 
-<div id="outline-container-orga4b160a" class="outline-2">
-<h2 id="orga4b160a">Styling React Components &amp; Elements</h2>
-<div class="outline-text-2" id="text-orga4b160a">
+<div id="outline-container-orga7117bf" class="outline-2">
+<h2 id="orga7117bf">Styling React Components &amp; Elements</h2>
+<div class="outline-text-2" id="text-orga7117bf">
 </div>
 </div>
 
-<div id="outline-container-orgecc10ed" class="outline-2">
-<h2 id="orgecc10ed">Debugging React Apps</h2>
-<div class="outline-text-2" id="text-orgecc10ed">
-</div>
+<div id="outline-container-org8b545bc" class="outline-2">
+<h2 id="org8b545bc">Debugging React Apps</h2>
+<div class="outline-text-2" id="text-org8b545bc">
 </div>
 
-<div id="outline-container-org848377d" class="outline-2">
-<h2 id="org848377d">Diving Deeper into Components &amp; React internals</h2>
-<div class="outline-text-2" id="text-org848377d">
-</div>
+<div id="outline-container-orgebb4cd9" class="outline-3">
+<h3 id="orgebb4cd9">Understanding Error Messages</h3>
 </div>
 
 
-<div id="outline-container-org82d069b" class="outline-2">
-<h2 id="org82d069b">Useful Resources &amp; Links</h2>
-<div class="outline-text-2" id="text-org82d069b">
+<div id="outline-container-org7e65fdc" class="outline-3">
+<h3 id="org7e65fdc">Using Dev Tools &amp; Sourcemaps to find Logical Errors</h3>
+</div>
+
+
+<div id="outline-container-org0ba2a56" class="outline-3">
+<h3 id="org0ba2a56">Using React Developer Tools</h3>
+</div>
+
+
+<div id="outline-container-org6fd19cc" class="outline-3">
+<h3 id="org6fd19cc">Using Error Boundaries</h3>
+</div>
+</div>
+
+<div id="outline-container-org00af890" class="outline-2">
+<h2 id="org00af890">Diving Deeper into Components &amp; React internals</h2>
+<div class="outline-text-2" id="text-org00af890">
+</div>
+
+<div id="outline-container-org65b5748" class="outline-3">
+<h3 id="org65b5748">Components: stateful, stateless, dumb and smart</h3>
+<div class="outline-text-3" id="text-org65b5748">
+<p>
+There are many terms to describe components: stateless, stateful, dumb, smart, container, presentational.
+</p>
+</div>
+
+<div id="outline-container-org84c512d" class="outline-4">
+<h4 id="org84c512d">Stateful vs Stateless</h4>
+<div class="outline-text-4" id="text-org84c512d">
+<p>
+A stateless component is a component without an internal state. What’s a state? It depends, in Angular it can be represented by internal properties of a class, in React it may be represented by the property this.state or by a hook, in StencilJS it may be indicated by a @State decorator, and so on… Let’s say that a component has an internal state whenever it can change behavior without receiving a property (or an input) from the outside.
+</p>
+
+<p>
+Let’s take a simple case: an Accordion. How does it work? The user clicks on a tab and that tab opens, becoming visible. So, the internal state of an accordion could simply be the index of the open tab (or tabs, if we can keep multiple tabs open at the same time).
+</p>
+
+<p>
+Therefore, an accordion which is completely stateless shouldn’t worry about changing its state autonomously, it should only rely on his parent component. This should be the flow:
+</p>
+<ol class="org-ol">
+<li>The parent gives the initial index of the open tab to the accordion.</li>
+<li>When the user clicks, the accordion just tells the parent which tab was clicked.</li>
+<li>The father then gives back to the accordion the index of the new tab.</li>
+</ol>
+
+<p>
+As you can see, this is an unusual behavior: the accordion already knows which tab to open! In fact, every accordion you’ll find in component libraries will be stateful, it’ll update its state independently whenever the user clicks.
+</p>
+
+<blockquote>
+<p>
+Watch out: a stateful component is a good thing (it doesn’t affect in any way the quality of your code, if it’s well-written), but if we want to do things properly we should take care to notify the parent whenever the internal state changes, and accept a new state as input. This way, we can continue to maneuver it from the outside if we must.
+</p>
+</blockquote>
+
+<p>
+So, as we said, it’s fine to create stateful components, but do it only if your component needs to be autonomous. It could save your life in some cases, saving you hundreds of repeated lines of code, but remember that a stateless component is typically more performant, easier to understand and to reason about, and we say it becomes more predictable: that means that if a change happens, it will be easier to understand the result.
+</p>
+
+<p>
+A stateless component is to be preferred is many cases, but this is only a general rule. Don’t bang your head on this wall and don’t let this be your life mission: if it’s logic that a component should maintain its internal state, there’s nothing wrong with that. As a matter of fact, wanting to create stateless components at all costs can be dangerous and can make your application more complex than it needs to be.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org76ad226" class="outline-4">
+<h4 id="org76ad226">Dumb vs Smart</h4>
+<div class="outline-text-4" id="text-org76ad226">
+<p>
+There’s a lot of confusion here, so let’s clarify what these terms don’t mean: dumb doesn’t mean stateless and smart doesn’t mean stateful.
+</p>
+
+<p>
+We can think of it this way: a dumb component is one that has no dependencies from outside. Vice versa, a smart component has dependencies! It means that it knows where he is, it knows that he’s part of a bigger application. It is aware of its surroundings. It’s a living thing. Sort of.
+</p>
+
+<p>
+The classic example is with a State Manager (such as Redux): typically, for every route there’s one smart component which is connected to the Application State (via Dependency Injection in Angular, for example), which can take things from the current state in order to pass it to the children, and it listens to the events emitted by the children in order to update the state.
+</p>
+
+<p>
+Consequently, it’s a good practice to write every child component as dumb. Let the parent be the one who interferes with the state, don’t touch it directly. If it happened, we’d have an application which is hard to maintain, with inconsistent behaviors: it’d become hard to understand who updates the state and why.
+</p>
+
+
+<div id="org24be340" class="figure">
+<p><img src="file:///home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/components.jpeg" alt="components" width="50%" height="50%" title="stateful, stateless, dumb and smart" align="center" />
+</p>
+<p><span class="figure-number">Figure 1: </span>stateful, stateless, dumb and smart</p>
+</div>
+
+<p>
+It could happen that a smart component may have the need to have its own internal state regardless of the global state (from the State Manager): maybe we’ve chosen not to keep a part of the state at the global level, like a form which could be pretty big or useless if serialized (it’s just an example, you could also keep a form in the global state).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7c0c772" class="outline-4">
+<h4 id="org7c0c772">Recap</h4>
+<div class="outline-text-4" id="text-org7c0c772">
+<p>
+So, in a typical component-based architecture scenario, these are the categories we can find:
+</p>
+<ul class="org-ul">
+<li>Stateless Component: it doesn’t have its internal state, it’s driven by the parent which gives it all it needs at the moment.</li>
+<li>Stateful Component: it can be guided by the father, but it has its own internal state for convenience. But it’s a good thing if this state is controllable by the parent component, so it doesn’t go out of control.</li>
+<li>Dumb/Presentational Component: it has no dependencies on the rest of the app (apart from the ones he needs in order to exist, obviously) and it shows some data with its template. It’s typically stateless, but it’s not always the case.</li>
+<li>Smart/Container Component: it can have external dependencies (eg. Redux), it organizes the route using child dumb components, it’s in charge of passing the state to the children and uses their events to update the global state (or its state).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org66c6465" class="outline-3">
+<h3 id="org66c6465">Functional Components vs. Class Components</h3>
+<div class="outline-text-3" id="text-org66c6465">
+<p>
+React uses a declarative approach and simplifies the creation of user interfaces. A web application built in React is structured in several small and isolated pieces of code called React components. There are two main types of components:
+</p>
+<ul class="org-ul">
+<li>Functional components</li>
+<li>Class components</li>
+</ul>
+
+<p>
+To understand the differences, it’s important to know what the React ecosystem used to be like. Years ago, functional components were used only to render JSX to show content to the user. On the other hand, class components were also able to utilize the lifecycle method system or the state system.
+</p>
+
+
+<div id="orgdeab0c7" class="figure">
+<p><img src="file:///home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components.jpeg" alt="functional and class components" width="50%" height="50%" title="functional and class components worked" align="center" />
+</p>
+<p><span class="figure-number">Figure 2: </span>functional and class components worked</p>
+</div>
+
+<p>
+In February 2019, the React team introduced Hooks as a new addition to React v16.8.0. React Hooks gave functional components the same capabilities as class components, with the possibility to use the state system and achieve the same results as the class components’ lifecycle methods.
+</p>
+
+
+<div id="org54e3282" class="figure">
+<p><img src="file:///home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components-current.jpeg" alt="functional and class components current" width="50%" height="50%" title="functional and class components work currently" align="center" />
+</p>
+<p><span class="figure-number">Figure 3: </span>functional and class components work currently</p>
+</div>
+</div>
+
+
+<div id="outline-container-org42818e9" class="outline-4">
+<h4 id="org42818e9">1. Rendering JSX to Show Content</h4>
+<div class="outline-text-4" id="text-org42818e9">
+<p>
+JSX stands for JavaScript XML, it “allows us to write HTML elements in JavaScript and place them in the DOM without using any createElement() and/or appendChild() methods”.
+</p>
+
+<p>
+<b>Rendering JSX in a class component</b>
+</p>
+
+<p>
+Class components are ES6 classes that extend the rendering method of React.Component:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">class</span> App <span style="color: #859900; font-weight: bold;">extends</span> React.Component {
+  render() {
+    <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">h1</span>&gt;<span style="color: #839496; background-color: #00212B;">This is a Class Component!!</span>&lt;/<span style="color: #268bd2;">h1</span>&gt;;
+  }
+}
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> App;
+</pre>
+</div>
+
+<p>
+You can also achieve the same result using destructuring:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React, { Component } from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">class</span> App <span style="color: #859900; font-weight: bold;">extends</span> Component {
+  render() {
+    <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">h1</span>&gt;<span style="color: #839496; background-color: #00212B;">This is a Class Component!!</span>&lt;/<span style="color: #268bd2;">h1</span>&gt;;
+  }
+}
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> App;
+</pre>
+</div>
+
+<p>
+<b>Rendering JSX in a functional component</b>
+</p>
+
+<p>
+Functional components are JavaScript functions that return JSX:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">App</span> = () =&gt; {
+  <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">h1</span>&gt;<span style="color: #839496; background-color: #00212B;">Function Components are the best!</span>&lt;/<span style="color: #268bd2;">h1</span>&gt;;
+};
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> App;
+
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf5ad4bb" class="outline-4">
+<h4 id="orgf5ad4bb">2. Handling State</h4>
+<div class="outline-text-4" id="text-orgf5ad4bb">
+<p>
+With the state system, we create a JavaScript object containing some data strictly relevant to the component we’re working on. Before Hooks, the state system was only usable with class components. But with this new addition, it is now possible to obtain the same result with functional components.
+</p>
+
+<p>
+To better see the differences between the two components, let’s make a simple counter that starts from zero and increments by clicking on the + button.
+</p>
+
+<p>
+<b>Handling state in a class component</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React, { Component } from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">class</span> Counter <span style="color: #859900; font-weight: bold;">extends</span> Component {
+  state = {
+    count: <span style="color: #d33682; font-weight: bold;">0</span>,
+  };
+  render() {
+    <span style="color: #859900; font-weight: bold;">return</span> (
+      &lt;<span style="color: #268bd2;">div</span>&gt;
+<span style="color: #839496; background-color: #00212B;">          </span>&lt;<span style="color: #268bd2;">p</span>&gt;<span style="color: #839496; background-color: #00212B;">Count: </span>{<span style="color: #d33682; font-weight: bold;">this</span>.state.count}&lt;/<span style="color: #268bd2;">p</span>&gt;
+<span style="color: #839496; background-color: #00212B;">        </span>&lt;<span style="color: #268bd2;">button</span> <span style="color: #6c71c4;">onClick</span>={() =&gt; <span style="color: #d33682; font-weight: bold;">this</span>.setState({ count: <span style="color: #d33682; font-weight: bold;">this</span>.state.count + <span style="color: #d33682; font-weight: bold;">1</span> })}&gt;<span style="color: #839496; background-color: #00212B;"> + </span>&lt;/<span style="color: #268bd2;">button</span>&gt;
+<span style="color: #839496; background-color: #00212B;">      </span>&lt;/<span style="color: #268bd2;">div</span>&gt;
+    );
+  }
+}
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> Counter;
+</pre>
+</div>
+
+<p>
+In a class component, we initialize our state object at the top containing a property called count and set it to 0. We reference our piece of state inside the render method with this.state.count. Finally, we call an arrow function that changes the state of count with this.setState whenever a user clicks on +.
+</p>
+
+<p>
+<b>Handling state in a functional component</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React, { useState } from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">Counter</span> = () =&gt; {
+  <span style="color: #859900; font-weight: bold;">const</span> [<span style="color: #6c71c4;">count</span>, <span style="color: #6c71c4;">setCount</span>] = useState(<span style="color: #d33682; font-weight: bold;">0</span>);
+  <span style="color: #859900; font-weight: bold;">return</span> (
+    &lt;<span style="color: #268bd2;">div</span>&gt;
+<span style="color: #839496; background-color: #00212B;">      </span>&lt;<span style="color: #268bd2;">p</span>&gt;<span style="color: #839496; background-color: #00212B;">Count: </span>{count}&lt;/<span style="color: #268bd2;">p</span>&gt;
+<span style="color: #839496; background-color: #00212B;">      </span>&lt;<span style="color: #268bd2;">button</span> <span style="color: #6c71c4;">onClick</span>={() =&gt; setCount(count + <span style="color: #d33682; font-weight: bold;">1</span>)}&gt;<span style="color: #839496; background-color: #00212B;">+</span>&lt;/<span style="color: #268bd2;">button</span>&gt;
+<span style="color: #839496; background-color: #00212B;">    </span>&lt;/<span style="color: #268bd2;">div</span>&gt;
+  );
+};
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> Counter;
+
+</pre>
+</div>
+
+<p>
+In a functional component, first, we have to get the useState function from the React library. Then, we make use of array destructuring to initialize a new piece of state. The first variable inside the count array is the piece of state that we are trying to keep track of, while the second element (setCount) is a function that we call to update our piece of state. useState takes in one argument that is the default value for our piece of state. Finally, we call an arrow function that changes the state of count with the use of setCount whenever a user clicks on +.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc616612" class="outline-4">
+<h4 id="orgc616612">3. Passing Props</h4>
+<div class="outline-text-4" id="text-orgc616612">
+<p>
+To pass data as parameters from one React component to another, we use React’s props.
+</p>
+
+<p>
+<b>Passing props in a class component</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React from <span style="color: #2aa198;">"react"</span>;
+<span style="color: #859900; font-weight: bold;">import</span> FunctionalComponent from <span style="color: #2aa198;">"./ClassComponent"</span>;
+
+<span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">App</span> = () =&gt; {
+  <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">FunctionalComponent</span> <span style="color: #6c71c4;">name</span>=<span style="color: #2aa198;">"Theresa"</span> /&gt;;
+};
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> App;
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React, { Component } from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">class</span> ClassComponent <span style="color: #859900; font-weight: bold;">extends</span> Component {
+  render() {
+    <span style="color: #859900; font-weight: bold;">const</span> { name } = <span style="color: #d33682; font-weight: bold;">this</span>.props;
+    <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">h1</span>&gt;<span style="color: #839496; background-color: #00212B;">Hi! My name is </span>{name}&lt;/<span style="color: #268bd2;">h1</span>&gt;;
+  }
+}
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> ClassComponent;
+</pre>
+</div>
+
+<p>
+In a class component, props are received via the use of this.
+</p>
+
+<p>
+<b>Passing props in a functional component</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React from <span style="color: #2aa198;">"react"</span>;
+<span style="color: #859900; font-weight: bold;">import</span> FunctionalComponent from <span style="color: #2aa198;">"./FunctionalComponent"</span>;
+
+<span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">App</span> = () =&gt; {
+  <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">FunctionalComponent</span> <span style="color: #6c71c4;">name</span>=<span style="color: #2aa198;">"Gianmarco"</span> /&gt;;
+};
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> App;
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">FunctionalComponent</span> = ({ name }) =&gt; {
+  <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">h1</span>&gt;<span style="color: #839496; background-color: #00212B;">Hi! My name is </span>{name}&lt;/<span style="color: #268bd2;">h1</span>&gt;;
+};
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> FunctionalComponent;
+</pre>
+</div>
+
+<p>
+In a functional component, we are passing props as an argument of the function.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgab95b12" class="outline-4">
+<h4 id="orgab95b12">4. Lifecycle Method System</h4>
+<div class="outline-text-4" id="text-orgab95b12">
+<p>
+Every component in React goes through a lifecycle of events. Lifecycles have a significant role in the timing of rendering. An example of a lifecycle method is the componentDidMount() that corresponds to the useEffect() method in a functional component.
+</p>
+
+<p>
+<b>componentDidMount() in a class component</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">class</span> App <span style="color: #859900; font-weight: bold;">extends</span> React.Component {
+  componentDidMount() {
+    console.log(<span style="color: #2aa198;">"After the component did mount!"</span>);
+  }
+
+  render() {
+    console.log(<span style="color: #2aa198;">"Component did mount!"</span>);
+    <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">h1</span>&gt;<span style="color: #839496; background-color: #00212B;">Hello world!</span>&lt;/<span style="color: #268bd2;">h1</span>&gt;;
+  }
+}
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> App;
+</pre>
+</div>
+
+<p>
+componentDidMount is a lifecycle method that is called after the component gets mounted on the DOM.
+</p>
+
+<p>
+<b>useEffect() in a functional component</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">import</span> React from <span style="color: #2aa198;">"react"</span>;
+
+<span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">App</span> = () =&gt; {
+  React.useEffect(() =&gt; {
+      console.log(<span style="color: #2aa198;">"Second!"</span>);
+  }, []);
+
+  console.log(<span style="color: #2aa198;">"First!"</span>)
+  <span style="color: #859900; font-weight: bold;">return</span> &lt;<span style="color: #268bd2;">h1</span>&gt;<span style="color: #839496; background-color: #00212B;">Hello World!</span>&lt;/<span style="color: #268bd2;">h1</span>&gt;;
+ };
+
+<span style="color: #859900; font-weight: bold;">export</span> <span style="color: #859900; font-weight: bold;">default</span> App;
+</pre>
+</div>
+
+<p>
+To obtain the same result in a functional component, we use the useEffect hook with the second argument of [].
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfdb73e5" class="outline-2">
+<h2 id="orgfdb73e5">Project Modules &amp; Services</h2>
+<div class="outline-text-2" id="text-orgfdb73e5">
+</div>
+<div id="outline-container-org2160849" class="outline-3">
+<h3 id="org2160849">Modules used:</h3>
+<div class="outline-text-3" id="text-org2160849">
+<ul class="org-ul">
+<li>create-react-app</li>
+<li>radium</li>
+<li>styled-components</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf85fb8b" class="outline-2">
+<h2 id="orgf85fb8b">Useful Resources &amp; Links</h2>
+<div class="outline-text-2" id="text-orgf85fb8b">
 <ul class="org-ul">
 <li><a href="https://github.com/facebookincubator/create-react-app">create-react-app</a></li>
 
@@ -968,6 +1417,14 @@ In simple terms, this is a function component:
 <li><a href="https://reactjs.org/docs/conditional-rendering.html">Conditional Rendering</a></li>
 
 <li><a href="https://reactjs.org/docs/lists-and-keys.html">Lists &amp; Keys</a></li>
+
+<li><a href="https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2">Using CSS Modules in create-react-app Projects</a></li>
+
+<li><a href="https://github.com/css-modules/css-modules">More information about CSS Modules</a></li>
+
+<li><a href="https://reactjs.org/docs/error-boundaries.html">Error Boundaries</a></li>
+
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/">Chrome Devtool Debugging</a></li>
 </ul>
 </div>
 </div>
@@ -975,7 +1432,7 @@ In simple terms, this is a function component:
 <div id="postamble" class="status">
 <p class="date">Date: 10-10-2020</p>
 <p class="author">Author: Martim Lima</p>
-<p class="date">Created: 2021-02-24 qua 15:27</p>
+<p class="date">Created: 2021-02-25 qui 15:14</p>
 </div>
 </body>
 </html>
