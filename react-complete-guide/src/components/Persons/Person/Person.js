@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 import classes from "./Person.css";
 
@@ -10,20 +10,43 @@ import classes from "./Person.css";
 // props get passed to the component (similar to function parameters)
 // whereas state is managed within the component (similar to variables declared within a function).
 
-const person = (props) => {
+// const person = (props) => {
 
-  console.log("[Person.js] rendering");
+//   console.log("[Person.js] rendering");
 
-  return (
-    <div className={classes.Person}>
-      <p onClick={props.click}>
-        This is {props.name} and it's {props.age} old!
-      </p>
-      <p>{props.children}</p>
-      {/* two way binding */}
-      <input type="text" onChange={props.changed} value={props.name} />
-    </div>
-  );
-};
+//   return (
+//     <div className={classes.Person}>
+//       <p onClick={props.click}>
+//         This is {props.name} and it's {props.age} old!
+//       </p>
+//       <p>{props.children}</p>
+//       {/* two way binding */}
+//       <input type="text" onChange={props.changed} value={props.name} />
+//     </div>
+//   );
+// };
 
-export default person;
+// export default person;
+
+class Person extends Component {
+  render() {
+    console.log("[Person.js] rendering");
+
+    return (
+      <div className={classes.Person}>
+        <p onClick={this.props.click}>
+          This is {this.props.name} and it's {this.props.age} old!
+        </p>
+        <p>{this.props.children}</p>
+        {/* two way binding */}
+        <input
+          type="text"
+          onChange={this.props.changed}
+          value={this.props.name}
+        />
+      </div>
+    );
+  }
+}
+
+export default Person;
