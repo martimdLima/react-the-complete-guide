@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Aux from "../../../hoc/Aux";
+
 import classes from "./Person.css";
 
 // in its simplest form, a component is a function returning some jsx.
@@ -33,7 +35,7 @@ class Person extends Component {
         console.log("[Person.js] rendering");
 
         return (
-            <div className={classes.Person}>
+            <Aux>
                 <p onClick={this.props.click}>
                     This is {this.props.name} and it's {this.props.age} old!
                 </p>
@@ -44,8 +46,22 @@ class Person extends Component {
                     onChange={this.props.changed}
                     value={this.props.name}
                 />
-            </div>
+            </Aux>
         );
+        // return (
+        //     <div className={classes.Person}>
+        //         <p onClick={this.props.click}>
+        //             This is {this.props.name} and it's {this.props.age} old!
+        //         </p>
+        //         <p>{this.props.children}</p>
+        //         {/* two way binding */}
+        //         <input
+        //             type="text"
+        //             onChange={this.props.changed}
+        //             value={this.props.name}
+        //         />
+        //     </div>
+        // );
     }
 }
 
