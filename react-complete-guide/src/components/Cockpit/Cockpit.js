@@ -5,13 +5,24 @@ import classes from "./Cockpit.css";
 const cockpit = (props) => {
     // with an array as a second argument, useEffect will only run when changes occour in the elements that compose the array
 
-    // useEffect(() => {
-    //     console.log("[Cockpit.js] useEffect");
+    useEffect(() => {
+        console.log("[Cockpit.js] 1st useEffect");
 
-    //     setTimeout(() => {
-    //         alert("Saved data to cloud!");
-    //     }, 1000);
-    // }, []);
+        const timer = setTimeout(() => {
+            alert("Saved data to cloud!");
+        }, 1000);
+        return () => {
+            clearTimeout(timer);
+            console.log("[Cockpit.js] cleanup work in 1st useEffect");
+        };
+    }, []);
+
+    useEffect(() => {
+        console.log("[Cockpit.js] 2nd useEffect");
+        return () => {
+            console.log("[Cockpit.js] cleanup work in 2nd useEffect");
+        };
+    });
 
     const assignedClasses = [];
     let buttonClasses = [classes.Button];

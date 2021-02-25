@@ -22,24 +22,33 @@ import Person from "./Person/Person";
 // export default persons;
 
 class Persons extends Component {
+    // getDerivedStateFromProps is invoked right before calling the render method, both on the initial mount and on subsequent updates.
     // static getDerivedStateFromProps(props, state) {
     //     console.log("[Persons.js] getDerivedStateFromProps");
     //     return state;
     // }
 
+    // Use shouldComponentUpdate() to let React know if a component’s output is not affected by the current change in state or props. 
     shouldComponentUpdate(nextProps, nextState) {
         "[Persons.js] shouldComponentUpdate";
         return true;
     }
 
+    // getSnapshotBeforeUpdate() is invoked right before the most recently rendered output is committed to e.g. the DOM.
     getSnapshotBeforeUpdate(previousProps, previousState) {
         console.log("[Persons.js] getSnapshotBeforeUpdate");
         return { message: "Test Snapshot" };
     }
 
+    // componentDidUpdate() is invoked immediately after updating occurs. This method is not called for the initial render.
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log("[Persons.js] componentDidUpdate");
         console.log(snapshot);
+    }
+
+    // componentWillUnmount() is invoked immediately before a component is unmounted and destroyed.
+    componentWillUnmount() {
+        console.log("[Persons.js] componentWillunmount");
     }
 
     render() {

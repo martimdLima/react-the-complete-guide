@@ -27,6 +27,7 @@ class App extends Component {
         ],
         otherState: "some value",
         showPersons: false,
+        showCockpit: true,
     };
 
     // getDerivedState runs after the constructor
@@ -35,8 +36,7 @@ class App extends Component {
         return state;
     }
 
-    // render will execute, persons component will render the individual person components in the persons component
-    // and once all of that is done, componentDidMount will run
+    // componentDidMount() is invoked immediately after a component is mounted (inserted into the tree).
     componentDidMount() {
         console.log("[App.js] ComponentDidMount");
     }
@@ -46,6 +46,7 @@ class App extends Component {
         return true;
     }
 
+    // componentDidUpdate() is invoked immediately after updating occurs. This method is not called for the initial render.
     componentDidUpdate() {
         console.log("[App.js] ComponentDidUpdate");
     }
@@ -129,12 +130,20 @@ class App extends Component {
 
         return (
             <div className={classes.App}>
-                <Cockpit
-                    title={this.props.appTitle}
-                    showPersons={this.state.showPersons}
-                    persons={this.state.persons}
-                    onClick={this.tooglePersonHandler}
-                />
+                <button
+                    onClick={() => {
+                        this.setState({ showCockpit: false });
+                    }}>
+                    Remove Cockpit
+                </button>
+                {this.state.showCockpit ? (
+                    <Cockpit
+                        title={this.props.appTitle}
+                        showPersons={this.state.showPersons}
+                        persons={this.state.persons}
+                        onClick={this.tooglePersonHandler}
+                    />
+                ) : null}
                 {persons}
             </div>
         );
