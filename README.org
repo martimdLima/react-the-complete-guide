@@ -484,6 +484,12 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
   :CATEGORY: Components & React Internals
   :END:
 
+* Project Modules & Services
+
+** Modules used:
++ create-react-app
++ radium
++ styled-components
 
 * Useful Resources & Links
  :PROPERTIES:
@@ -509,3 +515,7 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 + [[https://reactjs.org/docs/conditional-rendering.html][Conditional Rendering]]
 
 + [[https://reactjs.org/docs/lists-and-keys.html][Lists & Keys]]
+
++ [[https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2][Using CSS Modules in create-react-app Projects]]
+
++ [[https://github.com/css-modules/css-modules][More information about CSS Modules]]

@@ -14,9 +14,16 @@ import classes from "./Person.css";
 // whereas state is managed within the component (similar to variables declared within a function).
 
 const person = (props) => {
+
+  const rnd = Math.random();
+
+/*   if (rnd >  0.7) {
+      throw new Error("An error as occured!");
+  } */
+
   return (
     // <div className="Person" style={style}>
-    <div className={classes.person}>
+    <div className={classes.Person}>
       <p onClick={props.click}>
         This is {props.name} and it's {props.age} old!
       </p>
