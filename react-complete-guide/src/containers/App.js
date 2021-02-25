@@ -35,12 +35,20 @@ class App extends Component {
     return state;
   }
 
-  // render will execute, persons component will render the individual person components in the persons component 
+  // render will execute, persons component will render the individual person components in the persons component
   // and once all of that is done, componentDidMount will run
   componentDidMount() {
     console.log("[App.js] ComponentDidMount");
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("[App.js] shouldComponentUpdate");
+    return true;
+  }
+
+  componentDidUpdate() {
+    console.log("[App.js] ComponentDidUpdate");
+  }
 
   // The flaw of this approach is that in javascript, objects and arrays are reference types,
   // so when I get persons from my state as I do here I actually get a pointer to the original person's object
@@ -100,7 +108,6 @@ class App extends Component {
   };
 
   render() {
-
     // after the getDerivedState method runs, the render method will run
     console.log("[App.js] render");
 
