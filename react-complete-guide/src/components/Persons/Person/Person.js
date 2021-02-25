@@ -11,6 +11,9 @@ import classes from "./Person.css";
 // whereas state is managed within the component (similar to variables declared within a function).
 
 const person = (props) => {
+
+  console.log("[Person.js] rendering");
+
   return (
     <div className={classes.Person}>
       <p onClick={props.click}>

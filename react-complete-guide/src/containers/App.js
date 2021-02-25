@@ -14,6 +14,11 @@ class App extends Component {
   // were to re-render everything and then it updates the existing DOM in all the places where it needs to update it to reflect your new state
   // and props. New state in app.js, new props in person.js.
 
+  constructor(props) {
+    super(props);
+    console.log("[App.js].constructor");
+  }
+
   state = {
     persons: [
       { id: "aa24f", name: "John", age: 24 },
@@ -23,6 +28,19 @@ class App extends Component {
     otherState: "some value",
     showPersons: false,
   };
+
+  // getDerivedState runs after the constructor
+  static getDerivedStateFromProps(props, state) {
+    console.log("[App.js] getDerivedStateFromProps", props);
+    return state;
+  }
+
+  // render will execute, persons component will render the individual person components in the persons component 
+  // and once all of that is done, componentDidMount will run
+  componentDidMount() {
+    console.log("[App.js] ComponentDidMount");
+  }
+
 
   // The flaw of this approach is that in javascript, objects and arrays are reference types,
   // so when I get persons from my state as I do here I actually get a pointer to the original person's object
@@ -82,6 +100,10 @@ class App extends Component {
   };
 
   render() {
+
+    // after the getDerivedState method runs, the render method will run
+    console.log("[App.js] render");
+
     // handling dynamic content
     // if showPersons is true, then set the persons variable to the Persons components
     let persons = null;
