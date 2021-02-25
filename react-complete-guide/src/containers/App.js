@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import Persons from "../components/Persons/Persons";
 import Cockpit from "../components/Cockpit/Cockpit";
+import Aux from "../hoc/Aux";
+import withClass from "../hoc/withClass";
 
 import classes from "./App.css";
 
@@ -129,7 +131,7 @@ class App extends Component {
         }
 
         return (
-            <div className={classes.App}>
+            <Aux>
                 <button
                     onClick={() => {
                         this.setState({ showCockpit: false });
@@ -145,9 +147,9 @@ class App extends Component {
                     />
                 ) : null}
                 {persons}
-            </div>
+            </Aux>
         );
     }
 }
 
-export default App;
+export default withClass(App, classes.App);
