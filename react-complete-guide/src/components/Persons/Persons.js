@@ -28,10 +28,13 @@ class Persons extends Component {
     //     return state;
     // }
 
-    // Use shouldComponentUpdate() to let React know if a component’s output is not affected by the current change in state or props. 
+    // Use shouldComponentUpdate() to let React know if a component’s output is not affected by the current change in state or props.
     shouldComponentUpdate(nextProps, nextState) {
-        "[Persons.js] shouldComponentUpdate";
-        return true;
+        console.log("[Persons.js] shouldComponentUpdate");
+
+        if (nextProps.persons !== this.props.persons) {
+            return true;
+        }
     }
 
     // getSnapshotBeforeUpdate() is invoked right before the most recently rendered output is committed to e.g. the DOM.
