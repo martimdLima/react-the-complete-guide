@@ -479,6 +479,17 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
   :CATEGORY: Debugging React Apps
   :END:
 
+** Understanding Error Messages
+
+
+** Using Dev Tools & Sourcemaps to find Logical Errors
+
+
+** Using React Developer Tools
+
+
+** Using Error Boundaries
+
 * Diving Deeper into Components & React internals
   :PROPERTIES:
   :CATEGORY: Components & React Internals
@@ -519,3 +530,7 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 + [[https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2][Using CSS Modules in create-react-app Projects]]
 
 + [[https://github.com/css-modules/css-modules][More information about CSS Modules]]
+
++ [[https://reactjs.org/docs/error-boundaries.html][Error Boundaries]]
+
++ [[https://developers.google.com/web/tools/chrome-devtools/javascript/][Chrome Devtool Debugging]]
