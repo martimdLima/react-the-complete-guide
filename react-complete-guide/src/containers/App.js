@@ -1,29 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
-// import Radium, { StyleRoot } from "radium";
-// import styled from "styled-components";
-
-import Person from "../components/Persons/Person/Person";
-import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
+import Persons from "../components/Persons/Persons";
+import Cockpit from "../components/Cockpit/Cockpit";
 
 import classes from "./App.css";
-
-// Class for example, which we would use in normal html to assign a css class can't be used because it's a reserved word in javascript,
-// used to create a new class. This is why class name must be used.
-
-// const StyledButton = styled.button`
-// background-color: ${(props) => (props.alt ? "red" : "blue")};
-// color: white;
-// font: inherit;
-// border: 1px solid blue;
-// padding: 8px;
-// cursor: pointer;
-
-// &:hover {
-//   background-color: ${(props) => (props.alt ? "lightred" : "lightblue")};
-//   color: black;
-// }
-// `;
 
 class App extends Component {
   // The jsx expression must always have a parent element.
@@ -105,52 +85,26 @@ class App extends Component {
     // handling dynamic content
     // if showPersons is true, then set the persons variable to the Persons components
     let persons = null;
-    let buttonClasses = [classes.Button];
 
     if (this.state.showPersons) {
       persons = (
         <div>
-          {/* Outputting Lists */}
-          {this.state.persons.map((person, index) => {
-            return (
-              /*             <ErrorBoundary key={person.id}> */
-              <Person
-                click={() => this.deletePersonHandler(index)}
-                key={person.id}
-                name={person.name}
-                age={person.age}
-                changed={(event) => this.nameChangedHandler(event, person.id)}
-              />
-              /*               </ErrorBoundary> */
-            );
-          })}
+          <Persons
+            persons={this.state.persons}
+            click={this.deletePersonHandler}
+            changed={this.nameChangedHandler}
+          />
         </div>
       );
-
-      buttonClasses.push(classes.Red);
-    }
-
-    let assignedClasses = [];
-
-    if (this.state.persons.length <= 2) {
-      assignedClasses.push(classes.red);
-    }
-
-    if (this.state.persons.length <= 1) {
-      assignedClasses.push(classes.bold);
     }
 
     return (
       <div className={classes.App}>
-        <h1 className={assignedClasses.join(" ")}>A React App</h1>
-        <button
-          className={buttonClasses.join(" ")}
+        <Cockpit
+          showPersons={this.state.showPersons}
+          persons={this.state.persons}
           onClick={this.tooglePersonHandler}
-        >
-          Toogle Persons
-        </button>
-        {/* By using a ternary expression, we can show the div based on the state of the showPersons property 
-          this.state.showPersons ? <div> ... </div> : null */}
+        />
         {persons}
       </div>
     );
@@ -158,6 +112,3 @@ class App extends Component {
 }
 
 export default App;
-
-// example of an Higher Order Component
-// export default Radium(App);

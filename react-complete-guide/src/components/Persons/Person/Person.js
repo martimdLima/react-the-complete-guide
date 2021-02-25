@@ -1,10 +1,7 @@
 import React from "react";
-//import styled from "styled-components";
 
 import classes from "./Person.css";
-/* import Radium from "radium"; */
 
-/* import "./Person.css"; */
 // in its simplest form, a component is a function returning some jsx.
 
 // props (short for “properties”) and state are both plain JavaScript objects.
@@ -14,15 +11,7 @@ import classes from "./Person.css";
 // whereas state is managed within the component (similar to variables declared within a function).
 
 const person = (props) => {
-
-  const rnd = Math.random();
-
-/*   if (rnd >  0.7) {
-      throw new Error("An error as occured!");
-  } */
-
   return (
-    // <div className="Person" style={style}>
     <div className={classes.Person}>
       <p onClick={props.click}>
         This is {props.name} and it's {props.age} old!
@@ -35,4 +24,3 @@ const person = (props) => {
 };
 
 export default person;
-/* export default Radium(person); */
