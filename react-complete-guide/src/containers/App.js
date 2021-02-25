@@ -3,8 +3,8 @@ import React, { Component, useState } from "react";
 // import Radium, { StyleRoot } from "radium";
 // import styled from "styled-components";
 
-import Person from "./Person/Person";
-import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import Person from "../components/Persons/Person/Person";
+import ErrorBoundary from "../components/ErrorBoundary/ErrorBoundary";
 
 import classes from "./App.css";
 
@@ -113,15 +113,15 @@ class App extends Component {
           {/* Outputting Lists */}
           {this.state.persons.map((person, index) => {
             return (
-  /*             <ErrorBoundary key={person.id}> */
-                <Person
-                  click={() => this.deletePersonHandler(index)}
-                  key={person.id}
-                  name={person.name}
-                  age={person.age}
-                  changed={(event) => this.nameChangedHandler(event, person.id)}
-                />
-/*               </ErrorBoundary> */
+              /*             <ErrorBoundary key={person.id}> */
+              <Person
+                click={() => this.deletePersonHandler(index)}
+                key={person.id}
+                name={person.name}
+                age={person.age}
+                changed={(event) => this.nameChangedHandler(event, person.id)}
+              />
+              /*               </ErrorBoundary> */
             );
           })}
         </div>
