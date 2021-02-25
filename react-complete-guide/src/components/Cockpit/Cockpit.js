@@ -3,9 +3,15 @@ import React, { useEffect } from "react";
 import classes from "./Cockpit.css";
 
 const cockpit = (props) => {
-    useEffect(() => {
-        console.log("[Cockpit.js] useEffect");
-    });
+    // with an array as a second argument, useEffect will only run when changes occour in the elements that compose the array
+
+    // useEffect(() => {
+    //     console.log("[Cockpit.js] useEffect");
+
+    //     setTimeout(() => {
+    //         alert("Saved data to cloud!");
+    //     }, 1000);
+    // }, []);
 
     const assignedClasses = [];
     let buttonClasses = [classes.Button];
