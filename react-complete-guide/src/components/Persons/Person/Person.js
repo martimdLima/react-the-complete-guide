@@ -29,24 +29,24 @@ import classes from "./Person.css";
 // export default person;
 
 class Person extends Component {
-  render() {
-    console.log("[Person.js] rendering");
+    render() {
+        console.log("[Person.js] rendering");
 
-    return (
-      <div className={classes.Person}>
-        <p onClick={this.props.click}>
-          This is {this.props.name} and it's {this.props.age} old!
-        </p>
-        <p>{this.props.children}</p>
-        {/* two way binding */}
-        <input
-          type="text"
-          onChange={this.props.changed}
-          value={this.props.name}
-        />
-      </div>
-    );
-  }
+        return (
+            <div className={classes.Person}>
+                <p onClick={this.props.click}>
+                    This is {this.props.name} and it's {this.props.age} old!
+                </p>
+                <p>{this.props.children}</p>
+                {/* two way binding */}
+                <input
+                    type="text"
+                    onChange={this.props.changed}
+                    value={this.props.name}
+                />
+            </div>
+        );
+    }
 }
 
 export default Person;
