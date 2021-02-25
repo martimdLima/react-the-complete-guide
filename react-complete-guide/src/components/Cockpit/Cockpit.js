@@ -30,11 +30,11 @@ const cockpit = (props) => {
         buttonClasses.push(classes.Red);
     }
 
-    if (props.persons.length <= 2) {
+    if (props.personsLength <= 2) {
         assignedClasses.push(classes.red);
     }
 
-    if (props.persons.length <= 1) {
+    if (props.personsLength <= 1) {
         assignedClasses.push(classes.bold);
     }
 
@@ -49,4 +49,7 @@ const cockpit = (props) => {
     );
 };
 
-export default cockpit;
+// React.memo only checks for prop changes.
+// If your function component wrapped in React.memo has a useState or useContext Hook in its implementation,
+// it will still rerender when state or context change.
+export default React.memo(cockpit);
