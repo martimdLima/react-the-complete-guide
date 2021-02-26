@@ -4,6 +4,8 @@ import Aux from "../../../hoc/Aux";
 import withClass from "../../../hoc/withClass";
 import classes from "./Person.css";
 
+import { func, number, string } from "prop-types";
+
 // in its simplest form, a component is a function returning some jsx.
 
 // props (short for “properties”) and state are both plain JavaScript objects.
@@ -52,5 +54,13 @@ class Person extends Component {
         );
     }
 }
+
+// using propTypes
+Person.propTypes = {
+  click: func,
+  name: string,
+  age: number,
+  changed: func,
+};
 
 export default withClass(Person, classes.Person);
