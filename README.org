@@ -814,6 +814,7 @@ React provides the developers a set of predefined functions that if present is i
 + create-react-app
 + radium
 + styled-components
++ prop-types
 
 * Useful Resources & Links
  :PROPERTIES:
@@ -851,3 +852,13 @@ React provides the developers a set of predefined functions that if present is i
 + [[https://reactjs.org/docs/error-boundaries.html][Error Boundaries]]
 
 + [[https://developers.google.com/web/tools/chrome-devtools/javascript/][Chrome Devtool Debugging]]
+
++ [[https://reactjs.org/docs/hooks-effect.html][More on useEffect() ]]
+
++ [[https://reactjs.org/docs/state-and-lifecycle.html][State & Lifecycle ]]
+
++ [[https://reactjs.org/docs/typechecking-with-proptypes.html][PropTypes ]]
+
++ [[https://reactjs.org/docs/higher-order-components.html][Higher Order Components]]
+
++ [[https://reactjs.org/docs/refs-and-the-dom.html][Refs]]
