@@ -24,6 +24,7 @@ class BurguerBuilder extends Component {
         },
         totalPrice: 4,
         purchasable: false,
+        purchasing: false,
     };
 
     addIngredientHandler = (type) => {
@@ -83,6 +84,10 @@ class BurguerBuilder extends Component {
         this.setState({ purchasable: sum > 0 });
     }
 
+    purchaseHandler = () => {
+        this.setState({purchasing: true});
+    }
+
     render() {
         // disables the less button, by spreading the ingredients object and loop through it,
         // checking if each ingredient is less than zero and returning true or false accordingly
@@ -96,7 +101,7 @@ class BurguerBuilder extends Component {
 
         return (
             <Aux>
-                <Modal>
+                <Modal show={this.state.purchasing}>
                     <OrderSummary ingredients={this.state.ingredients} />
                 </Modal>
 
@@ -107,6 +112,7 @@ class BurguerBuilder extends Component {
                     disabled={disabledInfo}
                     price={this.state.totalPrice}
                     purchasable={this.state.purchasable}
+                    ordered={this.purchaseHandler}
                 />
             </Aux>
         );
