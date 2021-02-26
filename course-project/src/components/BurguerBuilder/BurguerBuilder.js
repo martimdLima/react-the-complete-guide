@@ -35,21 +35,49 @@ class BurguerBuilder extends Component {
 
         updatedIngredients[type] = updatedCount;
 
-        //const ingredientPrice = INGREDIENT_PRICES[type];
         const oldPrice = this.state.totalPrice;
         const newPrice = oldPrice + INGREDIENT_PRICES[type];
         this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
     }
 
     removeIngredientHandler = (type) => {
+        const oldCount = this.state.ingredients[type];
+
+        // to prevent the app from crashing from subtracting negative values, we check if the old count is less or equal to zero
+        if(oldCount <= 0) {
+            return;
+        }
+
+        const updatedCount = oldCount - 1;
+    
+        const updatedIngredients = {
+            ...this.state.ingredients
+        }
+
+        updatedIngredients[type] = updatedCount;
+
+        const oldPrice = this.state.totalPrice;
+        const newPrice = oldPrice - INGREDIENT_PRICES[type];
+        this.setState({totalPrice: newPrice, ingredients: updatedIngredients});
 
     }
 
     render() {
+
+        // disables the less button, by spreading the ingredients object and loop through it, 
+        // checking if each ingredient is less than zero and returning true or false accordingly
+        const disabledInfo = {
+            ...this.state.ingredients
+        };
+
+        for(let key in disabledInfo) {
+            disabledInfo[key] = disabledInfo[key] <= 0
+        }
+
         return (
             <Aux>
                 <Burguer ingredients={this.state.ingredients} />
-                <BuildControls ingredientAdded={this.addIngredientHandler}/>
+                <BuildControls ingredientAdded={this.addIngredientHandler} ingredientRemoved={this.removeIngredientHandler} disabled={disabledInfo}/>
             </Aux>
         );
     }
