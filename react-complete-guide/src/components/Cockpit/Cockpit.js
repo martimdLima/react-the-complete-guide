@@ -1,16 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 import classes from "./Cockpit.css";
 
 const cockpit = (props) => {
-    // with an array as a second argument, useEffect will only run when changes occour in the elements that compose the array
+    // useRef returns a mutable ref object whose .current property is initialized to the passed argument (initialValue).
+    // The returned object will persist for the full lifetime of the component.
+    const toggleButtonRef = useRef(null);
 
+    // with an array as a second argument, useEffect will only run when changes occour in the elements that compose the array
     useEffect(() => {
         console.log("[Cockpit.js] 1st useEffect");
 
-        setTimeout(() => {
-            alert("Saved data to cloud!");
-        }, 1000);
+        // setTimeout(() => {
+        //     alert("Saved data to cloud!");
+        // }, 1000);
+        toggleButtonRef.current.click();
         return () => {
             console.log("[Cockpit.js] cleanup work in 1st useEffect");
         };
@@ -42,7 +46,10 @@ const cockpit = (props) => {
         <div className={classes.Cockpit}>
             <h1>{props.title}</h1>
             <p className={assignedClasses.join(" ")}>A React App</p>
-            <button className={buttonClasses.join(" ")} onClick={props.onClick}>
+            <button
+                ref={toggleButtonRef}
+                className={buttonClasses.join(" ")}
+                onClick={props.onClick}>
                 Toogle Persons
             </button>
         </div>
