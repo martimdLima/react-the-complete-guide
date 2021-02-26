@@ -30,6 +30,7 @@ class App extends Component {
         otherState: "some value",
         showPersons: false,
         showCockpit: true,
+        changeCounter: 0,
     };
 
     // getDerivedState runs after the constructor
@@ -104,9 +105,12 @@ class App extends Component {
         persons[personIndex] = person;
 
         // finally sets the state with the new persons array
-        this.setState({
-            persons: persons,
-            otherState: "some value",
+        this.setState((prevState, props) => {
+            return {
+                persons: persons,
+                otherState: "some value",
+                changeCounter: prevState.changeCounter + 1,
+            };
         });
     };
 
