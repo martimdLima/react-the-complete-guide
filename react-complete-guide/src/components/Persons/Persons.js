@@ -64,7 +64,6 @@ class Persons extends PureComponent {
     render() {
         // this components will be rendered after the render method is run
         console.log("[Persons.js] rendering");
-
         return this.props.persons.map((person, index) => {
             return (
                 <Person
