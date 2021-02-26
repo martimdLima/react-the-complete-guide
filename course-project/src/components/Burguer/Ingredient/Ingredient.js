@@ -31,6 +31,9 @@ class Ingredient extends Component {
                 selectedIngredient = <div className={classes.Cheese}></div>;
                 break;
             case "bacon":
+                selectedIngredient = <div className={classes.Bacon}></div>;
+                break;
+            case "salad":
                 selectedIngredient = <div className={classes.Salad}></div>;
                 break;
             default:

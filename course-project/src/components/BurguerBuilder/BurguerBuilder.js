@@ -6,26 +6,24 @@ import Aux from "../../hoc/Aux";
 
 // This component is responsible for the Burger and Build Controls Components that enables the user to build a burguer
 class BurguerBuilder extends Component {
-
-/*     constructor(props) {
+    /*     constructor(props) {
         super(props);
         this.state = {...}
     } */
 
     state = {
-        ingredients : {
-            salad: 1,
-            bacon: 1,
-            cheese: 2,
-            meat: 2,
-        }
-    }
-
+        ingredients: {
+            salad: 0,
+            bacon: 0,
+            cheese: 0,
+            meat: 0,
+        },
+    };
 
     render() {
         return (
             <Aux>
-                <Burguer ingredients={this.state.ingredients}/>
+                <Burguer ingredients={this.state.ingredients} />
                 <div>Build Controls</div>
             </Aux>
         );
