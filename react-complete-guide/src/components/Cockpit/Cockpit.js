@@ -52,6 +52,7 @@ const cockpit = (props) => {
                 onClick={props.onClick}>
                 Toogle Persons
             </button>
+            <button onClick={props.login}>Login</button>
         </div>
     );
 };
