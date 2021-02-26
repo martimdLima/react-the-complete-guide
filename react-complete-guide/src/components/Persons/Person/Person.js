@@ -33,23 +33,36 @@ import { func, number, string } from "prop-types";
 // export default person;
 
 class Person extends Component {
+    constructor(props) {
+        super(props);
+        this.inputElementRef = React.createRef();
+    }
+
+    // since componentDidMount executes after the render method, inputElement will be set by now,
+    // and we can focus only the last paragraph rendered
+    // using refs - createRef method
+    componentDidMount() {
+        //this.inputElement.focus();
+        this.inputElementRef.current.focus();
+    }
+
     render() {
         console.log("[Person.js] rendering");
 
         return (
             <Aux>
-                {/*      <div className={classes.Person}></div> */}
                 <p onClick={this.props.click}>
                     This is {this.props.name} and it's {this.props.age} old!
                 </p>
                 <p>{this.props.children}</p>
-                {/* two way binding */}
                 <input
+                    /* using refs - function form method */
+                    /* ref={(inputEle) => {this.inputElement = inputEle;}} */
+                    ref={this.inputElementRef}
                     type="text"
                     onChange={this.props.changed}
                     value={this.props.name}
                 />
-                {/* </div> */}
             </Aux>
         );
     }
@@ -57,10 +70,10 @@ class Person extends Component {
 
 // using propTypes
 Person.propTypes = {
-  click: func,
-  name: string,
-  age: number,
-  changed: func,
+    click: func,
+    name: string,
+    age: number,
+    changed: func,
 };
 
 export default withClass(Person, classes.Person);
