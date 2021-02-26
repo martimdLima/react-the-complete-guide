@@ -3,7 +3,7 @@ import React, { Component, Fragment } from "react";
 import Aux from "../../../hoc/Aux";
 import withClass from "../../../hoc/withClass";
 import classes from "./Person.css";
-
+import AuthContext from "../../../context/auth-context";
 import { func, number, string } from "prop-types";
 
 // in its simplest form, a component is a function returning some jsx.
@@ -51,11 +51,13 @@ class Person extends Component {
 
         return (
             <Aux>
-                {this.props.isAuth ? (
+              <AuthContext.Consumer>
+                {(context) => context.authenticated ? (
                     <p>Authenticated</p>
                 ) : (
                     <p>Please log in</p>
                 )}
+              </AuthContext.Consumer>
                 <p onClick={this.props.click}>
                     This is {this.props.name} and it's {this.props.age} old!
                 </p>
