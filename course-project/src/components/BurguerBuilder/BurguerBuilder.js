@@ -22,6 +22,7 @@ class BurguerBuilder extends Component {
             meat: 0,
         },
         totalPrice: 4,
+        purchasable: false,
     };
 
     addIngredientHandler = (type) => {
@@ -40,6 +41,8 @@ class BurguerBuilder extends Component {
             totalPrice: newPrice,
             ingredients: updatedIngredients,
         });
+
+        this.updatePurchaseState(updatedIngredients);
     };
 
     removeIngredientHandler = (type) => {
@@ -64,7 +67,21 @@ class BurguerBuilder extends Component {
             totalPrice: newPrice,
             ingredients: updatedIngredients,
         });
+
+        this.updatePurchaseState(updatedIngredients);
     };
+
+    updatePurchaseState(ingredients) {
+        const sum = Object.keys(ingredients)
+            .map((ingrKey) => {
+                return ingredients[ingrKey];
+            })
+            .reduce((sum, el) => {
+                return sum + el;
+            }, 0);
+        console.log(sum);
+        this.setState({ purchasable: sum > 0 });
+    }
 
     render() {
         // disables the less button, by spreading the ingredients object and loop through it,
@@ -85,6 +102,7 @@ class BurguerBuilder extends Component {
                     ingredientRemoved={this.removeIngredientHandler}
                     disabled={disabledInfo}
                     price={this.state.totalPrice}
+                    purchasable={this.state.purchasable}
                 />
             </Aux>
         );
