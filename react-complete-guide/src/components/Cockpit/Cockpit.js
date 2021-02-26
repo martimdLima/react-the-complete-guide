@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
 import AuthContext from "../../context/auth-context";
 import classes from "./Cockpit.css";
 
@@ -6,6 +6,9 @@ const cockpit = (props) => {
     // useRef returns a mutable ref object whose .current property is initialized to the passed argument (initialValue).
     // The returned object will persist for the full lifetime of the component.
     const toggleButtonRef = useRef(null);
+    const authContext = useContext(AuthContext);
+
+    console.log(authContext.authenticated);
 
     // with an array as a second argument, useEffect will only run when changes occour in the elements that compose the array
     useEffect(() => {
@@ -52,9 +55,10 @@ const cockpit = (props) => {
                 onClick={props.onClick}>
                 Toogle Persons
             </button>
-            <AuthContext.Consumer>
+            {/*             <AuthContext.Consumer>
                 {(context) => <button onClick={context.login}>Login</button>}
-            </AuthContext.Consumer>
+            </AuthContext.Consumer> */}
+            <button onClick={authContext.login}>Login</button>
         </div>
     );
 };

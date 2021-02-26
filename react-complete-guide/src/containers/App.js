@@ -149,7 +149,11 @@ class App extends Component {
                     }}>
                     Remove Cockpit
                 </button>
-                <AuthContext.Provider value={{authenticated: this.state.authenticated, login: this.authenticationHandler}}>
+                <AuthContext.Provider
+                    value={{
+                        authenticated: this.state.authenticated,
+                        login: this.authenticationHandler,
+                    }}>
                     {this.state.showCockpit ? (
                         <Cockpit
                             title={this.props.appTitle}

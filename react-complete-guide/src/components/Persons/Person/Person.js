@@ -38,12 +38,15 @@ class Person extends Component {
         this.inputElementRef = React.createRef();
     }
 
+    static contextType = AuthContext;
+
     // since componentDidMount executes after the render method, inputElement will be set by now,
     // and we can focus only the last paragraph rendered
     // using refs - createRef method
     componentDidMount() {
         //this.inputElement.focus();
         this.inputElementRef.current.focus();
+        console.log(this.context.authenticated);
     }
 
     render() {
@@ -51,13 +54,18 @@ class Person extends Component {
 
         return (
             <Aux>
-              <AuthContext.Consumer>
+                {/*               <AuthContext.Consumer>
                 {(context) => context.authenticated ? (
                     <p>Authenticated</p>
                 ) : (
                     <p>Please log in</p>
                 )}
-              </AuthContext.Consumer>
+              </AuthContext.Consumer> */}
+                {this.context.authenticated ? (
+                    <p>Authenticated</p>
+                ) : (
+                    <p>Please log in</p>
+                )}
                 <p onClick={this.props.click}>
                     This is {this.props.name} and it's {this.props.age} old!
                 </p>
