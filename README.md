@@ -1,45 +1,45 @@
-- [Introduction](#org2ccf0f9)
-  - [What is React?](#org6ab7671)
-  - [Why React?](#org911c618)
-  - [Single Page Applications / Multi Page Applications](#orgaf3cce2)
-- [Refreshing Next Generation Javascript](#orgfb7f74d)
-  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org7c5b601)
-  - [Arrow Functions](#org9950313)
-  - [Exports & Imports (Modules)](#org0fa86a4)
-  - [Classes](#orgf1aaa08)
-  - [Classes, Properties and Methods](#orgd42b313)
-  - [Spread and Rest Operator](#org0672b78)
-  - [Destructuring](#org195720e)
-- [Understanding the Base Features & Syntax](#org7728386)
-  - [Using a Build Workflow](#orgf81b8b0)
-- [Working with Lists and Conditionals](#orgce643c5)
-  - [JSX](#orgc3de72c)
-  - [Components](#orgf684051)
-  - [Props and State](#org2bcfbbf)
-  - [Class, Pure and Function Components](#org5684530)
-- [Styling React Components & Elements](#orgdc898fc)
-- [Debugging React Apps](#orgb12ad4a)
-  - [Understanding Error Messages](#org75e93be)
-  - [Using Dev Tools & Sourcemaps to find Logical Errors](#org11d2787)
-  - [Using React Developer Tools](#orgfc428cb)
-  - [Using Error Boundaries](#org1c11539)
-- [Diving Deeper into Components & React internals](#org36f07cf)
-  - [Components: stateful, stateless, dumb and smart](#org8c87e23)
-  - [Functional Components vs. Class Components](#org567ce8f)
-  - [Lifecycle of Components](#org0d5adb3)
-- [Project Modules & Services](#org8442a44)
-  - [Modules used:](#org7048aa3)
-- [Useful Resources & Links](#org5bedb32)
+- [Introduction](#orgdb6fa44)
+  - [What is React?](#org2ca3018)
+  - [Why React?](#org152694d)
+  - [Single Page Applications / Multi Page Applications](#org588c1cb)
+- [Refreshing Next Generation Javascript](#org8c46048)
+  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#orga6ba958)
+  - [Arrow Functions](#org08e8488)
+  - [Exports & Imports (Modules)](#org4e44883)
+  - [Classes](#orge75ca36)
+  - [Classes, Properties and Methods](#org330d7ea)
+  - [Spread and Rest Operator](#org704ea32)
+  - [Destructuring](#orgbf70f43)
+- [Understanding the Base Features & Syntax](#org021ab07)
+  - [Using a Build Workflow](#orgb70896c)
+- [Working with Lists and Conditionals](#org030bfd7)
+  - [JSX](#orgfa9e72e)
+  - [Components](#orgac26269)
+  - [Props and State](#orgf225f97)
+  - [Class, Pure and Function Components](#org47f3ae3)
+- [Styling React Components & Elements](#org50bd083)
+- [Debugging React Apps](#org09a2467)
+  - [Understanding Error Messages](#org4074d8a)
+  - [Using Dev Tools & Sourcemaps to find Logical Errors](#org6b9870c)
+  - [Using React Developer Tools](#orgc63e7c5)
+  - [Using Error Boundaries](#org110a5b8)
+- [Diving Deeper into Components & React internals](#org1298f5d)
+  - [Components: stateful, stateless, dumb and smart](#org075d8cc)
+  - [Functional Components vs. Class Components](#orgd945a76)
+  - [Lifecycle of Components](#org99046d5)
+- [Project Modules & Services](#org4e1ae44)
+  - [Modules used:](#orgf06fe17)
+- [Useful Resources & Links](#orgf80db18)
 
 ---
 
 
-<a id="org2ccf0f9"></a>
+<a id="orgdb6fa44"></a>
 
 # Introduction
 
 
-<a id="org6ab7671"></a>
+<a id="org2ca3018"></a>
 
 ## What is React?
 
@@ -50,7 +50,7 @@ A browser side javascript framework - no need for server side rendering
 user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
 
 
-<a id="org911c618"></a>
+<a id="org152694d"></a>
 
 ## Why React?
 
@@ -59,7 +59,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Huge Ecosystem, Active Community, High Performance
 
 
-<a id="orgaf3cce2"></a>
+<a id="org588c1cb"></a>
 
 ## Single Page Applications / Multi Page Applications
 
@@ -68,12 +68,12 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per &ldquo;widget&rdquo;
 
 
-<a id="orgfb7f74d"></a>
+<a id="org8c46048"></a>
 
 # Refreshing Next Generation Javascript
 
 
-<a id="org7c5b601"></a>
+<a id="orga6ba958"></a>
 
 ## &ldquo;let&rdquo; and &ldquo;const&rdquo;
 
@@ -83,13 +83,13 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   const - constant values
 
 
-<a id="org9950313"></a>
+<a id="org08e8488"></a>
 
 ## Arrow Functions
 
-> Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this keyword
+Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this keyword
 
-> Normal Javascript Function Syntax
+**Normal Javascript Function Syntax**
 
 ```javascript
     function myFnc(arg) {
@@ -97,7 +97,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
     }
 ```
 
-> Arrow Function Syntax
+**Arrow Function Syntax**
 
 ```javascript
 
@@ -109,11 +109,11 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 ```
 
 
-<a id="org0fa86a4"></a>
+<a id="org4e44883"></a>
 
 ## Exports & Imports (Modules)
 
-> person.js
+**person.js**
 
 ```javascript
     const person = {
@@ -123,14 +123,14 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 exports default person
 ```
 
-> utility.js
+**utility.js**
 
 ```javascript
     export const clean = () => {...}
     export const baseData = 10;
 ```
 
-> app.js
+**app.js**
 
 ```javascript
 // default export
@@ -144,7 +144,7 @@ import * from './utility' // importing all using an alias from module
 ```
 
 
-<a id="orgf1aaa08"></a>
+<a id="orge75ca36"></a>
 
 ## Classes
 
@@ -187,7 +187,7 @@ somePerson.printGender();
 ```
 
 
-<a id="orgd42b313"></a>
+<a id="org330d7ea"></a>
 
 ## Classes, Properties and Methods
 
@@ -245,7 +245,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org0672b78"></a>
+<a id="org704ea32"></a>
 
 ## Spread and Rest Operator
 
@@ -282,7 +282,7 @@ age: 20
 ```
 
 
-<a id="org195720e"></a>
+<a id="orgbf70f43"></a>
 
 ## Destructuring
 
@@ -298,12 +298,12 @@ age: 20
 ```
 
 
-<a id="org7728386"></a>
+<a id="org021ab07"></a>
 
 # Understanding the Base Features & Syntax
 
 
-<a id="orgf81b8b0"></a>
+<a id="orgb70896c"></a>
 
 ## Using a Build Workflow
 
@@ -322,17 +322,17 @@ age: 20
 -   Use a Development Server
 
 
-<a id="orgce643c5"></a>
+<a id="org030bfd7"></a>
 
 # Working with Lists and Conditionals
 
 
-<a id="orgc3de72c"></a>
+<a id="orgfa9e72e"></a>
 
 ## JSX
 
 
-<a id="orgf684051"></a>
+<a id="orgac26269"></a>
 
 ## Components
 
@@ -343,7 +343,7 @@ Components are the core building block of React apps. Actually, React really is 
 -   Class Components (also referred to as &ldquo;containers&rdquo;, &ldquo;smart&rdquo; or &ldquo;stateful&rdquo; components) => class Cmp extends Component { render () { return <div>some JSX</div> } }
 
 
-<a id="org2bcfbbf"></a>
+<a id="orgf225f97"></a>
 
 ## Props and State
 
@@ -414,7 +414,7 @@ state simply is a property of the component class, you have to call it state tho
 Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props is, that this happens within one and the same component - you don&rsquo;t receive new data (props ) from outside!
 
 
-<a id="org5684530"></a>
+<a id="org47f3ae3"></a>
 
 ## Class, Pure and Function Components
 
@@ -520,42 +520,42 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 ```
 
 
-<a id="orgdc898fc"></a>
+<a id="org50bd083"></a>
 
 # Styling React Components & Elements
 
 
-<a id="orgb12ad4a"></a>
+<a id="org09a2467"></a>
 
 # Debugging React Apps
 
 
-<a id="org75e93be"></a>
+<a id="org4074d8a"></a>
 
 ## Understanding Error Messages
 
 
-<a id="org11d2787"></a>
+<a id="org6b9870c"></a>
 
 ## Using Dev Tools & Sourcemaps to find Logical Errors
 
 
-<a id="orgfc428cb"></a>
+<a id="orgc63e7c5"></a>
 
 ## Using React Developer Tools
 
 
-<a id="org1c11539"></a>
+<a id="org110a5b8"></a>
 
 ## Using Error Boundaries
 
 
-<a id="org36f07cf"></a>
+<a id="org1298f5d"></a>
 
 # Diving Deeper into Components & React internals
 
 
-<a id="org8c87e23"></a>
+<a id="org075d8cc"></a>
 
 ## Components: stateful, stateless, dumb and smart
 
@@ -593,7 +593,7 @@ The classic example is with a State Manager (such as Redux): typically, for ever
 
 Consequently, it’s a good practice to write every child component as dumb. Let the parent be the one who interferes with the state, don’t touch it directly. If it happened, we’d have an application which is hard to maintain, with inconsistent behaviors: it’d become hard to understand who updates the state and why.
 
-![img](/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/components.jpeg "stateful, stateless, dumb and smart")
+![img](https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/components.jpeg "stateful, stateless, dumb and smart")
 
 It could happen that a smart component may have the need to have its own internal state regardless of the global state (from the State Manager): maybe we’ve chosen not to keep a part of the state at the global level, like a form which could be pretty big or useless if serialized (it’s just an example, you could also keep a form in the global state).
 
@@ -608,7 +608,7 @@ So, in a typical component-based architecture scenario, these are the categories
 -   Smart/Container Component: it can have external dependencies (eg. Redux), it organizes the route using child dumb components, it’s in charge of passing the state to the children and uses their events to update the global state (or its state).
 
 
-<a id="org567ce8f"></a>
+<a id="orgd945a76"></a>
 
 ## Functional Components vs. Class Components
 
@@ -619,11 +619,11 @@ React uses a declarative approach and simplifies the creation of user interfaces
 
 To understand the differences, it’s important to know what the React ecosystem used to be like. Years ago, functional components were used only to render JSX to show content to the user. On the other hand, class components were also able to utilize the lifecycle method system or the state system.
 
-![img](/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components.jpeg "functional and class components worked")
+![img](https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs//functional-class-components.jpeg "functional and class components worked")
 
 In February 2019, the React team introduced Hooks as a new addition to React v16.8.0. React Hooks gave functional components the same capabilities as class components, with the possibility to use the state system and achieve the same results as the class components’ lifecycle methods.
 
-![img](/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components-current.jpeg "functional and class components work currently")
+![img](https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/functional-class-components-current.jpeg "functional and class components work currently")
 
 
 ### 1. Rendering JSX to Show Content
@@ -830,7 +830,7 @@ export default App;
 To obtain the same result in a functional component, we use the useEffect hook with the second argument of [].
 
 
-<a id="org0d5adb3"></a>
+<a id="org99046d5"></a>
 
 ## Lifecycle of Components
 
@@ -843,7 +843,7 @@ Every React Component has a lifecycle of its own, lifecycle of a component can b
 
 React provides the developers a set of predefined functions that if present is invoked around specific events in the lifetime of the component. Developers are supposed to override the functions with desired logic to execute accordingly.
 
-![img](/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/react-component-lifecycle2.png "React Components Lifecycle")
+![img](https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/react-component-lifecycle2.png "React Components Lifecycle")
 
 
 ### Functions of each Phase of Lifecycle
@@ -868,12 +868,12 @@ React provides the developers a set of predefined functions that if present is i
     -   **componentWillUnmount() Function** - This function is invoked before the component is finally unmounted from the DOM i.e. this function gets invoked once before the component is removed from the page and this denotes the end of the lifecycle.
 
 
-<a id="org8442a44"></a>
+<a id="org4e1ae44"></a>
 
 # Project Modules & Services
 
 
-<a id="org7048aa3"></a>
+<a id="orgf06fe17"></a>
 
 ## Modules used:
 
@@ -883,7 +883,7 @@ React provides the developers a set of predefined functions that if present is i
 -   prop-types
 
 
-<a id="org5bedb32"></a>
+<a id="orgf80db18"></a>
 
 # Useful Resources & Links
 

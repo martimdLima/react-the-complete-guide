@@ -51,25 +51,17 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 
 
 ** Arrow Functions
-
-#+BEGIN_QUOTE
 Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this  keyword
-#+END_QUOTE
 
-#+BEGIN_QUOTE
-Normal Javascript Function Syntax
-#+END_QUOTE
-
+*Normal Javascript Function Syntax*
 #+BEGIN_SRC javascript
     function myFnc(arg) {
         console.log(arg);
     }
 #+END_SRC
 
-#+BEGIN_QUOTE
-Arrow Function Syntax
-#+END_QUOTE
 
+*Arrow Function Syntax*
 #+BEGIN_SRC  javascript
 
     // if there is just one argument the parenthesis can be omitted, but if there is none or multiple arguments they must be present
@@ -82,10 +74,7 @@ Arrow Function Syntax
 
 ** Exports & Imports (Modules)
 
-#+BEGIN_QUOTE
-person.js
-#+END_QUOTE
-
+*person.js*
 #+BEGIN_SRC  javascript
     const person = {
     name: 'Max'
@@ -94,21 +83,13 @@ person.js
 exports default person
 #+END_SRC
 
-
-#+BEGIN_QUOTE
-utility.js
-#+END_QUOTE
-
+*utility.js*
 #+BEGIN_SRC  javascript
     export const clean = () => {...}
     export const baseData = 10;
 #+END_SRC
 
-
-#+BEGIN_QUOTE
-app.js
-#+END_QUOTE
-
+*app.js*
 #+BEGIN_SRC  javascript
 // default export
 import person from './person.js'
@@ -164,7 +145,6 @@ somePerson.printGender();
 ** Classes, Properties and Methods
 
 - Properties are like "variables attached to classes/objects"
-
 #+BEGIN_SRC javascript
 // ES6
 constructor() {
@@ -175,9 +155,7 @@ this.property = "value";
 this.property = "value";
 #+END_SRC
 
-
 - Methods are like "functions attached to classes/objects"
-
 #+BEGIN_SRC javascript
 // ES6
 someMethod () { ... }
@@ -185,7 +163,6 @@ someMethod () { ... }
 //ES7
 someMethod = () => { ... }
 #+END_SRC
-
 
 #+BEGIN_SRC javascript
 // class declaration
@@ -222,7 +199,6 @@ somePerson.printGender();
 ** Spread and Rest Operator
 
 - Spread - Used to split up array elements or object properties
-
 #+BEGIN_SRC javascript
 const newArray = [...oldArray, 1, 2];
 
@@ -315,7 +291,6 @@ props  allow you to pass data from a parent (wrapping) component to a child (emb
 *Example:*
 
 *AllPosts Component:*
-
 #+BEGIN_SRC javascript
 const posts = () => {
     return (
@@ -329,7 +304,6 @@ const posts = () => {
 Here, title  is the custom property (prop ) set up on the custom Post  component. We basically replicate the default HTML attribute behavior we already know (e.g. <input type="text">  informs the browser about how to handle that input).
 
 *Post Component:*
-
 #+BEGIN_SRC javascript
 const post = (props) => {
     return (
@@ -353,7 +327,6 @@ Changes to state also trigger an UI update.
 *Example:*
 
 *NewPost Component:*
-
 #+BEGIN_SRC javascript
 class NewPost extends Component { // state can only be accessed in class-based components!
     state = {
@@ -533,7 +506,7 @@ Consequently, it’s a good practice to write every child component as dumb. Let
 #+ATTR_HTML: :alt components :title stateful, stateless, dumb and smart :align center
 #+ATTR_HTML: :width 50% :height 50%
 #+NAME:   fig:stateful,stateless,dumbandsmart
-[[/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/components.jpeg]]
+[[https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/components.jpeg]]
 
 It could happen that a smart component may have the need to have its own internal state regardless of the global state (from the State Manager): maybe we’ve chosen not to keep a part of the state at the global level, like a form which could be pretty big or useless if serialized (it’s just an example, you could also keep a form in the global state).
 
@@ -557,7 +530,7 @@ To understand the differences, it’s important to know what the React ecosystem
 #+ATTR_HTML: :alt functional and class components :title functional and class components worked :align center
 #+ATTR_HTML: :width 50% :height 50%
 #+NAME:   fig:functional-and-class-components-worked
-[[/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components.jpeg]]
+[[https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs//functional-class-components.jpeg]]
 
 In February 2019, the React team introduced Hooks as a new addition to React v16.8.0. React Hooks gave functional components the same capabilities as class components, with the possibility to use the state system and achieve the same results as the class components’ lifecycle methods.
 
@@ -565,7 +538,7 @@ In February 2019, the React team introduced Hooks as a new addition to React v16
 #+ATTR_HTML: :alt functional and class components current :title functional and class components work currently :align center
 #+ATTR_HTML: :width 50% :height 50%
 #+NAME:   fig:functional-and-class-components-worked
-[[/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/functional-class-components-current.jpeg]]
+[[https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/functional-class-components-current.jpeg]]
 
 
 *** 1. Rendering JSX to Show Content
@@ -781,7 +754,7 @@ React provides the developers a set of predefined functions that if present is i
 #+ATTR_HTML: :alt components-lifecycle :title React Components Lifecycle :align center
 #+ATTR_HTML: :width 50% :height 50%
 #+NAME:   fig:react-components-lifecycle
-[[/home/mdlima/Documents/programming/repositories/gitLab/react-the-complete-guide/docs/img-resources/react-component-lifecycle2.png]]
+[[https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/react-component-lifecycle2.png]]
 
 *** Functions of each Phase of Lifecycle
 
