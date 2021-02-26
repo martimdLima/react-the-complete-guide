@@ -92,6 +92,10 @@ class BurguerBuilder extends Component {
         this.setState({ purchasing: false });
     };
 
+    purchaseContinueHandler = () => {
+        alert("You selected to continue with your purchase!");
+    };
+
     render() {
         // disables the less button, by spreading the ingredients object and loop through it,
         // checking if each ingredient is less than zero and returning true or false accordingly
@@ -108,7 +112,11 @@ class BurguerBuilder extends Component {
                 <Modal
                     show={this.state.purchasing}
                     modalClosed={this.purchaseCancelHandler}>
-                    <OrderSummary ingredients={this.state.ingredients} />
+                    <OrderSummary
+                        ingredients={this.state.ingredients}
+                        purchaseCancelled={this.purchaseCancelHandler}
+                        purchaseContinue={this.purchaseContinueHandler}
+                    />
                 </Modal>
 
                 <Burguer ingredients={this.state.ingredients} />
