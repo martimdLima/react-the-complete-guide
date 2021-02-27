@@ -9,6 +9,10 @@ const controls = [
     { label: "Bacon", type: "bacon" },
     { label: "Cheese", type: "cheese" },
     { label: "Meat", type: "meat" },
+/*     { label: "Lettuce", type: "lettuce" },
+    { label: "Onions", type: "onions" },
+    { label: "Tomato", type: "tomato" },
+    { label: "Pickles", type: "pickles" }, */
 ];
 
 const buildControls = (props) => (
