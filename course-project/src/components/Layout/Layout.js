@@ -8,7 +8,7 @@ import classes from "./Layout.module.css";
 // The Layout component is responsible for the layout of the app
 const Layout = (props) => (
     <Aux>
-        <Toolbar/>
+        <Toolbar />
         <main className={classes.Content}>{props.children}</main>
     </Aux>
 );
