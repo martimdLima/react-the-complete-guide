@@ -6,6 +6,7 @@ import Modal from "../UI/Modal/Modal";
 import Aux from "../../hoc/Aux/Aux";
 import OrderSummary from "../Burguer/OrderSummary/OrderSummary";
 import Spinner from "../UI/Spinner/Spinner";
+import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import axios from "../../axios-orders";
 
 const INGREDIENT_PRICES = {
@@ -96,8 +97,7 @@ class BurguerBuilder extends Component {
     };
 
     purchaseContinueHandler = () => {
-
-        this.setState({loading: true});
+        this.setState({ loading: true });
 
         const order = {
             ingredients: this.state.ingredients,
@@ -116,10 +116,10 @@ class BurguerBuilder extends Component {
         axios
             .post("/orders.json", order)
             .then((response) => {
-                this.setState({loading: false, purchasing: false});
+                this.setState({ loading: false, purchasing: false });
             })
             .catch((error) => {
-                this.setState({loading: false, purchasing: false});
+                this.setState({ loading: false, purchasing: false });
             });
     };
 
@@ -134,15 +134,17 @@ class BurguerBuilder extends Component {
             disabledInfo[key] = disabledInfo[key] <= 0;
         }
 
-        let orderSummary = <OrderSummary
-        ingredients={this.state.ingredients}
-        purchaseCancelled={this.purchaseCancelHandler}
-        purchaseContinue={this.purchaseContinueHandler}
-        price={this.state.totalPrice}
-        />
+        let orderSummary = (
+            <OrderSummary
+                ingredients={this.state.ingredients}
+                purchaseCancelled={this.purchaseCancelHandler}
+                purchaseContinue={this.purchaseContinueHandler}
+                price={this.state.totalPrice}
+            />
+        );
 
-        if(this.state.loading) {
-            orderSummary = <Spinner />
+        if (this.state.loading) {
+            orderSummary = <Spinner />;
         }
 
         return (
@@ -167,4 +169,4 @@ class BurguerBuilder extends Component {
     }
 }
 
-export default BurguerBuilder;
+export default withErrorHandler(BurguerBuilder, axios);
