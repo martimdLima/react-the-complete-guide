@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import BuildControls from "../Burguer/BuildControls/BuildControls";
 import Burguer from "../Burguer/Burguer";
 import Modal from "../UI/Modal/Modal";
-import Aux from "../../hoc/Aux";
+import Aux from "../../hoc/Aux/Aux";
 import OrderSummary from "../Burguer/OrderSummary/OrderSummary";
 
 const INGREDIENT_PRICES = {
