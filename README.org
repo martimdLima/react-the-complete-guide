@@ -842,7 +842,7 @@ You can pass it easily like this:
 <Link to="/my-path#start-position">Go to Start</Link>
 #+END_SRC
 
-
+#+BEGIN_SRC javascript
 <Link>
     TO ={{
         pathname: '/my-path',
