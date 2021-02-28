@@ -15,6 +15,7 @@ class NewPost extends Component {
     };
 
     componentDidMount() {
+        this.props.history.replace("/posts");
         console.log(this.props);
     }
 
@@ -33,10 +34,10 @@ class NewPost extends Component {
 
     render() {
         let redirect = null;
-             
+
         if (this.state.submitted) {
-        redirect = <Redirect to="/" />;
-        } 
+            redirect = <Redirect to="/" />;
+        }
         return (
             <div className="NewPost">
                 {redirect}
