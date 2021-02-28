@@ -25,16 +25,18 @@ class NewPost extends Component {
             author: this.state.author,
         };
         axios.post("/posts", data).then((response) => {
-            this.setState({ submitted: true });
-            console.log(response);
+            /* this.setState({ submitted: true }); */
+            this.props.history.push("/");
+            // this.props.history.replace("/")
         });
     };
 
     render() {
         let redirect = null;
+             
         if (this.state.submitted) {
-            redirect = <Redirect to="/" />;
-        }
+        redirect = <Redirect to="/" />;
+        } 
         return (
             <div className="NewPost">
                 {redirect}
