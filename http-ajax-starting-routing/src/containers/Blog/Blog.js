@@ -26,7 +26,7 @@ class Blog extends Component {
                             <li>
                                 <NavLink
                                     exact
-                                    to="/"
+                                    to="/posts/"
                                     activeClassName="currently-active"
                                     activeStyle={{
                                         color: "#fa923f",
@@ -51,8 +51,10 @@ class Blog extends Component {
 
                 <Switch>
                     {this.state.auth ? <Route path="/new-post" component={NewPost} /> : null}
+                    
                     <Route path="/posts" component={Posts} />
-                    <Route path="/" component={Posts} />
+                    {/* <Route render={() => <h1>Not found</h1>} /> */}
+                     <Route path="/" component={Posts} />
                     <Redirect from="/" to="/posts"/>
                 </Switch>
             </div>
