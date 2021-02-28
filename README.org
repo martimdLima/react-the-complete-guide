@@ -788,6 +788,12 @@ React provides the developers a set of predefined functions that if present is i
 + radium
 + styled-components
 + prop-types
++ react-router
++ react-router-dom
+
+** Services used:
++ [[https://jsonplaceholder.typicode.com/][Json Placeholder]]
+
 
 * Useful Resources & Links
  :PROPERTIES:
