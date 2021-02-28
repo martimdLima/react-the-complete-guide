@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { Route } from "react-router-dom";
 import Posts from "./Posts/Posts";
 
 //import Post from "../../components/Post/Post";
@@ -10,14 +10,7 @@ import Posts from "./Posts/Posts";
 import "./Blog.css";
 
 class Blog extends Component {
-
-
-
-
-
     render() {
-
-
         return (
             <div className="Blog">
                 <header>
@@ -32,8 +25,8 @@ class Blog extends Component {
                         </ul>
                     </nav>
                 </header>
-
-                <Posts />
+                <Route path="/" exact render={() => <h1>Home</h1>} />
+                {/* <Posts /> */}
                 {/* <section>
                     <FullPost id={this.state.selectedPostId} />
                 </section>
