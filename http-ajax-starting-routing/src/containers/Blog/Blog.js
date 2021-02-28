@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+
 import Posts from "./Posts/Posts";
+import NewPost from "./NewPost/NewPost";
+// import FullPost from "./Posts/FullPost/FullPost";
 
 //import Post from "../../components/Post/Post";
-// import FullPost from "./Posts/FullPost/FullPost";
-// import NewPost from "../../components/NewPost/NewPost";
+
 //import axios from "axios";
 //import axios from "../../axios";
 import "./Blog.css";
@@ -26,6 +28,7 @@ class Blog extends Component {
                     </nav>
                 </header>
                 <Route path="/" exact component={Posts} />
+                <Route path="/new-post"  component={NewPost} />
                 {/* <Route path="/" exact render={() => <h1>Home</h1>} /> */}
                 {/* <Posts /> */}
                 {/* <section>
