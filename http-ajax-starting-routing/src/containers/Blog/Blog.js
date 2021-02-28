@@ -2,20 +2,24 @@ import React, { Component } from "react";
 import { Route, NavLink, Switch, Redirect } from "react-router-dom";
 
 import Posts from "./Posts/Posts";
-import NewPost from "./NewPost/NewPost";
+import asyncComponent from "../../hoc/asyncComponent";
+import "./Blog.css";
+
+const asyncNewPost = asyncComponent(() => {
+    return import("./NewPost/NewPost");
+});
+//import NewPost from "./NewPost/NewPost";
 //import FullPost from "./FullPost/FullPost";
 
 //import Post from "../../components/Post/Post";
 
 //import axios from "axios";
 //import axios from "../../axios";
-import "./Blog.css";
 
 class Blog extends Component {
-
     state = {
-        auth: false,
-    }
+        auth: true,
+    };
 
     render() {
         return (
@@ -38,7 +42,7 @@ class Blog extends Component {
                             <li>
                                 <NavLink
                                     to={{
-                                        pathname: "/new-post",
+                                        pathname: "/new-post/",
                                         hash: "#submit",
                                         search: "?quick-submit=true",
                                     }}>
@@ -50,12 +54,13 @@ class Blog extends Component {
                 </header>
 
                 <Switch>
-                    {this.state.auth ? <Route path="/new-post" component={NewPost} /> : null}
-                    
+                    {this.state.auth ? (
+                        <Route path="/new-post/" component={asyncNewPost} />
+                    ) : null}
                     <Route path="/posts" component={Posts} />
-                    {/* <Route render={() => <h1>Not found</h1>} /> */}
-                     <Route path="/" component={Posts} />
-                    <Redirect from="/" to="/posts"/>
+                    <Route render={() => <h1>Not found</h1>} />
+                    {/* <Route path="/" component={Posts} />
+                    <Redirect from="/" to="/posts" /> */}
                 </Switch>
             </div>
         );
