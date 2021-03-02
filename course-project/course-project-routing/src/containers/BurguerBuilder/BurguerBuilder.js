@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-import BuildControls from "../Burguer/BuildControls/BuildControls";
-import Burger from "../Burguer/Burguer";
-import Modal from "../UI/Modal/Modal";
+import BuildControls from "../../components/Burguer/BuildControls/BuildControls";
+import Burger from "../../components/Burguer/Burguer";
+import Modal from "../../components/UI/Modal/Modal";
 import Aux from "../../hoc/Aux/Aux";
-import OrderSummary from "../Burguer/OrderSummary/OrderSummary";
-import Spinner from "../UI/Spinner/Spinner";
+import OrderSummary from "../../components/Burguer/OrderSummary/OrderSummary";
+import Spinner from "../../components/UI/Spinner/Spinner";
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import axios from "../../axios-orders";
 
@@ -165,7 +165,7 @@ class BurguerBuilder extends Component {
                     ingredients={this.state.ingredients}
                     price={this.state.totalPrice}
                     purchaseCancelled={this.purchaseCancelHandler}
-                    purchaseContinued={this.purchaseContinueHandler}
+                    purchaseContinue={this.purchaseContinueHandler}
                 />
             );
         }
