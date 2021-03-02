@@ -138,6 +138,7 @@ class BurguerBuilder extends Component {
                 queryParams.push(encodeURIComponent(key) + "=" + encodeURIComponent(this.state.ingredients[encodeURIComponent(key)]));
             }
 
+            queryParams.push("price=" + this.state.totalPrice)
             this.props.history.push({
                 pathname: "/checkout",
                 search: "?" + queryParams.join("&")
