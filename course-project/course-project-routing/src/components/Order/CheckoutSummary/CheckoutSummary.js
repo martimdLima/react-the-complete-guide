@@ -1,6 +1,6 @@
 import React from "react";
 
-import Burguer from "../../Burguer/Burguer4";
+import Burguer from "../../Burguer/Burguer";
 import Button from "../../UI/Button/Button";
 import classes from "./CheckoutSummary.module.css";
 
