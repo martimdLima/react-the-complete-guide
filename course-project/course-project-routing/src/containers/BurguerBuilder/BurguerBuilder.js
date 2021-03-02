@@ -28,6 +28,7 @@ class BurguerBuilder extends Component {
     };
 
     componentDidMount() {
+        //console.log(this.props);
         axios
             .get(
                 "https://react-course-project-31af6-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json"
@@ -106,7 +107,7 @@ class BurguerBuilder extends Component {
     };
 
     purchaseContinueHandler = () => {
-        this.setState({ loading: true });
+/*         this.setState({ loading: true });
 
         const order = {
             ingredients: this.state.ingredients,
@@ -129,7 +130,8 @@ class BurguerBuilder extends Component {
             })
             .catch((error) => {
                 this.setState({ loading: false, purchasing: false });
-            });
+            }); */
+            this.props.history.push("/checkout")
     };
 
     render() {

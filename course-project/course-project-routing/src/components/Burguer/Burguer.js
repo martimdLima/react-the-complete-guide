@@ -1,5 +1,7 @@
 import React from "react";
 
+import { withRouter} from "react-router-dom";
+
 import Ingredient from "../Burguer/Ingredient/Ingredient";
 
 import classes from "./Burguer.module.css";
@@ -8,6 +10,7 @@ import classes from "./Burguer.module.css";
 // where the value of that object is important to decide how many ingredients it's needed and the keys
 // important for which type of ingredient is needed.
 const burguer = (props) => {
+    console.log(props);
     let transformedIngredients = Object.keys(props.ingredients)
         .map((ingrKey) => {
             return [...Array(props.ingredients[ingrKey])].map((_, i) => {
@@ -31,4 +34,4 @@ const burguer = (props) => {
     );
 };
 
-export default burguer;
+export default withRouter(burguer);
