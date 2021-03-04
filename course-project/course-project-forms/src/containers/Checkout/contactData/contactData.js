@@ -8,14 +8,70 @@ import classes from "./contactData.module.css";
 
 class contactData extends Component {
     state = {
-        name: "",
-        email: "",
-        address: {
-            street: "",
-            postalCode: "",
-        },
-        ingredients: null,
+        orderForm: this.createOrderForm(),
+        loading: false,
     };
+
+    createOrderForm() {
+        return {
+            name: {
+                elementType: "input",
+                elementConfig: {
+                    type: "text",
+                    placeholder: "Your Name",
+                },
+                value: "",
+            },
+            street: {
+                elementType: "input",
+                elementConfig: {
+                    type: "text",
+                    placeholder: "Your Street",
+                },
+                value: "",
+            },
+            zipCode: {
+                elementType: "input",
+                elementConfig: {
+                    type: "text",
+                    placeholder: "Your ZipCode",
+                },
+                value: "",
+            },
+            country: {
+                elementType: "input",
+                elementConfig: {
+                    type: "text",
+                    placeholder: "Your Country",
+                },
+                value: "",
+            },
+            email: {
+                elementType: "input",
+                elementConfig: {
+                    type: "text",
+                    placeholder: "Your Email",
+                },
+                value: "",
+            },
+            deliveryMethod: {
+                elementType: "select",
+                elementConfig: {
+                    options: [
+                        {
+                            value: "fastest",
+                            displayValue: "Fastest",
+                        },
+                        {
+                            value: "cheapest",
+                            displayValue: "Cheapest",
+                        },
+                    ],
+                },
+                value: "",
+            },
+        };
+    }
 
     orderHandler = (event) => {
         event.preventDefault();
@@ -24,47 +80,36 @@ class contactData extends Component {
         const order = {
             ingredients: this.props.ingredients,
             price: this.props.price,
-            customer: {
-                name: "User 1",
-                address: {
-                    street: "Some random street",
-                    zipCode: "45245",
-                    Country: "kekistan",
-                },
-                email: "randomemail@test.com",
-            },
-            deliveryMethod: "express",
         };
         axios
             .post("/orders.json", order)
             .then((response) => {
-                this.setState({ loading: false});
-                this.props.history.push("/")
+                this.setState({ loading: false });
+                this.props.history.push("/");
             })
             .catch((error) => {
-                this.setState({ loading: false});
+                this.setState({ loading: false });
             });
     };
 
     render() {
         let form = (
             <form>
-                <Input inputtype="input"
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                />
-                <Input inputtype="input"
+                <Input elementType="..." elementConfig="..." value="..." />
+                <Input
+                    inputtype="input"
                     type="email"
                     name="email"
                     placeholder="Your Mail"
                 />
-                <Input inputtype="input"
+                <Input
+                    inputtype="input"
                     type="text"
                     name="street"
                     placeholder="Street"
                 />
-                <Input inputtype="input"
+                <Input
+                    inputtype="input"
                     type="text"
                     name="postal"
                     placeholder="Postal Code"
