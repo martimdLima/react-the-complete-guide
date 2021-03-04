@@ -8,6 +8,7 @@ const Input = (props) => {
 
     // depending on the elementType provided, the switch statement supports this input types:
     // input, textarea, select
+    // every input recieves an onChange listener that will react to any changes in the input
     switch (props.elementType) {
         case "input":
             inputElement = (
@@ -15,6 +16,7 @@ const Input = (props) => {
                     className={classes.InputElement}
                     {...props.elementConfig}
                     value={props.value}
+                    onChange={props.changed}
                 />
             );
             break;
@@ -24,12 +26,16 @@ const Input = (props) => {
                     className={classes.InputElement}
                     {...props.elementConfig}
                     value={props.value}
+                    onChange={props.changed}
                 />
             );
             break;
         case "select":
             inputElement = (
-                <select className={classes.InputElement} value={props.value}>
+                <select
+                    className={classes.InputElement}
+                    value={props.value}
+                    onChange={props.changed}>
                     {props.elementConfig.options.map((opt) => (
                         <option key={opt.value} value={opt.value}>
                             {opt.displayValue}
@@ -44,6 +50,7 @@ const Input = (props) => {
                     className={classes.InputElement}
                     {...props.elementConfig}
                     value={props.value}
+                    onChange={props.changed}
                 />
             );
     }

@@ -92,6 +92,24 @@ class contactData extends Component {
             });
     };
 
+    // the inputChangedHandler will get an event object as it will automatically be passed by react,
+    // if this method is attached to an event listener which it is.
+    inputChangedHandler = (event, inputIdentifier) => {
+        // create a shallow clone of the orderForm object
+        const updatedOrderForm = { ...this.state.orderForm };
+
+        // clone all the nested objects contained in the orderForm object
+        const updatedFormElement = { ...updatedOrderForm[inputIdentifier] };
+
+        // set the updatedFormElement value and set this equal to event target value
+        // set the updatedOrderForm set it equal to the updatedFormElement.
+        updatedFormElement.value = event.target.value;
+        updatedOrderForm[inputIdentifier] = updatedFormElement;
+
+        // call this.setState and set order form to updated order form.
+        this.setState({ orderForm: updatedOrderForm });
+    };
+
     render() {
         // create and initialize the form elements array
         const formElementsArray = [];
@@ -116,6 +134,9 @@ class contactData extends Component {
                         elementType={formElement.config.elementType}
                         elementConfig={formElement.config.elementConfig}
                         value={formElement.config.value}
+                        changed={(event) =>
+                            this.inputChangedHandler(event, formElement.id)
+                        }
                     />
                 ))}
 
