@@ -862,6 +862,8 @@ React router makes it easy to extract the fragment. You can simply access props.
 + prop-types
 + react-router
 + react-router-dom
++ redux
++ react-redux
 
 ** Services used:
 + [[https://jsonplaceholder.typicode.com/][Json Placeholder]]
