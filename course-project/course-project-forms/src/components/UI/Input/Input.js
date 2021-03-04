@@ -6,13 +6,18 @@ import classes from "./Input.module.css";
 const Input = (props) => {
 
     let inputElement = null;
-
+    let validationError = null;
     // create an array that will hold all the css classes for each input
     const inputClasses = [classes.InputElement];
 
     // if the input as an invalid property, add the Invalid css class to the inputClasses array
     if(props.invalid && props.shouldValidate && props.touched) {
         inputClasses.push(classes.Invalid);
+    }
+
+    if (props.invalid && props.touched) {
+        validationError = (<p className
+        ={classes.validationError}>Please enter a valid  {props.valueType}!</p>);
     }
 
     // depending on the elementType provided, the switch statement supports this input types:
@@ -68,6 +73,7 @@ const Input = (props) => {
         <div className={classes.Input}>
             <label className={classes.Label}>{props.label}</label>
             {inputElement}
+            {validationError}
         </div>
     );
 };

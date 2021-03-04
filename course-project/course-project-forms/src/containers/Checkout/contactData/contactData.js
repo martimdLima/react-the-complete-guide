@@ -19,6 +19,7 @@ class contactData extends Component {
                 elementType: "input",
                 elementConfig: {
                     type: "text",
+                    valueType: "name",
                     placeholder: "Your Name",
                 },
                 value: "",
@@ -34,6 +35,7 @@ class contactData extends Component {
                 elementType: "input",
                 elementConfig: {
                     type: "text",
+                    valueType: "street",
                     placeholder: "Your Street",
                 },
                 value: "",
@@ -49,6 +51,7 @@ class contactData extends Component {
                 elementType: "input",
                 elementConfig: {
                     type: "text",
+                    valueType: "zipcode",
                     placeholder: "Your ZipCode",
                 },
                 value: "",
@@ -64,6 +67,7 @@ class contactData extends Component {
                 elementType: "input",
                 elementConfig: {
                     type: "text",
+                    valueType: "country",
                     placeholder: "Your Country",
                 },
                 value: "",
@@ -77,6 +81,7 @@ class contactData extends Component {
                 elementType: "input",
                 elementConfig: {
                     type: "text",
+                    valueType: "email address",
                     placeholder: "Your Email",
                 },
                 value: "",
@@ -159,7 +164,6 @@ class contactData extends Component {
         // updates the correct form element with the updated form element
         updatedOrderForm[inputIdentifier] = updatedFormElement;
 
-        console.log(updatedFormElement);
         // call this.setState and set order form to updated order form.
         this.setState({ orderForm: updatedOrderForm });
     };
@@ -207,6 +211,7 @@ class contactData extends Component {
                         elementType={formElement.config.elementType}
                         elementConfig={formElement.config.elementConfig}
                         value={formElement.config.value}
+                        valueType={formElement.config.elementConfig.valueType}
                         invalid={!formElement.config.valid}
                         shouldValidate={formElement.config.validation}
                         touched={formElement.config.touched}
