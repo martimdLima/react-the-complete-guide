@@ -9,6 +9,7 @@ import classes from "./contactData.module.css";
 class contactData extends Component {
     state = {
         orderForm: this.createOrderForm(),
+        formIsvalid: false,
         loading: false,
     };
 
@@ -99,8 +100,12 @@ class contactData extends Component {
                         { value: "cheapest", displayValue: "Cheapest" },
                     ],
                 },
-                value: "",
-                valid: false,
+                value: "cheapest",
+                validation: {
+                    required: false,
+                },
+                valid: true,
+                touched: false,
             },
         };
     }
@@ -164,8 +169,18 @@ class contactData extends Component {
         // updates the correct form element with the updated form element
         updatedOrderForm[inputIdentifier] = updatedFormElement;
 
+        // if the valid property in the input is true and the form is valid enable the button, otherwise it stays disabled
+        let formIsvalid = true;
+
+        for (let inputId in updatedOrderForm) {
+            formIsvalid = updatedOrderForm[inputId].valid && formIsvalid;
+        }
+
         // call this.setState and set order form to updated order form.
-        this.setState({ orderForm: updatedOrderForm });
+        this.setState({
+            orderForm: updatedOrderForm,
+            formIsvalid: formIsvalid,
+        });
     };
 
     // checks the validity of the form inputs
@@ -221,7 +236,9 @@ class contactData extends Component {
                     />
                 ))}
 
-                <Button btnType="Success">Order</Button>
+                <Button btnType="Success" disabled={!this.state.formIsvalid}>
+                    Order
+                </Button>
             </form>
         );
 

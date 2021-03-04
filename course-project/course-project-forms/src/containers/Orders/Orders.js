@@ -30,7 +30,6 @@ class Orders extends Component {
     }
 
     render() {
-
         return (
             <div>
                 {this.state.orders.map((order) => (

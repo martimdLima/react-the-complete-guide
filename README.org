@@ -913,3 +913,11 @@ React router makes it easy to extract the fragment. You can simply access props.
 + [[https://reactjs.org/docs/higher-order-components.html][Higher Order Components]]
 
 + [[https://reactjs.org/docs/refs-and-the-dom.html][Refs]]
+
++ [[https://validatejs.org/][Validate.js]]
+
++ [[https://react.rocks/tag/Validation][Get more ideas about potential validation approaches]]
+
++ [[https://www.npmjs.com/package/react-validation][react-validation package]]
+
++ [[https://github.com/christianalfoni/formsy-react][formsy-react package]]
