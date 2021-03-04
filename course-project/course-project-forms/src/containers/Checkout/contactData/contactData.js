@@ -28,6 +28,7 @@ class contactData extends Component {
                     maxLength: 10,
                 },
                 valid: false,
+                touched: false,
             },
             street: {
                 elementType: "input",
@@ -42,6 +43,7 @@ class contactData extends Component {
                     maxLength: 20,
                 },
                 valid: false,
+                touched: false,
             },
             zipCode: {
                 elementType: "input",
@@ -56,6 +58,7 @@ class contactData extends Component {
                     maxLength: 8,
                 },
                 valid: false,
+                touched: false,
             },
             country: {
                 elementType: "input",
@@ -68,6 +71,7 @@ class contactData extends Component {
                     required: true,
                 },
                 valid: false,
+                touched: false,
             },
             email: {
                 elementType: "input",
@@ -80,6 +84,7 @@ class contactData extends Component {
                     required: true,
                 },
                 valid: false,
+                touched: false,
             },
             deliveryMethod: {
                 elementType: "select",
@@ -90,9 +95,6 @@ class contactData extends Component {
                     ],
                 },
                 value: "",
-                validation: {
-                    required: true,
-                },
                 valid: false,
             },
         };
@@ -151,6 +153,10 @@ class contactData extends Component {
             updatedFormElement.validation
         );
 
+        // updates the touched property to apply the Invalid css style only if the form input was touched
+        updatedFormElement.touched = true;
+
+        // updates the correct form element with the updated form element
         updatedOrderForm[inputIdentifier] = updatedFormElement;
 
         console.log(updatedFormElement);
@@ -201,6 +207,9 @@ class contactData extends Component {
                         elementType={formElement.config.elementType}
                         elementConfig={formElement.config.elementConfig}
                         value={formElement.config.value}
+                        invalid={!formElement.config.valid}
+                        shouldValidate={formElement.config.validation}
+                        touched={formElement.config.touched}
                         changed={(event) =>
                             this.inputChangedHandler(event, formElement.id)
                         }
