@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import BuildControls from "../../components/Burguer/BuildControls/BuildControls";
-import Burger from "../../components/Burguer/Burguer";
-import Modal from "../../components/UI/Modal/Modal";
-import Aux from "../../hoc/Aux/Aux";
-import OrderSummary from "../../components/Burguer/OrderSummary/OrderSummary";
-import Spinner from "../../components/UI/Spinner/Spinner";
-import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
+import * as actionTypes from "../../store/actions";
 import axios from "../../axios-orders";
 
-import * as actionTypes from "../../store/actions";
+import Aux from "../../hoc/Aux/Aux";
+import Modal from "../../components/UI/Modal/Modal";
+import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
+
+import BuildControls from "../../components/Burguer/BuildControls/BuildControls";
+import OrderSummary from "../../components/Burguer/OrderSummary/OrderSummary";
+import Burger from "../../components/Burguer/Burguer";
+
+import Spinner from "../../components/UI/Spinner/Spinner";
 
 // This component is responsible for the Burger and Build Controls Components that enables the user to build a burguer
 class BurguerBuilder extends Component {

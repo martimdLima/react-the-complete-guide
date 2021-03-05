@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import axios from "../../../axios-orders";
+
+import Input from "../../../components/UI/Input/Input";
+
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
-import Input from "../../../components/UI/Input/Input";
+
 import classes from "./contactData.module.css";
 
 class contactData extends Component {
