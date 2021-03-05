@@ -11,13 +11,6 @@ import axios from "../../axios-orders";
 
 import * as actionTypes from "../../store/actions";
 
-const INGREDIENT_PRICES = {
-    salad: 0.5,
-    bacon: 2,
-    cheese: 1,
-    meat: 3,
-};
-
 // This component is responsible for the Burger and Build Controls Components that enables the user to build a burguer
 class BurguerBuilder extends Component {
     state = {
@@ -29,7 +22,6 @@ class BurguerBuilder extends Component {
     };
 
     componentDidMount() {
-        //console.log(this.props);
         /*         axios
             .get(
                 "https://react-course-project-31af6-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json"
@@ -86,7 +78,7 @@ class BurguerBuilder extends Component {
         });
 
         this.updatePurchaseState(updatedIngredients);
-    }; */
+    };
 
     updatePurchaseState(ingredients) {
         const sum = Object.keys(ingredients)
@@ -98,6 +90,7 @@ class BurguerBuilder extends Component {
             }, 0);
         this.setState({ purchasable: sum > 0 });
     }
+    */
 
     purchaseHandler = () => {
         this.setState({ purchasing: true });
@@ -149,14 +142,14 @@ class BurguerBuilder extends Component {
                         disabled={disabledInfo}
                         purchasable={this.state.purchasable}
                         ordered={this.purchaseHandler}
-                        price={this.state.totalPrice}
+                        price={this.props.totalPrice}
                     />
                 </Aux>
             );
             orderSummary = (
                 <OrderSummary
                     ingredients={this.props.ings}
-                    price={this.state.totalPrice}
+                    price={this.props.totalPrice}
                     purchaseCancelled={this.purchaseCancelHandler}
                     purchaseContinue={this.purchaseContinueHandler}
                 />
@@ -182,6 +175,7 @@ class BurguerBuilder extends Component {
 const mapStateToProps = (state) => {
     return {
         ings: state.ingredients,
+        totalPrice: state.totalPrice,
     };
 };
 
@@ -189,14 +183,14 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onIngredientAdded: (ingName) =>
             dispatch({
-                type: actionTypes.ADD_INGREDIENT, payload: {ingredientName: ingName}
-                
+                type: actionTypes.ADD_INGREDIENT,
+                payload: { ingredientName: ingName },
             }),
         onIngredientRemoved: (ingName) =>
-        dispatch({
-            type: actionTypes.REMOVE_INGREDIENT, payload: {ingredientName: ingName}
-            
-        }),
+            dispatch({
+                type: actionTypes.REMOVE_INGREDIENT,
+                payload: { ingredientName: ingName },
+            }),
     };
 };
 

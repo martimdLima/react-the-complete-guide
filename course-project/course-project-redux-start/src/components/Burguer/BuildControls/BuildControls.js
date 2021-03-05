@@ -9,7 +9,7 @@ const controls = [
     { label: "Bacon", type: "bacon" },
     { label: "Cheese", type: "cheese" },
     { label: "Meat", type: "meat" },
-/*     { label: "Lettuce", type: "lettuce" },
+    /*     { label: "Lettuce", type: "lettuce" },
     { label: "Onions", type: "onions" },
     { label: "Tomato", type: "tomato" },
     { label: "Pickles", type: "pickles" }, */
@@ -29,7 +29,10 @@ const buildControls = (props) => (
                 disabled={props.disabled[ctrl.type]}
             />
         ))}
-        <button className={classes.OrderButton} disabled={!props.purchasable} onClick={props.ordered}>
+        <button
+            className={classes.OrderButton}
+            disabled={!props.purchasable}
+            onClick={props.ordered}>
             ORDER NOW
         </button>
     </div>
