@@ -1,45 +1,53 @@
-- [Introduction](#orgdb6fa44)
-  - [What is React?](#org2ca3018)
-  - [Why React?](#org152694d)
-  - [Single Page Applications / Multi Page Applications](#org588c1cb)
-- [Refreshing Next Generation Javascript](#org8c46048)
-  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#orga6ba958)
-  - [Arrow Functions](#org08e8488)
-  - [Exports & Imports (Modules)](#org4e44883)
-  - [Classes](#orge75ca36)
-  - [Classes, Properties and Methods](#org330d7ea)
-  - [Spread and Rest Operator](#org704ea32)
-  - [Destructuring](#orgbf70f43)
-- [Understanding the Base Features & Syntax](#org021ab07)
-  - [Using a Build Workflow](#orgb70896c)
-- [Working with Lists and Conditionals](#org030bfd7)
-  - [JSX](#orgfa9e72e)
-  - [Components](#orgac26269)
-  - [Props and State](#orgf225f97)
-  - [Class, Pure and Function Components](#org47f3ae3)
-- [Styling React Components & Elements](#org50bd083)
-- [Debugging React Apps](#org09a2467)
-  - [Understanding Error Messages](#org4074d8a)
-  - [Using Dev Tools & Sourcemaps to find Logical Errors](#org6b9870c)
-  - [Using React Developer Tools](#orgc63e7c5)
-  - [Using Error Boundaries](#org110a5b8)
-- [Diving Deeper into Components & React internals](#org1298f5d)
-  - [Components: stateful, stateless, dumb and smart](#org075d8cc)
-  - [Functional Components vs. Class Components](#orgd945a76)
-  - [Lifecycle of Components](#org99046d5)
-- [Project Modules & Services](#org4e1ae44)
-  - [Modules used:](#orgf06fe17)
-- [Useful Resources & Links](#orgf80db18)
+- [Introduction](#org75fc967)
+  - [What is React?](#org8d443bb)
+  - [Why React?](#orgecb6ddf)
+  - [Single Page Applications / Multi Page Applications](#orgf0018e2)
+- [Refreshing Next Generation Javascript](#org9206e72)
+  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#orgd737e3a)
+  - [Arrow Functions](#org5e2b459)
+  - [Exports & Imports (Modules)](#org5afd001)
+  - [Classes](#org31895b1)
+  - [Classes, Properties and Methods](#orgbc96932)
+  - [Spread and Rest Operator](#orge87e233)
+  - [Destructuring](#org9a41e2c)
+- [Understanding the Base Features & Syntax](#orgdc70224)
+  - [Using a Build Workflow](#org4e4131f)
+- [Working with Lists and Conditionals](#org38c15ed)
+  - [JSX](#org394e95a)
+  - [Components](#org3306e93)
+  - [Props and State](#orga26a6fc)
+  - [Class, Pure and Function Components](#orgf4bbd1a)
+- [Styling React Components & Elements](#org6276456)
+- [Debugging React Apps](#org5bc3277)
+  - [Understanding Error Messages](#org11f82fa)
+  - [Using Dev Tools & Sourcemaps to find Logical Errors](#org9d1c5bd)
+  - [Using React Developer Tools](#orge4881a7)
+  - [Using Error Boundaries](#org2d50cb5)
+- [Diving Deeper into Components & React internals](#orgc424d26)
+  - [Components: stateful, stateless, dumb and smart](#orgc2ade9a)
+  - [Functional Components vs. Class Components](#orgf07aa48)
+  - [Lifecycle of Components](#org11d6c92)
+- [Multi-Page-Feeling in a Single-Page-App: Routing](#org8c98e07)
+  - [Routing and SPAs](#org9429b29)
+  - [react-router vs react-router-dom](#org90d7fbe)
+  - [Absolute vs Relative Paths](#org2334954)
+  - [Parsing Query Parameters & the Fragment](#org82b2387)
+- [Redux](#org2e01c1d)
+  - [Immutable Update Patterns](#orgbfbc603)
+- [Project Modules & Services](#org3c92bf5)
+  - [Modules used:](#orgaa26bb3)
+  - [Services used:](#org974b558)
+- [Useful Resources & Links](#orgdfeda67)
 
 ---
 
 
-<a id="orgdb6fa44"></a>
+<a id="org75fc967"></a>
 
 # Introduction
 
 
-<a id="org2ca3018"></a>
+<a id="org8d443bb"></a>
 
 ## What is React?
 
@@ -50,7 +58,7 @@ A browser side javascript framework - no need for server side rendering
 user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
 
 
-<a id="org152694d"></a>
+<a id="orgecb6ddf"></a>
 
 ## Why React?
 
@@ -59,7 +67,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Huge Ecosystem, Active Community, High Performance
 
 
-<a id="org588c1cb"></a>
+<a id="orgf0018e2"></a>
 
 ## Single Page Applications / Multi Page Applications
 
@@ -68,12 +76,12 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per &ldquo;widget&rdquo;
 
 
-<a id="org8c46048"></a>
+<a id="org9206e72"></a>
 
 # Refreshing Next Generation Javascript
 
 
-<a id="orga6ba958"></a>
+<a id="orgd737e3a"></a>
 
 ## &ldquo;let&rdquo; and &ldquo;const&rdquo;
 
@@ -83,7 +91,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   const - constant values
 
 
-<a id="org08e8488"></a>
+<a id="org5e2b459"></a>
 
 ## Arrow Functions
 
@@ -109,7 +117,7 @@ Arrow functions are a different way of creating functions in JavaScript. Besides
 ```
 
 
-<a id="org4e44883"></a>
+<a id="org5afd001"></a>
 
 ## Exports & Imports (Modules)
 
@@ -144,7 +152,7 @@ import * from './utility' // importing all using an alias from module
 ```
 
 
-<a id="orge75ca36"></a>
+<a id="org31895b1"></a>
 
 ## Classes
 
@@ -187,7 +195,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org330d7ea"></a>
+<a id="orgbc96932"></a>
 
 ## Classes, Properties and Methods
 
@@ -245,7 +253,7 @@ somePerson.printGender();
 ```
 
 
-<a id="org704ea32"></a>
+<a id="orge87e233"></a>
 
 ## Spread and Rest Operator
 
@@ -282,7 +290,7 @@ age: 20
 ```
 
 
-<a id="orgbf70f43"></a>
+<a id="org9a41e2c"></a>
 
 ## Destructuring
 
@@ -298,12 +306,12 @@ age: 20
 ```
 
 
-<a id="org021ab07"></a>
+<a id="orgdc70224"></a>
 
 # Understanding the Base Features & Syntax
 
 
-<a id="orgb70896c"></a>
+<a id="org4e4131f"></a>
 
 ## Using a Build Workflow
 
@@ -322,17 +330,17 @@ age: 20
 -   Use a Development Server
 
 
-<a id="org030bfd7"></a>
+<a id="org38c15ed"></a>
 
 # Working with Lists and Conditionals
 
 
-<a id="orgfa9e72e"></a>
+<a id="org394e95a"></a>
 
 ## JSX
 
 
-<a id="orgac26269"></a>
+<a id="org3306e93"></a>
 
 ## Components
 
@@ -343,7 +351,7 @@ Components are the core building block of React apps. Actually, React really is 
 -   Class Components (also referred to as &ldquo;containers&rdquo;, &ldquo;smart&rdquo; or &ldquo;stateful&rdquo; components) => class Cmp extends Component { render () { return <div>some JSX</div> } }
 
 
-<a id="orgf225f97"></a>
+<a id="orga26a6fc"></a>
 
 ## Props and State
 
@@ -414,7 +422,7 @@ state simply is a property of the component class, you have to call it state tho
 Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props is, that this happens within one and the same component - you don&rsquo;t receive new data (props ) from outside!
 
 
-<a id="org47f3ae3"></a>
+<a id="orgf4bbd1a"></a>
 
 ## Class, Pure and Function Components
 
@@ -520,42 +528,42 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 ```
 
 
-<a id="org50bd083"></a>
+<a id="org6276456"></a>
 
 # Styling React Components & Elements
 
 
-<a id="org09a2467"></a>
+<a id="org5bc3277"></a>
 
 # Debugging React Apps
 
 
-<a id="org4074d8a"></a>
+<a id="org11f82fa"></a>
 
 ## Understanding Error Messages
 
 
-<a id="org6b9870c"></a>
+<a id="org9d1c5bd"></a>
 
 ## Using Dev Tools & Sourcemaps to find Logical Errors
 
 
-<a id="orgc63e7c5"></a>
+<a id="orge4881a7"></a>
 
 ## Using React Developer Tools
 
 
-<a id="org110a5b8"></a>
+<a id="org2d50cb5"></a>
 
 ## Using Error Boundaries
 
 
-<a id="org1298f5d"></a>
+<a id="orgc424d26"></a>
 
 # Diving Deeper into Components & React internals
 
 
-<a id="org075d8cc"></a>
+<a id="orgc2ade9a"></a>
 
 ## Components: stateful, stateless, dumb and smart
 
@@ -608,7 +616,7 @@ So, in a typical component-based architecture scenario, these are the categories
 -   Smart/Container Component: it can have external dependencies (eg. Redux), it organizes the route using child dumb components, it’s in charge of passing the state to the children and uses their events to update the global state (or its state).
 
 
-<a id="orgd945a76"></a>
+<a id="orgf07aa48"></a>
 
 ## Functional Components vs. Class Components
 
@@ -830,7 +838,7 @@ export default App;
 To obtain the same result in a functional component, we use the useEffect hook with the second argument of [].
 
 
-<a id="org99046d5"></a>
+<a id="org11d6c92"></a>
 
 ## Lifecycle of Components
 
@@ -868,12 +876,250 @@ React provides the developers a set of predefined functions that if present is i
     -   **componentWillUnmount() Function** - This function is invoked before the component is finally unmounted from the DOM i.e. this function gets invoked once before the component is removed from the page and this denotes the end of the lifecycle.
 
 
-<a id="org4e1ae44"></a>
+<a id="org8c98e07"></a>
+
+# Multi-Page-Feeling in a Single-Page-App: Routing
+
+
+<a id="org9429b29"></a>
+
+## Routing and SPAs
+
+
+<a id="org90d7fbe"></a>
+
+## react-router vs react-router-dom
+
+
+<a id="org2334954"></a>
+
+## Absolute vs Relative Paths
+
+
+<a id="org82b2387"></a>
+
+## Parsing Query Parameters & the Fragment
+
+You learned how to extract route parameters (=> :id etc).
+
+But how do you extract search (also referred to as &ldquo;query&rdquo;) parameters (=> ?something=somevalue at the end of the URL)? How do you extract the fragment (=> #something at the end of the URL)?
+
+**Query Params:** You can pass them easily like this:
+
+```javascript
+<Link to="/my-path?start=5">Go to Start</Link>
+```
+
+or
+
+```javascript
+<Link
+    to={{
+        pathname: '/my-path',
+        search: '?start=5'
+    }}
+    >Go to Start</Link>
+```
+
+React router makes it easy to get access to the search string: props.location.search .
+
+But that will only give you something like ?start=5
+
+You probably want to get the key-value pair, without the ? and the = . Here&rsquo;s a snippet which allows you to easily extract that information:
+
+```javascript
+componentDidMount() {
+    const query = new URLSearchParams(this.props.location.search);
+    for (let param of query.entries()) {
+        console.log(param); // yields ['start', '5']
+    }
+}
+```
+
+URLSearchParams is a built-in object, shipping with vanilla JavaScript. It returns an object, which exposes the entries() method. entries() returns an Iterator - basically a construct which can be used in a for&#x2026;of&#x2026; loop (as shown above).
+
+When looping through query.entries() , you get arrays where the first element is the key name (e.g. start ) and the second element is the assigned value (e.g. 5 ).
+
+**Fragment:** You can pass it easily like this:
+
+```javascript
+<Link to="/my-path#start-position">Go to Start</Link>
+```
+
+```javascript
+<Link>
+    TO ={{
+        pathname: '/my-path',
+        hash: 'start-position'
+    }}
+    >Go to Start</Link>
+```
+
+React router makes it easy to extract the fragment. You can simply access props.location.hash .
+
+
+<a id="org2e01c1d"></a>
+
+# Redux
+
+
+<a id="orgbfbc603"></a>
+
+## Immutable Update Patterns
+
+
+### Updating Nested Objects
+
+The key to updating nested data is **that every level of nesting must be copied and updated appropriately**. This is often a difficult concept for those learning Redux, and there are some specific problems that frequently occur when trying to update nested objects. These lead to accidental direct mutation, and should be avoided.
+
+**Common Mistake #1: New variables that point to the same objects**
+
+Defining a new variable does not create a new actual object - it only creates another reference to the same object. An example of this error would be:
+
+```javascript
+function updateNestedState(state, action) {
+    let nestedState = state.nestedState;
+    // ERROR: this directly modifies the existing object reference - don't do this!
+    nestedState.nestedField = action.data;
+
+    return {
+        ...state,
+        nestedState
+    };
+}
+```
+
+This function does correctly return a shallow copy of the top-level state object, but because the nestedState variable was still pointing at the existing object, the state was directly mutated.
+
+**Common Mistake #2: Only making a shallow copy of one level**
+
+Another common version of this error looks like this:
+
+```javascript
+function updateNestedState(state, action) {
+    // Problem: this only does a shallow copy!
+    let newState = {...state};
+
+    // ERROR: nestedState is still the same object!
+    newState.nestedState.nestedField = action.data;
+
+    return newState;
+}
+```
+
+Doing a shallow copy of the top level is not sufficient - the nestedState object should be copied as well.
+
+**Correct Approach: Copying All Levels of Nested Data**
+
+Unfortunately, the process of correctly applying immutable updates to deeply nested state can easily become verbose and hard to read. Here&rsquo;s what an example of updating state.first.second[someId].fourth might look like:
+
+```
+function updateVeryNestedField(state, action) {
+    return {
+        ...state,
+        first : {
+            ...state.first,
+            second : {
+                ...state.first.second,
+                [action.someId] : {
+                    ...state.first.second[action.someId],
+                    fourth : action.someValue
+                }
+            }
+        }
+    }
+}
+```
+
+Obviously, each layer of nesting makes this harder to read, and gives more chances to make mistakes. This is one of several reasons why you are encouraged to keep your state flattened, and compose reducers as much as possible.
+
+**Inserting and Removing Items in Arrays** Normally, a Javascript array&rsquo;s contents are modified using mutative functions like push, unshift, and splice. Since we don&rsquo;t want to mutate state directly in reducers, those should normally be avoided. Because of that, you might see &ldquo;insert&rdquo; or &ldquo;remove&rdquo; behavior written like this:
+
+```javascript
+function insertItem(array, action) {
+    return [
+        ...array.slice(0, action.index),
+        action.item,
+        ...array.slice(action.index)
+    ]
+}
+
+function removeItem(array, action) {
+    return [
+        ...array.slice(0, action.index),
+        ...array.slice(action.index + 1)
+    ];
+}
+```
+
+However, remember that the key is that the original in-memory reference is not modified. As long as we make a copy first, we can safely mutate the copy. Note that this is true for both arrays and objects, but nested values still must be updated using the same rules.
+
+This means that we could also write the insert and remove functions like this:
+
+```javascript
+function insertItem(array, action) {
+    let newArray = array.slice();
+    newArray.splice(action.index, 0, action.item);
+    return newArray;
+}
+
+function removeItem(array, action) {
+    let newArray = array.slice();
+    newArray.splice(action.index, 1);
+    return newArray;
+}
+```
+
+The remove function could also be implemented as:
+
+```javascript
+function removeItem(array, action) {
+    return array.filter( (item, index) => index !== action.index);
+}
+```
+
+**Updating an Item in an Array**
+
+Updating one item in an array can be accomplished by using Array.map, returning a new value for the item we want to update, and returning the existing values for all other items:
+
+```javascript
+function updateObjectInArray(array, action) {
+    return array.map( (item, index) => {
+        if(index !== action.index) {
+            // This isn't the item we care about - keep it as-is
+            return item;
+        }
+
+        // Otherwise, this is the one we want - return an updated value
+        return {
+            ...item,
+            ...action.item
+        };
+    });
+}
+```
+
+**Immutable Update Utility Libraries** Because writing immutable update code can become tedious, there are a number of utility libraries that try to abstract out the process. These libraries vary in APIs and usage, but all try to provide a shorter and more succinct way of writing these updates. Some, like dot-prop-immutable, take string paths for commands:
+
+```javascript
+state = dotProp.set(state, `todos.${index}.complete`, true)
+```
+
+Others, like immutability-helper (a fork of the now-deprecated React Immutability Helpers addon), use nested values and helper functions:
+
+```javascript
+var collection = [1, 2, {a: [12, 17, 15]}];
+var newCollection = update(collection, {2: {a: {$splice: [[1, 1, 13, 14]]}}});
+They can provide a useful alternative to writing manual immutable update logic.
+```
+
+
+<a id="org3c92bf5"></a>
 
 # Project Modules & Services
 
 
-<a id="orgf06fe17"></a>
+<a id="orgaa26bb3"></a>
 
 ## Modules used:
 
@@ -881,9 +1127,20 @@ React provides the developers a set of predefined functions that if present is i
 -   radium
 -   styled-components
 -   prop-types
+-   react-router
+-   react-router-dom
+-   redux
+-   react-redux
 
 
-<a id="orgf80db18"></a>
+<a id="org974b558"></a>
+
+## Services used:
+
+-   [Json Placeholder](https://jsonplaceholder.typicode.com/)
+
+
+<a id="orgdfeda67"></a>
 
 # Useful Resources & Links
 
@@ -928,3 +1185,13 @@ React provides the developers a set of predefined functions that if present is i
 -   [Higher Order Components](https://reactjs.org/docs/higher-order-components.html)
 
 -   [Refs](https://reactjs.org/docs/refs-and-the-dom.html)
+
+-   [Validate.js](https://validatejs.org/)
+
+-   [Get more ideas about potential validation approaches](https://react.rocks/tag/Validation)
+
+-   [react-validation package](https://www.npmjs.com/package/react-validation)
+
+-   [formsy-react package](https://github.com/christianalfoni/formsy-react)
+
+-   [Immutable Update Patterns on reduxjs.org](https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/)

@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2021-02-26 sex 14:43 -->
+<!-- 2021-03-05 sex 12:44 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>React - The Complete Guide</title>
@@ -229,72 +229,86 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7d0890e">Introduction</a>
+<li><a href="#org5f145df">Introduction</a>
 <ul>
-<li><a href="#org5dc65e0">What is React?</a></li>
-<li><a href="#org7b76d63">Why React?</a></li>
-<li><a href="#org7e9e2b8">Single Page Applications / Multi Page Applications</a></li>
+<li><a href="#orge073026">What is React?</a></li>
+<li><a href="#org7726159">Why React?</a></li>
+<li><a href="#orgfb1e5d0">Single Page Applications / Multi Page Applications</a></li>
 </ul>
 </li>
-<li><a href="#org320c8ff">Refreshing Next Generation Javascript</a>
+<li><a href="#org925a724">Refreshing Next Generation Javascript</a>
 <ul>
-<li><a href="#org3901aa8">&ldquo;let&rdquo; and &ldquo;const&rdquo;</a></li>
-<li><a href="#org5d117db">Arrow Functions</a></li>
-<li><a href="#org41e5edd">Exports &amp; Imports (Modules)</a></li>
-<li><a href="#org197ef7a">Classes</a></li>
-<li><a href="#orgc765559">Classes, Properties and Methods</a></li>
-<li><a href="#org5e8c9ac">Spread and Rest Operator</a></li>
-<li><a href="#orgb25540a">Destructuring</a></li>
+<li><a href="#org402064c">&ldquo;let&rdquo; and &ldquo;const&rdquo;</a></li>
+<li><a href="#org4e5bf9c">Arrow Functions</a></li>
+<li><a href="#org1c1f956">Exports &amp; Imports (Modules)</a></li>
+<li><a href="#org32f775b">Classes</a></li>
+<li><a href="#orgd2b397b">Classes, Properties and Methods</a></li>
+<li><a href="#orgc5d71ad">Spread and Rest Operator</a></li>
+<li><a href="#orgd910dab">Destructuring</a></li>
 </ul>
 </li>
-<li><a href="#org29013f5">Understanding the Base Features &amp; Syntax</a>
+<li><a href="#org98d3c63">Understanding the Base Features &amp; Syntax</a>
 <ul>
-<li><a href="#org5f26655">Using a Build Workflow</a></li>
+<li><a href="#org9582a7b">Using a Build Workflow</a></li>
 </ul>
 </li>
-<li><a href="#orgfe60e39">Working with Lists and Conditionals</a>
+<li><a href="#orgdab23ae">Working with Lists and Conditionals</a>
 <ul>
-<li><a href="#org1532b6a">JSX</a></li>
-<li><a href="#orgb6e429d">Components</a></li>
-<li><a href="#org5afb27a">Props and State</a></li>
-<li><a href="#orgc8564a8">Class, Pure and Function Components</a></li>
+<li><a href="#org86953ff">JSX</a></li>
+<li><a href="#orgebaa857">Components</a></li>
+<li><a href="#org1c6f241">Props and State</a></li>
+<li><a href="#org5a20e63">Class, Pure and Function Components</a></li>
 </ul>
 </li>
-<li><a href="#orgafa1f1b">Styling React Components &amp; Elements</a></li>
-<li><a href="#org18bc9f9">Debugging React Apps</a>
+<li><a href="#orgee76fd2">Styling React Components &amp; Elements</a></li>
+<li><a href="#orga0a56ad">Debugging React Apps</a>
 <ul>
-<li><a href="#org292c57e">Understanding Error Messages</a></li>
-<li><a href="#org7401b6e">Using Dev Tools &amp; Sourcemaps to find Logical Errors</a></li>
-<li><a href="#org0dce65d">Using React Developer Tools</a></li>
-<li><a href="#orgb5d570b">Using Error Boundaries</a></li>
+<li><a href="#orgefa5063">Understanding Error Messages</a></li>
+<li><a href="#org35346db">Using Dev Tools &amp; Sourcemaps to find Logical Errors</a></li>
+<li><a href="#org210f852">Using React Developer Tools</a></li>
+<li><a href="#orgce3ae45">Using Error Boundaries</a></li>
 </ul>
 </li>
-<li><a href="#orgc037bcf">Diving Deeper into Components &amp; React internals</a>
+<li><a href="#org4fc4fd8">Diving Deeper into Components &amp; React internals</a>
 <ul>
-<li><a href="#org935616a">Components: stateful, stateless, dumb and smart</a></li>
-<li><a href="#orgc048941">Functional Components vs. Class Components</a></li>
-<li><a href="#org6e60769">Lifecycle of Components</a></li>
+<li><a href="#org192566b">Components: stateful, stateless, dumb and smart</a></li>
+<li><a href="#orgf3ebdf7">Functional Components vs. Class Components</a></li>
+<li><a href="#org50cda3a">Lifecycle of Components</a></li>
 </ul>
 </li>
-<li><a href="#org3865e6a">Project Modules &amp; Services</a>
+<li><a href="#orgbe8a2df">Multi-Page-Feeling in a Single-Page-App: Routing</a>
 <ul>
-<li><a href="#orga0b9bfa">Modules used:</a></li>
+<li><a href="#org86faf8d">Routing and SPAs</a></li>
+<li><a href="#org15a3048">react-router vs react-router-dom</a></li>
+<li><a href="#org367aeff">Absolute vs Relative Paths</a></li>
+<li><a href="#orgb793ff2">Parsing Query Parameters &amp; the Fragment</a></li>
 </ul>
 </li>
-<li><a href="#org85f2502">Useful Resources &amp; Links</a></li>
+<li><a href="#org37376a0">Redux</a>
+<ul>
+<li><a href="#org3d6f440">Immutable Update Patterns</a></li>
+</ul>
+</li>
+<li><a href="#org70d1432">Project Modules &amp; Services</a>
+<ul>
+<li><a href="#org6efc862">Modules used:</a></li>
+<li><a href="#org80ddda8">Services used:</a></li>
+</ul>
+</li>
+<li><a href="#org422f85b">Useful Resources &amp; Links</a></li>
 </ul>
 </div>
 </div>
 <hr />
 
-<div id="outline-container-org7d0890e" class="outline-2">
-<h2 id="org7d0890e">Introduction</h2>
-<div class="outline-text-2" id="text-org7d0890e">
+<div id="outline-container-org5f145df" class="outline-2">
+<h2 id="org5f145df">Introduction</h2>
+<div class="outline-text-2" id="text-org5f145df">
 </div>
 
-<div id="outline-container-org5dc65e0" class="outline-3">
-<h3 id="org5dc65e0">What is React?</h3>
-<div class="outline-text-3" id="text-org5dc65e0">
+<div id="outline-container-orge073026" class="outline-3">
+<h3 id="orge073026">What is React?</h3>
+<div class="outline-text-3" id="text-orge073026">
 <p>
 &ldquo;A javascript Library for building User Interfaces&rdquo;
 </p>
@@ -309,9 +323,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org7b76d63" class="outline-3">
-<h3 id="org7b76d63">Why React?</h3>
-<div class="outline-text-3" id="text-org7b76d63">
+<div id="outline-container-org7726159" class="outline-3">
+<h3 id="org7726159">Why React?</h3>
+<div class="outline-text-3" id="text-org7726159">
 <ul class="org-ul">
 <li>UI State becomes difficult to handle with Vanilla Javascript</li>
 <li>Focus on Business Logic, not on preventing your App from exploding</li>
@@ -320,9 +334,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org7e9e2b8" class="outline-3">
-<h3 id="org7e9e2b8">Single Page Applications / Multi Page Applications</h3>
-<div class="outline-text-3" id="text-org7e9e2b8">
+<div id="outline-container-orgfb1e5d0" class="outline-3">
+<h3 id="orgfb1e5d0">Single Page Applications / Multi Page Applications</h3>
+<div class="outline-text-3" id="text-orgfb1e5d0">
 <ul class="org-ul">
 <li>Single Page Applications - Only ONE HTML Page, Content is (re)rendered on Client - Typically only ONE ReactDOM.render() call</li>
 
@@ -332,14 +346,14 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 </div>
 
-<div id="outline-container-org320c8ff" class="outline-2">
-<h2 id="org320c8ff">Refreshing Next Generation Javascript</h2>
-<div class="outline-text-2" id="text-org320c8ff">
+<div id="outline-container-org925a724" class="outline-2">
+<h2 id="org925a724">Refreshing Next Generation Javascript</h2>
+<div class="outline-text-2" id="text-org925a724">
 </div>
 
-<div id="outline-container-org3901aa8" class="outline-3">
-<h3 id="org3901aa8">&ldquo;let&rdquo; and &ldquo;const&rdquo;</h3>
-<div class="outline-text-3" id="text-org3901aa8">
+<div id="outline-container-org402064c" class="outline-3">
+<h3 id="org402064c">&ldquo;let&rdquo; and &ldquo;const&rdquo;</h3>
+<div class="outline-text-3" id="text-org402064c">
 <ul class="org-ul">
 <li>var - creates a variable in javascript</li>
 
@@ -350,9 +364,9 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 </div>
 
 
-<div id="outline-container-org5d117db" class="outline-3">
-<h3 id="org5d117db">Arrow Functions</h3>
-<div class="outline-text-3" id="text-org5d117db">
+<div id="outline-container-org4e5bf9c" class="outline-3">
+<h3 id="org4e5bf9c">Arrow Functions</h3>
+<div class="outline-text-3" id="text-org4e5bf9c">
 <p>
 Arrow functions are a different way of creating functions in JavaScript. Besides a shorter syntax, they offer advantages when it comes to keeping the scope of the this  keyword
 </p>
@@ -384,9 +398,9 @@ Arrow functions are a different way of creating functions in JavaScript. Besides
 </div>
 
 
-<div id="outline-container-org41e5edd" class="outline-3">
-<h3 id="org41e5edd">Exports &amp; Imports (Modules)</h3>
-<div class="outline-text-3" id="text-org41e5edd">
+<div id="outline-container-org1c1f956" class="outline-3">
+<h3 id="org1c1f956">Exports &amp; Imports (Modules)</h3>
+<div class="outline-text-3" id="text-org1c1f956">
 <p>
 <b>person.js</b>
 </p>
@@ -426,9 +440,9 @@ exports <span style="color: #859900; font-weight: bold;">default</span> person
 </div>
 
 
-<div id="outline-container-org197ef7a" class="outline-3">
-<h3 id="org197ef7a">Classes</h3>
-<div class="outline-text-3" id="text-org197ef7a">
+<div id="outline-container-org32f775b" class="outline-3">
+<h3 id="org32f775b">Classes</h3>
+<div class="outline-text-3" id="text-org32f775b">
 <div class="org-src-container">
 <pre class="src src-javascript"><span style="color: #405A61;">// </span><span style="color: #405A61;">class declaration</span>
 <span style="color: #859900; font-weight: bold;">class</span> Human {
@@ -470,9 +484,9 @@ somePerson.printGender();
 </div>
 </div>
 
-<div id="outline-container-orgc765559" class="outline-3">
-<h3 id="orgc765559">Classes, Properties and Methods</h3>
-<div class="outline-text-3" id="text-orgc765559">
+<div id="outline-container-orgd2b397b" class="outline-3">
+<h3 id="orgd2b397b">Classes, Properties and Methods</h3>
+<div class="outline-text-3" id="text-orgd2b397b">
 <ul class="org-ul">
 <li>Properties are like &ldquo;variables attached to classes/objects&rdquo;</li>
 </ul>
@@ -534,9 +548,9 @@ somePerson.printGender();
 </div>
 
 
-<div id="outline-container-org5e8c9ac" class="outline-3">
-<h3 id="org5e8c9ac">Spread and Rest Operator</h3>
-<div class="outline-text-3" id="text-org5e8c9ac">
+<div id="outline-container-orgc5d71ad" class="outline-3">
+<h3 id="orgc5d71ad">Spread and Rest Operator</h3>
+<div class="outline-text-3" id="text-orgc5d71ad">
 <ul class="org-ul">
 <li>Spread - Used to split up array elements or object properties</li>
 </ul>
@@ -577,9 +591,9 @@ age: <span style="color: #d33682; font-weight: bold;">20</span>
 </div>
 </div>
 
-<div id="outline-container-orgb25540a" class="outline-3">
-<h3 id="orgb25540a">Destructuring</h3>
-<div class="outline-text-3" id="text-orgb25540a">
+<div id="outline-container-orgd910dab" class="outline-3">
+<h3 id="orgd910dab">Destructuring</h3>
+<div class="outline-text-3" id="text-orgd910dab">
 <blockquote>
 <p>
 Easily extract array elements or object properties and store them in variables
@@ -601,14 +615,14 @@ Easily extract array elements or object properties and store them in variables
 </div>
 
 
-<div id="outline-container-org29013f5" class="outline-2">
-<h2 id="org29013f5">Understanding the Base Features &amp; Syntax</h2>
-<div class="outline-text-2" id="text-org29013f5">
+<div id="outline-container-org98d3c63" class="outline-2">
+<h2 id="org98d3c63">Understanding the Base Features &amp; Syntax</h2>
+<div class="outline-text-2" id="text-org98d3c63">
 </div>
 
-<div id="outline-container-org5f26655" class="outline-3">
-<h3 id="org5f26655">Using a Build Workflow</h3>
-<div class="outline-text-3" id="text-org5f26655">
+<div id="outline-container-org9582a7b" class="outline-3">
+<h3 id="org9582a7b">Using a Build Workflow</h3>
+<div class="outline-text-3" id="text-org9582a7b">
 <p>
 <b>Why?</b>
 </p>
@@ -633,18 +647,18 @@ Easily extract array elements or object properties and store them in variables
 </div>
 
 
-<div id="outline-container-orgfe60e39" class="outline-2">
-<h2 id="orgfe60e39">Working with Lists and Conditionals</h2>
-<div class="outline-text-2" id="text-orgfe60e39">
+<div id="outline-container-orgdab23ae" class="outline-2">
+<h2 id="orgdab23ae">Working with Lists and Conditionals</h2>
+<div class="outline-text-2" id="text-orgdab23ae">
 </div>
 
-<div id="outline-container-org1532b6a" class="outline-3">
-<h3 id="org1532b6a">JSX</h3>
+<div id="outline-container-org86953ff" class="outline-3">
+<h3 id="org86953ff">JSX</h3>
 </div>
 
-<div id="outline-container-orgb6e429d" class="outline-3">
-<h3 id="orgb6e429d">Components</h3>
-<div class="outline-text-3" id="text-orgb6e429d">
+<div id="outline-container-orgebaa857" class="outline-3">
+<h3 id="orgebaa857">Components</h3>
+<div class="outline-text-3" id="text-orgebaa857">
 <p>
 Components are the core building block of React apps. Actually, React really is just a library for creating components in its core.
 A typical React app therefore could be depicted as a component tree - having one root component (&ldquo;App&rdquo;) and then an potentially infinite amount of nested child components.
@@ -659,9 +673,9 @@ Each component needs to return/ render some JSX code - it defines which HTML cod
 </div>
 </div>
 
-<div id="outline-container-org5afb27a" class="outline-3">
-<h3 id="org5afb27a">Props and State</h3>
-<div class="outline-text-3" id="text-org5afb27a">
+<div id="outline-container-org1c6f241" class="outline-3">
+<h3 id="org1c6f241">Props and State</h3>
+<div class="outline-text-3" id="text-org1c6f241">
 <p>
 props  and state  are CORE concepts of React. Actually, only changes in props  and/ or state  trigger React to re-render your components and potentially update the DOM in the browser (a detailed look at how React checks whether to really touch the real DOM is provided in section 6).
 </p>
@@ -765,17 +779,17 @@ Whenever state  changes (taught over the next lectures), the component will re-r
 </div>
 
 
-<div id="outline-container-orgc8564a8" class="outline-3">
-<h3 id="orgc8564a8">Class, Pure and Function Components</h3>
-<div class="outline-text-3" id="text-orgc8564a8">
+<div id="outline-container-org5a20e63" class="outline-3">
+<h3 id="org5a20e63">Class, Pure and Function Components</h3>
+<div class="outline-text-3" id="text-org5a20e63">
 <p>
 React components come in different flavors to tackle different problems. In typical programming fashion, choosing which one works best gets an “it depends.” Each component type has its pros and cons depending on the problem at hand. The main takeaway is knowing how each component type is useful for a given scenario.
 </p>
 </div>
 
-<div id="outline-container-orge4af1c2" class="outline-4">
-<h4 id="orge4af1c2">Class components (formerly ‘Stateful’ components)</h4>
-<div class="outline-text-4" id="text-orge4af1c2">
+<div id="outline-container-org5b42d9d" class="outline-4">
+<h4 id="org5b42d9d">Class components (formerly ‘Stateful’ components)</h4>
+<div class="outline-text-4" id="text-org5b42d9d">
 <p>
 The one component type we see all over the place is the class component. It is a stateful component because it has both state and props. This component has a ton of flexibility which is the reason why it is all over the place. A plus here is this has all component lifecycle methods in their raw form. This helps in tailoring the component to fit specific use cases. For example, firing an Ajax request right after the component mounts. One con is managing state manually with setState because of complexity and risk increase.
 </p>
@@ -822,9 +836,9 @@ On the flip side, if complexity is a big concern, look into web hooks. Web hooks
 </div>
 </div>
 
-<div id="outline-container-org8915e43" class="outline-4">
-<h4 id="org8915e43">Pure components</h4>
-<div class="outline-text-4" id="text-org8915e43">
+<div id="outline-container-orgbedf2c8" class="outline-4">
+<h4 id="orgbedf2c8">Pure components</h4>
+<div class="outline-text-4" id="text-orgbedf2c8">
 <p>
 Pure components have this type definition:
 </p>
@@ -875,9 +889,9 @@ For example:
 </div>
 </div>
 
-<div id="outline-container-orga62116f" class="outline-4">
-<h4 id="orga62116f">Function components (formerly ‘Stateless’ components)</h4>
-<div class="outline-text-4" id="text-orga62116f">
+<div id="outline-container-org83c1c10" class="outline-4">
+<h4 id="org83c1c10">Function components (formerly ‘Stateless’ components)</h4>
+<div class="outline-text-4" id="text-org83c1c10">
 <p>
 A function component in React is defined like this:
 </p>
@@ -918,53 +932,53 @@ In simple terms, this is a function component:
 
 
 
-<div id="outline-container-orgafa1f1b" class="outline-2">
-<h2 id="orgafa1f1b">Styling React Components &amp; Elements</h2>
-<div class="outline-text-2" id="text-orgafa1f1b">
+<div id="outline-container-orgee76fd2" class="outline-2">
+<h2 id="orgee76fd2">Styling React Components &amp; Elements</h2>
+<div class="outline-text-2" id="text-orgee76fd2">
 </div>
 </div>
 
-<div id="outline-container-org18bc9f9" class="outline-2">
-<h2 id="org18bc9f9">Debugging React Apps</h2>
-<div class="outline-text-2" id="text-org18bc9f9">
+<div id="outline-container-orga0a56ad" class="outline-2">
+<h2 id="orga0a56ad">Debugging React Apps</h2>
+<div class="outline-text-2" id="text-orga0a56ad">
 </div>
 
-<div id="outline-container-org292c57e" class="outline-3">
-<h3 id="org292c57e">Understanding Error Messages</h3>
-</div>
-
-
-<div id="outline-container-org7401b6e" class="outline-3">
-<h3 id="org7401b6e">Using Dev Tools &amp; Sourcemaps to find Logical Errors</h3>
+<div id="outline-container-orgefa5063" class="outline-3">
+<h3 id="orgefa5063">Understanding Error Messages</h3>
 </div>
 
 
-<div id="outline-container-org0dce65d" class="outline-3">
-<h3 id="org0dce65d">Using React Developer Tools</h3>
+<div id="outline-container-org35346db" class="outline-3">
+<h3 id="org35346db">Using Dev Tools &amp; Sourcemaps to find Logical Errors</h3>
 </div>
 
 
-<div id="outline-container-orgb5d570b" class="outline-3">
-<h3 id="orgb5d570b">Using Error Boundaries</h3>
+<div id="outline-container-org210f852" class="outline-3">
+<h3 id="org210f852">Using React Developer Tools</h3>
+</div>
+
+
+<div id="outline-container-orgce3ae45" class="outline-3">
+<h3 id="orgce3ae45">Using Error Boundaries</h3>
 </div>
 </div>
 
-<div id="outline-container-orgc037bcf" class="outline-2">
-<h2 id="orgc037bcf">Diving Deeper into Components &amp; React internals</h2>
-<div class="outline-text-2" id="text-orgc037bcf">
+<div id="outline-container-org4fc4fd8" class="outline-2">
+<h2 id="org4fc4fd8">Diving Deeper into Components &amp; React internals</h2>
+<div class="outline-text-2" id="text-org4fc4fd8">
 </div>
 
-<div id="outline-container-org935616a" class="outline-3">
-<h3 id="org935616a">Components: stateful, stateless, dumb and smart</h3>
-<div class="outline-text-3" id="text-org935616a">
+<div id="outline-container-org192566b" class="outline-3">
+<h3 id="org192566b">Components: stateful, stateless, dumb and smart</h3>
+<div class="outline-text-3" id="text-org192566b">
 <p>
 There are many terms to describe components: stateless, stateful, dumb, smart, container, presentational.
 </p>
 </div>
 
-<div id="outline-container-orgcf34a88" class="outline-4">
-<h4 id="orgcf34a88">Stateful vs Stateless</h4>
-<div class="outline-text-4" id="text-orgcf34a88">
+<div id="outline-container-orga152c11" class="outline-4">
+<h4 id="orga152c11">Stateful vs Stateless</h4>
+<div class="outline-text-4" id="text-orga152c11">
 <p>
 A stateless component is a component without an internal state. What’s a state? It depends, in Angular it can be represented by internal properties of a class, in React it may be represented by the property this.state or by a hook, in StencilJS it may be indicated by a @State decorator, and so on… Let’s say that a component has an internal state whenever it can change behavior without receiving a property (or an input) from the outside.
 </p>
@@ -1002,9 +1016,9 @@ A stateless component is to be preferred is many cases, but this is only a gener
 </div>
 </div>
 
-<div id="outline-container-org9c272b5" class="outline-4">
-<h4 id="org9c272b5">Dumb vs Smart</h4>
-<div class="outline-text-4" id="text-org9c272b5">
+<div id="outline-container-orgf47c33b" class="outline-4">
+<h4 id="orgf47c33b">Dumb vs Smart</h4>
+<div class="outline-text-4" id="text-orgf47c33b">
 <p>
 There’s a lot of confusion here, so let’s clarify what these terms don’t mean: dumb doesn’t mean stateless and smart doesn’t mean stateful.
 </p>
@@ -1022,7 +1036,7 @@ Consequently, it’s a good practice to write every child component as dumb. Let
 </p>
 
 
-<div id="org707d3d5" class="figure">
+<div id="orgdae4261" class="figure">
 <p><img src="https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/components.jpeg" alt="components" width="50%" height="50%" title="stateful, stateless, dumb and smart" align="center" />
 </p>
 <p><span class="figure-number">Figure 1: </span>stateful, stateless, dumb and smart</p>
@@ -1034,9 +1048,9 @@ It could happen that a smart component may have the need to have its own interna
 </div>
 </div>
 
-<div id="outline-container-orgf1912ed" class="outline-4">
-<h4 id="orgf1912ed">Recap</h4>
-<div class="outline-text-4" id="text-orgf1912ed">
+<div id="outline-container-orge28cdf4" class="outline-4">
+<h4 id="orge28cdf4">Recap</h4>
+<div class="outline-text-4" id="text-orge28cdf4">
 <p>
 So, in a typical component-based architecture scenario, these are the categories we can find:
 </p>
@@ -1050,9 +1064,9 @@ So, in a typical component-based architecture scenario, these are the categories
 </div>
 </div>
 
-<div id="outline-container-orgc048941" class="outline-3">
-<h3 id="orgc048941">Functional Components vs. Class Components</h3>
-<div class="outline-text-3" id="text-orgc048941">
+<div id="outline-container-orgf3ebdf7" class="outline-3">
+<h3 id="orgf3ebdf7">Functional Components vs. Class Components</h3>
+<div class="outline-text-3" id="text-orgf3ebdf7">
 <p>
 React uses a declarative approach and simplifies the creation of user interfaces. A web application built in React is structured in several small and isolated pieces of code called React components. There are two main types of components:
 </p>
@@ -1066,7 +1080,7 @@ To understand the differences, it’s important to know what the React ecosystem
 </p>
 
 
-<div id="org5715bc1" class="figure">
+<div id="org5d58793" class="figure">
 <p><img src="https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs//functional-class-components.jpeg" alt="functional and class components" width="50%" height="50%" title="functional and class components worked" align="center" />
 </p>
 <p><span class="figure-number">Figure 2: </span>functional and class components worked</p>
@@ -1077,7 +1091,7 @@ In February 2019, the React team introduced Hooks as a new addition to React v16
 </p>
 
 
-<div id="org5ad5304" class="figure">
+<div id="orgd23a155" class="figure">
 <p><img src="https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/functional-class-components-current.jpeg" alt="functional and class components current" width="50%" height="50%" title="functional and class components work currently" align="center" />
 </p>
 <p><span class="figure-number">Figure 3: </span>functional and class components work currently</p>
@@ -1085,9 +1099,9 @@ In February 2019, the React team introduced Hooks as a new addition to React v16
 </div>
 
 
-<div id="outline-container-org182e4b3" class="outline-4">
-<h4 id="org182e4b3">1. Rendering JSX to Show Content</h4>
-<div class="outline-text-4" id="text-org182e4b3">
+<div id="outline-container-org5235df3" class="outline-4">
+<h4 id="org5235df3">1. Rendering JSX to Show Content</h4>
+<div class="outline-text-4" id="text-org5235df3">
 <p>
 JSX stands for JavaScript XML, it “allows us to write HTML elements in JavaScript and place them in the DOM without using any createElement() and/or appendChild() methods”.
 </p>
@@ -1149,9 +1163,9 @@ Functional components are JavaScript functions that return JSX:
 </div>
 </div>
 
-<div id="outline-container-orgcfad706" class="outline-4">
-<h4 id="orgcfad706">2. Handling State</h4>
-<div class="outline-text-4" id="text-orgcfad706">
+<div id="outline-container-orge76a02d" class="outline-4">
+<h4 id="orge76a02d">2. Handling State</h4>
+<div class="outline-text-4" id="text-orge76a02d">
 <p>
 With the state system, we create a JavaScript object containing some data strictly relevant to the component we’re working on. Before Hooks, the state system was only usable with class components. But with this new addition, it is now possible to obtain the same result with functional components.
 </p>
@@ -1216,9 +1230,9 @@ In a functional component, first, we have to get the useState function from the 
 </div>
 </div>
 
-<div id="outline-container-org00b637e" class="outline-4">
-<h4 id="org00b637e">3. Passing Props</h4>
-<div class="outline-text-4" id="text-org00b637e">
+<div id="outline-container-orgd5e5a5f" class="outline-4">
+<h4 id="orgd5e5a5f">3. Passing Props</h4>
+<div class="outline-text-4" id="text-orgd5e5a5f">
 <p>
 To pass data as parameters from one React component to another, we use React’s props.
 </p>
@@ -1292,9 +1306,9 @@ In a functional component, we are passing props as an argument of the function.
 </div>
 </div>
 
-<div id="outline-container-org85cc21f" class="outline-4">
-<h4 id="org85cc21f">4. Lifecycle Method System</h4>
-<div class="outline-text-4" id="text-org85cc21f">
+<div id="outline-container-orgc10a921" class="outline-4">
+<h4 id="orgc10a921">4. Lifecycle Method System</h4>
+<div class="outline-text-4" id="text-orgc10a921">
 <p>
 Every component in React goes through a lifecycle of events. Lifecycles have a significant role in the timing of rendering. An example of a lifecycle method is the componentDidMount() that corresponds to the useEffect() method in a functional component.
 </p>
@@ -1352,9 +1366,9 @@ To obtain the same result in a functional component, we use the useEffect hook w
 </div>
 </div>
 
-<div id="outline-container-org6e60769" class="outline-3">
-<h3 id="org6e60769">Lifecycle of Components</h3>
-<div class="outline-text-3" id="text-org6e60769">
+<div id="outline-container-org50cda3a" class="outline-3">
+<h3 id="org50cda3a">Lifecycle of Components</h3>
+<div class="outline-text-3" id="text-org50cda3a">
 <p>
 Every React Component has a lifecycle of its own, lifecycle of a component can be defined as the series of methods that are invoked in different stages of the component’s existence. The definition is pretty straightforward but what do we mean by different stages? A React Component can go through four stages of its life as follows.
 </p>
@@ -1371,16 +1385,16 @@ React provides the developers a set of predefined functions that if present is i
 </p>
 
 
-<div id="orgc12133e" class="figure">
+<div id="orgb2f703d" class="figure">
 <p><img src="https://gitlab.com/mdLima0/react-the-complete-guide/-/raw/master/resources/imgs/react-component-lifecycle2.png" alt="components-lifecycle" width="50%" height="50%" title="React Components Lifecycle" align="center" />
 </p>
 <p><span class="figure-number">Figure 4: </span>React Components Lifecycle</p>
 </div>
 </div>
 
-<div id="outline-container-orgb751c11" class="outline-4">
-<h4 id="orgb751c11">Functions of each Phase of Lifecycle</h4>
-<div class="outline-text-4" id="text-orgb751c11">
+<div id="outline-container-orgfaaef24" class="outline-4">
+<h4 id="orgfaaef24">Functions of each Phase of Lifecycle</h4>
+<div class="outline-text-4" id="text-orgfaaef24">
 <ol class="org-ol">
 <li><b>Initialization</b> - In this phase, the developer has to define the props and initial state of the component this is generally done in the constructor of the component. The following code snippet describes the initialization process.</li>
 
@@ -1416,26 +1430,347 @@ React provides the developers a set of predefined functions that if present is i
 </div>
 
 
-<div id="outline-container-org3865e6a" class="outline-2">
-<h2 id="org3865e6a">Project Modules &amp; Services</h2>
-<div class="outline-text-2" id="text-org3865e6a">
+<div id="outline-container-orgbe8a2df" class="outline-2">
+<h2 id="orgbe8a2df">Multi-Page-Feeling in a Single-Page-App: Routing</h2>
+<div class="outline-text-2" id="text-orgbe8a2df">
 </div>
-<div id="outline-container-orga0b9bfa" class="outline-3">
-<h3 id="orga0b9bfa">Modules used:</h3>
-<div class="outline-text-3" id="text-orga0b9bfa">
+<div id="outline-container-org86faf8d" class="outline-3">
+<h3 id="org86faf8d">Routing and SPAs</h3>
+</div>
+
+
+<div id="outline-container-org15a3048" class="outline-3">
+<h3 id="org15a3048">react-router vs react-router-dom</h3>
+</div>
+
+
+<div id="outline-container-org367aeff" class="outline-3">
+<h3 id="org367aeff">Absolute vs Relative Paths</h3>
+</div>
+
+
+<div id="outline-container-orgb793ff2" class="outline-3">
+<h3 id="orgb793ff2">Parsing Query Parameters &amp; the Fragment</h3>
+<div class="outline-text-3" id="text-orgb793ff2">
+<p>
+You learned how to extract route parameters (=&gt; :id  etc).
+</p>
+
+<p>
+But how do you extract search (also referred to as &ldquo;query&rdquo;) parameters (=&gt; ?something=somevalue  at the end of the URL)? How do you extract the fragment (=&gt; #something  at the end of the URL)?
+</p>
+
+<p>
+<b>Query Params:</b>
+You can pass them easily like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">&lt;Link to=<span style="color: #2aa198;">"/my-path?start=5"</span>&gt;Go to Start&lt;/Link&gt;
+</pre>
+</div>
+
+<p>
+or
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">&lt;Link
+    to={{
+        pathname: <span style="color: #2aa198;">'/my-path'</span>,
+        search: <span style="color: #2aa198;">'?start=5'</span>
+    }}
+    &gt;Go to Start&lt;/Link&gt;
+</pre>
+</div>
+
+<p>
+React router makes it easy to get access to the search string: props.location.search .
+</p>
+
+<p>
+But that will only give you something like ?start=5
+</p>
+
+<p>
+You probably want to get the key-value pair, without the ?  and the = . Here&rsquo;s a snippet which allows you to easily extract that information:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">componentDidMount() {
+    <span style="color: #859900; font-weight: bold;">const</span> <span style="color: #6c71c4;">query</span> = <span style="color: #859900; font-weight: bold;">new</span> <span style="color: #b58900;">URLSearchParams</span>(<span style="color: #d33682; font-weight: bold;">this</span>.props.location.search);
+    <span style="color: #859900; font-weight: bold;">for</span> (<span style="color: #859900; font-weight: bold;">let</span> <span style="color: #6c71c4;">param</span> of query.entries()) {
+        console.log(param); <span style="color: #405A61;">// </span><span style="color: #405A61;">yields ['start', '5']</span>
+    }
+}
+</pre>
+</div>
+
+<p>
+URLSearchParams  is a built-in object, shipping with vanilla JavaScript. It returns an object, which exposes the entries()  method. entries()  returns an Iterator - basically a construct which can be used in a for&#x2026;of&#x2026;  loop (as shown above).
+</p>
+
+<p>
+When looping through query.entries() , you get arrays where the first element is the key name (e.g. start ) and the second element is the assigned value (e.g. 5 ).
+</p>
+
+<p>
+<b>Fragment:</b>
+You can pass it easily like this:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">&lt;Link to=<span style="color: #2aa198;">"/my-path#start-position"</span>&gt;Go to Start&lt;/Link&gt;
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-javascript">&lt;Link&gt;
+    TO ={{
+        pathname: <span style="color: #2aa198;">'/my-path'</span>,
+        hash: <span style="color: #2aa198;">'start-position'</span>
+    }}
+    &gt;Go to Start&lt;/Link&gt;
+</pre>
+</div>
+
+<p>
+React router makes it easy to extract the fragment. You can simply access props.location.hash .
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org37376a0" class="outline-2">
+<h2 id="org37376a0">Redux</h2>
+<div class="outline-text-2" id="text-org37376a0">
+</div>
+<div id="outline-container-org3d6f440" class="outline-3">
+<h3 id="org3d6f440">Immutable Update Patterns</h3>
+<div class="outline-text-3" id="text-org3d6f440">
+</div>
+<div id="outline-container-org54a261a" class="outline-4">
+<h4 id="org54a261a">Updating Nested Objects</h4>
+<div class="outline-text-4" id="text-org54a261a">
+<p>
+The key to updating nested data is <b>that every level of nesting must be copied and updated appropriately</b>. This is often a difficult concept for those learning Redux, and there are some specific problems that frequently occur when trying to update nested objects. These lead to accidental direct mutation, and should be avoided.
+</p>
+
+<p>
+<b>Common Mistake #1: New variables that point to the same objects</b>
+</p>
+
+<p>
+Defining a new variable does not create a new actual object - it only creates another reference to the same object. An example of this error would be:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">function</span> <span style="color: #268bd2;">updateNestedState</span>(<span style="color: #6c71c4;">state</span>, <span style="color: #6c71c4;">action</span>) {
+    <span style="color: #859900; font-weight: bold;">let</span> <span style="color: #6c71c4;">nestedState</span> = state.nestedState;
+    <span style="color: #405A61;">// </span><span style="color: #405A61;">ERROR: this directly modifies the existing object reference - don't do this!</span>
+    nestedState.nestedField = action.data;
+
+    <span style="color: #859900; font-weight: bold;">return</span> {
+        ...state,
+        nestedState
+    };
+}
+</pre>
+</div>
+
+<p>
+This function does correctly return a shallow copy of the top-level state object, but because the nestedState variable was still pointing at the existing object, the state was directly mutated.
+</p>
+
+<p>
+<b>Common Mistake #2: Only making a shallow copy of one level</b>
+</p>
+
+<p>
+Another common version of this error looks like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">function</span> <span style="color: #268bd2;">updateNestedState</span>(<span style="color: #6c71c4;">state</span>, <span style="color: #6c71c4;">action</span>) {
+    <span style="color: #405A61;">// </span><span style="color: #405A61;">Problem: this only does a shallow copy!</span>
+    <span style="color: #859900; font-weight: bold;">let</span> <span style="color: #6c71c4;">newState</span> = {...state};
+
+    <span style="color: #405A61;">// </span><span style="color: #405A61;">ERROR: nestedState is still the same object!</span>
+    newState.nestedState.nestedField = action.data;
+
+    <span style="color: #859900; font-weight: bold;">return</span> newState;
+}
+</pre>
+</div>
+
+<p>
+Doing a shallow copy of the top level is not sufficient - the nestedState object should be copied as well.
+</p>
+
+<p>
+<b>Correct Approach: Copying All Levels of Nested Data</b>
+</p>
+
+<p>
+Unfortunately, the process of correctly applying immutable updates to deeply nested state can easily become verbose and hard to read. Here&rsquo;s what an example of updating state.first.second[someId].fourth might look like:
+</p>
+<pre class="example">
+function updateVeryNestedField(state, action) {
+    return {
+        ...state,
+        first : {
+            ...state.first,
+            second : {
+                ...state.first.second,
+                [action.someId] : {
+                    ...state.first.second[action.someId],
+                    fourth : action.someValue
+                }
+            }
+        }
+    }
+}
+</pre>
+
+<p>
+Obviously, each layer of nesting makes this harder to read, and gives more chances to make mistakes. This is one of several reasons why you are encouraged to keep your state flattened, and compose reducers as much as possible.
+</p>
+
+<p>
+<b>Inserting and Removing Items in Arrays</b>
+Normally, a Javascript array&rsquo;s contents are modified using mutative functions like push, unshift, and splice. Since we don&rsquo;t want to mutate state directly in reducers, those should normally be avoided. Because of that, you might see &ldquo;insert&rdquo; or &ldquo;remove&rdquo; behavior written like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">function</span> <span style="color: #268bd2;">insertItem</span>(<span style="color: #6c71c4;">array</span>, <span style="color: #6c71c4;">action</span>) {
+    <span style="color: #859900; font-weight: bold;">return</span> [
+        ...array.slice(<span style="color: #d33682; font-weight: bold;">0</span>, action.index),
+        action.item,
+        ...array.slice(action.index)
+    ]
+}
+
+<span style="color: #859900; font-weight: bold;">function</span> <span style="color: #268bd2;">removeItem</span>(<span style="color: #6c71c4;">array</span>, <span style="color: #6c71c4;">action</span>) {
+    <span style="color: #859900; font-weight: bold;">return</span> [
+        ...array.slice(<span style="color: #d33682; font-weight: bold;">0</span>, action.index),
+        ...array.slice(action.index + <span style="color: #d33682; font-weight: bold;">1</span>)
+    ];
+}
+</pre>
+</div>
+
+<p>
+However, remember that the key is that the original in-memory reference is not modified. As long as we make a copy first, we can safely mutate the copy. Note that this is true for both arrays and objects, but nested values still must be updated using the same rules.
+</p>
+
+<p>
+This means that we could also write the insert and remove functions like this:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">function</span> <span style="color: #268bd2;">insertItem</span>(<span style="color: #6c71c4;">array</span>, <span style="color: #6c71c4;">action</span>) {
+    <span style="color: #859900; font-weight: bold;">let</span> <span style="color: #6c71c4;">newArray</span> = array.slice();
+    newArray.splice(action.index, <span style="color: #d33682; font-weight: bold;">0</span>, action.item);
+    <span style="color: #859900; font-weight: bold;">return</span> newArray;
+}
+
+<span style="color: #859900; font-weight: bold;">function</span> <span style="color: #268bd2;">removeItem</span>(<span style="color: #6c71c4;">array</span>, <span style="color: #6c71c4;">action</span>) {
+    <span style="color: #859900; font-weight: bold;">let</span> <span style="color: #6c71c4;">newArray</span> = array.slice();
+    newArray.splice(action.index, <span style="color: #d33682; font-weight: bold;">1</span>);
+    <span style="color: #859900; font-weight: bold;">return</span> newArray;
+}
+</pre>
+</div>
+
+<p>
+The remove function could also be implemented as:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">function</span> <span style="color: #268bd2;">removeItem</span>(<span style="color: #6c71c4;">array</span>, <span style="color: #6c71c4;">action</span>) {
+    <span style="color: #859900; font-weight: bold;">return</span> array.filter( (item, index) =&gt; index !== action.index);
+}
+</pre>
+</div>
+
+<p>
+<b>Updating an Item in an Array</b>
+</p>
+
+<p>
+Updating one item in an array can be accomplished by using Array.map, returning a new value for the item we want to update, and returning the existing values for all other items:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">function</span> <span style="color: #268bd2;">updateObjectInArray</span>(<span style="color: #6c71c4;">array</span>, <span style="color: #6c71c4;">action</span>) {
+    <span style="color: #859900; font-weight: bold;">return</span> array.map( (item, index) =&gt; {
+        <span style="color: #859900; font-weight: bold;">if</span>(index !== action.index) {
+            <span style="color: #405A61;">// </span><span style="color: #405A61;">This isn't the item we care about - keep it as-is</span>
+            <span style="color: #859900; font-weight: bold;">return</span> item;
+        }
+
+        <span style="color: #405A61;">// </span><span style="color: #405A61;">Otherwise, this is the one we want - return an updated value</span>
+        <span style="color: #859900; font-weight: bold;">return</span> {
+            ...item,
+            ...action.item
+        };
+    });
+}
+</pre>
+</div>
+
+<p>
+<b>Immutable Update Utility Libraries</b>
+Because writing immutable update code can become tedious, there are a number of utility libraries that try to abstract out the process. These libraries vary in APIs and usage, but all try to provide a shorter and more succinct way of writing these updates. Some, like dot-prop-immutable, take string paths for commands:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-javascript">state = dotProp.set(state, <span style="color: #2aa198;">`todos.${index}.complete`</span>, <span style="color: #d33682; font-weight: bold;">true</span>)
+</pre>
+</div>
+
+<p>
+Others, like immutability-helper (a fork of the now-deprecated React Immutability Helpers addon), use nested values and helper functions:
+</p>
+<div class="org-src-container">
+<pre class="src src-javascript"><span style="color: #859900; font-weight: bold;">var</span> <span style="color: #6c71c4;">collection</span> = [<span style="color: #d33682; font-weight: bold;">1</span>, <span style="color: #d33682; font-weight: bold;">2</span>, {a: [<span style="color: #d33682; font-weight: bold;">12</span>, <span style="color: #d33682; font-weight: bold;">17</span>, <span style="color: #d33682; font-weight: bold;">15</span>]}];
+<span style="color: #859900; font-weight: bold;">var</span> <span style="color: #6c71c4;">newCollection</span> = update(collection, {<span style="color: #d33682; font-weight: bold;">2</span>: {a: {$splice: [[<span style="color: #d33682; font-weight: bold;">1</span>, <span style="color: #d33682; font-weight: bold;">1</span>, <span style="color: #d33682; font-weight: bold;">13</span>, <span style="color: #d33682; font-weight: bold;">14</span>]]}}});
+They can provide a useful alternative to writing manual immutable update logic.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org70d1432" class="outline-2">
+<h2 id="org70d1432">Project Modules &amp; Services</h2>
+<div class="outline-text-2" id="text-org70d1432">
+</div>
+<div id="outline-container-org6efc862" class="outline-3">
+<h3 id="org6efc862">Modules used:</h3>
+<div class="outline-text-3" id="text-org6efc862">
 <ul class="org-ul">
 <li>create-react-app</li>
 <li>radium</li>
 <li>styled-components</li>
 <li>prop-types</li>
+<li>react-router</li>
+<li>react-router-dom</li>
+<li>redux</li>
+<li>react-redux</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org80ddda8" class="outline-3">
+<h3 id="org80ddda8">Services used:</h3>
+<div class="outline-text-3" id="text-org80ddda8">
+<ul class="org-ul">
+<li><a href="https://jsonplaceholder.typicode.com/">Json Placeholder</a></li>
 </ul>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org85f2502" class="outline-2">
-<h2 id="org85f2502">Useful Resources &amp; Links</h2>
-<div class="outline-text-2" id="text-org85f2502">
+
+<div id="outline-container-org422f85b" class="outline-2">
+<h2 id="org422f85b">Useful Resources &amp; Links</h2>
+<div class="outline-text-2" id="text-org422f85b">
 <ul class="org-ul">
 <li><a href="https://github.com/facebookincubator/create-react-app">create-react-app</a></li>
 
@@ -1478,6 +1813,16 @@ React provides the developers a set of predefined functions that if present is i
 <li><a href="https://reactjs.org/docs/higher-order-components.html">Higher Order Components</a></li>
 
 <li><a href="https://reactjs.org/docs/refs-and-the-dom.html">Refs</a></li>
+
+<li><a href="https://validatejs.org/">Validate.js</a></li>
+
+<li><a href="https://react.rocks/tag/Validation">Get more ideas about potential validation approaches</a></li>
+
+<li><a href="https://www.npmjs.com/package/react-validation">react-validation package</a></li>
+
+<li><a href="https://github.com/christianalfoni/formsy-react">formsy-react package</a></li>
+
+<li><a href="https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/">Immutable Update Patterns on reduxjs.org</a></li>
 </ul>
 </div>
 </div>
@@ -1485,7 +1830,7 @@ React provides the developers a set of predefined functions that if present is i
 <div id="postamble" class="status">
 <p class="date">Date: 10-10-2020</p>
 <p class="author">Author: Martim Lima</p>
-<p class="date">Created: 2021-02-26 sex 14:43</p>
+<p class="date">Created: 2021-03-05 sex 12:44</p>
 </div>
 </body>
 </html>

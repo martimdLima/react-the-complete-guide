@@ -1,3 +1,6 @@
+// Outsourced action Types to a separate file
+import * as actionTypes from "./actions";
+
 const initialState = {
     counter: 0,
     results: [],
@@ -7,31 +10,31 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     // Initialize the switch statement based on the action.type, this will return the appropriate updated state based on the type
     switch (action.type) {
-        case "INCREMENT":
+        case actionTypes.INCREMENT:
             return {
                 ...state,
                 counter: state.counter + 1,
             };
 
-        case "DECREMENT":
+        case actionTypes.DECREMENT:
             return {
                 ...state,
                 counter: state.counter - 1,
             };
 
-        case "ADD":
+        case actionTypes.ADD:
             return {
                 ...state,
                 counter: state.counter + action.payload.value,
             };
 
-        case "SUB":
+        case actionTypes.SUB:
             return {
                 ...state,
                 counter: state.counter - action.payload.value,
             };
 
-        case "STORE_RESULT":
+        case actionTypes.STORE_RESULT:
             return {
                 ...state,
                 results: state.results.concat({
@@ -40,7 +43,7 @@ const reducer = (state = initialState, action) => {
                 }),
             };
 
-        case "DELETE_RESULT":
+        case actionTypes.DELETE_RESULT:
             /*             
             const id = 2;
             
