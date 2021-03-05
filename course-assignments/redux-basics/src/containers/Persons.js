@@ -40,7 +40,11 @@ const mapStateToProps = (state) => {
 // the react-redux package gives us well basically this helper function which will call dispatch on the store behind the scenes.
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAddPerson: () => dispatch({ type: actionTypes.ADD_PERSON }),
+        onAddPerson: (name, age) =>
+            dispatch({
+                type: actionTypes.ADD_PERSON,
+                payload: { name: name, age: age },
+            }),
         onDeletePerson: (id) =>
             dispatch({
                 type: actionTypes.REMOVE_PERSON,
