@@ -1067,3 +1067,13 @@ They can provide a useful alternative to writing manual immutable update logic.
 + [[https://github.com/christianalfoni/formsy-react][formsy-react package]]
 
 + [[https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/][Immutable Update Patterns on reduxjs.org]]
+
+ + [[https://redux.js.org/][Redux Docs]]
+
++ [[https://redux.js.org/introduction/core-concepts][Core Concepts]]
+
++ [[https://redux.js.org/basics/actions][Actions]]
+
++ [[https://redux.js.org/basics/reducers][Reducers]]
+
++ [[https://redux.js.org/faq][Redux FAQs]]
