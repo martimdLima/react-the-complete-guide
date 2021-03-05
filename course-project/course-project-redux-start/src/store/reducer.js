@@ -11,31 +11,24 @@ const initialState = {
 };
 
 // Create the Reducer for the app
-const reducer = (state = initialState, action) => {
-    // Initialize the switch statement based on the action.type, this will return the appropriate updated state based on the type
-    switch (action.type) {
-        // Adds a new Ingredient
+const reducer = ( state = initialState, action ) => {
+    switch ( action.type ) {
         case actionTypes.ADD_INGREDIENT:
             return {
                 ...state,
                 ingredients: {
                     ...state.ingredients,
-                    [action.ingredientName]:
-                        state.ingredients[action.ingredientName] + 1,
-                },
+                    [action.payload.ingredientName]: state.ingredients[action.payload.ingredientName] + 1
+                }
             };
-
-        // Removes a new Ingredient
         case actionTypes.REMOVE_INGREDIENT:
             return {
                 ...state,
                 ingredients: {
                     ...state.ingredients,
-                    [action.ingredientName]:
-                        state.ingredients[action.ingredientName] - 1,
-                },
+                    [action.payload.ingredientName]: state.ingredients[action.payload.ingredientName] - 1
+                }
             };
-
         default:
             return state;
     }
