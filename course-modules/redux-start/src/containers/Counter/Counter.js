@@ -32,10 +32,10 @@ class Counter extends Component {
         return (
             <div>
                 <CounterOutput value={this.props.ctr} />
-                <CounterControl label="Increment" clicked={() => this.counterChangedHandler( 'inc' )} />
-                <CounterControl label="Decrement" clicked={() => this.counterChangedHandler( 'dec' )}  />
-                <CounterControl label="Add 5" clicked={() => this.counterChangedHandler( 'add', 5 )}  />
-                <CounterControl label="Subtract 5" clicked={() => this.counterChangedHandler( 'sub', 5 )}  />
+                <CounterControl label="Increment" clicked={this.props.onIncrementCounter} />
+                <CounterControl label="Decrement" clicked={this.props.onDecrementCounter}  />
+                <CounterControl label="Add 5" clicked={this.props.onAddFiveCounter}  />
+                <CounterControl label="Subtract 5" clicked={this.props.onSubFiveCounter}  />
             </div>
         );
     }
@@ -51,7 +51,21 @@ const mapStateToProps = (state) => {
     };
 }
 
-//  Connect then gives us a container with access to this ctr, our property. This now allows us to output the ctr property.
 
+// mapDispatchToProps stores a function which will receive the dispatch function which we can execute as an argument,
+// the react-redux package gives us well basically this helper function which will call dispatch on the store behind the scenes.
+const mapDispatchToProps = dispatch => {
+
+    return {
+        onIncrementCounter: () => dispatch({ type: "INCREMENT" }),
+        onDecrementCounter: () => dispatch({ type: "DECREMENT" }),
+        onAddFiveCounter: () => dispatch({ type: "ADD5" }),
+        onSubFiveCounter: () => dispatch({ type: "SUB5" })
+    };
+}
+
+// By passing mapDispatchToProps to the connect method we get access to the onIncrementCounter method in the components.
+
+//  Connect then gives us a container with access to this ctr, our property. This now allows us to output the ctr property.
 // Connect is a function that returns a higher order component used on the export,
-export default connect(mapStateToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
