@@ -41,9 +41,24 @@ const reducer = (state = initialState, action) => {
             };
 
         case "DELETE_RESULT":
+            /*             
+            const id = 2;
+            
+            // create a copy of the new array and use the spread operator to distribute all the elements in state results into that new array.
+            const newArray= [...state.results]
+
+            // then we could simply use that new array here in our splice
+            newArray.splice(id, 1); 
+            */
+
+            // create a new const to hold the updated array and use the filter method to delete elements immutably
+            const updatedArray = state.results.filter(
+                (result) => result.id !== action.payload.resultId
+            );
+
             return {
                 ...state,
-                results: 0,
+                results: updatedArray,
             };
 
         default:
