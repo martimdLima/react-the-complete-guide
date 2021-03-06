@@ -99,9 +99,9 @@ class BurguerBuilder extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        ings: state.ingredients,
-        totalPrice: state.totalPrice,
-        error: state.error,
+        ings: state.burguerBuilder.ingredients,
+        totalPrice: state.burguerBuilder.totalPrice,
+        error: state.burguerBuilder.error,
     };
 };
 

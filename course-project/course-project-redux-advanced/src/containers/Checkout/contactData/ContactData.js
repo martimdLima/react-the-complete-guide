@@ -11,7 +11,7 @@ import Button from "../../../components/UI/Button/Button";
 
 import classes from "./contactData.module.css";
 
-import * as actions from "../../../store/actions/order"; 
+import * as actions from "../../../store/actions/order";
 
 class contactData extends Component {
     state = {
@@ -266,17 +266,20 @@ class contactData extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        ings: state.ingredients,
-        totalPrice: state.totalPrice,
-        loading: state.loading
+        ings: state.burguerBuilder.ingredients,
+        totalPrice: state.burguerBuilder.totalPrice,
+        loading: state.order.loading,
     };
 };
 
-
 const mapDispatchToProps = (dispatch) => {
     return {
-        onOrderBurguer: (orderData) => dispatch(actions.purchaseBurguerStart(orderData))
-    }
+        onOrderBurguer: (orderData) =>
+            dispatch(actions.purchaseBurguer(orderData)),
+    };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(contactData, axios));
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(withErrorHandler(contactData, axios));
