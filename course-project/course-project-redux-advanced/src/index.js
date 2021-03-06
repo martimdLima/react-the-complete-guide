@@ -9,7 +9,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import burguerBuilderReducer from "./store/reducers/burguerBuilder";
-import orderReducer from "./store/reducers/order"
+import orderReducer from "./store/reducers/order";
 
 import "./index.css";
 
@@ -17,8 +17,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     burguerBuilder: burguerBuilderReducer,
-    order: orderReducer
-})
+    order: orderReducer,
+});
 
 const store = createStore(
     rootReducer,

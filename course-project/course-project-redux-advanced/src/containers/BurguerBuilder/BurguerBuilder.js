@@ -20,7 +20,7 @@ class BurguerBuilder extends Component {
     };
 
     componentDidMount() {
-        this.props.onInitIngredients()
+        this.props.onInitIngredients();
     }
 
     updatePurchaseState() {
@@ -113,7 +113,7 @@ const mapDispatchToProps = (dispatch) => {
         onIngredientRemoved: (ingName) =>
             dispatch(actions.removeIngredient(ingName)),
         onInitIngredients: () => dispatch(actions.initIngredients()),
-        onInitPurchase: () => dispatch(actions.purchaseInit())
+        onInitPurchase: () => dispatch(actions.purchaseInit()),
     };
 };
 
