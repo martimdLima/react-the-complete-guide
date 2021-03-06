@@ -1,9 +1,31 @@
 import * as actionTypes from "./actionTypes";
 
-/* export const updatePurchase = (ingrName) => {
-    return {
-        type: actionTypes.ADD_INGREDIENT,
-        ingredientName: ingrName
-    }
+import axios from "../../axios-orders";
 
-} */
+export const purchaseBurguerSuccess = (orderId, orderData) => {
+    return {
+        type: actionTypes.PURCHASE_BURGUER_SUCCESS,
+        orderId: orderId,
+        orderData: orderData,
+    };
+};
+
+export const purchaseBurguerFail = (error) => {
+    return {
+        type: actionTypes.PURCHASE_BURGUER_FAILED,
+        error: error,
+    };
+};
+
+export const purchaseBurguerState = (orderData) => {
+    return (dispatch) => {
+        axios
+            .post("/orders.json", orderData)
+            .then((response) => {
+                dispatch(purchaseBurguerSuccess(response.data, orderData));
+            })
+            .catch((error) => {
+                dispatch(purchaseBurguerFail(error));
+            });
+    };
+};

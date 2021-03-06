@@ -47,7 +47,7 @@ const reducer = (state = initialState, action) => {
                     cheese: action.ingredients.cheese,
                     meat: action.ingredients.meat,
                 },
-                error: false
+                error: false,
             };
         case actionTypes.FETCH_INGREDIENTS_FAILED:
             return {
