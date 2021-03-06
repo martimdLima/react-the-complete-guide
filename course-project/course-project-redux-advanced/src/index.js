@@ -7,14 +7,14 @@ import { createStore } from "redux";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import reducer from "./store/reducer";
+import burguerBuilder from "./store/reducers/burguerBuilder";
 
 import "./index.css";
 
 //const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-    reducer,
+    burguerBuilder,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
