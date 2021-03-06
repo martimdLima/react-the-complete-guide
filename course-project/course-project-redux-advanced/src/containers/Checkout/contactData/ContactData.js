@@ -4,11 +4,14 @@ import { connect } from "react-redux";
 import axios from "../../../axios-orders";
 
 import Input from "../../../components/UI/Input/Input";
+import withErrorHandler from "../../../hoc/withErrorHandler/withErrorHandler";
 
 import Spinner from "../../../components/UI/Spinner/Spinner";
 import Button from "../../../components/UI/Button/Button";
 
 import classes from "./contactData.module.css";
+
+import * as actions from "../../../store/actions/order"; 
 
 class contactData extends Component {
     state = {
@@ -133,12 +136,13 @@ class contactData extends Component {
             ].value;
         }
 
-        this.setState({ loading: true });
         const order = {
             ingredients: this.props.ings,
             price: this.props.totalPrice,
             orderData: formData,
         };
+
+        this.props.onOrderBurguer(order);
     };
 
     // the inputChangedHandler is responbile for updating the input fields with the user input
@@ -268,4 +272,11 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(mapStateToProps)(contactData);
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onOrderBurguer: (orderData) => dispatch(actions.purchaseBurguerStart(orderData))
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(contactData));
