@@ -8,8 +8,6 @@ import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSumm
 import * as actions from "../../store/actions/index";
 
 class Checkout extends Component {
-
-
     checkoutCancelHandler = () => {
         this.props.history.goBack();
     };
@@ -22,7 +20,9 @@ class Checkout extends Component {
         let summary = <Redirect to="/" />;
 
         if (this.props.ings) {
-            const purchasedRedirect = this.props.purchased ? <Redirect to="/" /> : null;
+            const purchasedRedirect = this.props.purchased ? (
+                <Redirect to="/" />
+            ) : null;
 
             summary = (
                 <div>
@@ -47,7 +47,7 @@ class Checkout extends Component {
 const mapStateToProps = (state) => {
     return {
         ings: state.burguerBuilder.ingredients,
-        purchased: state.order.purchased
+        purchased: state.order.purchased,
     };
 };
 

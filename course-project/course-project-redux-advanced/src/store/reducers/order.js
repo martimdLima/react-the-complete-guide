@@ -11,8 +11,8 @@ const reducer = (state = initialState, action) => {
         case actionTypes.PURCHASE_INIT:
             return {
                 ...state,
-                purchased: false
-            }
+                purchased: false,
+            };
         case actionTypes.PURCHASE_BURGUER_START:
             return {
                 ...state,
@@ -35,7 +35,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false,
-                purchased: false
+                purchased: false,
             };
         default:
             return {
