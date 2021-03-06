@@ -16,11 +16,10 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 // This component is responsible for the Burger and Build Controls Components that enables the user to build a burguer
 class BurguerBuilder extends Component {
     state = {
-        totalPrice: 4,
         purchasing: false,
-        loading: false,
-        error: null,
     };
+
+    componentDidMount() {}
 
     updatePurchaseState() {
         const sum = Object.keys(this.props.ings)
@@ -82,10 +81,7 @@ class BurguerBuilder extends Component {
                 />
             );
         }
-        /*         if (this.state.loading) {
-            orderSummary = <Spinner />;
-        } */
-        // {salad: true, meat: false, ...}
+
         return (
             <Aux>
                 <Modal
