@@ -1078,3 +1078,9 @@ They can provide a useful alternative to writing manual immutable update logic.
 + [[https://redux.js.org/basics/reducers][Reducers]]
 
 + [[https://redux.js.org/faq][Redux FAQs]]
+
++ [[https://redux.js.org/advanced/middleware/][Middleware]]
+
++ [[https://github.com/gaearon/redux-thunk][redux-thunk package]]
+
++ [[https://redux.js.org/advanced/async-actions][Async Actions]]
