@@ -279,4 +279,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(contactData));
+export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(contactData, axios));
