@@ -17,7 +17,6 @@ class contactData extends Component {
     state = {
         orderForm: this.createOrderForm(),
         formIsvalid: false,
-        loading: false,
     };
 
     // creates the order form
@@ -253,7 +252,7 @@ class contactData extends Component {
             </form>
         );
 
-        if (this.state.loading) {
+        if (this.props.loading) {
             form = <Spinner />;
         }
         return (
@@ -269,6 +268,7 @@ const mapStateToProps = (state) => {
     return {
         ings: state.ingredients,
         totalPrice: state.totalPrice,
+        loading: state.loading
     };
 };
 
