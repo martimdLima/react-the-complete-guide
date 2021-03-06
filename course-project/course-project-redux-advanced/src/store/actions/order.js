@@ -12,7 +12,7 @@ export const purchaseBurguerSuccess = (orderId, orderData) => {
 
 export const purchaseBurguerFail = (error) => {
     return {
-        type: actionTypes.PURCHASE_BURGUER_FAILED,
+        type: actionTypes.PURCHASE_BURGUER_FAIL,
         error: error,
     };
 };
