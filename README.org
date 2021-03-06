@@ -1006,6 +1006,7 @@ They can provide a useful alternative to writing manual immutable update logic.
 + react-router-dom
 + redux
 + react-redux
++ redux-thunk
 
 ** Services used:
 + [[https://jsonplaceholder.typicode.com/][Json Placeholder]]
