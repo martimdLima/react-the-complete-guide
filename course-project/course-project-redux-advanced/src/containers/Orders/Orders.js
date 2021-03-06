@@ -12,11 +12,6 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import * as actions from "../../store/actions/index";
 
 class Orders extends Component {
-    /*     state = {
-        orders: [],
-        loading: true,
-    }; */
-
     componentDidMount() {
         this.props.onFetchOrders();
     }
