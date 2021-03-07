@@ -85,6 +85,9 @@ export class Auth extends Component {
         });
     };
 
+    logoutHandler = () => {
+    }
+
     // checks the validity of the form inputs
     checkValidity(value, rules) {
         let isValid = true;
@@ -168,6 +171,9 @@ export class Auth extends Component {
                 <Button btnType="Danger" clicked={this.switchAuthModeHandler}>
                     Switch to {this.state.isSignup ? "Login" : "Sign Up"}
                 </Button>
+   {/*              <Button btnType="Danger" clicked={this.logoutHandler}>
+                    Logout
+                </Button> */}
             </div>
         );
     }
