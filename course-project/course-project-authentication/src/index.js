@@ -10,6 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 
 import burguerBuilderReducer from "./store/reducers/burguerBuilder";
 import orderReducer from "./store/reducers/order";
+import authReducer from "./store/reducers/auth";
 
 import "./index.css";
 
@@ -18,6 +19,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
     burguerBuilder: burguerBuilderReducer,
     order: orderReducer,
+    auth: authReducer
 });
 
 const store = createStore(

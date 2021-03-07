@@ -6,33 +6,30 @@ export const authStart = () => {
         type: actionTypes.AUTH_START,
     };
 };
-export const authSuccess = (authData) => {
+export const authSuccess = (tokenId, userId) => {
     return {
         type: actionTypes.AUTH_SUCCESS,
-        authData: authData,
+        tokenId: tokenId,
+        userId: userId,
     };
 };
 
 export const authFail = (error) => {
     return {
         type: actionTypes.AUTH_FAIL,
-        error: error
+        error: error,
     };
 };
-
-// sign up - "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=" + API_KEY
-// sign in - "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=" + API_KEY
 
 export const auth = (email, password, isSignup) => {
     return (dispatch) => {
         dispatch(authStart());
 
-        let url = "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDtsfmUnmfvIgXBkiNwj2mHOXRvxzr2jPU"
-           ;
-
+        let url =
+            "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDtsfmUnmfvIgXBkiNwj2mHOXRvxzr2jPU";
         if (!isSignup) {
-            url =  "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDtsfmUnmfvIgXBkiNwj2mHOXRvxzr2jPU"
-                ;
+            url =
+                "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDtsfmUnmfvIgXBkiNwj2mHOXRvxzr2jPU";
         }
 
         const authData = {
@@ -45,7 +42,9 @@ export const auth = (email, password, isSignup) => {
             .post(url, authData)
             .then((response) => {
                 console.log(response);
-                dispatch(authSuccess(response.data));
+                dispatch(
+                    authSuccess(response.data.idToken, response.data.localId)
+                );
             })
             .catch((err) => {
                 console.log(err);
