@@ -49,6 +49,12 @@ export class Auth extends Component {
         isSignup: true,
     };
 
+    componentDidMount() {
+        if (!this.props.building && this.props.authRedirectPath !== "/") {
+            this.props.onSetAuthRedirectPath();
+        }
+    }
+
     // the inputChangedHandler is responbile for updating the input fields with the user input
     // it will get an event object as it will automatically be passed by react if this method is attached to an event listener which it is.
     inputChangedHandler = (event, controlName) => {
@@ -164,7 +170,7 @@ export class Auth extends Component {
         let authRedirect = false;
 
         if (this.props.isAuthenticated) {
-            authRedirect = <Redirect to="/" />;
+            authRedirect = <Redirect to={this.props.authRedirectPath} />;
         }
 
         return (
@@ -188,6 +194,8 @@ const mapStateToProps = (state) => {
         loading: state.auth.loading,
         error: state.auth.error,
         isAuthenticated: state.auth.tokenId !== null,
+        building: state.burguerBuilder.building,
+        authRedirectPath: state.auth.authRedirectPath,
     };
 };
 
@@ -195,6 +203,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         onAuth: (email, password, isSignup) =>
             dispatch(actions.auth(email, password, isSignup)),
+        onSetAuthRedirectPath: () => dispatch(actions.setAuthRedirectPath("/")),
     };
 };
 
