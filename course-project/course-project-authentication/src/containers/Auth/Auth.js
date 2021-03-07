@@ -44,6 +44,7 @@ export class Auth extends Component {
                 touched: false,
             },
         },
+        isSignup: true
     };
 
     // the inputChangedHandler is responbile for updating the input fields with the user input
@@ -63,8 +64,15 @@ export class Auth extends Component {
 
     submitHandler = (event) => {
         event.preventDefault();
-        this.props.onAuth(this.state.controls.email.value,this.state.controls.password.value)
-
+        this.props.onAuth(this.state.controls.email.value,this.state.controls.password.value, this.state.isSignup)
+    }
+    
+    switchAuthModeHandler = () => {
+        this.setState(prevState => {
+            return {
+                isSignup: !prevState.isSignup
+            }
+        })
     }
 
     // checks the validity of the form inputs
@@ -138,6 +146,9 @@ export class Auth extends Component {
                         Submit
                     </Button>
                 </form>
+                <Button btnType="Danger" clicked={this.switchAuthModeHandler}>
+                        Switch to {this.state.isSignup ? "Login" : "Sign Up"}
+                    </Button>
             </div>
         );
     }
@@ -146,7 +157,7 @@ export class Auth extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAuth: (email, password) => dispatch(actions.auth(email, password))
+        onAuth: (email, password, isSignup) => dispatch(actions.auth(email, password, isSignup))
     }
 }
 
