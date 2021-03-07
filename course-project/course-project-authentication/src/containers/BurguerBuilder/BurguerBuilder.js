@@ -35,7 +35,11 @@ class BurguerBuilder extends Component {
     }
 
     purchaseHandler = () => {
-        this.setState({ purchasing: true });
+        if (this.props.isAuthenticated) {
+            this.setState({ purchasing: true });
+        } else {
+            this.props.history.push("/auth");
+        }
     };
 
     purchaseCancelHandler = () => {
@@ -72,6 +76,7 @@ class BurguerBuilder extends Component {
                         purchasable={this.updatePurchaseState(this.props.ings)}
                         ordered={this.purchaseHandler}
                         price={this.props.totalPrice}
+                        isAuth={this.props.isAuthenticated}
                     />
                 </Aux>
             );
@@ -103,6 +108,7 @@ const mapStateToProps = (state) => {
         ings: state.burguerBuilder.ingredients,
         totalPrice: state.burguerBuilder.totalPrice,
         error: state.burguerBuilder.error,
+        isAuthenticated: state.auth.tokenId !== null,
     };
 };
 

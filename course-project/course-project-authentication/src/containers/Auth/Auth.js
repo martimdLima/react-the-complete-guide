@@ -9,6 +9,7 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import classes from "./Auth.module.css";
 
 import * as actions from "../../store/actions/index";
+import { Redirect } from "react-router-dom";
 
 export class Auth extends Component {
     state = {
@@ -85,8 +86,7 @@ export class Auth extends Component {
         });
     };
 
-    logoutHandler = () => {
-    }
+    logoutHandler = () => {};
 
     // checks the validity of the form inputs
     checkValidity(value, rules) {
@@ -161,8 +161,15 @@ export class Auth extends Component {
             />
         ));
 
+        let authRedirect = false;
+
+        if (this.props.isAuthenticated) {
+            authRedirect = <Redirect to="/" />;
+        }
+
         return (
             <div className={classes.Auth}>
+                {authRedirect}
                 {errorMessage}
                 <form onSubmit={this.submitHandler}>
                     {form}
@@ -171,9 +178,6 @@ export class Auth extends Component {
                 <Button btnType="Danger" clicked={this.switchAuthModeHandler}>
                     Switch to {this.state.isSignup ? "Login" : "Sign Up"}
                 </Button>
-   {/*              <Button btnType="Danger" clicked={this.logoutHandler}>
-                    Logout
-                </Button> */}
             </div>
         );
     }
@@ -183,6 +187,7 @@ const mapStateToProps = (state) => {
     return {
         loading: state.auth.loading,
         error: state.auth.error,
+        isAuthenticated: state.auth.tokenId !== null,
     };
 };
 
