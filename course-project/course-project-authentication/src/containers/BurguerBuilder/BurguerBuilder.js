@@ -121,7 +121,8 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(actions.removeIngredient(ingName)),
         onInitIngredients: () => dispatch(actions.initIngredients()),
         onInitPurchase: () => dispatch(actions.purchaseInit()),
-        onSetAuthRedirectPath: (path) => dispatch(actions.setAuthRedirectPath(path))
+        onSetAuthRedirectPath: (path) =>
+            dispatch(actions.setAuthRedirectPath(path)),
     };
 };
 

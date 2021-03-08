@@ -1,53 +1,53 @@
-- [Introduction](#org75fc967)
-  - [What is React?](#org8d443bb)
-  - [Why React?](#orgecb6ddf)
-  - [Single Page Applications / Multi Page Applications](#orgf0018e2)
-- [Refreshing Next Generation Javascript](#org9206e72)
-  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#orgd737e3a)
-  - [Arrow Functions](#org5e2b459)
-  - [Exports & Imports (Modules)](#org5afd001)
-  - [Classes](#org31895b1)
-  - [Classes, Properties and Methods](#orgbc96932)
-  - [Spread and Rest Operator](#orge87e233)
-  - [Destructuring](#org9a41e2c)
-- [Understanding the Base Features & Syntax](#orgdc70224)
-  - [Using a Build Workflow](#org4e4131f)
-- [Working with Lists and Conditionals](#org38c15ed)
-  - [JSX](#org394e95a)
-  - [Components](#org3306e93)
-  - [Props and State](#orga26a6fc)
-  - [Class, Pure and Function Components](#orgf4bbd1a)
-- [Styling React Components & Elements](#org6276456)
-- [Debugging React Apps](#org5bc3277)
-  - [Understanding Error Messages](#org11f82fa)
-  - [Using Dev Tools & Sourcemaps to find Logical Errors](#org9d1c5bd)
-  - [Using React Developer Tools](#orge4881a7)
-  - [Using Error Boundaries](#org2d50cb5)
-- [Diving Deeper into Components & React internals](#orgc424d26)
-  - [Components: stateful, stateless, dumb and smart](#orgc2ade9a)
-  - [Functional Components vs. Class Components](#orgf07aa48)
-  - [Lifecycle of Components](#org11d6c92)
-- [Multi-Page-Feeling in a Single-Page-App: Routing](#org8c98e07)
-  - [Routing and SPAs](#org9429b29)
-  - [react-router vs react-router-dom](#org90d7fbe)
-  - [Absolute vs Relative Paths](#org2334954)
-  - [Parsing Query Parameters & the Fragment](#org82b2387)
-- [Redux](#org2e01c1d)
-  - [Immutable Update Patterns](#orgbfbc603)
-- [Project Modules & Services](#org3c92bf5)
-  - [Modules used:](#orgaa26bb3)
-  - [Services used:](#org974b558)
-- [Useful Resources & Links](#orgdfeda67)
+- [Introduction](#org0228fef)
+  - [What is React?](#org7ee6be6)
+  - [Why React?](#org9a315d6)
+  - [Single Page Applications / Multi Page Applications](#org7b68fa9)
+- [Refreshing Next Generation Javascript](#org445e28c)
+  - [&ldquo;let&rdquo; and &ldquo;const&rdquo;](#org09ca5e3)
+  - [Arrow Functions](#org6518afc)
+  - [Exports & Imports (Modules)](#orgeb15511)
+  - [Classes](#orgd8e2d18)
+  - [Classes, Properties and Methods](#orgc3ba929)
+  - [Spread and Rest Operator](#org5d3524a)
+  - [Destructuring](#org2425c86)
+- [Understanding the Base Features & Syntax](#org8659ab6)
+  - [Using a Build Workflow](#orgd758f1f)
+- [Working with Lists and Conditionals](#org31bb893)
+  - [JSX](#orgf52b50a)
+  - [Components](#org7fba39c)
+  - [Props and State](#org5a349a9)
+  - [Class, Pure and Function Components](#orgeff4d8b)
+- [Styling React Components & Elements](#org920f4bd)
+- [Debugging React Apps](#org81f5223)
+  - [Understanding Error Messages](#orge00b14d)
+  - [Using Dev Tools & Sourcemaps to find Logical Errors](#orgf6fe760)
+  - [Using React Developer Tools](#orgc8afac6)
+  - [Using Error Boundaries](#org8e3535c)
+- [Diving Deeper into Components & React internals](#org839d9b9)
+  - [Components: stateful, stateless, dumb and smart](#org87439f5)
+  - [Functional Components vs. Class Components](#orgf994ac2)
+  - [Lifecycle of Components](#org761ebcc)
+- [Multi-Page-Feeling in a Single-Page-App: Routing](#orgea3f593)
+  - [Routing and SPAs](#orge53448e)
+  - [react-router vs react-router-dom](#org2f3fcdf)
+  - [Absolute vs Relative Paths](#org94edb91)
+  - [Parsing Query Parameters & the Fragment](#orgdf999da)
+- [Redux](#org9cc8415)
+  - [Immutable Update Patterns](#org26267ce)
+- [Project Modules & Services](#orga8049cc)
+  - [Modules used:](#orgab3aa6c)
+  - [Services used:](#org8965022)
+- [Useful Resources & Links](#orgf99e6c2)
 
 ---
 
 
-<a id="org75fc967"></a>
+<a id="org0228fef"></a>
 
 # Introduction
 
 
-<a id="org8d443bb"></a>
+<a id="org7ee6be6"></a>
 
 ## What is React?
 
@@ -58,7 +58,7 @@ A browser side javascript framework - no need for server side rendering
 user Interfaces - Components - enable flexibility and reusibility by constructing small modular pieces of code
 
 
-<a id="orgecb6ddf"></a>
+<a id="org9a315d6"></a>
 
 ## Why React?
 
@@ -67,7 +67,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Huge Ecosystem, Active Community, High Performance
 
 
-<a id="orgf0018e2"></a>
+<a id="org7b68fa9"></a>
 
 ## Single Page Applications / Multi Page Applications
 
@@ -76,12 +76,12 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   Multi Page Applications - Multi HTML Pages, Content is rendered on Server - One ReactDOM.render() call per &ldquo;widget&rdquo;
 
 
-<a id="org9206e72"></a>
+<a id="org445e28c"></a>
 
 # Refreshing Next Generation Javascript
 
 
-<a id="orgd737e3a"></a>
+<a id="org09ca5e3"></a>
 
 ## &ldquo;let&rdquo; and &ldquo;const&rdquo;
 
@@ -91,7 +91,7 @@ user Interfaces - Components - enable flexibility and reusibility by constructin
 -   const - constant values
 
 
-<a id="org5e2b459"></a>
+<a id="org6518afc"></a>
 
 ## Arrow Functions
 
@@ -117,7 +117,7 @@ Arrow functions are a different way of creating functions in JavaScript. Besides
 ```
 
 
-<a id="org5afd001"></a>
+<a id="orgeb15511"></a>
 
 ## Exports & Imports (Modules)
 
@@ -152,7 +152,7 @@ import * from './utility' // importing all using an alias from module
 ```
 
 
-<a id="org31895b1"></a>
+<a id="orgd8e2d18"></a>
 
 ## Classes
 
@@ -195,7 +195,7 @@ somePerson.printGender();
 ```
 
 
-<a id="orgbc96932"></a>
+<a id="orgc3ba929"></a>
 
 ## Classes, Properties and Methods
 
@@ -253,7 +253,7 @@ somePerson.printGender();
 ```
 
 
-<a id="orge87e233"></a>
+<a id="org5d3524a"></a>
 
 ## Spread and Rest Operator
 
@@ -290,7 +290,7 @@ age: 20
 ```
 
 
-<a id="org9a41e2c"></a>
+<a id="org2425c86"></a>
 
 ## Destructuring
 
@@ -306,12 +306,12 @@ age: 20
 ```
 
 
-<a id="orgdc70224"></a>
+<a id="org8659ab6"></a>
 
 # Understanding the Base Features & Syntax
 
 
-<a id="org4e4131f"></a>
+<a id="orgd758f1f"></a>
 
 ## Using a Build Workflow
 
@@ -330,17 +330,17 @@ age: 20
 -   Use a Development Server
 
 
-<a id="org38c15ed"></a>
+<a id="org31bb893"></a>
 
 # Working with Lists and Conditionals
 
 
-<a id="org394e95a"></a>
+<a id="orgf52b50a"></a>
 
 ## JSX
 
 
-<a id="org3306e93"></a>
+<a id="org7fba39c"></a>
 
 ## Components
 
@@ -351,7 +351,7 @@ Components are the core building block of React apps. Actually, React really is 
 -   Class Components (also referred to as &ldquo;containers&rdquo;, &ldquo;smart&rdquo; or &ldquo;stateful&rdquo; components) => class Cmp extends Component { render () { return <div>some JSX</div> } }
 
 
-<a id="orga26a6fc"></a>
+<a id="org5a349a9"></a>
 
 ## Props and State
 
@@ -422,7 +422,7 @@ state simply is a property of the component class, you have to call it state tho
 Whenever state changes (taught over the next lectures), the component will re-render and reflect the new state. The difference to props is, that this happens within one and the same component - you don&rsquo;t receive new data (props ) from outside!
 
 
-<a id="orgf4bbd1a"></a>
+<a id="orgeff4d8b"></a>
 
 ## Class, Pure and Function Components
 
@@ -528,42 +528,42 @@ const LeafItem = ({name, description}) => <>{name} {description}</>;
 ```
 
 
-<a id="org6276456"></a>
+<a id="org920f4bd"></a>
 
 # Styling React Components & Elements
 
 
-<a id="org5bc3277"></a>
+<a id="org81f5223"></a>
 
 # Debugging React Apps
 
 
-<a id="org11f82fa"></a>
+<a id="orge00b14d"></a>
 
 ## Understanding Error Messages
 
 
-<a id="org9d1c5bd"></a>
+<a id="orgf6fe760"></a>
 
 ## Using Dev Tools & Sourcemaps to find Logical Errors
 
 
-<a id="orge4881a7"></a>
+<a id="orgc8afac6"></a>
 
 ## Using React Developer Tools
 
 
-<a id="org2d50cb5"></a>
+<a id="org8e3535c"></a>
 
 ## Using Error Boundaries
 
 
-<a id="orgc424d26"></a>
+<a id="org839d9b9"></a>
 
 # Diving Deeper into Components & React internals
 
 
-<a id="orgc2ade9a"></a>
+<a id="org87439f5"></a>
 
 ## Components: stateful, stateless, dumb and smart
 
@@ -616,7 +616,7 @@ So, in a typical component-based architecture scenario, these are the categories
 -   Smart/Container Component: it can have external dependencies (eg. Redux), it organizes the route using child dumb components, it’s in charge of passing the state to the children and uses their events to update the global state (or its state).
 
 
-<a id="orgf07aa48"></a>
+<a id="orgf994ac2"></a>
 
 ## Functional Components vs. Class Components
 
@@ -838,7 +838,7 @@ export default App;
 To obtain the same result in a functional component, we use the useEffect hook with the second argument of [].
 
 
-<a id="org11d6c92"></a>
+<a id="org761ebcc"></a>
 
 ## Lifecycle of Components
 
@@ -876,27 +876,27 @@ React provides the developers a set of predefined functions that if present is i
     -   **componentWillUnmount() Function** - This function is invoked before the component is finally unmounted from the DOM i.e. this function gets invoked once before the component is removed from the page and this denotes the end of the lifecycle.
 
 
-<a id="org8c98e07"></a>
+<a id="orgea3f593"></a>
 
 # Multi-Page-Feeling in a Single-Page-App: Routing
 
 
-<a id="org9429b29"></a>
+<a id="orge53448e"></a>
 
 ## Routing and SPAs
 
 
-<a id="org90d7fbe"></a>
+<a id="org2f3fcdf"></a>
 
 ## react-router vs react-router-dom
 
 
-<a id="org2334954"></a>
+<a id="org94edb91"></a>
 
 ## Absolute vs Relative Paths
 
 
-<a id="org82b2387"></a>
+<a id="orgdf999da"></a>
 
 ## Parsing Query Parameters & the Fragment
 
@@ -958,12 +958,12 @@ When looping through query.entries() , you get arrays where the first element is
 React router makes it easy to extract the fragment. You can simply access props.location.hash .
 
 
-<a id="org2e01c1d"></a>
+<a id="org9cc8415"></a>
 
 # Redux
 
 
-<a id="orgbfbc603"></a>
+<a id="org26267ce"></a>
 
 ## Immutable Update Patterns
 
@@ -1114,12 +1114,12 @@ They can provide a useful alternative to writing manual immutable update logic.
 ```
 
 
-<a id="org3c92bf5"></a>
+<a id="orga8049cc"></a>
 
 # Project Modules & Services
 
 
-<a id="orgaa26bb3"></a>
+<a id="orgab3aa6c"></a>
 
 ## Modules used:
 
@@ -1131,16 +1131,17 @@ They can provide a useful alternative to writing manual immutable update logic.
 -   react-router-dom
 -   redux
 -   react-redux
+-   redux-thunk
 
 
-<a id="org974b558"></a>
+<a id="org8965022"></a>
 
 ## Services used:
 
 -   [Json Placeholder](https://jsonplaceholder.typicode.com/)
 
 
-<a id="orgdfeda67"></a>
+<a id="orgf99e6c2"></a>
 
 # Useful Resources & Links
 
@@ -1195,3 +1196,22 @@ They can provide a useful alternative to writing manual immutable update logic.
 -   [formsy-react package](https://github.com/christianalfoni/formsy-react)
 
 -   [Immutable Update Patterns on reduxjs.org](https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/)
+    -   [Redux Docs](https://redux.js.org/)
+
+-   [Core Concepts](https://redux.js.org/introduction/core-concepts)
+
+-   [Actions](https://redux.js.org/basics/actions)
+
+-   [Reducers](https://redux.js.org/basics/reducers)
+
+-   [Redux FAQs](https://redux.js.org/faq)
+
+-   [Middleware](https://redux.js.org/advanced/middleware/)
+
+-   [redux-thunk package](https://github.com/gaearon/redux-thunk)
+
+-   [Async Actions](https://redux.js.org/advanced/async-actions)
+
+-   [SPA Authentication in general](https://stormpath.com/blog/token-auth-spa)
+
+-   [Firebase authentication REST API](https://firebase.google.com/docs/reference/rest/auth/)

@@ -1084,3 +1084,7 @@ They can provide a useful alternative to writing manual immutable update logic.
 + [[https://github.com/gaearon/redux-thunk][redux-thunk package]]
 
 + [[https://redux.js.org/advanced/async-actions][Async Actions]]
+
++ [[https://stormpath.com/blog/token-auth-spa][SPA Authentication in general]]
+
++ [[https://firebase.google.com/docs/reference/rest/auth/][Firebase authentication REST API]]

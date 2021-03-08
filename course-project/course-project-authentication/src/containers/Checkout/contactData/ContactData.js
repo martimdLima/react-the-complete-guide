@@ -120,7 +120,6 @@ class contactData extends Component {
 
     // the orderHandler is responsible for the orders submission
     orderHandler = (event) => {
-      
         event.preventDefault();
 
         // extract the data that we want to submit.
@@ -140,7 +139,7 @@ class contactData extends Component {
             ingredients: this.props.ings,
             price: this.props.totalPrice,
             orderData: formData,
-            userId: this.props.userId
+            userId: this.props.userId,
         };
         console.log(this.props.totalPrice);
         this.props.onOrderBurguer(order, this.props.token);
@@ -266,16 +265,15 @@ class contactData extends Component {
     }
 }
 
-const mapStateToProps = state => {
-
+const mapStateToProps = (state) => {
     console.log(state.burguerBuilder);
     return {
         ings: state.burguerBuilder.ingredients,
         totalPrice: state.burguerBuilder.totalPrice,
         loading: state.order.loading,
         token: state.auth.tokenId,
-        userId: state.auth.userId
-    }
+        userId: state.auth.userId,
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
