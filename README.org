@@ -1002,11 +1002,15 @@ They can provide a useful alternative to writing manual immutable update logic.
 + radium
 + styled-components
 + prop-types
++ axios
 + react-router
 + react-router-dom
 + redux
 + react-redux
 + redux-thunk
++ jest
++ enzyme
+
 
 ** Services used:
 + [[https://jsonplaceholder.typicode.com/][Json Placeholder]]
