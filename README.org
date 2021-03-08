@@ -1092,3 +1092,7 @@ They can provide a useful alternative to writing manual immutable update logic.
 + [[https://stormpath.com/blog/token-auth-spa][SPA Authentication in general]]
 
 + [[https://firebase.google.com/docs/reference/rest/auth/][Firebase authentication REST API]]
+
++ [[http://airbnb.io/enzyme/docs/api/][Enzyme API]]
+
++ [[https://facebook.github.io/jest/][Jest Docs]]
