@@ -14,12 +14,15 @@ import authReducer from "./store/reducers/auth";
 
 import "./index.css";
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers =
+    process.env.NODE_ENV === "development"
+        ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+        : null || compose;
 
 const rootReducer = combineReducers({
     burguerBuilder: burguerBuilderReducer,
     order: orderReducer,
-    auth: authReducer
+    auth: authReducer,
 });
 
 const store = createStore(

@@ -5,22 +5,6 @@ import Backdrop from "../Backdrop/Backdrop";
 
 import classes from "./Modal.module.css";
 
-/* const modal = (props) => (
-    <Aux>
-        <Backdrop show={props.show} clicked={props.modalClosed} />
-        <div
-            className={classes.Modal}
-            style={{
-                transform: props.show ? "translateY(0)" : "translateY(-100vh)",
-                opacity: props.show ? "1" : "0",
-            }}>
-            {props.children}
-        </div>
-    </Aux>
-);
-
-export default React.memo(modal); */
-
 class Modal extends Component {
     // this could be a funcional component
     shouldComponentUpdate(nextProps, nextState) {
@@ -28,10 +12,6 @@ class Modal extends Component {
             nextProps.show !== this.props.show ||
             nextProps.children !== this.props.children
         );
-    }
-
-    componentDidUpdate() {
-        console.log("[Modal] will update");
     }
 
     render() {

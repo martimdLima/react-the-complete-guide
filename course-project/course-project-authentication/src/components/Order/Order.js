@@ -10,7 +10,7 @@ const Order = (props) => {
 
     const ingredientsOutput = ingredients.map((igr) => {
         return (
-            <span className={classes.Ingredients}>
+            <span className={classes.Ingredients} key={igr.name}>
                 {igr.name} ({igr.amount})
             </span>
         );

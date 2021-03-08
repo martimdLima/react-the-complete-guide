@@ -41,20 +41,6 @@ class App extends Component {
                 <Layout>{routes}</Layout>
             </div>
         );
-
-        /*         return (
-            <div>
-                <Layout>
-                    <Switch>
-                        <Route path="/checkout" component={Checkout} />
-                        <Route path="/orders" component={Orders} />
-                        <Route path="/auth" component={Auth} />
-                        <Route path="/logout" component={Logout} />
-                        <Route path="/" component={BurguerBuilder} />
-                    </Switch>
-                </Layout>
-            </div>
-        ); */
     }
 }
 

@@ -33,7 +33,6 @@ export const purchaseBurguer = (orderData, token) => {
                 dispatch(purchaseBurguerSuccess(response.data.name, orderData));
             })
             .catch((error) => {
-                console.log(error);
                 dispatch(purchaseBurguerFail(error));
             });
     };
@@ -69,7 +68,6 @@ export const fetchOrders = (token, userId) => {
         dispatch(fetchOrdersStart());
         const queryParams =
             "?auth=" + token + `&orderBy="userId"&equalTo="` + userId + '"';
-        console.log(userId);
         axios
             .get("/orders.json" + queryParams)
             .then((res) => {

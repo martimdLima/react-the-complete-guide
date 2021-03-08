@@ -143,7 +143,6 @@ class contactData extends Component {
             orderData: formData,
             userId: this.props.userId,
         };
-        console.log(this.props.totalPrice);
         this.props.onOrderBurguer(order, this.props.token);
     };
 
@@ -155,34 +154,22 @@ class contactData extends Component {
 
         // clone all the nested objects contained in the orderForm object
         //const updatedFormElement = { ...updatedOrderForm[inputIdentifier] };
+
+        // set the updatedFormElement value and set this equal to event target value
+        // set the updatedOrderForm set it equal to the updatedFormElement.
         const updatedFormElement = updateObject(
             this.state.orderForm[inputIdentifier],
             {
                 value: event.target.value,
-                valid: checkValidity(event.target.value, this.state.validation),
+                valid: checkValidity(event.target.value, this.state.orderForm[inputIdentifier].validation),
                 touched: true,
             }
         );
 
+        // updates the correct form element with the updated form element
         const updatedOrderForm = updateObject(this.state.orderForm, {
             [inputIdentifier]: updatedFormElement,
         });
-
-        // set the updatedFormElement value and set this equal to event target value
-        // set the updatedOrderForm set it equal to the updatedFormElement.
-        //updatedFormElement.value = event.target.value;
-
-        // checks the validity of the form input and updates the valid property of the form element
-        // updatedFormElement.valid = this.checkValidity(
-        //     updatedFormElement.value,
-        //     updatedFormElement.validation
-        // );
-
-        // updates the touched property to apply the Invalid css style only if the form input was touched
-        // updatedFormElement.touched = true;
-
-        // updates the correct form element with the updated form element
-        // updatedOrderForm[inputIdentifier] = updatedFormElement;
 
         // if the valid property in the input is true and the form is valid enable the button, otherwise it stays disabled
         let formIsvalid = true;
@@ -251,7 +238,6 @@ class contactData extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.burguerBuilder);
     return {
         ings: state.burguerBuilder.ingredients,
         totalPrice: state.burguerBuilder.totalPrice,
