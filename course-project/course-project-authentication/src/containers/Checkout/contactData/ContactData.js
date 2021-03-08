@@ -11,7 +11,7 @@ import Button from "../../../components/UI/Button/Button";
 
 import classes from "./contactData.module.css";
 
-import {updateObject} from "../../../shared/utility";
+import { updateObject, checkValidity } from "../../../shared/utility";
 
 import * as actions from "../../../store/actions/order";
 
@@ -155,19 +155,18 @@ class contactData extends Component {
 
         // clone all the nested objects contained in the orderForm object
         //const updatedFormElement = { ...updatedOrderForm[inputIdentifier] };
-        const updatedFormElement = updateObject(this.state.orderForm[inputIdentifier], {
-            value: event.target.value,
-            valid: this.checkValidity(
-                event.target.value,
-                this.state.validation
-            ),
-            touched: true
-        })
+        const updatedFormElement = updateObject(
+            this.state.orderForm[inputIdentifier],
+            {
+                value: event.target.value,
+                valid: checkValidity(event.target.value, this.state.validation),
+                touched: true,
+            }
+        );
 
         const updatedOrderForm = updateObject(this.state.orderForm, {
-            [inputIdentifier]: updatedFormElement
-        } );
-
+            [inputIdentifier]: updatedFormElement,
+        });
 
         // set the updatedFormElement value and set this equal to event target value
         // set the updatedOrderForm set it equal to the updatedFormElement.
@@ -183,7 +182,7 @@ class contactData extends Component {
         // updatedFormElement.touched = true;
 
         // updates the correct form element with the updated form element
-       // updatedOrderForm[inputIdentifier] = updatedFormElement;
+        // updatedOrderForm[inputIdentifier] = updatedFormElement;
 
         // if the valid property in the input is true and the form is valid enable the button, otherwise it stays disabled
         let formIsvalid = true;
@@ -198,35 +197,6 @@ class contactData extends Component {
             formIsvalid: formIsvalid,
         });
     };
-
-    // checks the validity of the form inputs
-    checkValidity(value, rules) {
-        let isValid = true;
-
-        if (rules.required) {
-            isValid = value.trim() !== "" && isValid;
-        }
-
-        if (rules.maxLength) {
-            isValid = value.length <= rules.maxLength && isValid;
-        }
-
-        if (rules.minLength) {
-            isValid = value.length >= rules.minLength && isValid;
-        }
-
-        if (rules.isEmail) {
-            const pattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-            isValid = pattern.test(value) && isValid;
-        }
-
-        if (rules.isNumeric) {
-            const pattern = /^\d+$/;
-            isValid = pattern.test(value) && isValid;
-        }
-
-        return isValid;
-    }
 
     render() {
         // create and initialize the form elements array

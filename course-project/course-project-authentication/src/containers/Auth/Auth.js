@@ -11,7 +11,7 @@ import classes from "./Auth.module.css";
 import * as actions from "../../store/actions/index";
 import { Redirect } from "react-router-dom";
 
-import { updateObject } from "../../shared/utility";
+import { updateObject, checkValidity } from "../../shared/utility";
 
 export class Auth extends Component {
     state = {
@@ -65,7 +65,7 @@ export class Auth extends Component {
         const updatedControls = updateObject(this.state.controls, {
             [controlName]: updateObject(this.state.controls[controlName], {
                 value: event.target.value,
-                valid: this.checkValidity(
+                valid: checkValidity(
                     event.target.value,
                     this.state.controls[controlName].validation
                 ),
@@ -108,7 +108,7 @@ export class Auth extends Component {
 
     logoutHandler = () => {};
 
-    // checks the validity of the form inputs
+/*     // checks the validity of the form inputs
     checkValidity(value, rules) {
         let isValid = true;
 
@@ -135,7 +135,7 @@ export class Auth extends Component {
         }
 
         return isValid;
-    }
+    } */
 
     render() {
         // create and initialize the form elements array
