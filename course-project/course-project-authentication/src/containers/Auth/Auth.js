@@ -11,6 +11,8 @@ import classes from "./Auth.module.css";
 import * as actions from "../../store/actions/index";
 import { Redirect } from "react-router-dom";
 
+import { updateObject } from "../../shared/utility";
+
 export class Auth extends Component {
     state = {
         controls: {
@@ -59,7 +61,22 @@ export class Auth extends Component {
     // it will get an event object as it will automatically be passed by react if this method is attached to an event listener which it is.
     inputChangedHandler = (event, controlName) => {
         // create a shallow clone of the orderForm object
-        const updatedControls = {
+
+        const updatedControls = updateObject(this.state.controls, {
+            [controlName]: updateObject(this.state.controls[controlName], {
+                value: event.target.value,
+                valid: this.checkValidity(
+                    event.target.value,
+                    this.state.controls[controlName].validation
+                ),
+                touched: true,
+            }),
+        });
+
+        this.setState({ controls: updatedControls });
+    };
+
+    /*        const updatedControls = {
             ...this.state.controls,
             [controlName]: {
                 ...this.state.controls[controlName],
@@ -70,10 +87,7 @@ export class Auth extends Component {
                 ),
                 touched: true,
             },
-        };
-
-        this.setState({ controls: updatedControls });
-    };
+        }; */
 
     submitHandler = (event) => {
         event.preventDefault();
