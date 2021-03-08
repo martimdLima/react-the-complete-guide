@@ -14,7 +14,7 @@ import Burger from "../../components/Burguer/Burguer";
 import Spinner from "../../components/UI/Spinner/Spinner";
 
 // This component is responsible for the Burger and Build Controls Components that enables the user to build a burguer
-class BurguerBuilder extends Component {
+export class BurguerBuilder extends Component {
     state = {
         purchasing: false,
     };
