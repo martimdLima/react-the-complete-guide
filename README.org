@@ -1096,3 +1096,7 @@ They can provide a useful alternative to writing manual immutable update logic.
 + [[http://airbnb.io/enzyme/docs/api/][Enzyme API]]
 
 + [[https://facebook.github.io/jest/][Jest Docs]]
+
++ [[https://webpack.js.org/concepts/][Webpack Docs]]
+
++ [[https://babeljs.io/][More about Babel]]
