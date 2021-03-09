@@ -1021,82 +1021,84 @@ They can provide a useful alternative to writing manual immutable update logic.
   :CATEGORY: Useful Resources & Links
   :END:
 
-+ [[https://github.com/facebookincubator/create-react-app][create-react-app]]
+- [[https://github.com/facebookincubator/create-react-app][create-react-app]]
 
-+ [[https://reactjs.org/docs/introducing-jsx.html][Introducing JSX]]
+- [[https://reactjs.org/docs/introducing-jsx.html][Introducing JSX]]
 
-+ [[https://reactjs.org/docs/rendering-elements.html][Rendering Elements]]
+- [[https://reactjs.org/docs/rendering-elements.html][Rendering Elements]]
 
-+ [[https://reactjs.org/docs/components-and-props.html][Components & Props]]
+- [[https://reactjs.org/docs/components-and-props.html][Components & Props]]
 
-+ [[https://blog.jscrambler.com/stateful-vs-stateless-vs-pure-react-components/][stateful-vs-stateless-vs-pure-react-components]]
+- [[https://blog.jscrambler.com/stateful-vs-stateless-vs-pure-react-components/][stateful-vs-stateless-vs-pure-react-components]]
 
-+ [[https://medium.com/@michelestieven/components-stateful-stateless-dumb-and-smart-2847dd4092f2][Components: stateful, stateless, dumb and smart]]
+- [[https://medium.com/@michelestieven/components-stateful-stateless-dumb-and-smart-2847dd4092f2][Components: stateful, stateless, dumb and smart]]
 
-+ [[https://betterprogramming.pub/functional-components-vs-class-components-in-react-2f28adccc993][Functional Components vs. Class Components in React]]
+- [[https://betterprogramming.pub/functional-components-vs-class-components-in-react-2f28adccc993][Functional Components vs. Class Components in React]]
 
-+ [[https://reactjs.org/docs/events.html][Listenable Events]]
+- [[https://reactjs.org/docs/events.html][Listenable Events]]
 
-+ [[https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper][State and Props]]
+- [[https://reactjs.org/docs/faq-state.html#gatsby-focus-wrapper][State and Props]]
 
-+ [[https://lucybain.com/blog/2016/react-state-vs-pros/][ReactJs: Props vs. State]]
+- [[https://lucybain.com/blog/2016/react-state-vs-pros/][ReactJs: Props vs. State]]
 
-+ [[https://reactjs.org/docs/conditional-rendering.html][Conditional Rendering]]
+- [[https://reactjs.org/docs/conditional-rendering.html][Conditional Rendering]]
 
-+ [[https://reactjs.org/docs/lists-and-keys.html][Lists & Keys]]
+- [[https://reactjs.org/docs/lists-and-keys.html][Lists & Keys]]
 
-+ [[https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2][Using CSS Modules in create-react-app Projects]]
+- [[https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2][Using CSS Modules in create-react-app Projects]]
 
-+ [[https://github.com/css-modules/css-modules][More information about CSS Modules]]
+- [[https://github.com/css-modules/css-modules][More information about CSS Modules]]
 
-+ [[https://reactjs.org/docs/error-boundaries.html][Error Boundaries]]
+- [[https://reactjs.org/docs/error-boundaries.html][Error Boundaries]]
 
-+ [[https://developers.google.com/web/tools/chrome-devtools/javascript/][Chrome Devtool Debugging]]
+- [[https://developers.google.com/web/tools/chrome-devtools/javascript/][Chrome Devtool Debugging]]
 
-+ [[https://reactjs.org/docs/hooks-effect.html][More on useEffect() ]]
+- [[https://reactjs.org/docs/hooks-effect.html][More on useEffect() ]]
 
-+ [[https://reactjs.org/docs/state-and-lifecycle.html][State & Lifecycle ]]
+- [[https://reactjs.org/docs/state-and-lifecycle.html][State & Lifecycle ]]
 
-+ [[https://reactjs.org/docs/typechecking-with-proptypes.html][PropTypes ]]
+- [[https://reactjs.org/docs/typechecking-with-proptypes.html][PropTypes ]]
 
-+ [[https://reactjs.org/docs/higher-order-components.html][Higher Order Components]]
+- [[https://reactjs.org/docs/higher-order-components.html][Higher Order Components]]
 
-+ [[https://reactjs.org/docs/refs-and-the-dom.html][Refs]]
+- [[https://reactjs.org/docs/refs-and-the-dom.html][Refs]]
 
-+ [[https://validatejs.org/][Validate.js]]
+- [[https://validatejs.org/][Validate.js]]
 
-+ [[https://react.rocks/tag/Validation][Get more ideas about potential validation approaches]]
+- [[https://react.rocks/tag/Validation][Get more ideas about potential validation approaches]]
 
-+ [[https://www.npmjs.com/package/react-validation][react-validation package]]
+- [[https://www.npmjs.com/package/react-validation][react-validation package]]
 
-+ [[https://github.com/christianalfoni/formsy-react][formsy-react package]]
+- [[https://github.com/christianalfoni/formsy-react][formsy-react package]]
 
-+ [[https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/][Immutable Update Patterns on reduxjs.org]]
+- [[https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/][Immutable Update Patterns on reduxjs.org]]
 
- + [[https://redux.js.org/][Redux Docs]]
+  + [[https://redux.js.org/][Redux Docs]]
 
-+ [[https://redux.js.org/introduction/core-concepts][Core Concepts]]
+- [[https://redux.js.org/introduction/core-concepts][Core Concepts]]
 
-+ [[https://redux.js.org/basics/actions][Actions]]
+- [[https://redux.js.org/basics/actions][Actions]]
 
-+ [[https://redux.js.org/basics/reducers][Reducers]]
+- [[https://redux.js.org/basics/reducers][Reducers]]
 
-+ [[https://redux.js.org/faq][Redux FAQs]]
+- [[https://redux.js.org/faq][Redux FAQs]]
 
-+ [[https://redux.js.org/advanced/middleware/][Middleware]]
+- [[https://redux.js.org/advanced/middleware/][Middleware]]
 
-+ [[https://github.com/gaearon/redux-thunk][redux-thunk package]]
+- [[https://github.com/gaearon/redux-thunk][redux-thunk package]]
 
-+ [[https://redux.js.org/advanced/async-actions][Async Actions]]
+- [[https://redux.js.org/advanced/async-actions][Async Actions]]
 
-+ [[https://stormpath.com/blog/token-auth-spa][SPA Authentication in general]]
+- [[https://stormpath.com/blog/token-auth-spa][SPA Authentication in general]]
 
-+ [[https://firebase.google.com/docs/reference/rest/auth/][Firebase authentication REST API]]
+- [[https://firebase.google.com/docs/reference/rest/auth/][Firebase authentication REST API]]
 
-+ [[http://airbnb.io/enzyme/docs/api/][Enzyme API]]
+- [[http://airbnb.io/enzyme/docs/api/][Enzyme API]]
 
-+ [[https://facebook.github.io/jest/][Jest Docs]]
+- [[https://facebook.github.io/jest/][Jest Docs]]
 
-+ [[https://webpack.js.org/concepts/][Webpack Docs]]
+- [[https://webpack.js.org/concepts/][Webpack Docs]]
 
-+ [[https://babeljs.io/][More about Babel]]
+- [[https://babeljs.io/][More about Babel]]
+
+- [[https://github.com/zeit/next.js/][Next.js Repo & Docs]]
