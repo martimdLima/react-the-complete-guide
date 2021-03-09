@@ -1,6 +1,5 @@
 */out/
-.*/
-.**/
+
 */docs/
 **/docs/
 docs/
@@ -14,3 +13,5 @@ docs/
 */server.key
 dirloc.txt
 .vscode/*
+**/course-modules/nextjs/.next/
+
