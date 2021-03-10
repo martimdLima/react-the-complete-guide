@@ -1103,3 +1103,15 @@ They can provide a useful alternative to writing manual immutable update logic.
 - [[https://babeljs.io/][More about Babel]]
 
 - [[https://github.com/zeit/next.js/][Next.js Repo & Docs]]
+
++ [[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions][More on CSS Transitions]]
+
++ [[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations][More on CSS Animations]]
+
++ [[https://github.com/reactjs/react-transition-group][More on ReactTransitionGroup]]
+
++ [[https://github.com/chenglou/react-motion][Alternative => React Motion]]
+
++ [[https://github.com/react-tools/react-move][Alternative => React Move]]
+
++ [[https://github.com/maisano/react-router-transition][Animating Route Animations]]
