@@ -15,6 +15,7 @@ export const FETCH_ORDERS_SUCCESS = "FETCH_ORDERS_SUCCESS";
 export const FETCH_ORDERS_FAILED = "FETCH_ORDERS_FAILED";
 
 // Auth ActionTypes
+export const AUTH_CHECK_INITIAL_STATE = "AUTH_CHECK_INITIAL_STATE";
 export const AUTH_USER = "AUTH_USER";
 export const AUTH_START = "AUTH_START";
 export const AUTH_SUCCESS = "AUTH_SUCCESS";
