@@ -65,13 +65,13 @@ class App extends Component {
                     )}
                 </Transition>
 
-                <Transition
+                {/* <Transition
                     in={this.state.modalIsOpen}
                     mountOnEnter
                     unmountOnExit
-                    timeout={this.animationTiming}>
-                    {(state) => <Modal show={state} closed={this.closeModal} />}
-                </Transition>
+                    timeout={this.animationTiming}> */}
+                    {/* {(state) =>} */} <Modal show={this.state.modalIsOpen} closed={this.closeModal} />
+                {/* </Transition> */}
 
                 {/*         {this.state.modalIsOpen ? (
                     <Modal
