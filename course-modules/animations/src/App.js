@@ -45,7 +45,13 @@ class App extends Component {
                     in={this.state.showBlock}
                     mountOnEnter
                     unmountOnExit
-                    timeout={1000}>
+                    timeout={1000}
+                    onEnter={() => console.log('onEnter')}
+                    onEntering={() => console.log('onEntering')}
+                    onEntered={() => console.log('onEntered')}
+                    onExit={() => console.log('onExit')}
+                    onExiting={() => console.log('onExiting')}
+                    onExited={() => console.log('onExited')}>
                     {(state) => (
                         <div
                             style={{
