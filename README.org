@@ -1010,6 +1010,7 @@ They can provide a useful alternative to writing manual immutable update logic.
 + redux-thunk
 + jest
 + enzyme
++ react-transition-group
 
 
 ** Services used:
