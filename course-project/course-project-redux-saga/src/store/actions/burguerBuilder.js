@@ -29,16 +29,5 @@ export const fetchIngredientsFailed = () => {
 };
 
 export const initIngredients = () => {
-    return (dispatch) => {
-        axios
-            .get(
-                "https://react-course-project-31af6-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json"
-            )
-            .then((response) => {
-                dispatch(setIngredients(response.data));
-            })
-            .catch((error) => {
-                dispatch(fetchIngredientsFailed());
-            });
-    };
+    return { type: actionTypes.INIT_INGREDIENTS };
 };
