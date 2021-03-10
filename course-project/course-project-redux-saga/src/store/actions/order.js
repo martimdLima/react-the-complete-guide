@@ -24,17 +24,10 @@ export const purchaseBurguerStart = () => {
 };
 
 export const purchaseBurguer = (orderData, token) => {
-    return (dispatch) => {
-        dispatch(purchaseBurguerStart());
-
-        axios
-            .post("/orders.json?auth=" + token, orderData)
-            .then((response) => {
-                dispatch(purchaseBurguerSuccess(response.data.name, orderData));
-            })
-            .catch((error) => {
-                dispatch(purchaseBurguerFail(error));
-            });
+    return {
+        type: actionTypes.PURCHASE_BURGER,
+        orderData: orderData,
+        token: token,
     };
 };
 
@@ -64,7 +57,7 @@ export const fetchOrdersFail = (error) => {
 };
 
 export const fetchOrders = (token, userId) => {
-    return (dispatch) => {
+    /*     return (dispatch) => {
         dispatch(fetchOrdersStart());
         const queryParams =
             "?auth=" + token + `&orderBy="userId"&equalTo="` + userId + '"';
@@ -83,5 +76,6 @@ export const fetchOrders = (token, userId) => {
             .catch((err) => {
                 dispatch(fetchOrdersFail(err));
             });
-    };
+    }; */
+    return { type: actionTypes.FETCH_ORDERS, token: token, userId: userId };
 };
