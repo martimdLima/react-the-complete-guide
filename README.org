@@ -1075,7 +1075,7 @@ They can provide a useful alternative to writing manual immutable update logic.
 
 - [[https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns/][Immutable Update Patterns on reduxjs.org]]
 
-  + [[https://redux.js.org/][Redux Docs]]
+- [[https://redux.js.org/][Redux Docs]]
 
 - [[https://redux.js.org/introduction/core-concepts][Core Concepts]]
 
@@ -1105,14 +1105,14 @@ They can provide a useful alternative to writing manual immutable update logic.
 
 - [[https://github.com/zeit/next.js/][Next.js Repo & Docs]]
 
-+ [[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions][More on CSS Transitions]]
+- [[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions][More on CSS Transitions]]
 
-+ [[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations][More on CSS Animations]]
+- [[https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations][More on CSS Animations]]
 
-+ [[https://github.com/reactjs/react-transition-group][More on ReactTransitionGroup]]
+- [[https://github.com/reactjs/react-transition-group][More on ReactTransitionGroup]]
 
-+ [[https://github.com/chenglou/react-motion][Alternative => React Motion]]
+- [[https://github.com/chenglou/react-motion][Alternative => React Motion]]
 
-+ [[https://github.com/react-tools/react-move][Alternative => React Move]]
+- [[https://github.com/react-tools/react-move][Alternative => React Move]]
 
-+ [[https://github.com/maisano/react-router-transition][Animating Route Animations]]
+- [[https://github.com/maisano/react-router-transition][Animating Route Animations]]
