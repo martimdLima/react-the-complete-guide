@@ -36,7 +36,11 @@ class App extends Component {
                 </button>
                 <br />
 
-                <Transition in={this.state.showBlock} mountOnEnter unmountOnExit timeout={1000}>
+                <Transition
+                    in={this.state.showBlock}
+                    mountOnEnter
+                    unmountOnExit
+                    timeout={1000}>
                     {(state) => (
                         <div
                             style={{
@@ -50,16 +54,20 @@ class App extends Component {
                     )}
                 </Transition>
 
-                {/*     {this.state.showBlock ? (
-  
-                ) : null} */}
+                <Transition
+                    in={this.state.modalIsOpen}
+                    mountOnEnter
+                    unmountOnExit
+                    timeout={1000}>
+                    {(state) => <Modal show={state} closed={this.closeModal} />}
+                </Transition>
 
-                {this.state.modalIsOpen ? (
+                {/*         {this.state.modalIsOpen ? (
                     <Modal
                         show={this.state.modalIsOpen}
                         closed={this.closeModal}
                     />
-                ) : null}
+                ) : null} */}
                 {this.state.modalIsOpen ? (
                     <Backdrop show={this.state.modalIsOpen} />
                 ) : null}
