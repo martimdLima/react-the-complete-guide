@@ -21,6 +21,11 @@ class App extends Component {
         this.setState({ modalIsOpen: false });
     };
 
+    animationTiming = {
+        enter: 400,
+        exit: 1000,
+    };
+
     render() {
         return (
             <div className="App">
@@ -58,7 +63,7 @@ class App extends Component {
                     in={this.state.modalIsOpen}
                     mountOnEnter
                     unmountOnExit
-                    timeout={1000}>
+                    timeout={this.animationTiming}>
                     {(state) => <Modal show={state} closed={this.closeModal} />}
                 </Transition>
 
