@@ -1,12 +1,31 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useReducer } from "react";
 
 import IngredientForm from "./IngredientForm";
 import IngredientList from "./IngredientList";
 import ErrorModal from "../UI/ErrorModal";
 import Search from "./Search";
 
+// An alternative to useState.
+// Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method.
+
+// useReducer is usually preferable to useState when you have complex state logic that involves multiple sub-values or
+// when the next state depends on the previous one.
+// useReducer also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
+const ingredientReducer = (currentIngredients, action) => {
+    switch (action.type) {
+        case "INIT":
+            return action.ingredients;
+        case "ADD":
+            return [...currentIngredients, action.ingredient];
+        case "DELETE":
+            return currentIngredients.filter((ig) => ig.id !== action.id);
+        default:
+            throw new Error("");
+    }
+};
+
 function Ingredients() {
-    const [ingredients, setIngredients] = useState([]);
+    const [ingredients, dispatch] = useReducer(ingredientReducer, []);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -15,7 +34,10 @@ function Ingredients() {
     // This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
     // (e.g. shouldComponentUpdate).
     const filteredIngredientsHandler = useCallback((filteredIngredients) => {
-        setIngredients(filteredIngredients);
+        dispatch({
+            type: "INIT",
+            ingredients: filteredIngredients,
+        });
     }, []);
 
     const clearErrorHandler = () => {
@@ -25,7 +47,7 @@ function Ingredients() {
 
     // useEffect can be used multiple times
     useEffect(() => {
-        console.log("RENDERING INGRIDIENTS");
+        console.log("RENDERING INGREDIENTS");
     }, [ingredients]);
 
     const addIngredientHandler = (ingredient) => {
@@ -43,10 +65,10 @@ function Ingredients() {
                 return response.json();
             })
             .then((responseData) => {
-                setIngredients((prevIngs) => [
-                    ...prevIngs,
-                    { id: responseData.name, ...ingredient },
-                ]);
+                dispatch({
+                    type: "ADD",
+                    ingredient: { id: responseData.name, ...ingredient },
+                });
             })
             .catch((err) => {
                 setError("Something went wrong. Please try again in a moment.");
@@ -62,11 +84,10 @@ function Ingredients() {
             }
         )
             .then((response) => {
-                setIngredients((prevIngs) =>
-                    prevIngs.filter((ig) => {
-                        return ig.id !== igId;
-                    })
-                );
+                dispatch({
+                    type: "DELETE",
+                    id: igId,
+                });
                 setIsLoading(false);
             })
             .catch((err) => {
