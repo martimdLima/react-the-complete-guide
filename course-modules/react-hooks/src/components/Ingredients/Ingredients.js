@@ -20,29 +20,65 @@ const ingredientReducer = (currentIngredients, action) => {
         case "DELETE":
             return currentIngredients.filter((ig) => ig.id !== action.id);
         default:
-            throw new Error("");
+            throw new Error("Error");
+    }
+};
+
+const httpReducer = (httpState, action) => {
+    switch (action.type) {
+        case "SEND_REQUEST":
+            return {
+                loading: true,
+                error: null,
+            };
+        case "RECEIVE_REQUEST":
+            return {
+                ...httpState,
+                loading: false,
+            };
+        case "ERROR":
+            return {
+                loading: false,
+                error: action.error,
+            };
+        case "CLEAR_ERROR":
+            return {
+                ...httpState,
+                error: null,
+            };
+        default:
+            throw new Error("Error");
     }
 };
 
 function Ingredients() {
-    const [ingredients, dispatch] = useReducer(ingredientReducer, []);
-    const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState("");
+    const [ingredients, dispatchIgs] = useReducer(ingredientReducer, []);
+    const [httpState, dispatchHttp] = useReducer(httpReducer, {
+        loading: false,
+        error: null,
+    });
+
+    //const [isLoading, setIsLoading] = useState(false);
+    //const [error, setError] = useState("");
 
     // Pass an inline callback and an array of dependencies.
     // useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed.
     // This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
     // (e.g. shouldComponentUpdate).
     const filteredIngredientsHandler = useCallback((filteredIngredients) => {
-        dispatch({
+        dispatchHttp({
+            type: "SEND_REQUEST",
+        });
+        dispatchIgs({
             type: "INIT",
             ingredients: filteredIngredients,
         });
     }, []);
 
     const clearErrorHandler = () => {
-        setError(null);
-        setIsLoading(false);
+        dispatchHttp({
+            type: "CLEAR_ERROR",
+        });
     };
 
     // useEffect can be used multiple times
@@ -51,7 +87,9 @@ function Ingredients() {
     }, [ingredients]);
 
     const addIngredientHandler = (ingredient) => {
-        setIsLoading(true);
+        dispatchHttp({
+            type: "SEND_REQUEST",
+        });
         fetch(
             "https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json",
             {
@@ -61,22 +99,29 @@ function Ingredients() {
             }
         )
             .then((response) => {
-                setIsLoading(false);
+                dispatchHttp({
+                    type: "RECEIVE_REQUEST",
+                });
                 return response.json();
             })
             .then((responseData) => {
-                dispatch({
+                dispatchIgs({
                     type: "ADD",
                     ingredient: { id: responseData.name, ...ingredient },
                 });
             })
             .catch((err) => {
-                setError("Something went wrong. Please try again in a moment.");
+                dispatchHttp({
+                    type: "ERROR",
+                    error: err.message,
+                });
             });
     };
 
     const removeIngredientHandler = (igId) => {
-        setIsLoading(true);
+        dispatchHttp({
+            type: "RECEIVE_REQUEST",
+        });
         fetch(
             `https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients/${igId}.json`,
             {
@@ -84,25 +129,29 @@ function Ingredients() {
             }
         )
             .then((response) => {
-                dispatch({
+                dispatchIgs({
                     type: "DELETE",
                     id: igId,
                 });
-                setIsLoading(false);
             })
             .catch((err) => {
-                setError("Something went wrong. Please try again in a moment.");
+                dispatchHttp({
+                    type: "ERROR",
+                    error: err.message,
+                });
             });
     };
 
     return (
         <div className="App">
-            {error && (
-                <ErrorModal onClose={clearErrorHandler}>{error}</ErrorModal>
+            {httpState.error && (
+                <ErrorModal onClose={clearErrorHandler}>
+                    {httpState.error}
+                </ErrorModal>
             )}
             <IngredientForm
                 onAddIngredient={addIngredientHandler}
-                loading={isLoading}
+                loading={httpState.isLoading}
             />
 
             <section>
