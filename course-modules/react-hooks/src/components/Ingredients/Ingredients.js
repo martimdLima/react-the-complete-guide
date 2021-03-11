@@ -70,11 +70,18 @@ function Ingredients() {
     };
 
     const onRemoveItem = (igId) => {
-        setIngredients((prevIngs) =>
-            prevIngs.filter((ig) => {
-                return ig.id !== igId;
-            })
-        );
+        fetch(
+            `https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients/${igId}.json`,
+            {
+                method: "DELETE",
+            }
+        ).then((response) => {
+            setIngredients((prevIngs) =>
+                prevIngs.filter((ig) => {
+                    return ig.id !== igId;
+                })
+            );
+        });
     };
 
     return (
