@@ -33,6 +33,11 @@ function Ingredients() {
             });
     }, []);
 
+    // useEffect can be used multiple times
+    useEffect(() => {
+      console.log("RENDERING INGRIDIENTS")
+    }, [ingredients]);
+
     const addIngredientHandler = (ingredient) => {
         fetch(
             "https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json",
