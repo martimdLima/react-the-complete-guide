@@ -2,10 +2,13 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import IngredientForm from "./IngredientForm";
 import IngredientList from "./IngredientList";
+import ErrorModal from "../UI/ErrorModal";
 import Search from "./Search";
 
 function Ingredients() {
     const [ingredients, setIngredients] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState("");
 
     // Pass an inline callback and an array of dependencies.
     // useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed.
@@ -15,34 +18,10 @@ function Ingredients() {
         setIngredients(filteredIngredients);
     }, []);
 
-    // The Effect Hook lets you perform side effects in function components
-    // Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects.
-
-    // If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array ([]) as a second argument.
-    // This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.
-    // If you pass an empty array ([]), the props and state inside the effect will always have their initial values.
-    // Passing [] as the second argument is closer to the familiar componentDidMount and componentWillUnmount mental model
-    /*     useEffect(() => {
-        fetch(
-            "https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json"
-        )
-            .then((response) => {
-                return response.json();
-            })
-            .then((responseData) => {
-                const loadedIngredients = [];
-
-                for (const key in responseData) {
-                    loadedIngredients.push({
-                        id: key,
-                        title: responseData[key].title,
-                        amount: responseData[key].amount,
-                    });
-                }
-
-                setIngredients(loadedIngredients);
-            });
-    }, []); */
+    const clearErrorHandler = () => {
+        setError(null);
+        setIsLoading(false);
+    };
 
     // useEffect can be used multiple times
     useEffect(() => {
@@ -50,6 +29,7 @@ function Ingredients() {
     }, [ingredients]);
 
     const addIngredientHandler = (ingredient) => {
+        setIsLoading(true);
         fetch(
             "https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json",
             {
@@ -59,6 +39,7 @@ function Ingredients() {
             }
         )
             .then((response) => {
+                setIsLoading(false);
                 return response.json();
             })
             .then((responseData) => {
@@ -66,33 +47,48 @@ function Ingredients() {
                     ...prevIngs,
                     { id: responseData.name, ...ingredient },
                 ]);
+            })
+            .catch((err) => {
+                setError("Something went wrong. Please try again in a moment.");
             });
     };
 
-    const onRemoveItem = (igId) => {
+    const removeIngredientHandler = (igId) => {
+        setIsLoading(true);
         fetch(
             `https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients/${igId}.json`,
             {
                 method: "DELETE",
             }
-        ).then((response) => {
-            setIngredients((prevIngs) =>
-                prevIngs.filter((ig) => {
-                    return ig.id !== igId;
-                })
-            );
-        });
+        )
+            .then((response) => {
+                setIngredients((prevIngs) =>
+                    prevIngs.filter((ig) => {
+                        return ig.id !== igId;
+                    })
+                );
+                setIsLoading(false);
+            })
+            .catch((err) => {
+                setError("Something went wrong. Please try again in a moment.");
+            });
     };
 
     return (
         <div className="App">
-            <IngredientForm onAddIngredient={addIngredientHandler} />
+            {error && (
+                <ErrorModal onClose={clearErrorHandler}>{error}</ErrorModal>
+            )}
+            <IngredientForm
+                onAddIngredient={addIngredientHandler}
+                loading={isLoading}
+            />
 
             <section>
                 <Search onLoadIngredients={filteredIngredientsHandler} />
                 <IngredientList
                     ingredients={ingredients}
-                    onRemoveItem={onRemoveItem}
+                    onRemoveItem={removeIngredientHandler}
                 />
             </section>
         </div>
