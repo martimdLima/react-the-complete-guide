@@ -11,7 +11,7 @@ const Search = React.memo((props) => {
 
     // The Effect Hook lets you perform side effects in function components
     // Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects.
-
+    // useEffect can be used multiple times
     // If you want to run an effect and clean it up only once (on mount and unmount), you can pass an empty array ([]) as a second argument.
     // This tells React that your effect doesn’t depend on any values from props or state, so it never needs to re-run.
     // If you pass an empty array ([]), the props and state inside the effect will always have their initial values.

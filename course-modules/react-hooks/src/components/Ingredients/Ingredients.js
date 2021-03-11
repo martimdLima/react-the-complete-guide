@@ -10,6 +10,7 @@ import IngredientForm from "./IngredientForm";
 import IngredientList from "./IngredientList";
 import ErrorModal from "../UI/ErrorModal";
 import Search from "./Search";
+import useHttp from "../../hooks/http";
 
 // An alternative to useState.
 // Accepts a reducer of type (state, action) => newState, and returns the current state paired with a dispatch method.
@@ -30,120 +31,59 @@ const ingredientReducer = (currentIngredients, action) => {
     }
 };
 
-const httpReducer = (httpState, action) => {
-    switch (action.type) {
-        case "SEND_REQUEST":
-            return {
-                loading: true,
-                error: null,
-            };
-        case "RECEIVE_REQUEST":
-            return {
-                ...httpState,
-                loading: false,
-            };
-        case "ERROR":
-            return {
-                loading: false,
-                error: action.error,
-            };
-        case "CLEAR_ERROR":
-            return {
-                ...httpState,
-                error: null,
-            };
-        default:
-            throw new Error("Error");
-    }
-};
-
 function Ingredients() {
     const [ingredients, dispatchIgs] = useReducer(ingredientReducer, []);
-    const [httpState, dispatchHttp] = useReducer(httpReducer, {
-        loading: false,
-        error: null,
-    });
+    const {
+        isLoading,
+        error,
+        data,
+        sendRequest,
+        extra,
+        identifier,
+    } = useHttp();
+
+    useEffect(() => {
+        if (identifier === "REMOVE_INGREDIENT" && !isLoading) {
+            dispatchIgs({ type: "DELETE", id: extra });
+        } else if (identifier === "ADD_INGREDIENT" && !isLoading && !error) {
+            dispatchIgs({
+                type: "ADD",
+                ingredient: { id: data.name, ...extra },
+            });
+        }
+    }, [data, extra, identifier, isLoading, error]);
 
     // Pass an inline callback and an array of dependencies.
     // useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed.
     // This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
     // (e.g. shouldComponentUpdate).
     const filteredIngredientsHandler = useCallback((filteredIngredients) => {
-        dispatchHttp({
-            type: "SEND_REQUEST",
-        });
-        dispatchIgs({
-            type: "INIT",
-            ingredients: filteredIngredients,
-        });
+        dispatchIgs({ type: "INIT", ingredients: filteredIngredients });
     }, []);
 
-    const clearErrorHandler = useCallback(() => {
-        dispatchHttp({
-            type: "CLEAR_ERROR",
-        });
-    }, []);
+    const clearErrorHandler = useCallback(() => {}, []);
 
-    // useEffect can be used multiple times
-    useEffect(() => {
-        console.log("RENDERING INGREDIENTS");
-    }, [ingredients]);
+    const addIngredientHandler = useCallback(
+        (ingredient) => {
+            sendRequest(
+                `https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json`,
+                "ADD",
+                JSON.stringify(ingredient),
+                "ADD_INGREDIENT"
+            );
+        },
+        [sendRequest]
+    );
 
-    const addIngredientHandler = useCallback((ingredient) => {
-        dispatchHttp({
-            type: "SEND_REQUEST",
-        });
-        fetch(
-            "https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json",
-            {
-                method: "POST",
-                body: JSON.stringify(ingredient),
-                headers: { "Content-Type": "application/json" },
-            }
-        )
-            .then((response) => {
-                dispatchHttp({
-                    type: "RECEIVE_REQUEST",
-                });
-                return response.json();
-            })
-            .then((responseData) => {
-                dispatchIgs({
-                    type: "ADD",
-                    ingredient: { id: responseData.name, ...ingredient },
-                });
-            })
-            .catch((err) => {
-                dispatchHttp({
-                    type: "ERROR",
-                    error: err.message,
-                });
-            });
-    }, []);
-
-    const removeIngredientHandler = useCallback((igId) => {
-        dispatchHttp({
-            type: "RECEIVE_REQUEST",
-        });
-        fetch(
-            `https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients/${igId}.json`,
-            {
-                method: "DELETE",
-            }
-        )
-            .then((response) => {
-                dispatchIgs({
-                    type: "DELETE",
-                    id: igId,
-                });
-            })
-            .catch((err) => {
-                dispatchHttp({
-                    type: "ERROR",
-                    error: err.message,
-                });
-            });
-    }, []);
+    const removeIngredientHandler = useCallback(
+        (igId) => {
+            sendRequest(
+                `https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients/${igId}.json`,
+                "REMOVE_INGREDIENT"
+            );
+        },
+        [sendRequest]
+    );
 
     // useMemo returns a memoized value.
 
@@ -167,14 +107,12 @@ function Ingredients() {
 
     return (
         <div className="App">
-            {httpState.error && (
-                <ErrorModal onClose={clearErrorHandler}>
-                    {httpState.error}
-                </ErrorModal>
+            {error && (
+                <ErrorModal onClose={clearErrorHandler}>{error}</ErrorModal>
             )}
             <IngredientForm
                 onAddIngredient={addIngredientHandler}
-                loading={httpState.isLoading}
+                loading={isLoading}
             />
 
             <section>
