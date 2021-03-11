@@ -19,10 +19,12 @@ import useHttp from "../../hooks/http";
 // when the next state depends on the previous one.
 // useReducer also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
 const ingredientReducer = (currentIngredients, action) => {
+
     switch (action.type) {
         case "INIT":
             return action.ingredients;
         case "ADD":
+
             return [...currentIngredients, action.ingredient];
         case "DELETE":
             return currentIngredients.filter((ig) => ig.id !== action.id);
@@ -40,12 +42,13 @@ function Ingredients() {
         sendRequest,
         extra,
         identifier,
+        clear,
     } = useHttp();
 
     useEffect(() => {
         if (identifier === "REMOVE_INGREDIENT" && !isLoading) {
             dispatchIgs({ type: "DELETE", id: extra });
-        } else if (identifier === "ADD_INGREDIENT" && !isLoading && !error) {
+        } else if (!isLoading && !error && identifier === "ADD_INGREDIENT") {
             dispatchIgs({
                 type: "ADD",
                 ingredient: { id: data.name, ...extra },
@@ -61,24 +64,28 @@ function Ingredients() {
         dispatchIgs({ type: "INIT", ingredients: filteredIngredients });
     }, []);
 
-    const clearErrorHandler = useCallback(() => {}, []);
+    const clearErrorHandler = useCallback(() => {
+        clear();
+    }, [clear]);
 
     const addIngredientHandler = useCallback(
-        (ingredient) => {
-            sendRequest(
-                `https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json`,
-                "ADD",
-                JSON.stringify(ingredient),
-                "ADD_INGREDIENT"
-            );
-        },
-        [sendRequest]
-    );
+      ingredient => {
+      sendRequest(
+        'https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients.json',
+        'POST',
+        JSON.stringify(ingredient),
+        ingredient,
+        'ADD_INGREDIENT'
+      );
+    }, [sendRequest]);
 
     const removeIngredientHandler = useCallback(
         (igId) => {
             sendRequest(
                 `https://react-hooks-132f3-default-rtdb.europe-west1.firebasedatabase.app/ingredients/${igId}.json`,
+                "DELETE",
+                null,
+                igId,
                 "REMOVE_INGREDIENT"
             );
         },
@@ -108,7 +115,7 @@ function Ingredients() {
     return (
         <div className="App">
             {error && (
-                <ErrorModal onClose={clearErrorHandler}>{error}</ErrorModal>
+                <ErrorModal onClose={clear}>{error}</ErrorModal>
             )}
             <IngredientForm
                 onAddIngredient={addIngredientHandler}

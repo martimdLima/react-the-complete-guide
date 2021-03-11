@@ -10,49 +10,48 @@ import { useCallback, useReducer } from "react";
 // Unlike a React component, a custom Hook doesn’t need to have a specific signature.
 // We can decide what it takes as arguments, and what, if anything, it should return.
 
+const initialState = {
+    loading: false,
+    error: null,
+    data: null,
+    extra: null,
+    identifier: null,
+};
+
 const httpReducer = (httpState, action) => {
     switch (action.type) {
-        case "SEND_REQUEST":
+        case 'SEND_REQUEST':
             return {
-                loading: true,
-                error: null,
-                data: null,
-                extra: null,
-                identifier: action.identifier
+              loading: true,
+              error: null,
+              data: null,
+              extra: null,
+              identifier: action.identifier
             };
-        case "RESPONSE":
+          case 'RESPONSE':
             return {
-                ...httpState,
-                loading: false,
-                data: action.responseData,
-                extra: action.extra
+              ...httpState,
+              loading: false,
+              data: action.responseData,
+              extra: action.extra
             };
         case "ERROR":
             return {
                 loading: false,
                 error: action.error,
             };
-        case "CLEAR_ERROR":
-            return {
-                ...httpState,
-                error: null,
-            };
+        case "CLEAR":
+            return initialState;
         default:
             throw new Error("Error");
     }
 };
 
 const useHttp = () => {
-    const [httpState, dispatchHttp] = useReducer(httpReducer, {
-        loading: false,
-        error: null,
-        data: null,
-        extra: null,
-        identifier: null
-    });
+    const [httpState, dispatchHttp] = useReducer(httpReducer, initialState);
 
     const sendRequest = useCallback((url, method, body, extra, identifier) => {
-        dispatchHttp({ type: "SEND", identifier: identifier});
+        dispatchHttp({ type: "SEND_REQUEST", identifier: identifier });
         fetch(url, {
             method: method,
             body: body,
@@ -62,7 +61,12 @@ const useHttp = () => {
                 return response.json();
             })
             .then((responseData) => {
-                dispatchHttp({ type: "RESPONSE", responseData: responseData, extra: extra  });
+                console.log(responseData)
+                dispatchHttp({
+                    type: "RESPONSE",
+                    responseData: responseData,
+                    extra: extra,
+                });
             })
             .catch((err) => {
                 dispatchHttp({
@@ -72,13 +76,17 @@ const useHttp = () => {
             });
     }, []);
 
+    const clear = useCallback(() => dispatchHttp({ type: "CLEAR" }), []);
+   
+    console.log(httpState.data);
     return {
         isLoading: httpState.isLoading,
         data: httpState.data,
         error: httpState.error,
         sendRequest: sendRequest,
         extra: httpState.extra,
-        identifier: httpState.identifier
+        identifier: httpState.identifier,
+        clear: clear,
     };
 };
 
