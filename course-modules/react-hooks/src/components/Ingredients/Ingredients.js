@@ -58,9 +58,6 @@ function Ingredients() {
         error: null,
     });
 
-    //const [isLoading, setIsLoading] = useState(false);
-    //const [error, setError] = useState("");
-
     // Pass an inline callback and an array of dependencies.
     // useCallback will return a memoized version of the callback that only changes if one of the dependencies has changed.
     // This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
