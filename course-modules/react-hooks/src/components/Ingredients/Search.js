@@ -6,10 +6,11 @@ import "./Search.css";
 const Search = React.memo((props) => {
     const { onLoadIngredients } = props;
     const [inputFilter, setInputFilter] = useState("");
+    // working with Refs & useRef()
     const inputRef = useRef();
 
     useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             if (inputFilter === inputRef.current.value) {
                 const queryParams =
                     inputFilter.length === 0
@@ -37,6 +38,10 @@ const Search = React.memo((props) => {
                     });
             }
         }, 500);
+        // cleaning Up with useEffect()
+        return () => {
+            clearTimeout(timer);
+        };
     }, [inputFilter, onLoadIngredients, inputRef]);
 
     return (
