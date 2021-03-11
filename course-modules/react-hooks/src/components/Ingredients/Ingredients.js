@@ -8,6 +8,10 @@ function Ingredients() {
 
     const [ingredients, setIngredients] = useState([]);
 
+    const filteredIngredientsHandler = (filteredIngredients) => {
+      setIngredients(filteredIngredients);
+    }
+
     // The Effect Hook lets you perform side effects in function components
     // Data fetching, setting up a subscription, and manually changing the DOM in React components are all examples of side effects.
 
@@ -26,7 +30,11 @@ function Ingredients() {
                 const loadedIngredients = [];
 
                 for (const key in responseData) {
-                    loadedIngredients.push(responseData[key]);
+                    loadedIngredients.push({
+                      id: key,
+                      title: responseData[key].title,
+                      amount: responseData[key].amount
+                    });
                 }
 
                 setIngredients(loadedIngredients);
@@ -71,7 +79,7 @@ function Ingredients() {
             <IngredientForm onAddIngredient={addIngredientHandler} />
 
             <section>
-                <Search />
+                <Search onLoadIngredients={filteredIngredientsHandler}/>
                 <IngredientList
                     ingredients={ingredients}
                     onRemoveItem={onRemoveItem}
