@@ -1,61 +1,62 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { connect } from "react-redux";
 import { Redirect, Route, Switch, withRouter } from "react-router-dom";
 import Layout from "./hoc/Layout/Layout";
+import Spinner from "./components/UI/Spinner/Spinner";
 import BurguerBuilder from "./containers/BurguerBuilder/BurguerBuilder";
 import Logout from "./containers/Auth/Logout/Logout";
 import * as actions from "./store/actions/index";
-import async from "./hoc/async/async";
 
-const asyncCheckout = async(() => {
+// <Suspense> component that lets you “wait” for some code to load and declaratively specify a loading state
+// (like a spinner) while we’re waiting.
+// Suspense for Data Fetching is a new feature that lets you also use <Suspense>
+// to declaratively “wait” for anything else, including data.
+const Checkout = React.lazy(() => {
     return import("./containers/Checkout/Checkout");
 });
 
-const asyncOrders = async(() => {
+const Orders = React.lazy(() => {
     return import("./containers/Orders/Orders");
 });
 
-const asyncAuth = async(() => {
+const Auth = React.lazy(() => {
     return import("./containers/Auth/Auth");
 });
 
-const App = props => {
-    
-/*     componentDidMount() {
-        
-    } */
+const App = (props) => {
     useEffect(() => {
         props.onTryAutoSignup();
-    }, [props])
+    }, [props]);
 
+    let routes = (
+        <Switch>
+            <Route path="/auth" render={() => <Auth />} />
+            <Route path="/" exact render={() => <BurguerBuilder />} />
+            <Redirect to="/" />
+        </Switch>
+    );
 
-        let routes = (
+    if (props.isAuthenticated) {
+        routes = (
             <Switch>
-                <Route path="/auth" component={asyncOrders} />
+                <Route path="/checkout" render={() => <Checkout />} />
+                <Route path="/orders" render={() => <Orders />} />
+                <Route path="/logout" component={Logout} />
+                <Route path="/auth" render={() => <Auth />} />
                 <Route path="/" exact component={BurguerBuilder} />
                 <Redirect to="/" />
             </Switch>
         );
+    }
 
-        if (props.isAuthenticated) {
-            routes = (
-                <Switch>
-                    <Route path="/checkout" component={asyncCheckout} />
-                    <Route path="/orders" component={asyncOrders} />
-                    <Route path="/logout" component={Logout} />
-                    <Route path="/auth" component={asyncAuth} />
-                    <Route path="/" exact component={BurguerBuilder} />
-                    <Redirect to="/" />
-                </Switch>
-            );
-        }
-
-        return (
-            <div>
+    return (
+        <div>
+            <Suspense fallback={<Spinner />}>
                 <Layout>{routes}</Layout>
-            </div>
-        );
-}
+            </Suspense>
+        </div>
+    );
+};
 
 const mapStateToProps = (state) => {
     return {
