@@ -50,11 +50,13 @@ export const Auth = (props) => {
 
     const [isSignup, setIsSignUp] = useState(false);
 
+    const {building, authRedirectPath, onSetAuthRedirectPath} = props;
+
     useEffect(() => {
-        if (!props.building && props.authRedirectPath !== "/") {
-            props.onSetAuthRedirectPath();
+        if (!building && authRedirectPath !== "/") {
+            onSetAuthRedirectPath();
         }
-    }, []);
+    }, [building, authRedirectPath, onSetAuthRedirectPath]);
 
     // the inputChangedHandler is responbile for updating the input fields with the user input
     // it will get an event object as it will automatically be passed by react if this method is attached to an event listener which it is.
